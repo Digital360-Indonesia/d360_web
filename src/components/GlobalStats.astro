@@ -1,0 +1,199 @@
+---
+---
+
+<section id="global-stats-section" class="py-20 bg-gray-50 relative overflow-hidden">
+  <div class="container mx-auto px-6 lg:px-8 max-w-7xl">
+    <div class="grid lg:grid-cols-3 gap-12 lg:gap-16 items-center">
+      <!-- Left Content -->
+      <div class="space-y-6">
+        <!-- English Version -->
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight" data-lang-en>
+          Results That Drive Your Business Forward
+        </h2>
+        <!-- Bahasa Version -->
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight hidden" data-lang-id>
+          Hasil Nyata yang Mendorong Bisnis Anda Maju
+        </h2>
+
+        <!-- English Version -->
+        <p class="text-base lg:text-lg text-gray-600" data-lang-en>
+          We help businesses grow sustain in a longterm — with the right technologies to implemented.
+        </p>
+        <!-- Bahasa Version -->
+        <p class="text-base lg:text-lg text-gray-600 hidden" data-lang-id>
+          Kami bantu bisnis bertumbuh untuk sustain dalam jangka panjang - dengan implementasi teknologi yang sesuai.
+        </p>
+
+        <div class="space-y-3">
+          <div class="text-5xl lg:text-6xl font-bold text-blue-600">
+            <span class="counter" data-target="97">0</span>%
+          </div>
+          <!-- English Version -->
+          <p class="text-base lg:text-lg text-gray-900" data-lang-en>
+            client satisfaction rate across multiple industries
+          </p>
+          <!-- Bahasa Version -->
+          <p class="text-base lg:text-lg text-gray-900 hidden" data-lang-id>
+            tingkat kepuasan klien di berbagai industri
+          </p>
+        </div>
+      </div>
+
+      <!-- Middle Content - Stats -->
+      <div class="space-y-10">
+        <!-- Stat 1 -->
+        <div class="border-l-2 border-gray-300 pl-6 space-y-2">
+          <div class="text-5xl lg:text-6xl font-bold text-blue-600">
+            <span class="counter" data-target="2">0</span>x
+          </div>
+          <!-- English Version -->
+          <p class="text-base lg:text-lg text-gray-900" data-lang-en>
+            faster decision-making with real-time analytics dashboards
+          </p>
+          <!-- Bahasa Version -->
+          <p class="text-base lg:text-lg text-gray-900 hidden" data-lang-id>
+            Keputusan lebih cepat berkat dashboard analitik real-time
+          </p>
+        </div>
+
+        <!-- Stat 2 -->
+        <div class="border-l-2 border-gray-300 pl-6 space-y-2">
+          <div class="text-5xl lg:text-6xl font-bold text-blue-600">
+            <span class="counter" data-target="28">0</span>%
+          </div>
+          <!-- English Version -->
+          <p class="text-base lg:text-lg text-gray-900" data-lang-en>
+            average increase in workflow efficiency within 3 months of implementation
+          </p>
+          <!-- Bahasa Version -->
+          <p class="text-base lg:text-lg text-gray-900 hidden" data-lang-id>
+            Rata-rata peningkatan efisiensi kerja dalam 3 bulan implementasi
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Content - Globe Graphic -->
+      <div class="relative flex justify-center lg:justify-end">
+        <div class="relative w-64 h-64 lg:w-80 lg:h-80">
+          <!-- Orange Circle Accent -->
+          <div class="absolute top-0 right-0 w-24 h-24 lg:w-32 lg:h-32 bg-orange-500 rounded-full -translate-y-4 translate-x-4"></div>
+
+          <!-- Globe Image Container -->
+          <div class="relative w-full h-full rounded-full overflow-hidden bg-gray-300">
+            <img
+              src="/section4-earthimage.png"
+              alt="Global Digital360 Network"
+              class="absolute inset-0 w-full h-full object-cover"
+            />
+          </div>
+
+          <!-- Lightning Bolt Graphics -->
+          <div class="absolute bottom-4 left-0 transform -translate-x-2">
+            <svg width="40" height="60" viewBox="0 0 40 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 0L5 35H15L10 60L35 25H25L30 0H20Z" fill="white" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <div class="absolute bottom-8 left-8 transform">
+            <svg width="35" height="52" viewBox="0 0 35 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17 0L4 30H13L8 52L30 22H21L26 0H17Z" fill="white" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const counters = document.querySelectorAll('.counter');
+    let hasAnimated = false;
+
+    const animateCounter = (counter: Element) => {
+      const target = parseInt(counter.getAttribute('data-target') || '0');
+      const duration = 2000; // 2 seconds animation
+      const frameRate = 1000 / 60; // 60fps
+      const totalFrames = Math.round(duration / frameRate);
+      const increment = target / totalFrames;
+      let current = 0;
+      let frame = 0;
+
+      const updateCounter = () => {
+        frame++;
+        current += increment;
+
+        if (frame < totalFrames) {
+          counter.textContent = Math.ceil(current).toLocaleString();
+          requestAnimationFrame(updateCounter);
+        } else {
+          counter.textContent = target.toLocaleString();
+        }
+      };
+
+      updateCounter();
+    };
+
+    // Intersection Observer for triggering animation when section is visible
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            hasAnimated = true;
+            // Small delay to ensure smooth trigger
+            setTimeout(() => {
+              counters.forEach((counter) => {
+                animateCounter(counter);
+              });
+            }, 100);
+          }
+        });
+      },
+      {
+        threshold: 0.2, // Trigger when 20% of section is visible
+        rootMargin: '0px 0px -100px 0px' // Trigger slightly before fully visible
+      }
+    );
+
+    // Observe the section by ID
+    const section = document.querySelector('#global-stats-section');
+    if (section) {
+      observer.observe(section);
+    }
+  });
+
+  // Language switching functionality
+  function switchLanguage(lang: string) {
+    const section = document.querySelector('#global-stats-section');
+    if (!section) return;
+
+    const enElements = section.querySelectorAll('[data-lang-en]');
+    const idElements = section.querySelectorAll('[data-lang-id]');
+
+    if (lang === 'EN') {
+      enElements.forEach(el => el.classList.remove('hidden'));
+      idElements.forEach(el => el.classList.add('hidden'));
+    } else if (lang === 'ID') {
+      enElements.forEach(el => el.classList.add('hidden'));
+      idElements.forEach(el => el.classList.remove('hidden'));
+    }
+  }
+
+  // Listen for language change events
+  window.addEventListener('languageChanged', ((e: CustomEvent) => {
+    switchLanguage(e.detail.language);
+  }) as EventListener);
+
+  // Load saved language on page load
+  document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('language') || 'EN';
+    switchLanguage(savedLang);
+  });
+</script>
+
+<style>
+  .counter {
+    display: inline-block;
+    min-width: 1ch;
+  }
+</style>

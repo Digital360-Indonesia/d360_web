@@ -1,0 +1,546 @@
+---
+---
+
+<header class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-100 z-50 transition-all duration-300" id="main-header">
+  <nav class="container mx-auto px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <!-- Logo and Navigation Group -->
+      <div class="flex items-center space-x-12">
+        <!-- Logo -->
+        <a href="/" class="flex items-center">
+          <img
+            src="/images/logo-digital360-ori.png"
+            alt="Digital360 Logo"
+            class="h-12 w-auto"
+          />
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center space-x-8">
+          <!-- Products with dropdown -->
+          <div class="relative group">
+            <button class="flex items-center text-gray-700 hover:text-gray-900 font-medium transition-colors group" id="products-btn" data-lang-en="Products" data-lang-id="Produk">
+              <span class="products-text">Products</span>
+              <svg class="ml-1 w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+
+            <!-- Products Dropdown Menu with Horizontal Tabs -->
+            <div class="fixed left-1/2 -translate-x-1/2 mt-2 w-screen max-w-7xl bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2" id="products-dropdown" style="top: 80px;">
+              <!-- Horizontal Tab Navigation -->
+              <div class="flex border-b border-gray-200 bg-gray-50 rounded-t-lg">
+                <button class="px-6 py-4 text-sm font-medium border-b-2 border-blue-600 text-blue-600 category-tab active" data-category="services" data-lang-en="360 Services" data-lang-id="360 Layanan">
+                  <span class="tab-text">360 Services</span>
+                </button>
+                <button class="px-6 py-4 text-sm font-medium border-b-2 border-transparent text-gray-600 hover:text-gray-900 category-tab" data-category="apps" data-lang-en="360 Apps" data-lang-id="360 Aplikasi">
+                  <span class="tab-text">360 Apps</span>
+                </button>
+                <button class="px-6 py-4 text-sm font-medium border-b-2 border-transparent text-gray-600 hover:text-gray-900 category-tab" data-category="partner" data-lang-en="360 Partner" data-lang-id="360 Mitra">
+                  <span class="tab-text">360 Partner</span>
+                </button>
+                <div class="flex-1"></div>
+                <a href="https://wa.me/6285706679500" target="_blank" class="px-6 py-4 text-sm font-medium text-blue-600 hover:text-blue-700 flex items-center" data-lang-en="SCHEDULE CONSULTATION" data-lang-id="JADWALKAN KONSULTASI">
+                  <span class="schedule-text">SCHEDULE CONSULTATION</span>
+                  <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+
+              <!-- Content Area -->
+              <div class="p-8">
+                <!-- 360 Services Content -->
+                <div class="category-content" id="services-content">
+                  <div class="grid grid-cols-3 gap-6">
+                    <a href="#dental360" class="block p-6 rounded-lg border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all bg-blue-50">
+                      <div class="flex items-start mb-2">
+                        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+                          <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                          </svg>
+                        </div>
+                      </div>
+                      <h4 class="font-semibold text-gray-900 mb-1">Dental360</h4>
+                      <p class="text-xs text-gray-600">Complete dental practice management system</p>
+                      <span class="text-xs text-blue-600 font-medium mt-2 inline-flex items-center">
+                        TRY NOW
+                        <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                      </span>
+                    </a>
+
+                    <a href="#business360" class="block p-6 rounded-lg border border-gray-200 hover:border-green-300 hover:shadow-md transition-all bg-green-50">
+                      <div class="flex items-start mb-2">
+                        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-3">
+                          <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                          </svg>
+                        </div>
+                      </div>
+                      <h4 class="font-semibold text-gray-900 mb-1">Business360</h4>
+                      <p class="text-xs text-gray-600">All-in-one business management solution</p>
+                      <span class="text-xs text-blue-600 font-medium mt-2 inline-flex items-center">
+                        TRY NOW
+                        <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                      </span>
+                    </a>
+
+                    <a href="#website360" class="block p-6 rounded-lg border border-gray-200 hover:border-cyan-300 hover:shadow-md transition-all bg-cyan-50">
+                      <div class="flex items-start mb-2">
+                        <div class="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center mr-3">
+                          <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                          </svg>
+                        </div>
+                      </div>
+                      <h4 class="font-semibold text-gray-900 mb-1">Website360</h4>
+                      <p class="text-xs text-gray-600">Professional website builder and hosting</p>
+                      <span class="text-xs text-blue-600 font-medium mt-2 inline-flex items-center">
+                        TRY NOW
+                        <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                      </span>
+                    </a>
+
+                    <a href="#clinic360" class="block p-6 rounded-lg border border-gray-200 hover:border-purple-300 hover:shadow-md transition-all bg-purple-50">
+                      <div class="flex items-start mb-2">
+                        <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-3">
+                          <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+                          </svg>
+                        </div>
+                      </div>
+                      <h4 class="font-semibold text-gray-900 mb-1">Clinic360</h4>
+                      <p class="text-xs text-gray-600">Healthcare clinic management platform</p>
+                      <span class="text-xs text-blue-600 font-medium mt-2 inline-flex items-center">
+                        TRY NOW
+                        <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                      </span>
+                    </a>
+
+                    <a href="#logistic360" class="block p-6 rounded-lg border border-gray-200 hover:border-red-300 hover:shadow-md transition-all bg-red-50">
+                      <div class="flex items-start mb-2">
+                        <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center mr-3">
+                          <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"></path>
+                          </svg>
+                        </div>
+                      </div>
+                      <h4 class="font-semibold text-gray-900 mb-1">Logistic360</h4>
+                      <p class="text-xs text-gray-600">Supply chain and logistics management</p>
+                      <span class="text-xs text-blue-600 font-medium mt-2 inline-flex items-center">
+                        TRY NOW
+                        <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- 360 Apps Content - Banner Style -->
+                <div class="category-content hidden" id="apps-content">
+                  <div class="flex items-center gap-8 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-8 border border-blue-100">
+                    <!-- Left Content -->
+                    <div class="flex-1">
+                      <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                          </svg>
+                        </div>
+                        <div>
+                          <span class="text-sm text-gray-600 font-medium">All-in-one suite</span>
+                          <h4 class="text-2xl font-bold text-gray-900">Digital360 Apps</h4>
+                          <span class="inline-block mt-1 px-3 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full">The Complete App Ecosystem</span>
+                        </div>
+                      </div>
+                      <p class="text-gray-700 mb-6 leading-relaxed">
+                        Run your entire business on Digital360 with our unified app platform, designed to help you break down silos between departments and increase organizational efficiency.
+                      </p>
+                      <div class="relative inline-block group/apps">
+                        <button class="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg cursor-not-allowed opacity-90">
+                          TRY DIGITAL360 APPS
+                          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                          </svg>
+                        </button>
+                        <!-- Under Construction Bubble -->
+                        <div class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 opacity-0 invisible group-hover/apps:opacity-100 group-hover/apps:visible transition-all duration-300">
+                          <div class="bg-gray-800 text-white text-xs px-3 py-2 rounded-lg whitespace-nowrap animate-bounce">
+                            🚧 Under Construction
+                          </div>
+                          <div class="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Right Image/Illustration -->
+                    <div class="flex-shrink-0 w-80 h-64 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-lg flex items-center justify-center">
+                      <svg class="w-48 h-48 text-blue-600 opacity-20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 360 Partner Content - Banner Style -->
+                <div class="category-content hidden" id="partner-content">
+                  <div class="flex items-center gap-8 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg p-8 border border-purple-100">
+                    <!-- Left Content -->
+                    <div class="flex-1">
+                      <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-purple-600 rounded-lg flex items-center justify-center mr-4">
+                          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                          </svg>
+                        </div>
+                        <div>
+                          <span class="text-sm text-gray-600 font-medium">Partner Program</span>
+                          <h4 class="text-2xl font-bold text-gray-900">Digital360 Partner</h4>
+                          <span class="inline-block mt-1 px-3 py-1 bg-purple-100 text-purple-700 text-xs font-semibold rounded-full">Grow Together with Us</span>
+                        </div>
+                      </div>
+                      <p class="text-gray-700 mb-6 leading-relaxed">
+                        Join our global partner network and unlock new opportunities for growth. Access exclusive resources, training, and support to deliver exceptional value to your clients.
+                      </p>
+                      <div class="relative inline-block group/partner">
+                        <button class="inline-flex items-center px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg cursor-not-allowed opacity-90">
+                          BECOME A PARTNER
+                          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                          </svg>
+                        </button>
+                        <!-- Under Construction Bubble -->
+                        <div class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 opacity-0 invisible group-hover/partner:opacity-100 group-hover/partner:visible transition-all duration-300">
+                          <div class="bg-gray-800 text-white text-xs px-3 py-2 rounded-lg whitespace-nowrap animate-bounce">
+                            🚧 Under Construction
+                          </div>
+                          <div class="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Right Image/Illustration -->
+                    <div class="flex-shrink-0 w-80 h-64 bg-gradient-to-br from-purple-100 to-pink-100 rounded-lg flex items-center justify-center">
+                      <svg class="w-48 h-48 text-purple-600 opacity-20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Portfolio Link -->
+          <a href="https://digital360.id/portofolio/" target="_blank" class="text-gray-700 hover:text-gray-900 font-medium transition-colors" data-lang-en="Portfolio" data-lang-id="Portofolio">
+            <span class="portfolio-text">Portfolio</span>
+          </a>
+
+          <a href="https://digital360.id/berita/" target="_blank" class="text-gray-700 hover:text-gray-900 font-medium transition-colors" data-lang-en="Blog" data-lang-id="Berita">
+            <span class="blog-text">Blog</span>
+          </a>
+
+          <!-- Pricing with Under Construction Tooltip -->
+          <div class="relative group">
+            <span class="text-gray-700 font-medium cursor-not-allowed pricing-text" data-lang-en="Pricing" data-lang-id="Harga">
+              Pricing
+            </span>
+            <!-- Under Construction Bubble - Right Side -->
+            <div class="absolute left-full ml-2 top-1/2 -translate-y-1/2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+              <div class="bg-gray-800 text-white text-xs px-3 py-2 rounded-lg whitespace-nowrap animate-bounce flex items-center">
+                <div class="absolute right-full w-0 h-0 border-t-4 border-b-4 border-r-4 border-transparent border-r-gray-800"></div>
+                🚧 Under Construction
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right side -->
+      <div class="hidden md:flex items-center space-x-4">
+        <!-- Language Dropdown -->
+        <div class="relative group">
+          <button class="flex items-center text-gray-700 hover:text-gray-900 font-medium transition-colors" id="language-btn">
+            <span>EN</span>
+            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <!-- Language Dropdown Menu -->
+          <div class="absolute right-0 mt-2 w-24 bg-white rounded-lg shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200" id="language-dropdown">
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-t-lg" onclick="event.preventDefault(); setLanguage('EN'); return false;">English</a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-b-lg" onclick="event.preventDefault(); setLanguage('ID'); return false;">Indonesia</a>
+          </div>
+        </div>
+
+        <!-- Sign In -->
+        <a href="#signin" class="text-gray-700 hover:text-gray-900 font-medium transition-colors" data-lang-en="Sign in" data-lang-id="Masuk">
+          <span class="signin-text">Sign in</span>
+        </a>
+
+        <!-- Book a Meeting Button -->
+        <a href="https://wa.me/6285706679500" target="_blank" class="flex items-center bg-primary-800 hover:bg-primary-900 text-white font-medium px-4 py-2 rounded-lg transition-colors duration-200">
+          <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.306"/>
+          </svg>
+          <span class="bookmeeting-text" data-lang-en="Book a Meeting" data-lang-id="Jadwalkan Pertemuan">Book a Meeting</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden p-2 text-gray-700" id="mobile-menu-btn">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="md:hidden hidden" id="mobile-menu">
+      <div class="py-4 space-y-4 border-t border-gray-100">
+        <a href="#products" class="block text-gray-700 hover:text-gray-900 font-medium transition-colors">Products</a>
+        <a href="#business-solution" class="block text-gray-700 hover:text-gray-900 font-medium transition-colors">Business Solution</a>
+        <a href="#blog" class="block text-gray-700 hover:text-gray-900 font-medium transition-colors">Blog</a>
+        <a href="#pricing" class="block text-gray-700 hover:text-gray-900 font-medium transition-colors">Pricing</a>
+        <a href="#signin" class="block text-gray-700 hover:text-gray-900 font-medium transition-colors">Sign in</a>
+        <a href="https://wa.me/6285706679500" target="_blank" class="flex items-center bg-primary-800 hover:bg-primary-900 text-white font-medium px-4 py-2 rounded-lg transition-colors duration-200 w-fit">
+          <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.306"/>
+          </svg>
+          Book a Meeting
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Sticky header scroll effect
+  const header = document.getElementById('main-header');
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Add shadow and adjust opacity on scroll - header stays visible
+    if (scrollTop > 10) {
+      header?.classList.add('shadow-lg');
+      header?.style.setProperty('background', 'rgba(255, 255, 255, 0.98)');
+    } else {
+      header?.classList.remove('shadow-lg');
+      header?.style.setProperty('background', 'rgba(255, 255, 255, 0.95)');
+    }
+  });
+
+  // Products dropdown category switching
+  document.addEventListener('DOMContentLoaded', () => {
+    const categoryTabs = document.querySelectorAll('.category-tab');
+    const categoryContents = document.querySelectorAll('.category-content');
+
+    categoryTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const category = tab.getAttribute('data-category');
+
+        // Remove active class from all tabs
+        categoryTabs.forEach(t => {
+          t.classList.remove('active', 'border-blue-600', 'text-blue-600');
+          t.classList.add('border-transparent', 'text-gray-600');
+        });
+
+        // Add active class to clicked tab
+        tab.classList.add('active', 'border-blue-600', 'text-blue-600');
+        tab.classList.remove('border-transparent', 'text-gray-600');
+
+        // Hide all content sections
+        categoryContents.forEach(content => {
+          content.classList.add('hidden');
+        });
+
+        // Show selected content
+        const selectedContent = document.getElementById(`${category}-content`);
+        if (selectedContent) {
+          selectedContent.classList.remove('hidden');
+        }
+      });
+    });
+  });
+
+  // Language functionality
+  function setLanguage(lang, skipSave = false) {
+    try {
+      // Update language button display
+      const langBtn = document.getElementById('language-btn');
+      const span = langBtn?.querySelector('span');
+      if (span) {
+        span.textContent = lang;
+      }
+
+      // Save to localStorage (unless skipSave is true)
+      if (!skipSave) {
+        localStorage.setItem('language', lang);
+      }
+
+      // Update all translatable elements
+      const langKey = lang === 'EN' ? 'en' : 'id';
+
+      // Helper function to get translation from element or its parent
+      const getTranslation = (element, langKey) => {
+        if (!element) return null;
+        // Check element itself first
+        let translation = element.getAttribute(`data-lang-${langKey}`);
+        // If not found, check parent
+        if (!translation && element.parentElement) {
+          translation = element.parentElement.getAttribute(`data-lang-${langKey}`);
+        }
+        return translation;
+      };
+
+      // Update navigation items
+      const productsText = document.querySelector('.products-text');
+      if (productsText) {
+        const translation = getTranslation(productsText, langKey);
+        if (translation) productsText.textContent = translation;
+      }
+
+      const portfolioText = document.querySelector('.portfolio-text');
+      if (portfolioText) {
+        const translation = getTranslation(portfolioText, langKey);
+        if (translation) portfolioText.textContent = translation;
+      }
+
+      const blogText = document.querySelector('.blog-text');
+      if (blogText) {
+        const translation = getTranslation(blogText, langKey);
+        if (translation) blogText.textContent = translation;
+      }
+
+      const pricingElement = document.querySelector('.pricing-text');
+      if (pricingElement) {
+        const translation = getTranslation(pricingElement, langKey);
+        if (translation) pricingElement.textContent = translation;
+      }
+
+      const signinText = document.querySelector('.signin-text');
+      if (signinText) {
+        const translation = getTranslation(signinText, langKey);
+        if (translation) signinText.textContent = translation;
+      }
+
+      const bookMeetingElement = document.querySelector('.bookmeeting-text');
+      if (bookMeetingElement) {
+        const translation = getTranslation(bookMeetingElement, langKey);
+        if (translation) bookMeetingElement.textContent = translation;
+      }
+
+      // Update dropdown tabs
+      document.querySelectorAll('.category-tab').forEach(tab => {
+        const textSpan = tab.querySelector('.tab-text');
+        if (textSpan) {
+          const translation = tab.getAttribute(`data-lang-${langKey}`);
+          if (translation) {
+            textSpan.textContent = translation;
+          }
+        }
+      });
+
+      // Update schedule consultation
+      const scheduleElement = document.querySelector('.schedule-text');
+      if (scheduleElement) {
+        const translation = getTranslation(scheduleElement, langKey);
+        if (translation) scheduleElement.textContent = translation;
+      }
+
+      // Dispatch custom event for other components to listen
+      const event = new CustomEvent('languageChanged', { detail: { language: lang } });
+      window.dispatchEvent(event);
+    } catch (error) {
+      console.error('Error changing language:', error);
+    }
+  }
+
+  // Initialize language on page load
+  let languageInitialized = false;
+
+  document.addEventListener('DOMContentLoaded', () => {
+    if (languageInitialized) return;
+    languageInitialized = true;
+
+    const savedLang = localStorage.getItem('language') || 'EN';
+
+    // Update language button display
+    const langBtn = document.getElementById('language-btn');
+    const span = langBtn?.querySelector('span');
+    if (span) {
+      span.textContent = savedLang;
+    }
+
+    // Apply saved language (including EN to ensure consistency)
+    // Use requestAnimationFrame for smooth rendering
+    requestAnimationFrame(() => {
+      setLanguage(savedLang, true); // skipSave = true to avoid redundant localStorage write
+    });
+  });
+
+  // Make setLanguage available globally
+  window.setLanguage = setLanguage;
+
+  // Add "Under Construction" tooltips to all placeholder # links
+  document.addEventListener('DOMContentLoaded', () => {
+    // Find all links that start with # (excluding #signin which might be special)
+    const placeholderLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
+
+    placeholderLinks.forEach(link => {
+      // Skip if already has a tooltip parent
+      if (link.parentElement?.classList.contains('relative') && link.parentElement?.classList.contains('group')) {
+        return;
+      }
+
+      // Check if link has block display (for vertical nav items)
+      const isBlock = window.getComputedStyle(link).display === 'block';
+
+      // Wrap link in tooltip container
+      const wrapper = document.createElement('div');
+      wrapper.className = isBlock ? 'relative group block' : 'relative group inline-block';
+
+      // Clone and modify the link
+      const parent = link.parentElement;
+      parent?.insertBefore(wrapper, link);
+      wrapper.appendChild(link);
+
+      // Add cursor style
+      link.style.cursor = 'not-allowed';
+      link.style.opacity = '0.9';
+
+      // Prevent default click
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+      });
+
+      // Create tooltip
+      const tooltip = document.createElement('div');
+      tooltip.className = 'absolute left-1/2 -translate-x-1/2 bottom-full mb-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50';
+      tooltip.innerHTML = `
+        <div class="bg-gray-800 text-white text-xs px-3 py-2 rounded-lg whitespace-nowrap animate-bounce">
+          🚧 Under Construction
+        </div>
+        <div class="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800"></div>
+      `;
+
+      wrapper.appendChild(tooltip);
+    });
+  });
+</script>

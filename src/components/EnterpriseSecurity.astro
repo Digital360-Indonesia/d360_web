@@ -1,0 +1,86 @@
+---
+---
+
+<section id="enterprise-security-section" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-6 lg:px-8 max-w-6xl">
+    <div class="text-center space-y-12">
+      <!-- Heading - English -->
+      <h2 class="font-bold text-gray-900" style="font-size: 2.3rem;" data-lang-en="true">
+        Trusted by Businesses, Secured by Technology
+      </h2>
+      <!-- Heading - Bahasa Indonesia -->
+      <h2 class="font-bold text-gray-900 hidden" style="font-size: 2.3rem;" data-lang-id="true">
+        Dipercaya oleh Bisnis, Dilindungi oleh Teknologi
+      </h2>
+
+      <!-- Security Badges -->
+      <div class="flex flex-wrap justify-center items-center gap-12 md:gap-16 py-8">
+        <!-- Badge 1 -->
+        <div class="flex flex-col items-center">
+          <img src="/badge1.png" alt="Security Badge 1" class="w-40 h-40 md:w-48 md:h-48 object-contain">
+        </div>
+
+        <!-- Badge 2 -->
+        <div class="flex flex-col items-center">
+          <img src="/badge2.png" alt="Security Badge 2" class="w-40 h-40 md:w-48 md:h-48 object-contain">
+        </div>
+
+        <!-- Badge 3 -->
+        <div class="flex flex-col items-center">
+          <img src="/badge3.png" alt="Security Badge 3" class="w-24 h-24 md:w-28 md:h-28 object-contain">
+        </div>
+      </div>
+
+      <!-- Description Text - English -->
+      <div class="max-w-3xl mx-auto space-y-4" data-lang-en="true">
+        <p class="text-lg md:text-xl text-gray-600 leading-relaxed">
+          Your data's safety is our top priority. With enterprise-grade protection and compliance, Digital360 is trusted by 50+ teams to keep their operations running securely and efficiently.
+        </p>
+        <p class="text-lg md:text-xl text-gray-600 leading-relaxed font-medium">
+          Work with a partner you can trust.
+        </p>
+      </div>
+
+      <!-- Description Text - Bahasa Indonesia -->
+      <div class="max-w-3xl mx-auto space-y-4 hidden" data-lang-id="true">
+        <p class="text-lg md:text-xl text-gray-600 leading-relaxed">
+          Keamanan data Anda adalah prioritas utama kami. Dengan perlindungan dan kepatuhan setara standar enterprise, Digital360 telah dipercaya oleh lebih dari 50+ team untuk menjaga operasional mereka tetap aman dan efisien.
+        </p>
+        <p class="text-lg md:text-xl text-gray-600 leading-relaxed font-medium">
+          Bermitra dengan partner yang dapat Anda percaya.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Language switching functionality
+  function switchLanguage(lang: string) {
+    // Only select elements within this Enterprise Security section
+    const section = document.querySelector('#enterprise-security-section');
+    if (!section) return;
+
+    const enElements = section.querySelectorAll('[data-lang-en]');
+    const idElements = section.querySelectorAll('[data-lang-id]');
+
+    if (lang === 'EN') {
+      enElements.forEach(el => el.classList.remove('hidden'));
+      idElements.forEach(el => el.classList.add('hidden'));
+    } else if (lang === 'ID') {
+      enElements.forEach(el => el.classList.add('hidden'));
+      idElements.forEach(el => el.classList.remove('hidden'));
+    }
+  }
+
+  // Listen for language change events
+  window.addEventListener('languageChanged', ((e: CustomEvent) => {
+    switchLanguage(e.detail.language);
+  }) as EventListener);
+
+  // Load saved language on page load
+  document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('language') || 'EN';
+    switchLanguage(savedLang);
+  });
+</script>

@@ -1,0 +1,322 @@
+---
+---
+
+<section class="pt-6 pb-12 bg-white">
+  <!-- Header -->
+  <div class="container mx-auto px-6 lg:px-8 max-w-7xl text-center mb-8">
+    <h2 class="text-4xl font-bold text-gray-900 mb-3">
+      For teams of all sizes
+    </h2>
+    <p class="text-lg text-gray-600">
+      Everyone from start-ups to large enterprises prefer Atlassian
+    </p>
+  </div>
+
+  <!-- Testimonial Container with Dark Background - Curved Shape -->
+  <div class="relative overflow-hidden">
+    <!-- Dark background with wave/curve effect -->
+    <div class="absolute inset-0 bg-black" style="clip-path: polygon(0 6%, 100% 0%, 100% 100%, 0% 100%);"></div>
+
+    <div class="relative text-white py-12">
+      <div class="container mx-auto px-6 lg:px-8 max-w-7xl">
+        <!-- Main Content Grid -->
+        <div class="grid lg:grid-cols-2 gap-10 items-center mb-12">
+          <!-- Left Side - Profile with Decorative Elements -->
+          <div class="relative flex justify-center items-center min-h-[300px]">
+          <!-- Decorative Background Shapes -->
+          <div class="absolute inset-0 flex items-center justify-center">
+            <!-- Green curved shape -->
+            <div class="absolute w-56 h-56 bg-green-500 rounded-full transform -translate-x-6" style="clip-path: ellipse(50% 60% at 50% 50%);"></div>
+
+            <!-- Blue triangle -->
+            <div class="absolute w-28 h-28 bg-blue-600 transform translate-x-14 translate-y-6" style="clip-path: polygon(50% 0%, 0% 100%, 100% 100%);"></div>
+
+            <!-- Sparkle decorations -->
+            <div class="absolute top-12 left-16 text-white text-xl">✦</div>
+            <div class="absolute top-16 left-12 text-white text-base">✦</div>
+
+            <!-- Line graph icon -->
+            <svg class="absolute bottom-16 right-12 w-14 h-14 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path>
+              <polyline points="1,10 4,7 7,9 10,4" stroke="white" stroke-width="1.5" fill="none"/>
+            </svg>
+          </div>
+
+          <!-- Profile Photo -->
+          <div id="testimonial-image" class="relative z-10 w-72 h-72 rounded-full overflow-hidden grayscale">
+            <img
+              src="/section5-pfahmi.png"
+              alt="P. Fahmi"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        <!-- Right Side - Testimonial Content -->
+        <div class="space-y-4">
+          <div id="testimonial-label" class="text-xs font-semibold tracking-wider text-gray-400 uppercase">
+            Dental Care
+          </div>
+
+          <blockquote id="testimonial-quote" class="text-2xl md:text-3xl font-normal leading-tight">
+            "Digital360 has transformed how we manage our dental clinic operations with seamless digital solutions."
+          </blockquote>
+
+          <div class="space-y-1">
+            <div id="testimonial-name" class="text-base font-bold">
+              P. FAHMI
+            </div>
+            <div id="testimonial-role" class="text-sm text-gray-400">
+              Operations Manager, B Fresh Dental Care
+            </div>
+          </div>
+
+          <a href="#" id="testimonial-link" class="inline-flex items-center text-white hover:text-gray-300 font-semibold text-sm mt-2">
+            Read B Fresh's case study →
+          </a>
+        </div>
+      </div>
+
+      <!-- Company Logos - Interactive Buttons with Progress Bars -->
+      <div class="border-t border-gray-800 pt-8">
+        <div class="max-w-3xl mx-auto">
+          <!-- Progress bars container - Connected like Instagram stories -->
+          <div class="flex gap-2 mb-4">
+            <div class="progress-bar-container flex-1 h-1 bg-gray-700 rounded-full overflow-hidden">
+              <div class="progress-bar h-full bg-white rounded-full" data-index="0" style="width: 0%;"></div>
+            </div>
+            <div class="progress-bar-container flex-1 h-1 bg-gray-700 rounded-full overflow-hidden">
+              <div class="progress-bar h-full bg-white rounded-full" data-index="1" style="width: 0%;"></div>
+            </div>
+            <div class="progress-bar-container flex-1 h-1 bg-gray-700 rounded-full overflow-hidden">
+              <div class="progress-bar h-full bg-white rounded-full" data-index="2" style="width: 0%;"></div>
+            </div>
+            <div class="progress-bar-container flex-1 h-1 bg-gray-700 rounded-full overflow-hidden">
+              <div class="progress-bar h-full bg-white rounded-full" data-index="3" style="width: 0%;"></div>
+            </div>
+          </div>
+
+          <!-- Logo buttons aligned with progress bars -->
+          <div class="grid grid-cols-4 gap-2">
+            <!-- B Fresh Dental Care -->
+            <button
+              class="company-logo-btn opacity-60 hover:opacity-100 transition-opacity duration-300 flex justify-center items-center"
+              data-testimonial="0"
+            >
+              <img src="/section2-2.png" alt="B Fresh Dental Care" class="max-h-32 max-w-full object-contain brightness-0 invert" />
+            </button>
+
+            <!-- Vido Garment -->
+            <button
+              class="company-logo-btn opacity-60 hover:opacity-100 transition-opacity duration-300 flex justify-center items-center"
+              data-testimonial="1"
+            >
+              <img src="/section2-1.png" alt="Vido Garment" class="max-h-32 max-w-full object-contain brightness-0 invert" />
+            </button>
+
+            <!-- Apotek Farmabox -->
+            <button
+              class="company-logo-btn opacity-60 hover:opacity-100 transition-opacity duration-300 flex justify-center items-center"
+              data-testimonial="2"
+            >
+              <img src="/section2-5.png" alt="Apotek Farmabox" class="max-h-32 max-w-full object-contain brightness-0 invert" />
+            </button>
+
+            <!-- PLN -->
+            <button
+              class="company-logo-btn opacity-60 hover:opacity-100 transition-opacity duration-300 flex justify-center items-center"
+              data-testimonial="3"
+            >
+              <img src="/section2-9.png" alt="PLN" class="max-h-32 max-w-full object-contain brightness-0 invert" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<script>
+  // Testimonial data (only 4 now)
+  const testimonials = [
+    {
+      label: "Dental Care",
+      quote: "\"Digital360 has transformed how we manage our dental clinic operations with seamless digital solutions.\"",
+      name: "P. FAHMI",
+      role: "Operations Manager, B Fresh Dental Care",
+      link: "Read B Fresh's case study →",
+      linkUrl: "#",
+      image: "/section5-pfahmi.png"
+    },
+    {
+      label: "Garment Industry",
+      quote: "\"With Digital360's solutions, we've streamlined our production workflow and improved team collaboration significantly.\"",
+      name: "P. MUCHAROM",
+      role: "Production Director, Vido Garment",
+      link: "Read Vido Garment's case study →",
+      linkUrl: "#",
+      image: "/section5-pmucharom.png"
+    },
+    {
+      label: "Pharmaceutical",
+      quote: "\"Digital360 helped us modernize our pharmacy operations and provide better service to our customers.\"",
+      name: "P. MARIA",
+      role: "Head of Operations, Apotek Farmabox",
+      link: "Read Apotek Farmabox's case study →",
+      linkUrl: "#",
+      image: "/section5-pmaria.png"
+    },
+    {
+      label: "Energy & Utilities",
+      quote: "\"Our collaboration with Digital360 has enhanced our digital infrastructure and operational efficiency.\"",
+      name: "P. TAUFIK",
+      role: "IT Manager, PLN",
+      link: "Read PLN's case study →",
+      linkUrl: "#",
+      image: "/section5-ptaufik.png"
+    }
+  ];
+
+  let currentIndex = 0;
+  let progressInterval: number | null = null;
+  let progressStartTime = 0;
+  const DURATION = 5000; // 5 seconds per testimonial
+
+  // Get all logo buttons and progress bars
+  const logoButtons = document.querySelectorAll('.company-logo-btn');
+  const progressBars = document.querySelectorAll('.progress-bar');
+
+  // Function to update testimonial content
+  function updateTestimonial(index: number, skipAnimation = false) {
+    const testimonial = testimonials[index];
+    currentIndex = index;
+
+    // Update content with fade effect
+    const elements = {
+      label: document.getElementById('testimonial-label'),
+      quote: document.getElementById('testimonial-quote'),
+      name: document.getElementById('testimonial-name'),
+      role: document.getElementById('testimonial-role'),
+      link: document.getElementById('testimonial-link'),
+      image: document.getElementById('testimonial-image')
+    };
+
+    if (!skipAnimation) {
+      // Fade out
+      Object.values(elements).forEach(el => {
+        if (el) el.style.opacity = '0';
+      });
+    }
+
+    // Update content after fade (or immediately if skipping animation)
+    setTimeout(() => {
+      if (elements.label) elements.label.textContent = testimonial.label;
+      if (elements.quote) elements.quote.textContent = testimonial.quote;
+      if (elements.name) elements.name.textContent = testimonial.name;
+      if (elements.role) elements.role.textContent = testimonial.role;
+      if (elements.link) {
+        elements.link.textContent = testimonial.link;
+        elements.link.setAttribute('href', testimonial.linkUrl);
+      }
+      if (elements.image) {
+        const img = elements.image.querySelector('img');
+        if (img) {
+          img.setAttribute('src', testimonial.image);
+          img.setAttribute('alt', testimonial.name);
+        }
+      }
+
+      // Fade in
+      Object.values(elements).forEach(el => {
+        if (el) el.style.opacity = '1';
+      });
+    }, skipAnimation ? 0 : 300);
+
+    // Update active logo
+    logoButtons.forEach((btn, i) => {
+      if (i === index) {
+        btn.classList.remove('opacity-60');
+        btn.classList.add('opacity-100');
+      } else {
+        btn.classList.remove('opacity-100');
+        btn.classList.add('opacity-60');
+      }
+    });
+
+    // Reset all progress bars
+    progressBars.forEach((bar, i) => {
+      if (i < index) {
+        // Already viewed - fill completely
+        (bar as HTMLElement).style.width = '100%';
+      } else if (i === index) {
+        // Current - reset to 0
+        (bar as HTMLElement).style.width = '0%';
+      } else {
+        // Not yet viewed - empty
+        (bar as HTMLElement).style.width = '0%';
+      }
+    });
+
+    // Start progress animation for current item
+    startProgress(index);
+  }
+
+  // Function to animate progress bar
+  function startProgress(index: number) {
+    // Clear existing interval
+    if (progressInterval) {
+      clearInterval(progressInterval);
+    }
+
+    progressStartTime = Date.now();
+    const currentProgressBar = progressBars[index] as HTMLElement;
+
+    progressInterval = setInterval(() => {
+      const elapsed = Date.now() - progressStartTime;
+      const progress = Math.min((elapsed / DURATION) * 100, 100);
+
+      currentProgressBar.style.width = `${progress}%`;
+
+      // Move to next testimonial when complete
+      if (progress >= 100) {
+        clearInterval(progressInterval!);
+        const nextIndex = (index + 1) % testimonials.length;
+        setTimeout(() => {
+          updateTestimonial(nextIndex);
+        }, 300);
+      }
+    }, 16); // ~60fps
+  }
+
+  // Add click handlers to logo buttons
+  logoButtons.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+      if (progressInterval) {
+        clearInterval(progressInterval);
+      }
+      updateTestimonial(index);
+    });
+  });
+
+  // Add transition styles
+  const style = document.createElement('style');
+  style.textContent = `
+    #testimonial-label,
+    #testimonial-quote,
+    #testimonial-name,
+    #testimonial-role,
+    #testimonial-link,
+    #testimonial-image {
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .progress-bar {
+      transition: width 0.016s linear;
+    }
+  `;
+  document.head.appendChild(style);
+
+  // Start the slideshow on page load
+  updateTestimonial(0, true);
+</script>

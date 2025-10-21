@@ -1,0 +1,162 @@
+---
+---
+
+<section id="home" class="bg-white">
+  <div class="container mx-auto px-6 lg:px-8">
+    <div class="pt-32 pb-20 text-center">
+      <!-- Main Heading -->
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-normal text-gray-900 mb-8 leading-tight max-w-5xl mx-auto" data-lang-en="true">
+        The Digital Partner for Businesses <span class="relative inline-block">
+          <span class="relative z-10 font-bold">Ready</span>
+          <svg class="absolute -bottom-2 left-0 w-full h-4 z-0" viewBox="0 0 200 20" fill="none">
+            <path d="M5 15 Q50 5 95 10 T185 12" stroke="#F59E0B" stroke-width="6" fill="none" stroke-linecap="round"/>
+          </svg>
+        </span> to Scale
+      </h1>
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-normal text-gray-900 mb-8 leading-tight max-w-5xl mx-auto hidden" data-lang-id="true">
+        Partner Digital Bisnis Anda untuk <span class="relative inline-block">
+          <span class="relative z-10 font-bold">Scale Up</span>
+          <svg class="absolute -bottom-2 left-0 w-full h-4 z-0" viewBox="0 0 200 20" fill="none">
+            <path d="M5 15 Q50 5 95 10 T185 12" stroke="#F59E0B" stroke-width="6" fill="none" stroke-linecap="round"/>
+          </svg>
+        </span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto" data-lang-en="true">
+        We build AI-powered systems that actually work for your business—custom dashboards, smart management tools, and digital solutions designed around how you really operate.
+      </p>
+      <p class="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto hidden" data-lang-id="true">
+        Bangun sistem digital yang efektif untuk bisnis Anda—dashboard AI-powered, tools manajemen terintegrasi, dan solusi custom yang mendukung pertumbuhan tanpa mengubah workflow Anda.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+        <div class="relative group">
+          <a href="#contact" class="bg-primary-800 hover:bg-primary-900 text-white font-semibold px-8 py-4 rounded-full transition-colors duration-200 cursor-not-allowed opacity-90 inline-block" data-lang-en="true">
+            Get started
+          </a>
+          <!-- Under Construction Bubble -->
+          <div class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+            <div class="bg-gray-800 text-white text-xs px-3 py-2 rounded-lg whitespace-nowrap animate-bounce">
+              🚧 Under Construction
+            </div>
+            <div class="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800"></div>
+          </div>
+        </div>
+        <div class="relative group">
+          <a href="#contact" class="bg-primary-800 hover:bg-primary-900 text-white font-semibold px-8 py-4 rounded-full transition-colors duration-200 cursor-not-allowed opacity-90 inline-block hidden" data-lang-id="true">
+            Mulai Sekarang
+          </a>
+          <!-- Under Construction Bubble -->
+          <div class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+            <div class="bg-gray-800 text-white text-xs px-3 py-2 rounded-lg whitespace-nowrap animate-bounce">
+              🚧 Dalam Pembangunan
+            </div>
+            <div class="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800"></div>
+          </div>
+        </div>
+        <a href="https://wa.me/6285706679500" target="_blank" class="bg-white hover:bg-gray-50 text-black font-semibold px-8 py-4 rounded-full border border-gray-300 transition-colors duration-200" data-lang-en="true">
+          Book a Consultation
+        </a>
+        <a href="https://wa.me/6285706679500" target="_blank" class="bg-white hover:bg-gray-50 text-black font-semibold px-8 py-4 rounded-full border border-gray-300 transition-colors duration-200 hidden" data-lang-id="true">
+          Hubungi Kami
+        </a>
+      </div>
+
+      <!-- Video -->
+      <div class="max-w-4xl mx-auto">
+        <div class="relative aspect-video bg-gray-100 rounded-3xl overflow-hidden shadow-2xl">
+          <!-- Animated gradient background behind video -->
+          <div class="absolute inset-0 gradient-bg"></div>
+
+          <!-- Video overlay -->
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            class="w-full h-full object-cover relative z-10"
+          >
+            <source src="/videos/CSD-10721_WAC_Hero_FULL_LowBR.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  svg path {
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+    animation: draw 2s ease-out 0.5s forwards;
+  }
+
+  /* Subtle slow-moving gradient animation */
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .gradient-bg {
+    background: linear-gradient(
+      135deg,
+      rgba(15, 45, 120, 0.65),     /* deeper navy blue - 65% opacity */
+      rgba(30, 80, 200, 0.6),      /* vibrant blue - 60% opacity */
+      rgba(50, 120, 220, 0.65),    /* bright blue - 65% opacity */
+      rgba(15, 45, 120, 0.7)       /* deeper navy blue - 70% opacity */
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 20s ease-in-out infinite;
+    opacity: 0.85;
+  }
+</style>
+
+<script>
+  // Language switching functionality
+  function switchLanguage(lang: string) {
+    // Only select elements within this Hero section, not the entire page
+    const heroSection = document.querySelector('#home');
+    if (!heroSection) return;
+
+    const enElements = heroSection.querySelectorAll('[data-lang-en]');
+    const idElements = heroSection.querySelectorAll('[data-lang-id]');
+
+    if (lang === 'EN') {
+      enElements.forEach(el => el.classList.remove('hidden'));
+      idElements.forEach(el => el.classList.add('hidden'));
+    } else if (lang === 'ID') {
+      enElements.forEach(el => el.classList.add('hidden'));
+      idElements.forEach(el => el.classList.remove('hidden'));
+    }
+
+    // Save language preference
+    localStorage.setItem('language', lang);
+  }
+
+  // Listen for language change events
+  window.addEventListener('languageChanged', ((e: CustomEvent) => {
+    switchLanguage(e.detail.language);
+  }) as EventListener);
+
+  // Load saved language on page load
+  document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('language') || 'EN';
+    switchLanguage(savedLang);
+  });
+</script>
