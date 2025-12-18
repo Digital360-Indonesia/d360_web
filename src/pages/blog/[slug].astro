@@ -63,12 +63,14 @@ const { Content } = await post.render();
     <section class="py-8">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
-          <img
-            src={post.data.image || 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&h=600&fit=crop'}
-            alt={post.data.title}
-            class="w-full h-96 object-cover rounded-lg shadow-lg"
-            loading="lazy"
-          />
+          <div class="featured-image-container">
+            <img
+              src={post.data.image || 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&h=715&fit=crop'}
+              alt={post.data.title}
+              class="featured-image rounded-lg shadow-lg"
+              loading="lazy"
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -232,5 +234,14 @@ const { Content } = await post.render();
 
   :global(.image-caption) {
     @apply text-center text-sm text-gray-600 italic mt-2;
+  }
+
+  .featured-image-container {
+    @apply my-6 w-full;
+    aspect-ratio: 1200 / 715;
+  }
+
+  .featured-image {
+    @apply rounded-lg shadow-lg w-full h-full object-cover;
   }
 </style>

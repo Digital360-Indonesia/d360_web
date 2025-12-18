@@ -7,14 +7,15 @@ interface Props {
   readTime: string;
   image: string;
   slug: string;
+  dataCategory?: string;
 }
 
-const { title, excerpt, category, date, readTime, image, slug } = Astro.props;
+const { title, excerpt, category, date, readTime, image, slug, dataCategory } = Astro.props;
 ---
 
-<article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+<article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300" data-category={dataCategory || category}>
   <!-- Image -->
-  <div class="relative h-48 overflow-hidden">
+  <div class="relative blog-card-image overflow-hidden">
     <img
       src={image}
       alt={title}
@@ -82,5 +83,9 @@ const { title, excerpt, category, date, readTime, image, slug } = Astro.props;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+
+  .blog-card-image {
+    aspect-ratio: 1200 / 715;
   }
 </style>

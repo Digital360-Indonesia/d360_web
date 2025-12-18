@@ -5,13 +5,13 @@ import Footer from '../../components/Footer.astro';
 import BlogCard from '../../components/BlogCard.astro';
 import { getCollection } from 'astro:content';
 
-// Get all published blog posts sorted by date
+// Get all published blog posts sorted by date (no server-side filtering)
 const allBlogPosts = await getCollection('blog', ({ data }) => {
   return data.published;
 });
 
-// Sort by date (newest first)
-const blogPosts = allBlogPosts
+// Sort by date (newest first) and map to required format
+const sortedBlogPosts = allBlogPosts
   .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
   .map((post) => ({
     title: post.data.title,
@@ -23,12 +23,15 @@ const blogPosts = allBlogPosts
       year: 'numeric'
     }),
     readTime: post.data.readTime,
-    image: post.data.image || 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=400&fit=crop',
+    image: post.data.image || 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&h=715&fit=crop',
     slug: post.slug
   }));
 
 // Get unique categories for filter
 const categories = ["Semua", ...Array.from(new Set(allBlogPosts.map(post => post.data.category)))];
+
+// Get all posts for client-side filtering and pagination
+const blogPosts = sortedBlogPosts;
 ---
 
 <Layout title="Blog - Digital360" description="Temukan insight terbaru tentang teknologi dan transformasi digital dari tim Digital360">
@@ -54,8 +57,9 @@ const categories = ["Semua", ...Array.from(new Set(allBlogPosts.map(post => post
         <div class="flex flex-wrap gap-2 justify-center">
           {categories.map((category) => (
             <button
-              class={`px-4 py-2 rounded-full font-medium transition-colors ${
-                category === "Semua"
+              data-category={category}
+              class={`category-filter px-4 py-2 rounded-full font-medium transition-colors cursor-pointer inline-block ${
+                category === 'Semua'
                   ? "bg-primary-800 text-white"
                   : "bg-gray-200 text-gray-700 hover:bg-gray-300"
               }`}
@@ -67,24 +71,152 @@ const categories = ["Semua", ...Array.from(new Set(allBlogPosts.map(post => post
       </div>
 
       <!-- Blog Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div id="blogGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {blogPosts.map((post) => (
-          <BlogCard {...post} />
+          <BlogCard {...post} data-category={post.category} />
         ))}
       </div>
 
-      <!-- Load More Button -->
-      <div class="text-center mt-12">
-        <button class="bg-primary-800 text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-900 transition-colors">
-          Muat Lebih Banyak Artikel
-        </button>
+      <!-- Filter Info -->
+      <div class="mt-8 text-center text-gray-600">
+        <p id="filterInfo">Menampilkan semua {blogPosts.length} artikel</p>
       </div>
-    </div>
+
+      </div>
   </section>
 
     </main>
   <Footer />
 </Layout>
+
+<script define:vars={{ blogPosts }}>
+  // Get all blog posts from server-side data
+  let posts = Array.isArray(blogPosts) ? blogPosts : [];
+
+  // DOM elements
+  const blogGrid = document.getElementById('blogGrid');
+  const filterButtons = document.querySelectorAll('.category-filter');
+  const filterInfo = document.getElementById('filterInfo');
+
+  // Filter posts function
+  function filterPosts(category) {
+    const filteredPosts = category === 'Semua'
+      ? posts
+      : posts.filter(post => post.category === category);
+
+    // Clear current grid
+    blogGrid.innerHTML = '';
+
+    // Add filtered posts
+    filteredPosts.forEach(post => {
+      const postCard = createBlogCard(post);
+      blogGrid.appendChild(postCard);
+    });
+
+    // Update filter info
+    const categoryText = category === 'Semua' ? '' : ` dalam kategori "${category}"`;
+    filterInfo.textContent = `Menampilkan ${filteredPosts.length} dari ${posts.length} artikel${categoryText}`;
+
+    // Update button states
+    filterButtons.forEach(button => {
+      const buttonCategory = button.getAttribute('data-category');
+      if (buttonCategory === category) {
+        button.classList.remove('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
+        button.classList.add('bg-primary-800', 'text-white');
+      } else {
+        button.classList.remove('bg-primary-800', 'text-white');
+        button.classList.add('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
+      }
+    });
+  }
+
+  // Create blog card HTML
+  function createBlogCard(post) {
+    const article = document.createElement('article');
+    article.className = 'bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300';
+    article.setAttribute('data-category', post.category);
+
+    article.innerHTML = `
+      <div class="relative blog-card-image overflow-hidden">
+        <img
+          src="${post.image}"
+          alt="${post.title}"
+          class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+          loading="lazy"
+        />
+        <div class="absolute top-4 left-4">
+          <span class="bg-primary-800 text-white px-3 py-1 rounded-full text-sm font-semibold">
+            ${post.category}
+          </span>
+        </div>
+      </div>
+
+      <div class="p-6">
+        <h3 class="text-xl font-bold mb-3 line-clamp-2 hover:text-primary-800 transition-colors">
+          <a href="/blog/${post.slug}" class="hover:text-primary-800 transition-colors">
+            ${post.title}
+          </a>
+        </h3>
+
+        <p class="text-gray-600 mb-4 line-clamp-3">
+          ${post.excerpt}
+        </p>
+
+        <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+          <div class="flex items-center space-x-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+            <span>${post.date}</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span>${post.readTime}</span>
+          </div>
+        </div>
+
+        <a
+          href="/blog/${post.slug}"
+          class="inline-flex items-center text-primary-800 font-semibold hover:text-primary-900 transition-colors"
+        >
+          Baca Selengkapnya
+          <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    `;
+
+    return article;
+  }
+
+  // Add click event listeners to filter buttons
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const category = button.getAttribute('data-category');
+      filterPosts(category);
+    });
+  });
+
+  // Check URL parameters on page load
+  function initFilterFromURL() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryFromURL = urlParams.get('category');
+
+    if (categoryFromURL) {
+      filterPosts(categoryFromURL);
+    } else {
+      // Default to showing all posts
+      filterPosts('Semua');
+    }
+  }
+
+  // Initialize on page load
+  document.addEventListener('DOMContentLoaded', initFilterFromURL);
+</script>
+
 
 <style>
   .line-clamp-2 {
