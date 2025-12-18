@@ -1,0 +1,103 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { getCollection } from 'astro:content';
+
+// Get all published blog posts sorted by date
+const allBlogPosts = await getCollection('blog', ({ data }) => {
+  return data.published;
+});
+
+// Sort by date (newest first)
+const blogPosts = allBlogPosts
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .map((post) => ({
+    title: post.data.title,
+    excerpt: post.data.excerpt,
+    category: post.data.category,
+    date: new Date(post.data.date).toLocaleDateString('id-ID', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    }),
+    readTime: post.data.readTime,
+    image: post.data.image || 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=400&fit=crop',
+    slug: post.slug
+  }));
+
+// Get unique categories for filter
+const categories = ["Semua", ...Array.from(new Set(allBlogPosts.map(post => post.data.category)))];
+---
+
+<Layout title="Blog - Digital360" description="Temukan insight terbaru tentang teknologi dan transformasi digital dari tim Digital360">
+  <Header />
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-primary-800 to-primary-900 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">Digital360 Blog</h1>
+          <p class="text-xl text-primary-100">
+            Temukan insight terbaru tentang teknologi, transformasi digital, dan inovasi bisnis
+          </p>
+        </div>
+      </div>
+    </section>
+
+  <!-- Blog Content -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <!-- Category Filter -->
+      <div class="mb-12">
+        <div class="flex flex-wrap gap-2 justify-center">
+          {categories.map((category) => (
+            <button
+              class={`px-4 py-2 rounded-full font-medium transition-colors ${
+                category === "Semua"
+                  ? "bg-primary-800 text-white"
+                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- Blog Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {blogPosts.map((post) => (
+          <BlogCard {...post} />
+        ))}
+      </div>
+
+      <!-- Load More Button -->
+      <div class="text-center mt-12">
+        <button class="bg-primary-800 text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-900 transition-colors">
+          Muat Lebih Banyak Artikel
+        </button>
+      </div>
+    </div>
+  </section>
+
+    </main>
+  <Footer />
+</Layout>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
