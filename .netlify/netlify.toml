@@ -64,6 +64,11 @@ to = "/sitemap-index.xml"
 status = 200
 force = false
 
+# Blog article redirects - old WordPress to new Astro structure
+# IMPORTANT: Redirect old article URLs (without /blog/) to new structure (with /blog/)
+# Using _redirects file for better wildcard support
+# See: public/_redirects file for implementation
+
 # SPA fallback - redirect all other requests to index.html
 # This should be LAST and only apply if no matching file exists
 [[redirects]]

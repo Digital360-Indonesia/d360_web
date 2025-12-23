@@ -1,0 +1,14 @@
+# Redirects for old WordPress URLs to new Astro structure
+
+# Blog articles - redirect from /slug/ to /blog/slug/
+# This uses regex to match all article URLs and redirect to /blog/
+/5-kunci-sukses-pemasaran-dengan-media-sosial/ /blog/5-kunci-sukses-pemasaran-dengan-media-sosial/ 301
+/5-pilar-digital-marketing-terpadu-untuk-umkm-yang-ingin-naik-kelas/ /blog/5-pilar-digital-marketing-terpadu-untuk-umkm-yang-ingin-naik-kelas/ 301
+/konten-berkualitas-tak-lagi-cukup-saatnya-gabungkan-seo-storytelling-dan-visual-branding/ /blog/konten-berkualitas-tak-lagi-cukup-saatnya-gabungkan-seo-storytelling-dan-visual-branding/ 301
+/apa-itu-kurban-digital-kenali-teknologi-mengubah-tradisi/ /blog/apa-itu-kurban-digital-kenali-teknologi-mengubah-tradisi/ 301
+/digital-marketing-terpadu-solusi-bisnis-andal-digital360/ /blog/digital-marketing-terpadu-solusi-bisnis-andal-digital360/ 301
+
+# Note: Add more redirects as needed for other important articles
+# Due to the large number of articles (668), you may want to:
+# 1. Add redirects for top traffic articles only
+# 2. Or use a script to generate all redirects
