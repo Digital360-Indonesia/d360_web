@@ -1,0 +1,10 @@
+# robots.txt for Digital360
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://digital360.id/sitemap.xml
+
+# Crawl-delay (optional, polite to servers)
+Crawl-delay: 1

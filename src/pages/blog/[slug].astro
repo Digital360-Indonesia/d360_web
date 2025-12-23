@@ -24,6 +24,9 @@ const formattedDate = new Date(post.data.date).toLocaleDateString('id-ID', {
   year: 'numeric'
 });
 
+// Format ISO date for meta tags
+const isoDate = new Date(post.data.date).toISOString();
+
 // Get related posts (same category, excluding current post)
 const relatedPosts = await getCollection('blog', ({ data }) => {
   return data.published && data.category === post.data.category;
@@ -35,9 +38,52 @@ const filteredRelatedPosts = relatedPosts
 
 // Get the Content component
 const { Content } = await post.render();
+
+// Blog-specific meta
+const blogTitle = `${post.data.title} - Digital360 Blog`;
+const blogDescription = post.data.excerpt;
+const blogImage = post.data.image || 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&h=630&fit=crop';
+const blogUrl = `https://digital360.id/blog/${post.slug}`;
+const blogAuthor = post.data.author || 'Digital360';
+
+// Prepare tags for schema
+const schemaTags = post.data.tags || [];
 ---
 
-<Layout title={`${post.data.title} - Digital360 Blog`} description={post.data.excerpt}>
+<Layout
+  title={blogTitle}
+  description={blogDescription}
+  lang="id"
+  ogImage={blogImage}
+  ogType="article"
+  articlePublishedTime={isoDate}
+  articleAuthor={blogAuthor}
+>
+  <!-- JSON-LD Structured Data - Article -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": post.data.title,
+    "description": post.data.excerpt,
+    "image": blogImage,
+    "datePublished": isoDate,
+    "dateModified": isoDate,
+    "author": {
+      "@type": "Organization",
+      "name": blogAuthor
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Digital360",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://digital360.id/assets/images/logo-digital360-ori.png"
+      }
+    },
+    "inLanguage": "id-ID",
+    "keywords": schemaTags.join(', ')
+  })} />
+
   <Header />
   <main class="pt-20">
     <!-- Hero Section -->
