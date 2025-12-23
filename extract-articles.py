@@ -65,8 +65,27 @@ class Digital360Extractor:
                 if response.status_code == 200:
                     data = response.json()
                     if data and len(data) > 0:
+                        post_data = data[0]
+
+                        # Fetch tags data if post has tags
+                        if post_data.get('tags') and len(post_data['tags']) > 0:
+                            try:
+                                tag_ids = ','.join(map(str, post_data['tags']))
+                                tags_response = self.session.get(
+                                    f"{self.api_url}/tags?include={tag_ids}",
+                                    timeout=10
+                                )
+                                if tags_response.status_code == 200:
+                                    tags_data = tags_response.json()
+                                    post_data['tags'] = tags_data
+                                else:
+                                    post_data['tags'] = []
+                            except Exception as e:
+                                print(f"  ⚠️  Warning: Could not fetch tags for {slug}: {e}")
+                                post_data['tags'] = []
+
                         # Return the post object directly
-                        return data[0]
+                        return post_data
 
             return None
 
@@ -274,7 +293,35 @@ class Digital360Extractor:
                 if isinstance(tag, dict):
                     tag_name = tag.get('name', '')
                     if tag_name:
-                        tags.append(tag_name.lower().replace(' ', '-'))
+                        # Clean tag name - remove all hashes and split by # delimiter
+                        cleaned_tag = tag_name.strip().lower()
+
+                        # Remove leading hashes
+                        cleaned_tag = cleaned_tag.lstrip('#')
+
+                        # If tag contains # in the middle, split by # and process each part
+                        if '#' in cleaned_tag:
+                            # Split by # and take meaningful parts
+                            parts = cleaned_tag.split('#')
+                            for part in parts:
+                                part = part.strip('-').strip()
+                                # Only add if it's a meaningful tag (3+ chars)
+                                if part and len(part) >= 3 and not part.isdigit():
+                                    tags.append(part)
+                        else:
+                            # Normal tag - just clean it up
+                            cleaned_tag = cleaned_tag.replace('#', '').strip()
+                            if len(cleaned_tag) >= 3 and not cleaned_tag.isdigit():
+                                tags.append(cleaned_tag)
+
+        # Remove duplicates while preserving order
+        seen = set()
+        unique_tags = []
+        for tag in tags:
+            if tag not in seen:
+                seen.add(tag)
+                unique_tags.append(tag)
+        tags = unique_tags
 
         # Generate frontmatter
         frontmatter = f"""---

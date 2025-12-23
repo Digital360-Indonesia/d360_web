@@ -6,7 +6,7 @@ date: "2025-08-23"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2025/08/5-pilar-digital-marketing-terpadu-untuk-umkm-yang-ingin-naik-kelas.jpg"
-tags: []
+tags: ["digitalmarketingumkm", "strategidigitalterpadu", "digital360indonesia", "naikkelasumkm", "pemasarandigitalprofesional", "seodanads", "brandingumkm"]
 published: true
 ---
 

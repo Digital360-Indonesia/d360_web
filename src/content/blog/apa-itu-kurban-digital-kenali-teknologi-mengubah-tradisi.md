@@ -6,7 +6,7 @@ date: "2023-06-17"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2023/06/apa-itu-kurban-digital-kenali-teknologi-mengubah-tradisi.jpg"
-tags: []
+tags: ["kurban digital", "qurban digital", "teknologi", "tradisi"]
 published: true
 ---
 

@@ -7,10 +7,11 @@ interface Props {
   readTime: string;
   image: string;
   slug: string;
+  tags?: string[];
   dataCategory?: string;
 }
 
-const { title, excerpt, category, date, readTime, image, slug, dataCategory } = Astro.props;
+const { title, excerpt, category, date, readTime, image, slug, tags, dataCategory } = Astro.props;
 ---
 
 <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300" data-category={dataCategory || category}>
@@ -22,15 +23,31 @@ const { title, excerpt, category, date, readTime, image, slug, dataCategory } = 
       class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
       loading="lazy"
     />
-    <div class="absolute top-4 left-4">
-      <span class="bg-primary-800 text-white px-3 py-1 rounded-full text-sm font-semibold">
-        {category}
-      </span>
-    </div>
   </div>
 
   <!-- Content -->
   <div class="p-6">
+    <!-- Category Badge & Tags -->
+    <div class="mb-3 flex flex-wrap items-center gap-2">
+      <span class="inline-block bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-semibold">
+        {category}
+      </span>
+      {tags && tags.length > 0 && (
+        <>
+          {tags.slice(0, 3).map((tag) => (
+            <span class="inline-block bg-gray-100 text-gray-600 px-2 py-1 rounded-full text-xs font-medium">
+              #{tag}
+            </span>
+          ))}
+          {tags.length > 3 && (
+            <span class="inline-block bg-gray-100 text-gray-600 px-2 py-1 rounded-full text-xs font-medium">
+              +{tags.length - 3}
+            </span>
+          )}
+        </>
+      )}
+    </div>
+
     <h3 class="text-xl font-bold mb-3 line-clamp-2 hover:text-primary-800 transition-colors">
       <a href={`/blog/${slug}`} class="hover:text-primary-800 transition-colors">
         {title}

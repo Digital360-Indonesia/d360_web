@@ -6,7 +6,7 @@ date: "2023-06-19"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2023/06/5-kunci-sukses-pemasaran-dengan-media-sosial.jpg"
-tags: []
+tags: ["kunci sukses", "media sosial", "pemasaran", "social media"]
 published: true
 ---
 
