@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import BlogCard from '../../components/BlogCard.astro';
+import BlogSkeleton from '../../components/BlogSkeleton.astro';
 import { getCollection } from 'astro:content';
 
 // Get all published blog posts sorted by date (no server-side filtering)
@@ -77,6 +78,12 @@ const TOTAL_PAGES = Math.ceil(blogPosts.length / POSTS_PER_PAGE);
 
       <!-- Blog Grid -->
       <div id="blogGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+        <!-- Skeleton Loader (initially hidden) -->
+        <div id="blogSkeleton" class="hidden">
+          <BlogSkeleton count={POSTS_PER_PAGE} />
+        </div>
+
+        <!-- Blog Posts -->
         {blogPosts.slice(0, POSTS_PER_PAGE).map((post) => (
           <BlogCard {...post} data-category={post.category} />
         ))}
@@ -108,22 +115,49 @@ const TOTAL_PAGES = Math.ceil(blogPosts.length / POSTS_PER_PAGE);
 
   // DOM elements
   const blogGrid = document.getElementById('blogGrid');
+  const blogSkeleton = document.getElementById('blogSkeleton');
   const filterButtons = document.querySelectorAll('.category-filter');
   const filterInfo = document.getElementById('filterInfo');
   const paginationNav = document.getElementById('pagination');
 
+  // Show skeleton loader
+  function showSkeleton() {
+    if (blogSkeleton) {
+      blogSkeleton.classList.remove('hidden');
+    }
+    // Hide existing blog cards
+    const existingCards = blogGrid.querySelectorAll('article[data-category]');
+    existingCards.forEach(card => card.style.display = 'none');
+  }
+
+  // Hide skeleton loader
+  function hideSkeleton() {
+    if (blogSkeleton) {
+      blogSkeleton.classList.add('hidden');
+    }
+    // Show existing blog cards
+    const existingCards = blogGrid.querySelectorAll('article[data-category]');
+    existingCards.forEach(card => card.style.display = '');
+  }
+
   // Filter posts function
   function filterPosts(category) {
-    currentCategory = category;
-    filteredPosts = category === 'Semua'
-      ? [...posts]
-      : posts.filter(post => post.category === category);
+    showSkeleton();
 
-    currentPage = 1; // Reset to first page when filter changes
-    renderPage(currentPage);
-    updateFilterInfo();
-    updatePagination();
-    updateCategoryButtons(category);
+    // Simulate loading delay for better UX
+    setTimeout(() => {
+      currentCategory = category;
+      filteredPosts = category === 'Semua'
+        ? [...posts]
+        : posts.filter(post => post.category === category);
+
+      currentPage = 1; // Reset to first page when filter changes
+      renderPage(currentPage);
+      updateFilterInfo();
+      updatePagination();
+      updateCategoryButtons(category);
+      hideSkeleton();
+    }, 300);
   }
 
   // Render posts for specific page
@@ -132,8 +166,12 @@ const TOTAL_PAGES = Math.ceil(blogPosts.length / POSTS_PER_PAGE);
     const endIndex = startIndex + POSTS_PER_PAGE;
     const postsToShow = filteredPosts.slice(startIndex, endIndex);
 
-    // Clear current grid
+    // Clear current grid but keep skeleton
+    const skeleton = blogGrid.querySelector('#blogSkeleton');
     blogGrid.innerHTML = '';
+    if (skeleton) {
+      blogGrid.appendChild(skeleton);
+    }
 
     // Add posts for current page
     postsToShow.forEach(post => {
@@ -274,13 +312,19 @@ const TOTAL_PAGES = Math.ceil(blogPosts.length / POSTS_PER_PAGE);
     const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
     if (page < 1 || page > totalPages) return;
 
-    currentPage = page;
-    renderPage(currentPage);
-    updateFilterInfo();
-    updatePagination();
+    showSkeleton();
 
-    // Scroll to top of blog grid
-    document.getElementById('blogGrid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Simulate loading delay for better UX
+    setTimeout(() => {
+      currentPage = page;
+      renderPage(currentPage);
+      updateFilterInfo();
+      updatePagination();
+      hideSkeleton();
+
+      // Scroll to top of blog grid
+      document.getElementById('blogGrid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 300);
   }
 
   // Create blog card HTML

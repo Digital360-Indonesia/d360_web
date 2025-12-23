@@ -1,0 +1,96 @@
+---
+/**
+ * BlogSkeleton - Loading skeleton component for blog cards
+ */
+
+const count = Astro.props.count || 9;
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  {Array.from({ length: count }).map(() => (
+    <article class="bg-white rounded-lg shadow-md overflow-hidden">
+      <!-- Image Skeleton -->
+      <div class="relative blog-card-image overflow-hidden bg-gray-200">
+        <div class="skeleton-shimmer w-full h-full absolute inset-0"></div>
+      </div>
+
+      <!-- Content Skeleton -->
+      <div class="p-6">
+        <!-- Category Badge Skeleton -->
+        <div class="mb-3 flex items-center gap-2">
+          <div class="h-6 w-20 bg-gray-200 rounded-full animate-pulse"></div>
+          <div class="h-5 w-16 bg-gray-200 rounded-full animate-pulse"></div>
+          <div class="h-5 w-16 bg-gray-200 rounded-full animate-pulse"></div>
+        </div>
+
+        <!-- Title Skeleton -->
+        <div class="mb-3 space-y-2">
+          <div class="h-6 bg-gray-200 rounded animate-pulse"></div>
+          <div class="h-6 w-3/4 bg-gray-200 rounded animate-pulse"></div>
+        </div>
+
+        <!-- Excerpt Skeleton -->
+        <div class="mb-4 space-y-2">
+          <div class="h-4 bg-gray-200 rounded animate-pulse"></div>
+          <div class="h-4 bg-gray-200 rounded animate-pulse"></div>
+          <div class="h-4 w-2/3 bg-gray-200 rounded animate-pulse"></div>
+        </div>
+
+        <!-- Meta Info Skeleton -->
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center space-x-2">
+            <div class="h-4 w-4 bg-gray-200 rounded animate-pulse"></div>
+            <div class="h-4 w-24 bg-gray-200 rounded animate-pulse"></div>
+          </div>
+          <div class="flex items-center space-x-2">
+            <div class="h-4 w-4 bg-gray-200 rounded animate-pulse"></div>
+            <div class="h-4 w-16 bg-gray-200 rounded animate-pulse"></div>
+          </div>
+        </div>
+
+        <!-- Button Skeleton -->
+        <div class="h-5 w-32 bg-gray-200 rounded animate-pulse"></div>
+      </div>
+    </article>
+  ))}
+</div>
+
+<style>
+  .blog-card-image {
+    aspect-ratio: 1200 / 715;
+  }
+
+  .skeleton-shimmer {
+    background: linear-gradient(
+      90deg,
+      #f0f0f0 0%,
+      #e0e0e0 50%,
+      #f0f0f0 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+</style>
