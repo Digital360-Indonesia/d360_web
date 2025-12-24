@@ -1,0 +1,242 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CustomerStoryCard from '../../components/CustomerStoryCard.astro';
+import CustomerStoryFilter from '../../components/CustomerStoryFilter.astro';
+import { getCollection } from 'astro:content';
+
+// Get all published customer stories
+const allStories = await getCollection('customerStories', ({ data }) => {
+  return data.published === true;
+});
+
+// Sort by date (newest first)
+const sortedStories = allStories.sort((a, b) => {
+  return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
+});
+
+// Get featured stories (first 3)
+const featuredStories = sortedStories.slice(0, 3);
+const remainingStories = sortedStories.slice(3);
+---
+
+<Layout
+  title="Customer Stories - Digital360 | Success Stories & Case Studies"
+  description="Discover how leading businesses across Indonesia transformed their operations with Digital360's innovative digital solutions. Read inspiring customer success stories."
+>
+  <Header />
+
+  <main class="min-h-screen bg-white pt-20">
+    <!-- Hero Section - Two Column Layout -->
+    <section class="bg-[#f4ede4] py-16 md:py-20">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <!-- Left Column - Text Content -->
+          <div class="max-w-xl">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+              Inspiring stories, remarkable productivity
+            </h1>
+            <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+              Efficiency abounds in these success stories of teams, companies and industries shaping the future of work. They do it all with the help of Digital360.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a
+                href="#featured-video"
+                class="inline-flex items-center justify-center px-6 py-3 bg-[#611f69] text-white rounded font-semibold hover:bg-[#4a1a52] transition-colors"
+              >
+                WATCH DEMO
+              </a>
+              <a
+                href="#stories"
+                class="inline-flex items-center text-[#1264a3] font-semibold hover:underline"
+              >
+                See all stories
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column - Featured Video/Image with Story Card -->
+          <div class="relative">
+            <!-- Video/Image Container -->
+            <div class="relative rounded-lg overflow-hidden shadow-2xl">
+              <img
+                src={featuredStories[0].data.coverImage}
+                alt={featuredStories[0].data.company}
+                class="w-full h-auto aspect-video object-cover"
+              />
+              <!-- Play Button Overlay -->
+              <div class="absolute inset-0 flex items-center justify-center bg-black/20">
+                <button class="w-20 h-20 bg-[#1264a3] rounded-lg flex items-center justify-center hover:bg-[#0d4d7d] transition-colors shadow-xl">
+                  <svg class="w-10 h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Featured Story Card Overlay -->
+              <div class="absolute bottom-0 left-0 right-0 bg-white p-6 shadow-lg">
+                <div class="flex items-center gap-3 mb-3">
+                  <img
+                    src={featuredStories[0].data.logo}
+                    alt={featuredStories[0].data.company}
+                    class="h-8 w-auto object-contain"
+                  />
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">{featuredStories[0].data.company}</h3>
+                <p class="text-gray-700 mb-3 text-sm">{featuredStories[0].data.title}</p>
+                <a
+                  href={`/customer-stories/${featuredStories[0].slug}`}
+                  class="inline-flex items-center text-[#1264a3] font-semibold text-sm hover:underline"
+                >
+                  Read story
+                  <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Stories Grid (3 Cards) -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {featuredStories.slice(1, 4).map((story) => (
+            <div class="group">
+              <!-- Story Image with Video Icon -->
+              <div class="relative rounded-lg overflow-hidden mb-4 shadow-md">
+                <img
+                  src={story.data.coverImage}
+                  alt={story.data.company}
+                  class="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <!-- Video Play Icon -->
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-16 h-16 bg-[#1264a3] rounded-lg flex items-center justify-center shadow-lg">
+                    <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Story Info -->
+              <div class="mb-3">
+                <img
+                  src={story.data.logo}
+                  alt={story.data.company}
+                  class="h-6 w-auto object-contain"
+                />
+              </div>
+              <h3 class="font-bold text-gray-900 mb-2 text-lg">{story.data.title}</h3>
+              <a
+                href={`/customer-stories/${story.slug}`}
+                class="inline-flex items-center text-[#1264a3] font-semibold hover:underline"
+              >
+                Read story
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-white border-y">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+          <div class="text-center">
+            <div class="text-4xl md:text-5xl font-bold text-primary-800 mb-2">50+</div>
+            <div class="text-gray-600 font-medium">Happy Clients</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl md:text-5xl font-bold text-primary-800 mb-2">85%</div>
+            <div class="text-gray-600 font-medium">Improved Efficiency</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl md:text-5xl font-bold text-primary-800 mb-2">95%</div>
+            <div class="text-gray-600 font-medium">Client Satisfaction</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl md:text-5xl font-bold text-primary-800 mb-2">24/7</div>
+            <div class="text-gray-600 font-medium">Support Available</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section id="stories" class="py-8 bg-white container mx-auto px-4 sm:px-6 lg:px-8">
+      <CustomerStoryFilter />
+    </section>
+
+    <!-- All Stories Grid -->
+    <section class="py-8 pb-16 bg-white container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="stories-grid">
+        {sortedStories.map((story) => (
+          <CustomerStoryCard
+            company={story.data.company}
+            title={story.data.title}
+            excerpt={story.data.excerpt}
+            industry={story.data.industry}
+            logo={story.data.logo}
+            coverImage={story.data.coverImage}
+            slug={story.slug}
+            dataIndustry={story.data.industry}
+          />
+        ))}
+      </div>
+
+      <!-- Empty State -->
+      <div id="empty-state" class="text-center py-16 hidden">
+        <svg class="w-24 h-24 mx-auto text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        <h3 class="text-xl font-semibold text-gray-700 mb-2">No stories found</h3>
+        <p class="text-gray-500">We're having a bit of trouble finding a story in that category.</p>
+        <button
+          onclick="document.querySelector('[data-filter=\"all\"]').click()"
+          class="mt-4 px-6 py-2 bg-primary-800 text-white rounded-full font-semibold hover:bg-primary-900 transition-colors"
+        >
+          View all stories
+        </button>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-primary-800 to-primary-900 text-white">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Write Your Success Story?</h2>
+        <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+          Join hundreds of businesses that have transformed their operations with Digital360
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/contact"
+            class="px-8 py-4 bg-white text-primary-800 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+          >
+            Get Started Today
+          </a>
+          <a
+            href="/products"
+            class="px-8 py-4 bg-primary-700 text-white rounded-lg font-semibold hover:bg-primary-600 transition-colors border-2 border-white/20"
+          >
+            Explore Our Solutions
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,262 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const stories = await getCollection('customerStories', ({ data }) => {
+    return data.published === true;
+  });
+
+  return stories.map((story) => ({
+    params: { slug: story.slug },
+    props: { story },
+  }));
+}
+
+interface Props {
+  story: CollectionEntry<'customerStories'>;
+}
+
+const { story } = Astro.props;
+const { company, title, excerpt, industry, product, logo, coverImage, stats, overview, problem, solution, images } = story.data;
+
+// Get related stories (same industry, excluding current)
+const relatedStories = (await getCollection('customerStories', ({ data, slug }) => {
+  return data.published === true && data.industry === industry && slug !== story.slug;
+})).slice(0, 3);
+
+const industryLabels: Record<string, string> = {
+  dental: 'Dental',
+  pharmacy: 'Pharmacy',
+  manufacture: 'Manufacturing',
+  outsourcing: 'Outsourcing',
+  logistic: 'Logistics',
+  others: 'Others'
+};
+---
+
+<Layout
+  title={`${company} - Customer Story | Digital360`}
+  description={excerpt}
+>
+  <Header />
+
+  <main class="min-h-screen bg-white pt-20">
+    <!-- Hero Section with Cover Image -->
+    <section class="relative h-[60vh] md:h-[70vh] overflow-hidden">
+      <div class="absolute inset-0">
+        <img
+          src={coverImage}
+          alt={company}
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+      </div>
+
+      <div class="relative h-full container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-end pb-16">
+        <!-- Breadcrumb -->
+        <div class="mb-6">
+          <a href="/customer-stories" class="text-white/80 hover:text-white transition-colors text-sm font-medium">
+            ← Back to Customer Stories
+          </a>
+        </div>
+
+        <!-- Industry Badge -->
+        <div class="mb-4">
+          <span class="inline-block bg-white/90 backdrop-blur-sm text-primary-800 px-4 py-2 rounded-full text-sm font-semibold">
+            {industryLabels[industry]} Industry
+          </span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-w-4xl">
+          {title}
+        </h1>
+
+        <!-- Company Info -->
+        <div class="flex items-center gap-4">
+          <div class="bg-white rounded-lg p-3 shadow-lg">
+            <img
+              src={logo}
+              alt={`${company} logo`}
+              class="h-10 w-auto object-contain"
+            />
+          </div>
+          <div class="text-white">
+            <div class="text-xl font-semibold">{company}</div>
+            <div class="text-white/80">{product}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section (if available) -->
+    {stats && (stats.metric1 || stats.metric2 || stats.metric3) && (
+      <section class="py-12 bg-gray-50 border-y">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {stats.metric1 && (
+              <div class="text-center">
+                <div class="text-3xl font-bold text-primary-800 mb-2">{stats.metric1}</div>
+              </div>
+            )}
+            {stats.metric2 && (
+              <div class="text-center">
+                <div class="text-3xl font-bold text-primary-800 mb-2">{stats.metric2}</div>
+              </div>
+            )}
+            {stats.metric3 && (
+              <div class="text-center">
+                <div class="text-3xl font-bold text-primary-800 mb-2">{stats.metric3}</div>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Main Content -->
+    <article class="py-16 container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <!-- Company Overview -->
+        <section class="mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">Company Overview</h2>
+          <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+            {overview}
+          </div>
+        </section>
+
+        <!-- First Image (if available) -->
+        {images && images[0] && (
+          <div class="mb-16 rounded-xl overflow-hidden shadow-xl">
+            <img
+              src={images[0]}
+              alt={`${company} implementation 1`}
+              class="w-full h-auto"
+              loading="lazy"
+            />
+          </div>
+        )}
+
+        <!-- The Problem -->
+        <section class="mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">The Challenge</h2>
+          <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed bg-red-50 border-l-4 border-red-500 p-8 rounded-r-lg">
+            {problem}
+          </div>
+        </section>
+
+        <!-- Second Image (if available) -->
+        {images && images[1] && (
+          <div class="mb-16 rounded-xl overflow-hidden shadow-xl">
+            <img
+              src={images[1]}
+              alt={`${company} implementation 2`}
+              class="w-full h-auto"
+              loading="lazy"
+            />
+          </div>
+        )}
+
+        <!-- The Solution -->
+        <section class="mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">The Solution</h2>
+          <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed bg-green-50 border-l-4 border-green-500 p-8 rounded-r-lg">
+            {solution}
+          </div>
+        </section>
+
+        <!-- Third Image (if available) -->
+        {images && images[2] && (
+          <div class="mb-16 rounded-xl overflow-hidden shadow-xl">
+            <img
+              src={images[2]}
+              alt={`${company} implementation 3`}
+              class="w-full h-auto"
+              loading="lazy"
+            />
+          </div>
+        )}
+      </div>
+    </article>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-br from-primary-800 to-primary-900 text-white">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Business?</h2>
+        <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+          Let's discuss how Digital360 can help you achieve similar results
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/contact"
+            class="px-8 py-4 bg-white text-primary-800 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+          >
+            Contact Sales
+          </a>
+          <a
+            href="/products"
+            class="px-8 py-4 bg-primary-700 text-white rounded-lg font-semibold hover:bg-primary-600 transition-colors border-2 border-white/20"
+          >
+            View Products
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Stories -->
+    {relatedStories.length > 0 && (
+      <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold text-gray-900 mb-8">More stories in {industryLabels[industry]}</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {relatedStories.map((relatedStory) => (
+              <a
+                href={`/customer-stories/${relatedStory.slug}`}
+                class="group bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300"
+              >
+                <div class="relative h-48 overflow-hidden">
+                  <img
+                    src={relatedStory.data.coverImage}
+                    alt={relatedStory.data.company}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div class="absolute bottom-4 left-4 right-4">
+                    <div class="bg-white rounded p-2 inline-block mb-2">
+                      <img
+                        src={relatedStory.data.logo}
+                        alt={relatedStory.data.company}
+                        class="h-6 w-auto object-contain"
+                      />
+                    </div>
+                    <h3 class="text-white font-semibold line-clamp-2">{relatedStory.data.title}</h3>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .prose {
+    font-size: 1.125rem;
+    line-height: 1.75;
+  }
+</style>

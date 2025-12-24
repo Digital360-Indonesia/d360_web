@@ -66,16 +66,19 @@
 
       <!-- Video -->
       <div class="max-w-4xl mx-auto">
-        <div class="relative aspect-video bg-gray-100 rounded-3xl overflow-hidden shadow-2xl">
+        <div class="relative aspect-video bg-black rounded-3xl overflow-hidden shadow-2xl">
           <!-- Animated gradient background behind video -->
           <div class="absolute inset-0 gradient-bg"></div>
 
           <!-- Video overlay -->
           <video
+            id="hero-video"
             autoplay
             muted
             loop
             playsinline
+            preload="auto"
+            poster="/assets/images/hero-video-poster.jpg"
             class="w-full h-full object-cover relative z-10"
           >
             <source src="/assets/videos/CSD-10721_WAC_Hero_FULL_LowBR.mp4" type="video/mp4">
@@ -158,5 +161,39 @@
   document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('language') || 'EN';
     switchLanguage(savedLang);
+  });
+
+  // Ensure video plays immediately
+  function initHeroVideo() {
+    const video = document.getElementById('hero-video') as HTMLVideoElement;
+
+    if (video) {
+      // Attempt to play
+      const playPromise = video.play();
+
+      if (playPromise !== undefined) {
+        playPromise.catch(error => {
+          // Auto-play was prevented, retry on user interaction
+          console.log('Autoplay prevented, will retry on interaction');
+          document.addEventListener('click', () => {
+            video.play();
+          }, { once: true });
+        });
+      }
+    }
+  }
+
+  // Initialize video immediately
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHeroVideo);
+  } else {
+    initHeroVideo();
+  }
+
+  // Also handle page show (back/forward cache)
+  window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+      initHeroVideo();
+    }
   });
 </script>

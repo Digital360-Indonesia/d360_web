@@ -1,0 +1,136 @@
+---
+// Filter component for customer stories
+---
+
+<div class="mb-8">
+  <div class="flex flex-col gap-6">
+    <!-- Filter Title -->
+    <div>
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Browse customer stories</h2>
+      <p class="text-gray-600">Filter by industry to find stories relevant to your business</p>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="flex flex-wrap gap-3">
+      <button
+        data-filter="all"
+        class="filter-btn filter-active px-5 py-2.5 rounded-full font-semibold transition-all duration-300 bg-primary-800 text-white hover:bg-primary-900"
+      >
+        All Stories
+      </button>
+      <button
+        data-filter="dental"
+        class="filter-btn px-5 py-2.5 rounded-full font-semibold transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800"
+      >
+        Dental
+      </button>
+      <button
+        data-filter="pharmacy"
+        class="filter-btn px-5 py-2.5 rounded-full font-semibold transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800"
+      >
+        Pharmacy
+      </button>
+      <button
+        data-filter="manufacture"
+        class="filter-btn px-5 py-2.5 rounded-full font-semibold transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800"
+      >
+        Manufacturing
+      </button>
+      <button
+        data-filter="outsourcing"
+        class="filter-btn px-5 py-2.5 rounded-full font-semibold transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800"
+      >
+        Outsourcing
+      </button>
+      <button
+        data-filter="logistic"
+        class="filter-btn px-5 py-2.5 rounded-full font-semibold transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800"
+      >
+        Logistics
+      </button>
+      <button
+        data-filter="others"
+        class="filter-btn px-5 py-2.5 rounded-full font-semibold transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800"
+      >
+        Others
+      </button>
+    </div>
+
+    <!-- Results Counter -->
+    <div class="text-sm text-gray-600">
+      Showing <span id="results-count" class="font-semibold">0</span> stories
+    </div>
+  </div>
+</div>
+
+<script>
+  // Filter functionality
+  function initializeFilters() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const storyCards = document.querySelectorAll('[data-industry]');
+    const resultsCount = document.getElementById('results-count');
+
+    function updateResultsCount() {
+      const visibleCards = Array.from(storyCards).filter(
+        (card) => (card as HTMLElement).style.display !== 'none'
+      );
+      if (resultsCount) {
+        resultsCount.textContent = visibleCards.length.toString();
+      }
+    }
+
+    function filterStories(industry: string) {
+      let visibleCount = 0;
+
+      storyCards.forEach((card) => {
+        const cardIndustry = (card as HTMLElement).dataset.industry;
+
+        if (industry === 'all' || cardIndustry === industry) {
+          (card as HTMLElement).style.display = 'block';
+          visibleCount++;
+        } else {
+          (card as HTMLElement).style.display = 'none';
+        }
+      });
+
+      updateResultsCount();
+
+      // Show empty state if no results
+      const emptyState = document.getElementById('empty-state');
+      if (emptyState) {
+        if (visibleCount === 0) {
+          emptyState.style.display = 'block';
+        } else {
+          emptyState.style.display = 'none';
+        }
+      }
+    }
+
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const filter = (button as HTMLElement).dataset.filter || 'all';
+
+        // Update active state
+        filterButtons.forEach((btn) => {
+          btn.classList.remove('filter-active', 'bg-primary-800', 'text-white');
+          btn.classList.add('bg-gray-100', 'text-gray-700');
+        });
+
+        button.classList.add('filter-active', 'bg-primary-800', 'text-white');
+        button.classList.remove('bg-gray-100', 'text-gray-700');
+
+        // Filter stories
+        filterStories(filter);
+      });
+    });
+
+    // Initialize with all stories
+    updateResultsCount();
+  }
+
+  // Initialize on page load
+  document.addEventListener('DOMContentLoaded', initializeFilters);
+
+  // Re-initialize on page navigation (for Astro view transitions)
+  document.addEventListener('astro:page-load', initializeFilters);
+</script>
