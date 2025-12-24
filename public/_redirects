@@ -693,34 +693,35 @@
 /ramadhan-telah-tiba/ /ramadhan-telah-tiba/ 301
 /jasa-social-media-management/ /jasa-social-media-management/ 301
 /get-started/ /get-started/ 301
-/portofolio/ /portofolio/ 301
+/portofolio/ /customer-stories 301
+/portfolio/ /customer-stories 301
 /get-started/step3/ /get-started/step3/ 301
 /get-started/step2/ /get-started/step2/ 301
 
-# === PORTFOLIO PAGES (keep same URL) ===
-/portfolio/vido-garment/ /portfolio/vido-garment/ 301
-/portfolio/terminal-cargo-indonesia/ /portfolio/terminal-cargo-indonesia/ 301
-/portfolio/mahasura-production/ /portfolio/mahasura-production/ 301
-/portfolio/jaya-travelindo/ /portfolio/jaya-travelindo/ 301
-/portfolio/jessy-bakery/ /portfolio/jessy-bakery/ 301
-/portfolio/jaya-flashcard/ /portfolio/jaya-flashcard/ 301
-/portfolio/bima-rent-car/ /portfolio/bima-rent-car/ 301
-/portfolio/bfresh-dental-care/ /portfolio/bfresh-dental-care/ 301
-/portfolio/koperasi-karyawan-usaha-sejahtera-bersama/ /portfolio/koperasi-karyawan-usaha-sejahtera-bersama/ 301
-/portfolio/pelangi-artha-anugrah/ /portfolio/pelangi-artha-anugrah/ 301
-/portfolio/rosyid-college/ /portfolio/rosyid-college/ 301
-/portfolio/maxklin/ /portfolio/maxklin/ 301
-/portfolio/trend-flower/ /portfolio/trend-flower/ 301
-/portfolio/alas-rumah/ /portfolio/alas-rumah/ 301
-/portfolio/qtadabbur/ /portfolio/qtadabbur/ 301
-/portfolio/kino-aksesoris/ /portfolio/kino-aksesoris/ 301
-/portfolio/arek-import/ /portfolio/arek-import/ 301
-/portfolio/pusaka-putra-jaya/ /portfolio/pusaka-putra-jaya/ 301
-/portfolio/prestise-eco-laundry/ /portfolio/prestise-eco-laundry/ 301
-/portfolio/lazismu-pulang-pisau/ /portfolio/lazismu-pulang-pisau/ 301
-/portfolio/lion-inti-perkasa/ /portfolio/lion-inti-perkasa/ 301
-/portfolio/kustompedia/ /portfolio/kustompedia/ 301
-/portfolio/jari-solusi-sehat/ /portfolio/jari-solusi-sehat/ 301
+# === PORTFOLIO PAGES (redirect to customer stories) ===
+/portfolio/vido-garment/ /customer-stories/vido-garment 301
+/portfolio/terminal-cargo-indonesia/ /customer-stories/terminal-cargo-indonesia 301
+/portfolio/bfresh-dental-care/ /customer-stories/bfresh-dental-care 301
+/portfolio/pelangi-artha-anugrah/ /customer-stories/pelangi-artha-anugrah 301
+/portfolio/mahasura-production/ /customer-stories 301
+/portfolio/jaya-travelindo/ /customer-stories 301
+/portfolio/jessy-bakery/ /customer-stories 301
+/portfolio/jaya-flashcard/ /customer-stories 301
+/portfolio/bima-rent-car/ /customer-stories 301
+/portfolio/koperasi-karyawan-usaha-sejahtera-bersama/ /customer-stories 301
+/portfolio/rosyid-college/ /customer-stories 301
+/portfolio/maxklin/ /customer-stories 301
+/portfolio/trend-flower/ /customer-stories 301
+/portfolio/alas-rumah/ /customer-stories 301
+/portfolio/qtadabbur/ /customer-stories 301
+/portfolio/kino-aksesoris/ /customer-stories 301
+/portfolio/arek-import/ /customer-stories 301
+/portfolio/pusaka-putra-jaya/ /customer-stories 301
+/portfolio/prestise-eco-laundry/ /customer-stories 301
+/portfolio/lazismu-pulang-pisau/ /customer-stories 301
+/portfolio/lion-inti-perkasa/ /customer-stories 301
+/portfolio/kustompedia/ /customer-stories 301
+/portfolio/jari-solusi-sehat/ /customer-stories 301
 
 # === TAG/CATEGORY PAGES ===
 # NO REDIRECT - These pages don't exist in new Astro site
