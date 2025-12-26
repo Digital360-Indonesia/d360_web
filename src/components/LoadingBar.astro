@@ -1,0 +1,136 @@
+---
+/**
+ * LoadingBar - Global loading progress bar component
+ * Shows a progress line at the top of the page during navigation/loading
+ */
+---
+
+<div id="loading-bar" class="loading-bar" aria-hidden="true">
+	<div class="loading-bar-progress"></div>
+</div>
+
+<style>
+	.loading-bar {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 3px;
+		z-index: 9999;
+		pointer-events: none;
+	}
+
+	.loading-bar-progress {
+		height: 100%;
+		background: #1e40af;
+		box-shadow: 0 0 10px #1e40af;
+		width: 0%;
+		transform-origin: left;
+		will-change: transform, width;
+	}
+
+	/* Loading states */
+	.loading-bar.loading .loading-bar-progress {
+		animation: loading-progress 1.5s ease-in-out infinite;
+	}
+
+	@keyframes loading-progress {
+		0% {
+			width: 0%;
+			transform: translateX(0%);
+		}
+
+		50% {
+			width: 70%;
+			transform: translateX(0%);
+		}
+
+		100% {
+			width: 100%;
+			transform: translateX(0%);
+		}
+	}
+
+	/* Finish animation */
+	.loading-bar.finishing .loading-bar-progress {
+		animation: loading-finish 0.4s ease-out forwards;
+	}
+
+	@keyframes loading-finish {
+		0% {
+			width: 100%;
+			opacity: 1;
+		}
+
+		100% {
+			width: 100%;
+			opacity: 0;
+		}
+	}
+</style>
+
+<script>
+	const loadingBar = document.getElementById('loading-bar');
+	let isLoading = false;
+	let timeoutId = null;
+
+	// Start loading with delay to prevent flicker
+	function start() {
+		if (isLoading) return;
+		isLoading = true;
+
+		// Reset and show loading state
+		loadingBar?.classList.remove('finishing');
+
+		// Delay showing the bar to prevent flickering on fast loads
+		timeoutId = window.setTimeout(() => {
+			loadingBar?.classList.add('loading');
+		}, 100);
+	}
+
+	// Finish loading
+	function finish() {
+		if (!isLoading) return;
+
+		if (timeoutId !== null) {
+			clearTimeout(timeoutId);
+			timeoutId = null;
+		}
+
+		// Show finishing animation
+		loadingBar?.classList.remove('loading');
+		loadingBar?.classList.add('finishing');
+
+		setTimeout(() => {
+			loadingBar?.classList.remove('finishing');
+			isLoading = false;
+		}, 400);
+	}
+
+	// Expose functions globally for manual control
+	window.loadingBar = { start, finish };
+
+	// Listen for Astro navigation events
+	document.addEventListener('astro:after-swap', () => {
+		finish();
+	});
+
+	document.addEventListener('astro:before-preparation', () => {
+		start();
+	});
+
+	// Handle page load on initial visit
+	document.addEventListener('DOMContentLoaded', () => {
+		finish();
+	});
+
+	// Handle link clicks for instant feedback
+	document.addEventListener('click', (e) => {
+		const target = e.target;
+		const link = target.closest('a');
+
+		if (link && link.href && !link.hasAttribute('target') && !link.href.startsWith('#') && link.href.startsWith(window.location.origin)) {
+			start();
+		}
+	});
+</script>

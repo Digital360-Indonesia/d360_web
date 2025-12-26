@@ -247,19 +247,6 @@
             <span class="blog-text">Blog</span>
           </a>
 
-          <!-- Pricing with Under Construction Tooltip -->
-          <div class="relative group">
-            <span class="text-gray-700 font-medium cursor-not-allowed pricing-text" data-lang-en="Pricing" data-lang-id="Harga">
-              Pricing
-            </span>
-            <!-- Under Construction Bubble - Right Side -->
-            <div class="absolute left-full ml-2 top-1/2 -translate-y-1/2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-              <div class="bg-gray-800 text-white text-xs px-3 py-2 rounded-lg whitespace-nowrap animate-bounce flex items-center">
-                <div class="absolute right-full w-0 h-0 border-t-4 border-b-4 border-r-4 border-transparent border-r-gray-800"></div>
-                🚧 Under Construction
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -313,9 +300,6 @@
         </a>
         <a href="/blog" class="block text-gray-700 hover:text-gray-900 font-medium transition-colors" data-lang-en="Blog" data-lang-id="Berita">
           <span class="mobile-blog-text">Blog</span>
-        </a>
-        <a href="#pricing" class="block text-gray-700 hover:text-gray-900 font-medium transition-colors" data-lang-en="Pricing" data-lang-id="Harga">
-          <span class="mobile-pricing-text">Pricing</span>
         </a>
         <a href="#signin" class="block text-gray-700 hover:text-gray-900 font-medium transition-colors" data-lang-en="Sign in" data-lang-id="Masuk">
           <span class="mobile-signin-text">Sign in</span>
@@ -450,12 +434,6 @@
         if (translation) blogText.textContent = translation;
       }
 
-      const pricingElement = document.querySelector('.pricing-text');
-      if (pricingElement) {
-        const translation = getTranslation(pricingElement, langKey);
-        if (translation) pricingElement.textContent = translation;
-      }
-
       const signinText = document.querySelector('.signin-text');
       if (signinText) {
         const translation = getTranslation(signinText, langKey);
@@ -485,12 +463,6 @@
       if (mobileBlog) {
         const translation = getTranslation(mobileBlog, langKey);
         if (translation) mobileBlog.textContent = translation;
-      }
-
-      const mobilePricing = document.querySelector('.mobile-pricing-text');
-      if (mobilePricing) {
-        const translation = getTranslation(mobilePricing, langKey);
-        if (translation) mobilePricing.textContent = translation;
       }
 
       const mobileSignin = document.querySelector('.mobile-signin-text');
