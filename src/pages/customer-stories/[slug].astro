@@ -5,6 +5,8 @@ import Footer from '../../components/Footer.astro';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 
+export const prerender = true;
+
 export async function getStaticPaths() {
   const stories = await getCollection('customerStories', ({ data }) => {
     return data.published === true;
@@ -21,7 +23,19 @@ interface Props {
 }
 
 const { story } = Astro.props;
-const { company, title, excerpt, industry, product, logo, coverImage, stats, overview, problem, solution, images } = story.data;
+const { company, title, titleId, excerpt, excerptId, industry, product, logo, coverImage, stats, overview, overviewEn, problem, problemEn, solution, solutionEn, images } = story.data;
+
+// Detect language from URL parameter or default to Indonesian
+const url = new URL(Astro.request.url);
+const lang = url.searchParams.get('lang') || 'id';
+const isEnglish = lang === 'en';
+
+// Select content based on language
+const displayTitle = isEnglish ? title : (titleId || title);
+const displayExcerpt = isEnglish ? excerpt : (excerptId || excerpt);
+const displayOverview = isEnglish ? (overviewEn || overview) : overview;
+const displayProblem = isEnglish ? (problemEn || problem) : problem;
+const displaySolution = isEnglish ? (solutionEn || solution) : solution;
 
 // Get related stories (same industry, excluding current)
 const relatedStories = (await getCollection('customerStories', ({ data, slug }) => {
@@ -40,7 +54,8 @@ const industryLabels: Record<string, string> = {
 
 <Layout
   title={`${company} - Customer Story | Digital360`}
-  description={excerpt}
+  description={displayExcerpt}
+  lang={lang}
 >
   <Header />
 
@@ -73,7 +88,7 @@ const industryLabels: Record<string, string> = {
 
         <!-- Title -->
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-w-4xl">
-          {title}
+          {displayTitle}
         </h1>
 
         <!-- Company Info -->
@@ -125,7 +140,7 @@ const industryLabels: Record<string, string> = {
         <section class="mb-16">
           <h2 class="text-3xl font-bold text-gray-900 mb-6">Company Overview</h2>
           <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
-            {overview}
+            {displayOverview}
           </div>
         </section>
 
@@ -145,7 +160,7 @@ const industryLabels: Record<string, string> = {
         <section class="mb-16">
           <h2 class="text-3xl font-bold text-gray-900 mb-6">The Challenge</h2>
           <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed bg-red-50 border-l-4 border-red-500 p-8 rounded-r-lg">
-            {problem}
+            {displayProblem}
           </div>
         </section>
 
@@ -165,7 +180,7 @@ const industryLabels: Record<string, string> = {
         <section class="mb-16">
           <h2 class="text-3xl font-bold text-gray-900 mb-6">The Solution</h2>
           <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed bg-green-50 border-l-4 border-green-500 p-8 rounded-r-lg">
-            {solution}
+            {displaySolution}
           </div>
         </section>
 
