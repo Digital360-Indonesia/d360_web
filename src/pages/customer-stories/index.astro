@@ -90,9 +90,9 @@ const remainingStories = sortedStories.slice(3);
     </section>
 
     <!-- Featured Stories Grid (3 Cards) -->
-    <section class="py-20 bg-white">
+    <section class="py-16 md:py-20 bg-white">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
           {featuredStories.slice(1, 4).map((story) => (
             <div class="group text-left">
               <!-- Circular Story Image -->
@@ -168,7 +168,7 @@ const remainingStories = sortedStories.slice(3);
     <!-- All Stories Grid -->
     <section class="pb-16 bg-white">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="stories-grid">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" id="stories-grid">
         {sortedStories.map((story) => (
           <CustomerStoryCard
             company={story.data.company}
