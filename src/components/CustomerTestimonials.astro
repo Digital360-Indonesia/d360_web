@@ -79,8 +79,8 @@
 
       <!-- Company Logos - Interactive Buttons with Progress Bars -->
       <div class="border-t border-gray-800 pt-8">
-        <div class="max-w-3xl mx-auto">
-          <!-- Progress bars container - Connected like Instagram stories -->
+        <div class="max-w-5xl mx-auto">
+          <!-- Progress bars container - 4 testimonials -->
           <div class="flex gap-2 mb-4">
             <div class="progress-bar-container flex-1 h-1 bg-gray-700 rounded-full overflow-hidden">
               <div class="progress-bar h-full bg-white rounded-full" data-index="0" style="width: 0%;"></div>
@@ -96,14 +96,51 @@
             </div>
           </div>
 
-          <!-- Logo buttons aligned with progress bars -->
-          <div class="grid grid-cols-4 gap-2">
+          <!-- Mobile: Slider with 4 logos -->
+          <div class="md:hidden overflow-hidden">
+            <div id="mobile-logo-slider" class="flex transition-transform duration-500 ease-in-center">
+              <!-- B Fresh Dental Care -->
+              <button
+                class="company-logo-btn opacity-60 hover:opacity-100 transition-opacity duration-300 flex justify-center items-center flex-shrink-0 w-1/4"
+                data-testimonial="0"
+              >
+                <img src="/assets/images/bfresh-dental-care-logo.png" alt="B Fresh Dental Care" class="max-h-16 max-w-full object-contain brightness-0 invert" />
+              </button>
+
+              <!-- Vido Garment -->
+              <button
+                class="company-logo-btn opacity-60 hover:opacity-100 transition-opacity duration-300 flex justify-center items-center flex-shrink-0 w-1/4"
+                data-testimonial="1"
+              >
+                <img src="/assets/images/vido-garment-logo.png" alt="Vido Garment" class="max-h-16 max-w-full object-contain brightness-0 invert" />
+              </button>
+
+              <!-- Apotek Farmabox -->
+              <button
+                class="company-logo-btn opacity-60 hover:opacity-100 transition-opacity duration-300 flex justify-center items-center flex-shrink-0 w-1/4"
+                data-testimonial="2"
+              >
+                <img src="/assets/images/apotek-farmabox-logo.png" alt="Apotek Farmabox" class="max-h-16 max-w-full object-contain brightness-0 invert" />
+              </button>
+
+              <!-- PLN UID Jawa Timur -->
+              <button
+                class="company-logo-btn opacity-60 hover:opacity-100 transition-opacity duration-300 flex justify-center items-center flex-shrink-0 w-1/4"
+                data-testimonial="3"
+              >
+                <img src="/assets/images/pln-uid-jatim-logo.png" alt="PLN UID Jawa Timur" class="max-h-16 max-w-full object-contain brightness-0 invert" />
+              </button>
+            </div>
+          </div>
+
+          <!-- Desktop: 4 logos in 1 row -->
+          <div class="hidden md:flex justify-center items-center gap-6 lg:gap-8 flex-nowrap">
             <!-- B Fresh Dental Care -->
             <button
               class="company-logo-btn opacity-60 hover:opacity-100 transition-opacity duration-300 flex justify-center items-center"
               data-testimonial="0"
             >
-              <img src="/assets/images/client-2.png" alt="B Fresh Dental Care" class="max-h-32 max-w-full object-contain brightness-0 invert" />
+              <img src="/assets/images/bfresh-dental-care-logo.png" alt="B Fresh Dental Care" class="max-h-20 max-w-full object-contain brightness-0 invert" />
             </button>
 
             <!-- Vido Garment -->
@@ -111,7 +148,7 @@
               class="company-logo-btn opacity-60 hover:opacity-100 transition-opacity duration-300 flex justify-center items-center"
               data-testimonial="1"
             >
-              <img src="/assets/images/client-1.png" alt="Vido Garment" class="max-h-32 max-w-full object-contain brightness-0 invert" />
+              <img src="/assets/images/vido-garment-logo.png" alt="Vido Garment" class="max-h-20 max-w-full object-contain brightness-0 invert" />
             </button>
 
             <!-- Apotek Farmabox -->
@@ -119,15 +156,15 @@
               class="company-logo-btn opacity-60 hover:opacity-100 transition-opacity duration-300 flex justify-center items-center"
               data-testimonial="2"
             >
-              <img src="/assets/images/client-5.png" alt="Apotek Farmabox" class="max-h-32 max-w-full object-contain brightness-0 invert" />
+              <img src="/assets/images/apotek-farmabox-logo.png" alt="Apotek Farmabox" class="max-h-20 max-w-full object-contain brightness-0 invert" />
             </button>
 
-            <!-- PLN -->
+            <!-- PLN UID Jawa Timur -->
             <button
               class="company-logo-btn opacity-60 hover:opacity-100 transition-opacity duration-300 flex justify-center items-center"
               data-testimonial="3"
             >
-              <img src="/assets/images/client-9.png" alt="PLN" class="max-h-32 max-w-full object-contain brightness-0 invert" />
+              <img src="/assets/images/pln-uid-jatim-logo.png" alt="PLN UID Jawa Timur" class="max-h-20 max-w-full object-contain brightness-0 invert" />
             </button>
           </div>
         </div>
@@ -138,7 +175,7 @@
 </section>
 
 <script>
-  // Testimonial data (only 4 now) with bilingual support
+  // Testimonial data with bilingual support - 4 testimonials
   const testimonials = [
     {
       label: { EN: "Dental Care", ID: "Layanan Kesehatan Gigi" },
@@ -183,7 +220,7 @@
         ID: "\"Kolaborasi kami dengan Digital360 telah meningkatkan infrastruktur digital dan efisiensi operasional.\""
       },
       name: "Taufik Akbar",
-      role: { EN: "Senior Officer, Network & Distribution Performance, PLN", ID: "Senior Officer Kinerja Jaringan dan Konstruksi Distribusi, PLN" },
+      role: { EN: "Senior Officer, PLN", ID: "Senior Officer, PLN" },
       link: { EN: "Read PLN's case study →", ID: "Baca studi kasus PLN →" },
       linkUrl: "#",
       image: "/assets/images/testimonial-taufik.png"
@@ -255,8 +292,9 @@
     }, skipAnimation ? 0 : 300);
 
     // Update active logo
-    logoButtons.forEach((btn, i) => {
-      if (i === index) {
+    logoButtons.forEach((btn) => {
+      const btnIndex = parseInt(btn.getAttribute('data-testimonial') || '0');
+      if (btnIndex === index) {
         btn.classList.remove('opacity-60');
         btn.classList.add('opacity-100');
       } else {
@@ -311,12 +349,14 @@
   }
 
   // Add click handlers to logo buttons
-  logoButtons.forEach((btn, index) => {
+  logoButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
       if (progressInterval) {
         clearInterval(progressInterval);
       }
-      updateTestimonial(index);
+      // Get the testimonial index from data attribute
+      const testimonialIndex = parseInt(btn.getAttribute('data-testimonial') || '0');
+      updateTestimonial(testimonialIndex);
     });
   });
 

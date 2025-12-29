@@ -6,7 +6,7 @@ excerpt: "How PT Pelangi Artha Anugrah transformed workforce management from man
 excerptId: "Bagaimana PT Pelangi Artha Anugrah mentransformasi pengelolaan tenaga kerja dari dokumen fisik menjadi platform digital terintegrasi"
 industry: "outsourcing"
 product: "HR Management Dashboard"
-logo: "/assets/images/pusaka-putra-jaya-logo.png"
+logo: "/assets/images/paa-indonesia-logo.png"
 coverImage: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1600&h=1000&fit=crop&auto=format"
 stats:
   metric1: "End-to-end HR process"

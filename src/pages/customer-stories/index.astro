@@ -15,10 +15,6 @@ const allStories = await getCollection('customerStories', ({ data }) => {
 const sortedStories = allStories.sort((a, b) => {
   return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
 });
-
-// Get featured stories (first 3)
-const featuredStories = sortedStories.slice(0, 3);
-const remainingStories = sortedStories.slice(3);
 ---
 
 <Layout
@@ -40,23 +36,15 @@ const remainingStories = sortedStories.slice(3);
             <p class="text-base md:text-lg text-gray-700 mb-6 leading-relaxed">
               Efficiency abounds in these success stories of teams, companies and industries shaping the future of work. They do it all with the help of Digital360.
             </p>
-            <div class="flex flex-col gap-3">
-              <a
-                href="#featured-video"
-                class="inline-flex items-center justify-center px-6 py-3 bg-primary-800 text-white rounded font-semibold hover:bg-primary-900 transition-colors w-fit"
-              >
-                WATCH DEMO
-              </a>
-              <a
-                href="#stories"
-                class="inline-flex items-center text-primary-800 font-medium hover:underline"
-              >
-                See all stories
-                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </a>
-            </div>
+            <a
+              href="#stories"
+              class="inline-flex items-center text-primary-800 font-medium hover:underline"
+            >
+              See all stories
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </a>
           </div>
 
           <!-- Right Column - Featured Image with Rounded Right Edge -->
@@ -64,78 +52,33 @@ const remainingStories = sortedStories.slice(3);
             <!-- Oval/Rounded Container -->
             <div class="relative hero-image-container">
               <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop"
-                alt="Team collaboration"
+                src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&h=600&fit=crop"
+                alt="Dental clinic"
                 class="w-full h-auto object-cover"
               />
+            </div>
 
-              <!-- Featured Story Card - Bottom Right -->
-              <div class="absolute bottom-6 right-6 bg-white p-4 shadow-xl max-w-xs">
-                <h3 class="font-bold text-gray-900 mb-1 text-base uppercase tracking-wide">{featuredStories[0].data.company}</h3>
-                <p class="text-gray-700 mb-2 text-sm">{featuredStories[0].data.title}</p>
-                <a
-                  href={`/customer-stories/${featuredStories[0].slug}`}
-                  class="inline-flex items-center text-primary-800 font-semibold text-sm hover:underline"
-                >
-                  Read story
-                  <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                  </svg>
-                </a>
-              </div>
+            <!-- Featured Story Card - Bottom Right (Outside container) -->
+            <div class="absolute -bottom-4 -right-4 bg-white p-4 shadow-xl max-w-xs rounded-lg">
+              <h3 class="font-bold text-gray-900 mb-1 text-base uppercase tracking-wide">{sortedStories[0].data.company}</h3>
+              <p class="text-gray-700 mb-2 text-sm">{sortedStories[0].data.title}</p>
+              <a
+                href={`/customer-stories/${sortedStories[0].slug}`}
+                class="inline-flex items-center text-primary-800 font-semibold text-sm hover:underline"
+              >
+                Read story
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Featured Stories Grid (3 Cards) -->
-    <section class="py-16 md:py-20 bg-white">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
-          {featuredStories.slice(1, 4).map((story) => (
-            <div class="group text-left">
-              <!-- Circular Story Image -->
-              <a href={`/customer-stories/${story.slug}`} class="block mb-6">
-                <div class="relative rounded-full aspect-square overflow-hidden bg-gray-100 shadow-lg">
-                  <img
-                    src={story.data.coverImage}
-                    alt={story.data.company}
-                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-              </a>
-
-              <!-- Company Logo -->
-              <div class="mb-4">
-                <img
-                  src={story.data.logo}
-                  alt={story.data.company}
-                  class="h-8 w-auto object-contain"
-                />
-              </div>
-
-              <!-- Story Title -->
-              <h3 class="font-bold text-gray-900 mb-3 text-xl leading-snug">{story.data.title}</h3>
-
-              <!-- Read Story Link -->
-              <a
-                href={`/customer-stories/${story.slug}`}
-                class="inline-flex items-center text-primary-800 font-semibold hover:underline transition-colors"
-              >
-                Read story
-                <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-              </a>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
     <!-- Stats Section -->
-    <section class="py-16 bg-gray-50">
+    <section class="py-16 bg-gray-50 border-t border-gray-200">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 max-w-6xl mx-auto">
           <div class="text-center">
@@ -159,14 +102,14 @@ const remainingStories = sortedStories.slice(3);
     </section>
 
     <!-- Filter Section -->
-    <section id="stories" class="py-12 md:py-16 bg-white border-t border-gray-200">
+    <section id="stories" class="pt-8 pb-4 bg-white border-t border-gray-200">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <CustomerStoryFilter />
       </div>
     </section>
 
     <!-- All Stories Grid -->
-    <section class="pb-16 bg-white">
+    <section class="pt-0 pb-16 bg-white">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" id="stories-grid">
         {sortedStories.map((story) => (
