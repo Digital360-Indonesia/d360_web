@@ -6,7 +6,7 @@ excerpt: "How Vido Garment synchronized all divisions with advanced ERP system f
 excerptId: "Bagaimana Vido Garment mensinkronkan semua divisi dengan sistem ERP advance untuk operasi yang lancar"
 industry: "manufacture"
 product: "Manufacture ERP"
-logo: "https://via.placeholder.com/400x200/f59e0b/ffffff?text=Vido+Garment"
+logo: "/assets/images/vido-garment-logo.png"
 coverImage: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1600&h=1000&fit=crop&auto=format"
 stats:
   metric1: "End-to-end integration"

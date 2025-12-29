@@ -6,7 +6,7 @@ excerpt: "How Terminal Cargo Indonesia enhanced customer experience with self-se
 excerptId: "Bagaimana Terminal Cargo Indonesia meningkatkan pengalaman pelanggan dengan sistem tracking mandiri dan harga transparan"
 industry: "logistic"
 product: "Logistics Management System"
-logo: "https://via.placeholder.com/400x200/ef4444/ffffff?text=TCI"
+logo: "/assets/images/terminal-cargo-indonesia-logo.png"
 coverImage: "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=1600&h=1000&fit=crop&auto=format"
 stats:
   metric1: "Self-service tracking"

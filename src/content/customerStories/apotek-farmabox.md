@@ -6,7 +6,7 @@ excerpt: "How Farmabox transformed pharmacy operations with smart forecasting an
 excerptId: "Bagaimana Farmabox mentransformasi operasi apotek dengan smart forecasting dan manajemen terpusat"
 industry: "pharmacy"
 product: "Pharmacy System"
-logo: "https://via.placeholder.com/400x200/06b6d4/ffffff?text=Farmabox"
+logo: "/assets/images/apotek-farmabox-logo.png"
 coverImage: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1600&h=1000&fit=crop&auto=format"
 stats:
   metric1: "Smart forecasting"

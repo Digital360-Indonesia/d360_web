@@ -6,7 +6,7 @@ excerpt: "How BFresh Dental Care revolutionized patient experience with end-to-e
 excerptId: "Bagaimana BFresh Dental Care merevolusi pengalaman pasien dengan sistem klinik digital end-to-end"
 industry: "dental"
 product: "Dental360 - Advanced & End-to-End Clinic System"
-logo: "https://via.placeholder.com/400x200/10b981/ffffff?text=BFresh+Dental"
+logo: "/assets/images/bfresh-dental-care-logo.png"
 coverImage: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1600&h=1000&fit=crop&auto=format"
 stats:
   metric1: "Fully integrated system"

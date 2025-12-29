@@ -6,7 +6,7 @@ excerpt: "How PLN UID Jawa Timur transformed TJSL division's document management
 excerptId: "Bagaimana PLN UID Jawa Timur mentransformasi manajemen dokumen divisi TJSL dan relasi stakeholder dengan platform custom"
 industry: "others"
 product: "Custom TJSL Management Dashboard"
-logo: "https://via.placeholder.com/400x200/3b82f6/ffffff?text=PLN"
+logo: "/assets/images/pln-uid-jatim-logo.png"
 coverImage: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1600&h=1000&fit=crop"
 stats:
   metric1: "Centralized documentation"

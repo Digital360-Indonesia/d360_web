@@ -6,7 +6,7 @@ excerpt: "How Tibed Dental transformed clinic management with data-driven insigh
 excerptId: "Bagaimana Tibed Dental mentransformasi manajemen klinik dengan insight berbasis data dan sistem pelaporan menyeluruh"
 industry: "dental"
 product: "Dental360 - Reporting & Insight Dashboard"
-logo: "https://via.placeholder.com/400x200/1e40af/ffffff?text=Tibed+Dental"
+logo: "/assets/images/paa-indonesia-logo.png"
 coverImage: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1600&h=1000&fit=crop&auto=format"
 stats:
   metric1: "Real-time reporting"
