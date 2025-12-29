@@ -69,10 +69,5 @@ force = false
 # Using _redirects file for better wildcard support
 # See: public/_redirects file for implementation
 
-# SPA fallback - redirect all other requests to index.html
-# This should be LAST and only apply if no matching file exists
-[[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
-force = false
+# No SPA fallback needed for Astro SSR mode
+# Astro Netlify adapter handles routing automatically
