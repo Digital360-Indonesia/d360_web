@@ -23,11 +23,11 @@ const industryLabels: Record<string, string> = {
 ---
 
 <article
-  class="group relative bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition-all duration-300 min-h-[320px] md:min-h-[360px]"
+  class="group relative rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition-all duration-300"
   data-industry={dataIndustry || industry}
 >
-  <!-- Background Cover Image -->
-  <div class="relative story-card-image overflow-hidden bg-gradient-to-br from-primary-50 to-primary-100">
+  <!-- Background Cover Image - Full Card -->
+  <div class="absolute inset-0 overflow-hidden bg-gradient-to-br from-primary-50 to-primary-100">
     <img
       src={coverImage}
       alt={company}
@@ -39,7 +39,7 @@ const industryLabels: Record<string, string> = {
   </div>
 
   <!-- Content Overlay -->
-  <div class="absolute inset-0 p-5 sm:p-6 flex flex-col justify-between">
+  <div class="relative z-10 min-h-[340px] md:min-h-[380px] p-5 sm:p-6 flex flex-col justify-between">
     <!-- Top: Company Logo -->
     <div class="flex justify-start">
       <div class="bg-white rounded-lg p-2 sm:p-2.5 shadow-lg max-w-[120px] sm:max-w-[140px]">
@@ -91,9 +91,5 @@ const industryLabels: Record<string, string> = {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-  }
-
-  .story-card-image {
-    aspect-ratio: 4 / 3;
   }
 </style>
