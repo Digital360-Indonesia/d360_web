@@ -281,12 +281,24 @@
         </a>
       </div>
 
-      <!-- Mobile Menu Button -->
-      <button class="md:hidden p-2 text-gray-700" id="mobile-menu-btn">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
+      <!-- Mobile Menu Button & Language Selector -->
+      <div class="flex items-center gap-2 md:hidden">
+        <!-- Language Selector -->
+        <button onclick="setLanguage('EN')" class="p-2 text-gray-700 hover:text-gray-900 transition-colors text-sm font-medium" id="mobile-lang-en">
+          EN
+        </button>
+        <span class="text-gray-300">|</span>
+        <button onclick="setLanguage('ID')" class="p-2 text-gray-700 hover:text-gray-900 transition-colors text-sm font-medium" id="mobile-lang-id">
+          ID
+        </button>
+
+        <!-- Mobile Menu Button -->
+        <button class="p-2 text-gray-700" id="mobile-menu-btn">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
     </div>
 
     <!-- Mobile Menu -->
@@ -295,8 +307,8 @@
         <a href="#products" class="block text-gray-700 hover:text-gray-900 font-medium transition-colors" data-lang-en="Products" data-lang-id="Produk">
           <span class="mobile-products-text">Products</span>
         </a>
-        <a href="#business-solution" class="block text-gray-700 hover:text-gray-900 font-medium transition-colors" data-lang-en="Business Solution" data-lang-id="Solusi Bisnis">
-          <span class="mobile-business-solution-text">Business Solution</span>
+        <a href="/customer-stories" class="block text-gray-700 hover:text-gray-900 font-medium transition-colors" data-lang-en="Portfolio" data-lang-id="Portofolio">
+          <span class="mobile-portfolio-text">Portfolio</span>
         </a>
         <a href="/blog" class="block text-gray-700 hover:text-gray-900 font-medium transition-colors" data-lang-en="Blog" data-lang-id="Berita">
           <span class="mobile-blog-text">Blog</span>
@@ -388,6 +400,23 @@
         span.textContent = lang;
       }
 
+      // Update mobile language buttons active state
+      const mobileLangEn = document.getElementById('mobile-lang-en');
+      const mobileLangId = document.getElementById('mobile-lang-id');
+      if (mobileLangEn && mobileLangId) {
+        if (lang === 'EN') {
+          mobileLangEn.classList.add('text-blue-600', 'font-bold');
+          mobileLangEn.classList.remove('text-gray-700');
+          mobileLangId.classList.remove('text-blue-600', 'font-bold');
+          mobileLangId.classList.add('text-gray-700');
+        } else {
+          mobileLangId.classList.add('text-blue-600', 'font-bold');
+          mobileLangId.classList.remove('text-gray-700');
+          mobileLangEn.classList.remove('text-blue-600', 'font-bold');
+          mobileLangEn.classList.add('text-gray-700');
+        }
+      }
+
       // Save to localStorage (unless skipSave is true)
       if (!skipSave) {
         localStorage.setItem('language', lang);
@@ -453,10 +482,10 @@
         if (translation) mobileProducts.textContent = translation;
       }
 
-      const mobileBusinessSolution = document.querySelector('.mobile-business-solution-text');
-      if (mobileBusinessSolution) {
-        const translation = getTranslation(mobileBusinessSolution, langKey);
-        if (translation) mobileBusinessSolution.textContent = translation;
+      const mobilePortfolio = document.querySelector('.mobile-portfolio-text');
+      if (mobilePortfolio) {
+        const translation = getTranslation(mobilePortfolio, langKey);
+        if (translation) mobilePortfolio.textContent = translation;
       }
 
       const mobileBlog = document.querySelector('.mobile-blog-text');
@@ -525,6 +554,23 @@
     const span = langBtn?.querySelector('span');
     if (span) {
       span.textContent = savedLang;
+    }
+
+    // Update mobile language buttons active state
+    const mobileLangEn = document.getElementById('mobile-lang-en');
+    const mobileLangId = document.getElementById('mobile-lang-id');
+    if (mobileLangEn && mobileLangId) {
+      if (savedLang === 'EN') {
+        mobileLangEn.classList.add('text-blue-600', 'font-bold');
+        mobileLangEn.classList.remove('text-gray-700');
+        mobileLangId.classList.remove('text-blue-600', 'font-bold');
+        mobileLangId.classList.add('text-gray-700');
+      } else {
+        mobileLangId.classList.add('text-blue-600', 'font-bold');
+        mobileLangId.classList.remove('text-gray-700');
+        mobileLangEn.classList.remove('text-blue-600', 'font-bold');
+        mobileLangEn.classList.add('text-gray-700');
+      }
     }
 
     // Apply saved language (including EN to ensure consistency)
