@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
 import LoadingBar from '../components/LoadingBar.astro';
 
 export interface Props {
@@ -114,12 +115,21 @@ const hreflangDefault = hreflangId; // Use Indonesian as default for Indonesia a
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={ogImage} />
 
+    <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Preload critical assets for faster initial render -->
+    <link rel="preload" href="/assets/images/digital360-logo.png" as="image" />
+    <link rel="preload" href="/assets/images/hero-poster.jpg" as="image" fetchpriority="high" />
+    <link rel="preload" href="/assets/videos/CSD-10721_WAC_Hero_FULL_LowBR.mp4" as="video" type="video/mp4" />
+
+    <!-- View Transitions for smooth page navigation -->
+    <ViewTransitions />
   </head>
   <body>
     <LoadingBar />

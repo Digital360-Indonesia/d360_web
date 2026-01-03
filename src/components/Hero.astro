@@ -67,8 +67,16 @@
       <!-- Video -->
       <div class="max-w-4xl mx-auto px-4">
         <div class="relative aspect-video bg-black rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl">
-          <!-- Animated gradient background behind video -->
-          <div class="absolute inset-0 gradient-bg"></div>
+          <!-- Loading skeleton - hidden once video loads -->
+          <div id="video-skeleton" class="absolute inset-0 bg-gray-200 animate-pulse z-20">
+            <div class="absolute inset-0 bg-gradient-to-br from-gray-300 via-gray-200 to-gray-300 opacity-50"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-16 h-16 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
+            </div>
+          </div>
+
+          <!-- Animated gradient background behind video - hidden initially -->
+          <div id="video-gradient" class="absolute inset-0 gradient-bg opacity-0 transition-opacity duration-500"></div>
 
           <!-- Video overlay -->
           <video
@@ -77,9 +85,9 @@
             muted
             loop
             playsinline
-            preload="auto"
+            preload="metadata"
             poster="/assets/images/hero-poster.jpg"
-            class="w-full h-full object-cover relative z-10"
+            class="w-full h-full object-cover relative z-10 opacity-0 transition-opacity duration-500"
           >
             <source src="/assets/videos/CSD-10721_WAC_Hero_FULL_LowBR.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -100,6 +108,9 @@
   svg path {
     stroke-dasharray: 300;
     stroke-dashoffset: 300;
+  }
+
+  svg path.animate-draw {
     animation: draw 2s ease-out 0.5s forwards;
   }
 
@@ -157,28 +168,71 @@
     switchLanguage(e.detail.language);
   }) as EventListener);
 
-  // Load saved language on page load
+  // Load saved language on page load and trigger animations
   document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('language') || 'EN';
     switchLanguage(savedLang);
+
+    // Trigger the "Ready" underline animation
+    const svgPaths = document.querySelectorAll('#home svg path');
+    svgPaths.forEach(path => {
+      // Remove class first to reset
+      path.classList.remove('animate-draw');
+      // Force reflow
+      void path.offsetWidth;
+      // Add class to trigger animation
+      path.classList.add('animate-draw');
+    });
   });
 
-  // Ensure video plays immediately
+  // Ensure video plays immediately with proper loading states
   function initHeroVideo() {
     const video = document.getElementById('hero-video') as HTMLVideoElement;
+    const skeleton = document.getElementById('video-skeleton');
+    const gradient = document.getElementById('video-gradient');
 
-    if (video) {
+    if (video && skeleton && gradient) {
+      // Hide skeleton and show video once it can play
+      const handleCanPlay = () => {
+        skeleton.style.display = 'none';
+        video.style.opacity = '1';
+        gradient.style.opacity = '0.85';
+      };
+
+      // Show skeleton if video takes too long
+      const handleWaiting = () => {
+        skeleton.style.display = 'block';
+      };
+
+      // Hide skeleton when playing
+      const handlePlaying = () => {
+        skeleton.style.display = 'none';
+      };
+
+      video.addEventListener('canplay', handleCanPlay);
+      video.addEventListener('waiting', handleWaiting);
+      video.addEventListener('playing', handlePlaying);
+
+      // If video is already ready
+      if (video.readyState >= 3) {
+        handleCanPlay();
+      }
+
       // Attempt to play
       const playPromise = video.play();
 
       if (playPromise !== undefined) {
-        playPromise.catch(error => {
-          // Auto-play was prevented, retry on user interaction
-          console.log('Autoplay prevented, will retry on interaction');
-          document.addEventListener('click', () => {
-            video.play();
-          }, { once: true });
-        });
+        playPromise
+          .then(() => {
+            handleCanPlay();
+          })
+          .catch(error => {
+            // Auto-play was prevented, retry on user interaction
+            console.log('Autoplay prevented, will retry on interaction');
+            document.addEventListener('click', () => {
+              video.play().then(handleCanPlay);
+            }, { once: true });
+          });
       }
     }
   }
