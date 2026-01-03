@@ -167,20 +167,13 @@
                       <p class="text-gray-700 mb-6 leading-relaxed">
                         Run your entire business on Digital360 with our unified app platform, designed to help you break down silos between departments and increase organizational efficiency.
                       </p>
-                      <div class="relative inline-block group/apps">
-                        <button class="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg cursor-not-allowed opacity-90">
+                      <div class="relative inline-block">
+                        <a href="https://wa.me/6285706679500" target="_blank" class="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-200">
                           TRY DIGITAL360 APPS
                           <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                           </svg>
-                        </button>
-                        <!-- Under Construction Bubble -->
-                        <div class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 opacity-0 invisible group-hover/apps:opacity-100 group-hover/apps:visible transition-all duration-300">
-                          <div class="bg-gray-800 text-white text-xs px-3 py-2 rounded-lg whitespace-nowrap animate-bounce">
-                            🚧 Under Construction
-                          </div>
-                          <div class="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800"></div>
-                        </div>
+                        </a>
                       </div>
                     </div>
                     <!-- Right Image/Illustration -->
@@ -212,20 +205,13 @@
                       <p class="text-gray-700 mb-6 leading-relaxed">
                         Join our global partner network and unlock new opportunities for growth. Access exclusive resources, training, and support to deliver exceptional value to your clients.
                       </p>
-                      <div class="relative inline-block group/partner">
-                        <button class="inline-flex items-center px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg cursor-not-allowed opacity-90">
+                      <div class="relative inline-block">
+                        <a href="https://wa.me/6285706679500" target="_blank" class="inline-flex items-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors duration-200">
                           BECOME A PARTNER
                           <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                           </svg>
-                        </button>
-                        <!-- Under Construction Bubble -->
-                        <div class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 opacity-0 invisible group-hover/partner:opacity-100 group-hover/partner:visible transition-all duration-300">
-                          <div class="bg-gray-800 text-white text-xs px-3 py-2 rounded-lg whitespace-nowrap animate-bounce">
-                            🚧 Under Construction
-                          </div>
-                          <div class="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800"></div>
-                        </div>
+                        </a>
                       </div>
                     </div>
                     <!-- Right Image/Illustration -->
@@ -584,52 +570,6 @@
 
   // Make setLanguage available globally
   window.setLanguage = setLanguage;
-
-  // Add "Under Construction" tooltips to all placeholder # links
-  document.addEventListener('DOMContentLoaded', () => {
-    // Find all links that start with # (excluding #signin which might be special)
-    const placeholderLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
-
-    placeholderLinks.forEach(link => {
-      // Skip if already has a tooltip parent
-      if (link.parentElement?.classList.contains('relative') && link.parentElement?.classList.contains('group')) {
-        return;
-      }
-
-      // Check if link has block display (for vertical nav items)
-      const isBlock = window.getComputedStyle(link).display === 'block';
-
-      // Wrap link in tooltip container
-      const wrapper = document.createElement('div');
-      wrapper.className = isBlock ? 'relative group block' : 'relative group inline-block';
-
-      // Clone and modify the link
-      const parent = link.parentElement;
-      parent?.insertBefore(wrapper, link);
-      wrapper.appendChild(link);
-
-      // Add cursor style
-      link.style.cursor = 'not-allowed';
-      link.style.opacity = '0.9';
-
-      // Prevent default click
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-      });
-
-      // Create tooltip
-      const tooltip = document.createElement('div');
-      tooltip.className = 'absolute left-1/2 -translate-x-1/2 bottom-full mb-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50';
-      tooltip.innerHTML = `
-        <div class="bg-gray-800 text-white text-xs px-3 py-2 rounded-lg whitespace-nowrap animate-bounce">
-          🚧 Under Construction
-        </div>
-        <div class="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800"></div>
-      `;
-
-      wrapper.appendChild(tooltip);
-    });
-  });
 </script>
 
 <style>
