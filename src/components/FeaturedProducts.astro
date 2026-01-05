@@ -20,10 +20,10 @@
       <div>
         <!-- Product 1 Content - Initially centered and aligned -->
         <div class="product-section min-h-[400px] md:min-h-[500px] lg:min-h-[600px] flex items-center" data-product="0">
-          <div class="space-y-2 md:space-y-3 w-full px-2">
+          <div class="space-y-3 md:space-y-4 lg:space-y-5 w-full px-2">
             <!-- Product Logo -->
             <div class="flex items-center">
-              <img src="/assets/images/dental360-logo.png" alt="Dental360 Logo" width="192" height="64" class="w-24 h-9 sm:w-28 sm:h-10 md:w-32 md:h-12 object-contain">
+              <img src="/assets/images/satu360dental-logo.png" alt="Dental360 Logo" width="192" height="64" class="w-36 h-12 sm:w-40 sm:h-14 md:w-48 md:h-16 object-contain">
             </div>
 
             <!-- Product Title -->
@@ -70,10 +70,10 @@
 
         <!-- Product 2 Content -->
         <div class="product-section min-h-[400px] md:min-h-[500px] lg:min-h-[600px] flex items-center" data-product="1">
-          <div class="space-y-2 md:space-y-3 w-full px-2">
+          <div class="space-y-3 md:space-y-4 lg:space-y-5 w-full px-2">
             <!-- Product Logo -->
             <div class="flex items-center">
-              <img src="/assets/images/business360-logo.png" alt="Business360 Logo" class="w-28 h-11 sm:w-32 sm:h-12 md:w-40 md:h-14 object-contain">
+              <img src="/assets/images/satu360manufacture-logo.png" alt="Business360 Logo" width="224" height="64" class="w-40 h-14 sm:w-44 sm:h-16 md:w-52 md:h-18 object-contain">
             </div>
 
             <!-- Product Title -->
@@ -120,10 +120,10 @@
 
         <!-- Product 3 Content -->
         <div class="product-section min-h-[400px] md:min-h-[500px] lg:min-h-[600px] flex items-center" data-product="2">
-          <div class="space-y-2 md:space-y-3 w-full px-2">
+          <div class="space-y-3 md:space-y-4 lg:space-y-5 w-full px-2">
             <!-- Product Logo -->
             <div class="flex items-center">
-              <img src="/assets/images/website360-logo.png" alt="Website360 Logo" class="w-28 h-11 sm:w-32 sm:h-12 md:w-40 md:h-14 object-contain">
+              <img src="/assets/images/web360-logo.png" alt="Website360 Logo" width="224" height="64" class="w-28 h-11 sm:w-32 sm:h-12 md:w-40 md:h-14 object-contain">
             </div>
 
             <!-- Product Title -->
@@ -170,17 +170,10 @@
 
         <!-- Product 4 Content - AI Tools / Garment Try On App -->
         <div class="product-section min-h-[400px] md:min-h-[500px] lg:min-h-[600px] flex items-center" data-product="3">
-          <div class="space-y-2 md:space-y-3 w-full px-2">
+          <div class="space-y-3 md:space-y-4 lg:space-y-5 w-full px-2">
             <!-- Product Logo -->
             <div class="flex items-center">
-              <div class="flex items-center gap-2">
-                <div class="w-9 h-9 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center">
-                  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                  </svg>
-                </div>
-                <span class="text-lg sm:text-xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent" id="aitools-logo-text">AI Tools</span>
-              </div>
+              <img src="/assets/images/tryon360-logo.png" alt="TryOn360 Logo" width="192" height="64" class="w-24 h-9 sm:w-28 sm:h-10 md:w-32 md:h-12 object-contain">
             </div>
 
             <!-- Product Title -->
@@ -239,7 +232,7 @@
               </div>
 
               <!-- Main Image Container - Larger -->
-              <div class="relative w-[130%] h-[130%] flex items-center justify-center">
+              <div class="relative w-[160%] h-[160%] flex items-center justify-center overflow-hidden">
                 <!-- Loading Skeleton -->
                 <div class="image-skeleton absolute inset-0 bg-gray-200 animate-pulse rounded-lg flex items-center justify-center z-10">
                   <div class="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
@@ -250,7 +243,7 @@
                   width="1200"
                   height="900"
                   loading="lazy"
-                  class="w-full h-full object-contain drop-shadow-2xl opacity-0 transition-opacity duration-500 relative z-20"
+                  class="w-full h-full object-contain drop-shadow-2xl opacity-0 transition-opacity duration-500 relative z-20 scale-110"
                   onload="this.style.opacity='1'; this.previousElementSibling.style.display='none';"
                 >
               </div>
@@ -500,10 +493,6 @@
       }
     },
     aitools: {
-      logoText: {
-        EN: "AI Tools",
-        ID: "AI Tools"
-      },
       title: {
         EN: "Garment Try On App - Virtual Fitting Room",
         ID: "Aplikasi Virtual Try On - Ruang Pasar Virtual"
@@ -609,16 +598,12 @@
     }
 
     // Update AI Tools content
-    const aitoolsLogoText = document.getElementById('aitools-logo-text');
     const aitoolsTitle = document.getElementById('aitools-title');
     const aitoolsDesc = document.getElementById('aitools-desc');
     const aitoolsCtaPrimary = document.getElementById('aitools-cta-primary');
     const aitoolsCtaSecondary = document.getElementById('aitools-cta-secondary');
     const aitoolsProof = document.getElementById('aitools-proof');
 
-    if (aitoolsLogoText && translations.aitools.logoText[lang]) {
-      aitoolsLogoText.textContent = translations.aitools.logoText[lang];
-    }
     if (aitoolsTitle && translations.aitools.title[lang]) {
       aitoolsTitle.textContent = translations.aitools.title[lang];
     }
