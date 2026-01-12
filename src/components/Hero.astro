@@ -1,4 +1,5 @@
 ---
+const videoPoster = '/assets/images/dental360-dashboard.png';
 ---
 
 <section id="home" class="bg-white">
@@ -46,33 +47,19 @@
         </a>
       </div>
 
-      <!-- Video -->
-      <div class="max-w-4xl mx-auto px-4">
-        <div class="relative aspect-video bg-black rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl">
-          <!-- Loading skeleton - hidden once video loads -->
-          <div id="video-skeleton" class="absolute inset-0 bg-gray-200 animate-pulse z-20">
-            <div class="absolute inset-0 bg-gradient-to-br from-gray-300 via-gray-200 to-gray-300 opacity-50"></div>
-            <div class="absolute inset-0 flex items-center justify-center">
-              <div class="w-16 h-16 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
-            </div>
-          </div>
-
-          <!-- Animated gradient background behind video - hidden initially -->
-          <div id="video-gradient" class="absolute inset-0 gradient-bg opacity-0 transition-opacity duration-500"></div>
-
-          <!-- Video overlay -->
+      <!-- Hero Video -->
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl bg-[#0f172a]">
           <video
-            id="hero-video"
+            id="heroVideo"
+            class="w-full h-auto"
+            poster={videoPoster}
             autoplay
             muted
             loop
             playsinline
-            preload="metadata"
-            poster="/assets/images/hero-poster.jpg"
-            class="w-full h-full object-cover relative z-10 opacity-0 transition-opacity duration-500"
           >
-            <source src="/assets/videos/CSD-10721_WAC_Hero_FULL_LowBR.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+            <source src="/assets/videos/CSD-10721_WAC_Hero_FULL_LowBR.mp4" type="video/mp4" />
           </video>
         </div>
       </div>
@@ -94,32 +81,6 @@
 
   svg path.animate-draw {
     animation: draw 2s ease-out 0.5s forwards;
-  }
-
-  /* Subtle slow-moving gradient animation */
-  @keyframes gradientShift {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-
-  .gradient-bg {
-    background: linear-gradient(
-      135deg,
-      rgba(15, 45, 120, 0.65),     /* deeper navy blue - 65% opacity */
-      rgba(30, 80, 200, 0.6),      /* vibrant blue - 60% opacity */
-      rgba(50, 120, 220, 0.65),    /* bright blue - 65% opacity */
-      rgba(15, 45, 120, 0.7)       /* deeper navy blue - 70% opacity */
-    );
-    background-size: 400% 400%;
-    animation: gradientShift 20s ease-in-out infinite;
-    opacity: 0.85;
   }
 </style>
 
@@ -165,71 +126,5 @@
       // Add class to trigger animation
       path.classList.add('animate-draw');
     });
-  });
-
-  // Ensure video plays immediately with proper loading states
-  function initHeroVideo() {
-    const video = document.getElementById('hero-video') as HTMLVideoElement;
-    const skeleton = document.getElementById('video-skeleton');
-    const gradient = document.getElementById('video-gradient');
-
-    if (video && skeleton && gradient) {
-      // Hide skeleton and show video once it can play
-      const handleCanPlay = () => {
-        skeleton.style.display = 'none';
-        video.style.opacity = '1';
-        gradient.style.opacity = '0.85';
-      };
-
-      // Show skeleton if video takes too long
-      const handleWaiting = () => {
-        skeleton.style.display = 'block';
-      };
-
-      // Hide skeleton when playing
-      const handlePlaying = () => {
-        skeleton.style.display = 'none';
-      };
-
-      video.addEventListener('canplay', handleCanPlay);
-      video.addEventListener('waiting', handleWaiting);
-      video.addEventListener('playing', handlePlaying);
-
-      // If video is already ready
-      if (video.readyState >= 3) {
-        handleCanPlay();
-      }
-
-      // Attempt to play
-      const playPromise = video.play();
-
-      if (playPromise !== undefined) {
-        playPromise
-          .then(() => {
-            handleCanPlay();
-          })
-          .catch(error => {
-            // Auto-play was prevented, retry on user interaction
-            console.log('Autoplay prevented, will retry on interaction');
-            document.addEventListener('click', () => {
-              video.play().then(handleCanPlay);
-            }, { once: true });
-          });
-      }
-    }
-  }
-
-  // Initialize video immediately
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initHeroVideo);
-  } else {
-    initHeroVideo();
-  }
-
-  // Also handle page show (back/forward cache)
-  window.addEventListener('pageshow', (event) => {
-    if (event.persisted) {
-      initHeroVideo();
-    }
   });
 </script>
