@@ -85,6 +85,19 @@ const videoPoster = '/assets/images/dental360-dashboard.png';
 </style>
 
 <script>
+  // Ensure video plays after view transition navigation
+  document.addEventListener('astro:after-swap', () => {
+    const video = document.getElementById('heroVideo') as HTMLVideoElement;
+    if (video) {
+      video.currentTime = 0;
+      video.play().catch(err => {
+        // Autoplay was prevented, unmute and try again
+        video.muted = true;
+        video.play().catch(e => console.log('Video autoplay prevented:', e));
+      });
+    }
+  });
+
   // Language switching functionality
   function switchLanguage(lang: string) {
     // Only select elements within this Hero section, not the entire page
