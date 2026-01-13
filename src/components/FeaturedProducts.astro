@@ -317,7 +317,8 @@
 </section>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+  // Function to initialize FeaturedProducts
+  function initFeaturedProducts() {
     const productSections = document.querySelectorAll('.product-section');
     const productImages = document.querySelectorAll('.product-image');
 
@@ -339,7 +340,6 @@
         }
       });
 
-
       currentIndex = index;
     }
 
@@ -359,7 +359,6 @@
 
         // If this section is in the center area of viewport
         if (rect.top < viewportHeight * 0.6 && rect.bottom > viewportHeight * 0.4) {
-          console.log('Active product section:', index); // Debug log
           updateActiveProduct(index);
         }
       });
@@ -373,6 +372,23 @@
 
     // Initial state
     updateActiveProduct(0);
+
+    // Ensure images are visible after navigation
+    productImages.forEach((img, i) => {
+      if (i === 0) {
+        img.style.opacity = '1';
+        img.style.pointerEvents = 'auto';
+        img.style.transform = 'scale(1)';
+      }
+    });
+  }
+
+  // Initialize on DOM load
+  document.addEventListener('DOMContentLoaded', initFeaturedProducts);
+
+  // Re-initialize after view transition
+  document.addEventListener('astro:after-swap', () => {
+    setTimeout(initFeaturedProducts, 50);
   });
 </script>
 

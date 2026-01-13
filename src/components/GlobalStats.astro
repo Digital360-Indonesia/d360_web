@@ -90,7 +90,8 @@
 </section>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+  // Function to initialize counter animations
+  function initGlobalStats() {
     const counters = document.querySelectorAll('.counter');
     let hasAnimated = false;
 
@@ -144,6 +145,14 @@
     if (section) {
       observer.observe(section);
     }
+  }
+
+  // Initialize on DOM load
+  document.addEventListener('DOMContentLoaded', initGlobalStats);
+
+  // Re-initialize after view transition
+  document.addEventListener('astro:after-swap', () => {
+    setTimeout(initGlobalStats, 50);
   });
 
   // Language switching functionality

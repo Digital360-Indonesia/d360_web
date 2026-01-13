@@ -85,17 +85,37 @@ const videoPoster = '/assets/images/dental360-dashboard.png';
 </style>
 
 <script>
-  // Ensure video plays after view transition navigation
-  document.addEventListener('astro:after-swap', () => {
+  // Function to initialize Hero animations
+  function initHeroAnimations() {
+    const savedLang = localStorage.getItem('language') || 'EN';
+    switchLanguage(savedLang);
+
+    // Trigger the "Ready" underline animation
+    const svgPaths = document.querySelectorAll('#home svg path');
+    svgPaths.forEach(path => {
+      // Remove class first to reset
+      path.classList.remove('animate-draw');
+      // Force reflow
+      void path.offsetWidth;
+      // Add class to trigger animation
+      path.classList.add('animate-draw');
+    });
+
+    // Ensure video plays
     const video = document.getElementById('heroVideo') as HTMLVideoElement;
     if (video) {
       video.currentTime = 0;
       video.play().catch(err => {
-        // Autoplay was prevented, unmute and try again
         video.muted = true;
         video.play().catch(e => console.log('Video autoplay prevented:', e));
       });
     }
+  }
+
+  // Handle view transition navigation
+  document.addEventListener('astro:after-swap', () => {
+    // Small delay to ensure DOM is ready
+    setTimeout(initHeroAnimations, 50);
   });
 
   // Language switching functionality
@@ -125,19 +145,5 @@ const videoPoster = '/assets/images/dental360-dashboard.png';
   }) as EventListener);
 
   // Load saved language on page load and trigger animations
-  document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('language') || 'EN';
-    switchLanguage(savedLang);
-
-    // Trigger the "Ready" underline animation
-    const svgPaths = document.querySelectorAll('#home svg path');
-    svgPaths.forEach(path => {
-      // Remove class first to reset
-      path.classList.remove('animate-draw');
-      // Force reflow
-      void path.offsetWidth;
-      // Add class to trigger animation
-      path.classList.add('animate-draw');
-    });
-  });
+  document.addEventListener('DOMContentLoaded', initHeroAnimations);
 </script>
