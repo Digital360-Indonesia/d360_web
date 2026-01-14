@@ -217,18 +217,8 @@
         </a>
       </div>
 
-      <!-- Mobile Menu Button & Language Selector -->
-      <div class="flex items-center gap-2 md:hidden">
-        <!-- Language Selector -->
-        <button onclick="setLanguage('EN')" class="p-2 text-gray-700 hover:text-gray-900 transition-colors text-sm font-medium" id="mobile-lang-en">
-          EN
-        </button>
-        <span class="text-gray-300">|</span>
-        <button onclick="setLanguage('ID')" class="p-2 text-gray-700 hover:text-gray-900 transition-colors text-sm font-medium" id="mobile-lang-id">
-          ID
-        </button>
-
-        <!-- Mobile Menu Button -->
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden">
         <button class="p-2 text-gray-700" id="mobile-menu-btn">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -236,41 +226,265 @@
         </button>
       </div>
     </div>
+  </nav>
+</header>
 
-    <!-- Mobile Menu -->
-    <div class="md:hidden hidden" id="mobile-menu">
-      <div class="py-4 space-y-4 border-t border-gray-100">
-        <a href="#products" class="block text-gray-700 hover:text-gray-900 font-medium transition-colors" data-lang-en="Products" data-lang-id="Produk">
+<!-- Fullscreen Mobile Navigation Overlay (outside header) -->
+<div id="mobile-nav-overlay" class="md:hidden fixed inset-0 bg-white z-[60] transform translate-x-full transition-transform duration-300 ease-in-out">
+  <!-- Main Menu Level -->
+  <div id="mobile-nav-main" class="h-full flex flex-col">
+    <!-- Top Bar: Logo, Language, Close -->
+    <div class="flex items-center justify-between px-6 py-5 border-b border-gray-100">
+      <!-- Logo -->
+      <a href="/" data-no-view-transition class="flex items-center" onclick="closeMobileNav()">
+        <img
+          src="/assets/images/digital360-logo.png"
+          alt="Digital360 Logo"
+          width="150"
+          height="48"
+          class="h-10 w-auto"
+        />
+      </a>
+
+      <!-- Language & Close -->
+      <div class="flex items-center gap-4">
+        <button onclick="setLanguage('EN')" class="p-2 text-gray-700 hover:text-gray-900 transition-colors text-sm font-medium" id="mobile-lang-en">
+          EN
+        </button>
+        <span class="text-gray-300">|</span>
+        <button onclick="setLanguage('ID')" class="p-2 text-gray-700 hover:text-gray-900 transition-colors text-sm font-medium" id="mobile-lang-id">
+          ID
+        </button>
+        <button class="p-2 text-gray-700 hover:text-gray-900" id="mobile-nav-close">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu Items -->
+    <div class="flex-1 overflow-y-auto px-6 py-8">
+      <div class="space-y-2">
+        <!-- Products with arrow (has submenu) -->
+        <button class="w-full flex items-center justify-between py-4 text-left text-xl font-medium text-gray-900 hover:text-gray-700 transition-colors border-b border-gray-100" id="mobile-products-trigger">
           <span class="mobile-products-text">Products</span>
-        </a>
-        <a href="/customer-stories" class="block text-gray-700 hover:text-gray-900 font-medium transition-colors" data-lang-en="Portfolio" data-lang-id="Portofolio">
+          <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+
+        <a href="/customer-stories" class="block py-4 text-xl font-medium text-gray-900 hover:text-gray-700 transition-colors border-b border-gray-100" onclick="closeMobileNav()" data-lang-en="Portfolio" data-lang-id="Portofolio">
           <span class="mobile-portfolio-text">Portfolio</span>
         </a>
-        <a href="/blog" class="block text-gray-700 hover:text-gray-900 font-medium transition-colors" data-lang-en="Blog" data-lang-id="Berita">
+
+        <a href="/blog" class="block py-4 text-xl font-medium text-gray-900 hover:text-gray-700 transition-colors border-b border-gray-100" onclick="closeMobileNav()" data-lang-en="Blog" data-lang-id="Berita">
           <span class="mobile-blog-text">Blog</span>
         </a>
-        <a href="#signin" class="block text-gray-700 hover:text-gray-900 font-medium transition-colors" data-lang-en="Sign in" data-lang-id="Masuk">
+
+        <a href="#signin" class="block py-4 text-xl font-medium text-gray-900 hover:text-gray-700 transition-colors border-b border-gray-100" onclick="closeMobileNav()" data-lang-en="Sign in" data-lang-id="Masuk">
           <span class="mobile-signin-text">Sign in</span>
         </a>
-        <a href="https://wa.me/6285706679500" target="_blank" class="flex items-center bg-primary-800 hover:bg-primary-900 text-white font-medium px-4 py-2 rounded-lg transition-colors duration-200 w-fit" data-lang-en="Book a Meeting" data-lang-id="Jadwalkan Pertemuan">
-          <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+      </div>
+
+      <!-- CTA Button -->
+      <div class="mt-8">
+        <a href="https://wa.me/6285706679500" target="_blank" class="flex items-center justify-center bg-primary-800 hover:bg-primary-900 text-white font-medium px-6 py-3 rounded-lg transition-colors duration-200" data-lang-en="Book a Meeting" data-lang-id="Jadwalkan Pertemuan">
+          <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.306"/>
           </svg>
           <span class="mobile-bookmeeting-text">Book a Meeting</span>
         </a>
       </div>
     </div>
-  </nav>
-</header>
+  </div>
+
+  <!-- Products Submenu Level -->
+  <div id="mobile-nav-products" class="h-full flex flex-col hidden absolute inset-0 bg-white">
+    <!-- Top Bar: Back, Logo, Close -->
+    <div class="flex items-center justify-between px-6 py-5 border-b border-gray-100">
+      <!-- Back Button -->
+      <button class="flex items-center text-gray-700 hover:text-gray-900" id="mobile-nav-back">
+        <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+        <span class="text-sm font-medium">Back</span>
+      </button>
+
+      <!-- Logo -->
+      <a href="/" data-no-view-transition class="flex items-center" onclick="closeMobileNav()">
+        <img
+          src="/assets/images/digital360-logo.png"
+          alt="Digital360 Logo"
+          width="150"
+          height="48"
+          class="h-10 w-auto"
+        />
+      </a>
+
+      <!-- Close Button -->
+      <button class="p-2 text-gray-700 hover:text-gray-900" id="mobile-nav-close-sub">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Section Title -->
+    <div class="px-6 py-4 bg-gray-50 border-b border-gray-100">
+      <p class="text-sm font-semibold text-gray-500 uppercase tracking-wide">Our Products</p>
+    </div>
+
+    <!-- Submenu Content -->
+    <div class="flex-1 overflow-y-auto">
+      <!-- Dental360 Card -->
+      <a href="/dental360" class="block" onclick="closeMobileNav()">
+        <div class="mx-4 my-4 rounded-xl border border-gray-200 bg-white shadow-sm hover:shadow-lg hover:border-gray-300 transition-all overflow-hidden">
+          <div class="relative h-32 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
+            <img
+              src="/assets/images/satu360dental-logo.png"
+              alt="Dental360"
+              class="h-10 w-auto object-contain"
+            />
+          </div>
+          <div class="p-5">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Dental360</h3>
+            <p class="text-sm text-gray-600 mb-3">Complete dental practice management system with booking, records, inventory & billing.</p>
+            <div class="flex items-center text-blue-600 font-medium text-sm">
+              <span>Explore Dental360</span>
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Manufacture360 Card -->
+      <a href="/manufacturemanagementsystem" class="block" onclick="closeMobileNav()">
+        <div class="mx-4 my-4 rounded-xl border border-gray-200 bg-white shadow-sm hover:shadow-lg hover:border-gray-300 transition-all overflow-hidden">
+          <div class="relative h-32 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
+            <img
+              src="/assets/images/satu360manufacture-logo.png"
+              alt="Manufacture360"
+              class="h-10 w-auto object-contain"
+            />
+          </div>
+          <div class="p-5">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Manufacture360</h3>
+            <p class="text-sm text-gray-600 mb-3">All-in-one business management solution connecting HR to operations.</p>
+            <div class="flex items-center text-blue-600 font-medium text-sm">
+              <span>Explore Manufacture360</span>
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Website360 Card -->
+      <a href="https://wa.me/6285706679500" target="_blank" class="block" onclick="closeMobileNav()">
+        <div class="mx-4 my-4 rounded-xl border border-gray-200 bg-white shadow-sm hover:shadow-lg hover:border-gray-300 transition-all overflow-hidden">
+          <div class="relative h-32 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
+            <img
+              src="/assets/images/web360-logo.png"
+              alt="Website360"
+              class="h-16 w-auto object-contain"
+            />
+          </div>
+          <div class="p-5">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Website360</h3>
+            <p class="text-sm text-gray-600 mb-3">Professional websites built to strengthen your digital presence and marketing goals.</p>
+            <div class="flex items-center text-blue-600 font-medium text-sm">
+              <span>Get Started</span>
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Tryon360 Card -->
+      <a href="https://tryon.digital360.id" target="_blank" class="block" onclick="closeMobileNav()">
+        <div class="mx-4 my-4 rounded-xl border border-gray-200 bg-white shadow-sm hover:shadow-lg hover:border-gray-300 transition-all overflow-hidden">
+          <div class="relative h-32 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
+            <img
+              src="/assets/images/tryon360-logo.png"
+              alt="Tryon360"
+              class="h-16 w-auto object-contain"
+            />
+          </div>
+          <div class="p-5">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Tryon360</h3>
+            <p class="text-sm text-gray-600 mb-3">AI-powered virtual try-on for fashion & e-commerce. Upload 2 photos and get realistic visualizations.</p>
+            <div class="flex items-center text-blue-600 font-medium text-sm">
+              <span>Try It Now</span>
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
 
 <script>
-  // Mobile menu toggle
+  // Fullscreen mobile navigation
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileNavOverlay = document.getElementById('mobile-nav-overlay');
+  const mobileNavMain = document.getElementById('mobile-nav-main');
+  const mobileNavProducts = document.getElementById('mobile-nav-products');
+  const mobileProductsTrigger = document.getElementById('mobile-products-trigger');
+  const mobileNavBack = document.getElementById('mobile-nav-back');
+  const mobileNavClose = document.getElementById('mobile-nav-close');
+  const mobileNavCloseSub = document.getElementById('mobile-nav-close-sub');
 
-  mobileMenuBtn?.addEventListener('click', () => {
-    mobileMenu?.classList.toggle('hidden');
-  });
+  // Open mobile nav
+  function openMobileNav() {
+    if (mobileNavOverlay) {
+      mobileNavOverlay.classList.remove('translate-x-full');
+      document.body.classList.add('mobile-nav-open');
+    }
+  }
+
+  // Close mobile nav
+  function closeMobileNav() {
+    if (mobileNavOverlay) {
+      mobileNavOverlay.classList.add('translate-x-full');
+      document.body.classList.remove('mobile-nav-open');
+    }
+    // Reset to main menu
+    setTimeout(() => {
+      if (mobileNavProducts) mobileNavProducts.classList.add('hidden');
+      if (mobileNavMain) mobileNavMain.classList.remove('hidden');
+    }, 300);
+  }
+
+  // Show products submenu
+  function showProductsSubmenu() {
+    if (mobileNavMain) mobileNavMain.classList.add('hidden');
+    if (mobileNavProducts) mobileNavProducts.classList.remove('hidden');
+  }
+
+  // Back to main menu
+  function backToMainMenu() {
+    if (mobileNavProducts) mobileNavProducts.classList.add('hidden');
+    if (mobileNavMain) mobileNavMain.classList.remove('hidden');
+  }
+
+  // Event listeners
+  if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMobileNav);
+  if (mobileNavClose) mobileNavClose.addEventListener('click', closeMobileNav);
+  if (mobileNavCloseSub) mobileNavCloseSub.addEventListener('click', closeMobileNav);
+  if (mobileProductsTrigger) mobileProductsTrigger.addEventListener('click', showProductsSubmenu);
+  if (mobileNavBack) mobileNavBack.addEventListener('click', backToMainMenu);
+
+  // Make functions available globally
+  window.closeMobileNav = closeMobileNav;
 
   // Sticky header scroll effect
   const header = document.getElementById('main-header');
@@ -540,5 +754,19 @@
 
   .language-switching * {
     pointer-events: none;
+  }
+
+  /* Mobile Navigation - simple transitions */
+  #mobile-nav-main.hidden {
+    display: none;
+  }
+
+  #mobile-nav-products.hidden {
+    display: none;
+  }
+
+  /* Body scroll lock class */
+  body.mobile-nav-open {
+    overflow: hidden;
   }
 </style>

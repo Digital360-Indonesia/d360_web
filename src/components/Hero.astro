@@ -1,5 +1,5 @@
 ---
-const videoPoster = '/assets/images/dental360-dashboard.png';
+const videoPoster = '/assets/images/hero-placeholder.png';
 ---
 
 <section id="home" class="bg-white">
@@ -50,10 +50,18 @@ const videoPoster = '/assets/images/dental360-dashboard.png';
       <!-- Hero Video -->
       <div class="max-w-5xl mx-auto px-4">
         <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl bg-[#0f172a]">
+          <!-- Placeholder Image (shown while video loads) -->
+          <img
+            id="heroPlaceholder"
+            src={videoPoster}
+            alt="Hero Video Preview"
+            class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 z-10"
+          >
+
+          <!-- Video (hidden initially, fades in when ready) -->
           <video
             id="heroVideo"
-            class="w-full h-auto"
-            poster={videoPoster}
+            class="w-full h-auto opacity-0 transition-opacity duration-500"
             autoplay
             muted
             loop
@@ -101,14 +109,43 @@ const videoPoster = '/assets/images/dental360-dashboard.png';
       path.classList.add('animate-draw');
     });
 
-    // Ensure video plays
+    // Handle video loading with smooth transition
     const video = document.getElementById('heroVideo') as HTMLVideoElement;
-    if (video) {
-      video.currentTime = 0;
-      video.play().catch(err => {
-        video.muted = true;
-        video.play().catch(e => console.log('Video autoplay prevented:', e));
-      });
+    const placeholder = document.getElementById('heroPlaceholder') as HTMLImageElement;
+
+    if (video && placeholder) {
+      // Wait for video to be ready before playing and showing
+      video.addEventListener('canplaythrough', () => {
+        // Video is ready to play smoothly
+        video.play().catch(err => {
+          video.muted = true;
+          video.play().catch(e => console.log('Video autoplay prevented:', e));
+        });
+
+        // Fade in video and hide placeholder
+        video.classList.remove('opacity-0');
+        placeholder.classList.add('opacity-0');
+
+        // Remove placeholder from DOM after fade completes
+        setTimeout(() => {
+          placeholder.style.display = 'none';
+        }, 500);
+      }, { once: true });
+
+      // Fallback: if video takes too long, show it anyway after 3 seconds
+      setTimeout(() => {
+        if (video.classList.contains('opacity-0')) {
+          video.play().catch(err => {
+            video.muted = true;
+            video.play().catch(e => console.log('Video autoplay prevented:', e));
+          });
+          video.classList.remove('opacity-0');
+          placeholder.classList.add('opacity-0');
+          setTimeout(() => {
+            placeholder.style.display = 'none';
+          }, 500);
+        }
+      }, 3000);
     }
   }
 
