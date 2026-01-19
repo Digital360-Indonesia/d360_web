@@ -25,7 +25,7 @@ import Footer from '../../components/Footer.astro';
             </div>
           </div>
           <div class="hero-image">
-            <img src="/assets/images/dental360-dashboard.png" alt="Dental360 Dashboard" />
+            <img src="/assets/images/dental360-dashboard.png" alt="Dental360 Dashboard" width="1200" height="900" />
           </div>
         </div>
       </div>
@@ -75,40 +75,37 @@ import Footer from '../../components/Footer.astro';
         <div class="carousel-wrapper">
           <div class="carousel-track" id="carouselTrack">
             <div class="feature-slide">
-              <div class="slide-img-skeleton">
-                <img src="/assets/images/dentalbsm-s3-1.png" alt="Appointment Management" class="slide-img" onload="this.parentElement.classList.add('loaded')" />
-              </div>
+              <img src="/assets/images/dentalbsm-s3-1.png" alt="Appointment Management" width="1200" height="800" loading="lazy" class="slide-img" />
               <h3 data-lang-en="Appointment Management" data-lang-id="Manajemen Appointment">Appointment Management</h3>
               <p data-lang-en="Smart scheduling system with conflict detection, recurring appointments, and waitlist management" data-lang-id="Sistem penjadwalan cerdas dengan deteksi konflik, appointment berulang, dan manajemen waitlist">Smart scheduling system with conflict detection, recurring appointments, and waitlist management</p>
             </div>
             <div class="feature-slide">
-              <div class="slide-img-skeleton">
-                <img src="/assets/images/dentalbsm-s3-2.png" alt="Patient Database" class="slide-img" onload="this.parentElement.classList.add('loaded')" />
-              </div>
+              <img src="/assets/images/dentalbsm-s3-2.png" alt="Patient Database" width="1200" height="800" loading="lazy" class="slide-img" />
               <h3 data-lang-en="Patient Database" data-lang-id="Database Pasien">Patient Database</h3>
               <p data-lang-en="Comprehensive patient profiles with medical history, treatments, and document attachments" data-lang-id="Profil pasien lengkap dengan riwayat medis, perawatan, dan lampiran dokumen">Comprehensive patient profiles with medical history, treatments, and document attachments</p>
             </div>
             <div class="feature-slide">
-              <div class="slide-img-skeleton">
-                <img src="/assets/images/dentalbsm-s3-3.png" alt="Patient Medical Records" class="slide-img" onload="this.parentElement.classList.add('loaded')" />
-              </div>
+              <img src="/assets/images/dentalbsm-s3-3.png" alt="Patient Medical Records" width="1200" height="800" loading="lazy" class="slide-img" />
               <h3 data-lang-en="Patient Medical Records" data-lang-id="Rekam Medis Pasien">Patient Medical Records</h3>
               <p data-lang-en="Complete documentation from anamnesis, complaints, diagnosis to odontogram visualization" data-lang-id="Dokumentasi lengkap dari anamnesis, keluhan, diagnosis hingga visualisasi odontogram">Complete documentation from anamnesis, complaints, diagnosis to odontogram visualization</p>
             </div>
             <div class="feature-slide">
-              <div class="slide-img-skeleton">
-                <img src="/assets/images/dentalbsm-s3-4.png" alt="Dashboard" class="slide-img" onload="this.parentElement.classList.add('loaded')" />
-              </div>
+              <img src="/assets/images/dentalbsm-s3-4.png" alt="Dashboard" width="1200" height="800" loading="lazy" class="slide-img" />
               <h3 data-lang-en="Dashboard" data-lang-id="Dasbor">Dashboard</h3>
               <p data-lang-en="Centralized all-in-one quick access for complete practice overview" data-lang-id="Akses terpusat all-in-one untuk overview praktik lengkap">Centralized all-in-one quick access for complete practice overview</p>
             </div>
             <div class="feature-slide">
-              <div class="slide-img-skeleton">
-                <img src="/assets/images/dentalbsm-s3-5.png" alt="Analytics Report" class="slide-img" onload="this.parentElement.classList.add('loaded')" />
-              </div>
+              <img src="/assets/images/dentalbsm-s3-5.png" alt="Analytics Report" width="1200" height="800" loading="lazy" class="slide-img" />
               <h3 data-lang-en="Analytics Report" data-lang-id="Laporan Analitik">Analytics Report</h3>
               <p data-lang-en="Comprehensive reports on revenue, treatment, financial, and demographics for dental business" data-lang-id="Laporan komprehensif tentang pendapatan, perawatan, keuangan, dan demografi untuk bisnis dental">Comprehensive reports on revenue, treatment, financial, and demographics for dental business</p>
             </div>
+          </div>
+
+          <!-- Scroll Indicator Arrow -->
+          <div class="scroll-indicator">
+            <svg class="scroll-arrow" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
           </div>
         </div>
       </div>
@@ -119,7 +116,7 @@ import Footer from '../../components/Footer.astro';
       <div class="container">
         <div class="cta-content">
           <div class="cta-image">
-            <img src="/assets/images/dental360-dashboard.png" alt="Dental360 Platform" />
+            <img src="/assets/images/dental360-dashboard.png" alt="Dental360 Platform" width="1200" height="900" />
           </div>
           <div class="cta-text">
             <h2 data-lang-en="Ready to Transform Your Practice?" data-lang-id="Siap untuk Mengubah Praktik Anda?">Ready to Transform Your Practice?</h2>
@@ -341,6 +338,7 @@ import Footer from '../../components/Footer.astro';
   }
 
   .carousel-wrapper {
+    position: relative;
     overflow-x: auto;
     padding-bottom: 1rem;
   }
@@ -394,46 +392,6 @@ import Footer from '../../components/Footer.astro';
     margin-bottom: 1rem;
   }
 
-  /* Slide image skeleton */
-  .slide-img-skeleton {
-    position: relative;
-    width: 100%;
-    height: 180px;
-    margin-bottom: 1rem;
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-    background-size: 200% 100%;
-    animation: shimmer 1.5s infinite;
-    border-radius: 12px;
-    overflow: hidden;
-  }
-
-  .slide-img-skeleton.loaded {
-    background: none;
-    animation: none;
-    transition: background 0.3s ease-out 0.8s; /* Delay removal by 0.8s */
-  }
-
-  .slide-img-skeleton .slide-img {
-    position: relative;
-    z-index: 2;
-    opacity: 0;
-    margin-bottom: 0;
-    transition: opacity 0.5s ease-in 0.3s; /* Delay fade in by 0.3s */
-  }
-
-  .slide-img-skeleton.loaded .slide-img {
-    opacity: 1;
-  }
-
-  @keyframes shimmer {
-    0% {
-      background-position: 200% 0;
-    }
-    100% {
-      background-position: -200% 0;
-    }
-  }
-
   .feature-slide h3 {
     font-size: 1rem;
     font-weight: 700;
@@ -445,6 +403,39 @@ import Footer from '../../components/Footer.astro';
     color: var(--text-light);
     line-height: 1.5;
     font-size: 0.9rem;
+  }
+
+  /* Scroll Indicator Arrow */
+  .scroll-indicator {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    pointer-events: none;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 127, 255, 0.2);
+    backdrop-filter: blur(8px);
+  }
+
+  .scroll-arrow {
+    color: var(--primary);
+    animation: bounceRight 1.5s ease-in-out infinite;
+  }
+
+  @keyframes bounceRight {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(8px);
+    }
   }
 
   /* Section 4: CTA Banner */
@@ -533,6 +524,17 @@ import Footer from '../../components/Footer.astro';
 
     .cta-text h2 {
       font-size: 1.5rem;
+    }
+
+    .scroll-indicator {
+      right: 0.5rem;
+      width: 40px;
+      height: 40px;
+    }
+
+    .scroll-indicator svg {
+      width: 24px;
+      height: 24px;
     }
   }
 </style>

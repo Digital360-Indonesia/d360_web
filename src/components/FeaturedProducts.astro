@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 ---
 
 <section class="py-10 sm:py-12 md:py-16 bg-white relative" id="featured-products-section">
@@ -75,10 +76,14 @@
               <!-- Loading Skeleton -->
               <div class="skeleton-placeholder absolute inset-0 rounded-lg z-0"></div>
               <img
-                src="/assets/images/dental360-dashboard.png"
+                src="/assets/images/dental360-dashboard.webp"
                 alt="Dental360 Interface"
-                class="product-img w-full h-full object-contain relative z-10"
+                width="1200"
+                height="900"
                 loading="lazy"
+                class="product-img w-full h-full object-contain relative z-10"
+                onload="this.classList.add('loaded'); const s=this.parentElement?.querySelector('.skeleton-placeholder'); if(s) s.classList.add('hidden');"
+                onerror="this.src='/assets/images/dental360-dashboard.png'; this.classList.add('loaded'); const s=this.parentElement?.querySelector('.skeleton-placeholder'); if(s) s.classList.add('hidden');"
               />
             </div>
           </div>
@@ -144,10 +149,14 @@
               <!-- Loading Skeleton -->
               <div class="skeleton-placeholder absolute inset-0 rounded-lg z-0"></div>
               <img
-                src="/assets/images/business360-dashboard.png"
+                src="/assets/images/business360-dashboard.webp"
                 alt="Manufacture360 Interface"
-                class="product-img w-full h-full object-contain relative z-10"
+                width="1200"
+                height="900"
                 loading="lazy"
+                class="product-img w-full h-full object-contain relative z-10"
+                onload="this.classList.add('loaded'); const s=this.parentElement?.querySelector('.skeleton-placeholder'); if(s) s.classList.add('hidden');"
+                onerror="this.src='/assets/images/business360-dashboard.png'; this.classList.add('loaded'); const s=this.parentElement?.querySelector('.skeleton-placeholder'); if(s) s.classList.add('hidden');"
               />
             </div>
           </div>
@@ -213,10 +222,14 @@
               <!-- Loading Skeleton -->
               <div class="skeleton-placeholder absolute inset-0 rounded-lg z-0"></div>
               <img
-                src="/assets/images/website360-builder.png"
+                src="/assets/images/website360-builder.webp"
                 alt="Website360 Interface"
-                class="product-img w-full h-full object-contain relative z-10"
+                width="1200"
+                height="900"
                 loading="lazy"
+                class="product-img w-full h-full object-contain relative z-10"
+                onload="this.classList.add('loaded'); const s=this.parentElement?.querySelector('.skeleton-placeholder'); if(s) s.classList.add('hidden');"
+                onerror="this.src='/assets/images/website360-builder.png'; this.classList.add('loaded'); const s=this.parentElement?.querySelector('.skeleton-placeholder'); if(s) s.classList.add('hidden');"
               />
             </div>
           </div>
@@ -261,10 +274,14 @@
               <!-- Loading Skeleton -->
               <div class="skeleton-placeholder absolute inset-0 rounded-lg z-0"></div>
               <img
-                src="/assets/images/ai-virtual-tryon.png"
+                src="/assets/images/ai-virtual-tryon.webp"
                 alt="TryOn360 Interface"
-                class="product-img w-full h-full object-contain relative z-10"
+                width="1200"
+                height="900"
                 loading="lazy"
+                class="product-img w-full h-full object-contain relative z-10"
+                onload="this.classList.add('loaded'); const s=this.parentElement?.querySelector('.skeleton-placeholder'); if(s) s.classList.add('hidden');"
+                onerror="this.src='/assets/images/ai-virtual-tryon.png'; this.classList.add('loaded'); const s=this.parentElement?.querySelector('.skeleton-placeholder'); if(s) s.classList.add('hidden');"
               />
             </div>
           </div>
@@ -282,13 +299,15 @@
                 <!-- Loading Skeleton -->
                 <div class="skeleton-placeholder absolute inset-0 rounded-lg z-0"></div>
                 <img
-                  src="/assets/images/dental360-dashboard.png"
+                  src="/assets/images/dental360-dashboard.webp"
                   alt="Dental360 Interface"
                   width="1200"
                   height="900"
                   loading="lazy"
                   class="product-img w-full h-full object-contain relative z-10"
-                  >
+                  onload="this.classList.add('loaded'); const s=this.parentElement?.querySelector('.skeleton-placeholder'); if(s) s.classList.add('hidden');"
+                  onerror="this.src='/assets/images/dental360-dashboard.png'; this.classList.add('loaded'); const s=this.parentElement?.querySelector('.skeleton-placeholder'); if(s) s.classList.add('hidden');"
+                />
               </div>
             </div>
           </div>
@@ -301,13 +320,15 @@
                 <!-- Loading Skeleton -->
                 <div class="skeleton-placeholder absolute inset-0 rounded-lg z-0"></div>
                 <img
-                  src="/assets/images/business360-dashboard.png"
+                  src="/assets/images/business360-dashboard.webp"
                   alt="Business360 Interface"
                   width="1200"
                   height="900"
                   loading="lazy"
                   class="product-img w-full h-full object-contain relative z-10"
-                  >
+                  onload="this.classList.add('loaded'); const s=this.parentElement?.querySelector('.skeleton-placeholder'); if(s) s.classList.add('hidden');"
+                  onerror="this.src='/assets/images/business360-dashboard.png'; this.classList.add('loaded'); const s=this.parentElement?.querySelector('.skeleton-placeholder'); if(s) s.classList.add('hidden');"
+                />
               </div>
             </div>
           </div>
@@ -320,13 +341,15 @@
                 <!-- Loading Skeleton -->
                 <div class="skeleton-placeholder absolute inset-0 rounded-lg z-0"></div>
                 <img
-                  src="/assets/images/website360-builder.png"
+                  src="/assets/images/website360-builder.webp"
                   alt="Website360 Interface"
                   width="1200"
                   height="900"
                   loading="lazy"
                   class="product-img w-full h-full object-contain relative z-10"
-                  >
+                  onload="this.classList.add('loaded'); const s=this.parentElement?.querySelector('.skeleton-placeholder'); if(s) s.classList.add('hidden');"
+                  onerror="this.src='/assets/images/website360-builder.png'; this.classList.add('loaded'); const s=this.parentElement?.querySelector('.skeleton-placeholder'); if(s) s.classList.add('hidden');"
+                />
               </div>
             </div>
           </div>
@@ -339,13 +362,15 @@
                 <!-- Loading Skeleton -->
                 <div class="skeleton-placeholder absolute inset-0 rounded-lg z-0"></div>
                 <img
-                  src="/assets/images/ai-virtual-tryon.png"
+                  src="/assets/images/ai-virtual-tryon.webp"
                   alt="AI Tools Garment Try On Interface"
                   width="1200"
                   height="900"
                   loading="lazy"
                   class="product-img w-full h-full object-contain relative z-10"
-                  >
+                  onload="this.classList.add('loaded'); const s=this.parentElement?.querySelector('.skeleton-placeholder'); if(s) s.classList.add('hidden');"
+                  onerror="this.src='/assets/images/ai-virtual-tryon.png'; this.classList.add('loaded'); const s=this.parentElement?.querySelector('.skeleton-placeholder'); if(s) s.classList.add('hidden');"
+                />
               </div>
             </div>
           </div>
@@ -704,53 +729,99 @@
     }, 50);
   });
 
-  // Skeleton Loading Handler - Simple and Clean
-  function handleImageLoad(img) {
-    // Check if already processed to avoid duplicate handling
-    if (img.classList.contains('loaded')) {
-      return;
-    }
-
-    const skeleton = img.parentElement.querySelector('.skeleton-placeholder');
-    if (skeleton) {
-      // Mark image as loaded (triggers fade in)
-      img.classList.add('loaded');
-
-      // Hide skeleton after short delay
-      setTimeout(() => {
-        skeleton.classList.add('hidden');
-      }, 300);
-    }
-  }
-
-  // Attach load handlers when DOM is ready
+  // Skeleton Loading Handler - Simple and Direct
   document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM loaded, attaching image handlers');
+
     const productImages = document.querySelectorAll('.product-img');
-    productImages.forEach(img => {
+    console.log('Found product images:', productImages.length);
+
+    productImages.forEach((img, index) => {
+      console.log(`Processing image ${index}:`, img.src);
+
+      // Find the skeleton element
+      let skeleton = img.parentElement?.querySelector('.skeleton-placeholder');
+
+      // If not found, try closest
+      if (!skeleton) {
+        skeleton = img.closest('.product-image, .relative')?.querySelector('.skeleton-placeholder');
+      }
+
+      console.log(`Skeleton for image ${index}:`, skeleton ? 'found' : 'not found');
+
+      // Function to hide skeleton and show image
+      const revealImage = () => {
+        console.log(`Revealing image ${index}`);
+        img.classList.add('loaded');
+        if (skeleton) {
+          skeleton.classList.add('hidden');
+        }
+      };
+
+      // Force reveal after 3 seconds regardless of load status
+      const forceRevealTimeout = setTimeout(() => {
+        if (!img.classList.contains('loaded')) {
+          console.log(`Force revealing image ${index} after timeout`);
+          revealImage();
+        }
+      }, 3000);
+
+      // Check if already loaded
       if (img.complete && img.naturalHeight !== 0) {
-        // Image already loaded
-        handleImageLoad(img);
+        clearTimeout(forceRevealTimeout);
+        console.log(`Image ${index} already loaded`);
+        revealImage();
       } else {
         // Wait for load event
-        img.addEventListener('load', () => handleImageLoad(img));
+        img.addEventListener('load', () => {
+          clearTimeout(forceRevealTimeout);
+          console.log(`Image ${index} loaded successfully`);
+          revealImage();
+        });
+
         img.addEventListener('error', () => {
-          // On error, hide skeleton immediately
-          const skeleton = img.parentElement.querySelector('.skeleton-placeholder');
-          if (skeleton) skeleton.classList.add('hidden');
+          clearTimeout(forceRevealTimeout);
+          console.error(`Image ${index} failed to load:`, img.src);
+          // Still reveal on error to hide skeleton
+          revealImage();
         });
       }
     });
   });
 
-  // Re-attach handlers after view transition
+  // Re-attach after view transitions
   document.addEventListener('astro:after-swap', () => {
     setTimeout(() => {
       const productImages = document.querySelectorAll('.product-img');
-      productImages.forEach(img => {
+      console.log('After swap - Found product images:', productImages.length);
+
+      productImages.forEach((img, index) => {
+        let skeleton = img.parentElement?.querySelector('.skeleton-placeholder');
+        if (!skeleton) {
+          skeleton = img.closest('.product-image, .relative')?.querySelector('.skeleton-placeholder');
+        }
+
+        const revealImage = () => {
+          img.classList.add('loaded');
+          if (skeleton) {
+            skeleton.classList.add('hidden');
+          }
+        };
+
+        const forceRevealTimeout = setTimeout(() => {
+          if (!img.classList.contains('loaded')) {
+            revealImage();
+          }
+        }, 3000);
+
         if (img.complete && img.naturalHeight !== 0) {
-          handleImageLoad(img);
+          clearTimeout(forceRevealTimeout);
+          revealImage();
         } else {
-          img.addEventListener('load', () => handleImageLoad(img));
+          img.addEventListener('load', () => {
+            clearTimeout(forceRevealTimeout);
+            revealImage();
+          });
         }
       });
     }, 100);

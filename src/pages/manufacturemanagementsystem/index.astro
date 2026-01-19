@@ -25,7 +25,7 @@ import Footer from '../../components/Footer.astro';
             </div>
           </div>
           <div class="hero-image">
-            <img src="/assets/images/business360-dashboard.png" alt="Manufacture360 Dashboard" />
+            <img src="/assets/images/business360-dashboard.png" alt="Manufacture360 Dashboard" width="1200" height="900" />
           </div>
         </div>
       </div>
@@ -104,33 +104,32 @@ import Footer from '../../components/Footer.astro';
         <div class="carousel-wrapper">
           <div class="carousel-track" id="carouselTrack">
             <div class="feature-slide">
-              <div class="slide-img-skeleton">
-                <img src="/assets/images/manufacturebsm-s3-1.png" alt="Manufacture ERP" class="slide-img" onload="this.parentElement.classList.add('loaded')" />
-              </div>
+              <img src="/assets/images/manufacturebsm-s3-1.png" alt="Manufacture ERP" width="1200" height="800" loading="lazy" class="slide-img" />
               <h3 data-lang-en="Manufacture ERP System" data-lang-id="Sistem ERP Manufaktur">Manufacture ERP System</h3>
               <p data-lang-en="Tailored ERP solution with centralized dashboard integrating production, inventory, sales, and finance in one platform" data-lang-id="Solusi ERP yang disesuaikan dengan dashboard terpusat mengintegrasikan produksi, inventory, sales, dan keuangan dalam satu platform">Tailored ERP solution with centralized dashboard integrating production, inventory, sales, and finance in one platform</p>
             </div>
             <div class="feature-slide">
-              <div class="slide-img-skeleton">
-                <img src="/assets/images/manufacturebsm-s3-2.png" alt="HR Management" class="slide-img" onload="this.parentElement.classList.add('loaded')" />
-              </div>
+              <img src="/assets/images/manufacturebsm-s3-2.png" alt="HR Management" width="1200" height="800" loading="lazy" class="slide-img" />
               <h3 data-lang-en="HR Management System" data-lang-id="Sistem Manajemen HR">HR Management System</h3>
               <p data-lang-en="Streamlined human resource operations from employee database, payroll management to daily attendance check-in and tracking" data-lang-id="Operasi HR yang efisien dari database karyawan, manajemen payroll hingga check-in dan tracking absensi harian">Streamlined human resource operations from employee database, payroll management to daily attendance check-in and tracking</p>
             </div>
             <div class="feature-slide">
-              <div class="slide-img-skeleton">
-                <img src="/assets/images/manufacturebsm-s3-3.png" alt="Production Tracking" class="slide-img" onload="this.parentElement.classList.add('loaded')" />
-              </div>
+              <img src="/assets/images/manufacturebsm-s3-3.png" alt="Production Tracking" width="1200" height="800" loading="lazy" class="slide-img" />
               <h3 data-lang-en="Production Workflow Tracking" data-lang-id="Tracking Workflow Produksi">Production Workflow Tracking</h3>
               <p data-lang-en="Real-time monitoring and reporting of entire production process from planning to completion with detailed analytics" data-lang-id="Monitoring dan reporting real-time seluruh proses produksi dari perencanaan hingga penyelesaian dengan analitik detail">Real-time monitoring and reporting of entire production process from planning to completion with detailed analytics</p>
             </div>
             <div class="feature-slide">
-              <div class="slide-img-skeleton">
-                <img src="/assets/images/manufacturebsm-s3-4.png" alt="Project Management" class="slide-img" onload="this.parentElement.classList.add('loaded')" />
-              </div>
+              <img src="/assets/images/manufacturebsm-s3-4.png" alt="Project Management" width="1200" height="800" loading="lazy" class="slide-img" />
               <h3 data-lang-en="Project Management" data-lang-id="Manajemen Proyek">Project Management</h3>
               <p data-lang-en="Comprehensive project tracking with team work schedules, task assignments, deadlines, and progress monitoring tools" data-lang-id="Tracking proyek komprehensif dengan jadwal kerja tim, penugasan tugas, deadline, dan tools monitoring progress">Comprehensive project tracking with team work schedules, task assignments, deadlines, and progress monitoring tools</p>
             </div>
+          </div>
+
+          <!-- Scroll Indicator Arrow -->
+          <div class="scroll-indicator">
+            <svg class="scroll-arrow" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
           </div>
         </div>
       </div>
@@ -141,7 +140,7 @@ import Footer from '../../components/Footer.astro';
       <div class="container">
         <div class="cta-content">
           <div class="cta-image">
-            <img src="/assets/images/business360-dashboard.png" alt="Manufacture360 Platform" />
+            <img src="/assets/images/business360-dashboard.png" alt="Manufacture360 Platform" width="1200" height="900" />
           </div>
           <div class="cta-text">
             <h2 data-lang-en="Ready to Transform Your Manufacturing?" data-lang-id="Siap untuk Mengubah Manufaktur Anda?">Ready to Transform Your Manufacturing?</h2>
@@ -363,6 +362,7 @@ import Footer from '../../components/Footer.astro';
   }
 
   .carousel-wrapper {
+    position: relative;
     overflow-x: auto;
     padding-bottom: 1rem;
   }
@@ -416,43 +416,36 @@ import Footer from '../../components/Footer.astro';
     margin-bottom: 1rem;
   }
 
-  /* Slide image skeleton */
-  .slide-img-skeleton {
-    position: relative;
-    width: 100%;
-    height: 180px;
-    margin-bottom: 1rem;
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-    background-size: 200% 100%;
-    animation: shimmer 1.5s infinite;
-    border-radius: 12px;
-    overflow: hidden;
+  /* Scroll Indicator Arrow */
+  .scroll-indicator {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    pointer-events: none;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(255, 183, 3, 0.2);
+    backdrop-filter: blur(8px);
   }
 
-  .slide-img-skeleton.loaded {
-    background: none;
-    animation: none;
-    transition: background 0.3s ease-out 0.8s; /* Delay removal by 0.8s */
+  .scroll-arrow {
+    color: var(--primary);
+    animation: bounceRight 1.5s ease-in-out infinite;
   }
 
-  .slide-img-skeleton .slide-img {
-    position: relative;
-    z-index: 2;
-    opacity: 0;
-    margin-bottom: 0;
-    transition: opacity 0.5s ease-in 0.3s; /* Delay fade in by 0.3s */
-  }
-
-  .slide-img-skeleton.loaded .slide-img {
-    opacity: 1;
-  }
-
-  @keyframes shimmer {
-    0% {
-      background-position: 200% 0;
+  @keyframes bounceRight {
+    0%, 100% {
+      transform: translateX(0);
     }
-    100% {
-      background-position: -200% 0;
+    50% {
+      transform: translateX(8px);
     }
   }
 
@@ -555,6 +548,17 @@ import Footer from '../../components/Footer.astro';
 
     .cta-text h2 {
       font-size: 1.5rem;
+    }
+
+    .scroll-indicator {
+      right: 0.5rem;
+      width: 40px;
+      height: 40px;
+    }
+
+    .scroll-indicator svg {
+      width: 24px;
+      height: 24px;
     }
   }
 </style>

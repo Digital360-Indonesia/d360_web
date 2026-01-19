@@ -1,0 +1,123 @@
+---
+/**
+ * OptimizedImage Component
+ *
+ * Menampilkan gambar dengan format modern (WebP/AVIF) dan fallback ke format asli
+ * Mirip dengan Next.js Image component
+ *
+ * Usage:
+ * <OptimizedImage
+ *   src="/assets/images/dental360-dashboard.png"
+ *   alt="Dental360 Dashboard"
+ *   width={1200}
+ *   height={900}
+ *   class="w-full h-full"
+ *   loading="lazy"
+ * />
+ */
+
+interface Props {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+  sizes?: string;
+  quality?: number;
+}
+
+const {
+  src,
+  alt,
+  width,
+  height,
+  class: className = '',
+  loading = 'lazy',
+  sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw',
+  quality = 85
+} = Astro.props;
+
+// Determine file extension
+const originalExtension = src.split('.').pop()?.toLowerCase() || '';
+const basePath = src.replace(/\.[^.]+$/, '');
+
+// Generate WebP path
+const webpSrc = `${basePath}.webp`;
+
+// Generate AVIF path (optional - uncomment if needed)
+// const avifSrc = `${basePath}.avif`;
+
+// Check if files exist (for build time)
+const fs = await import('fs/promises');
+const path = await import('path');
+
+const publicDir = path.resolve(process.cwd(), 'public');
+const originalPath = path.join(publicDir, src);
+const webpPath = path.join(publicDir, webpSrc);
+
+// Check if WebP exists
+let webpExists = false;
+try {
+  await fs.access(webpPath);
+  webpExists = true;
+} catch {
+  webpExists = false;
+}
+
+// If WebP doesn't exist, create it on the fly (optional)
+// This is useful for development
+if (!webpExists && import.meta.env.DEV) {
+  console.warn(`⚠️ WebP version not found for ${src}`);
+  console.warn(`💡 Run 'npm run optimize:images' to generate optimized images`);
+}
+---
+
+<picture class={className}>
+  <!-- WebP source (modern format) -->
+  {webpExists && (
+    <source
+      srcset={webpSrc}
+      type="image/webp"
+      sizes={sizes}
+    />
+  )}
+
+  <!-- Fallback to original format -->
+  <img
+    src={src}
+    alt={alt}
+    {width}
+    {height}
+    loading={loading}
+    decoding="async"
+    class="product-img"
+    onload={(event) => {
+      const target = event.target as HTMLImageElement;
+      target.classList.add('loaded');
+      // Dispatch custom event for skeleton loading
+      target.dispatchEvent(new CustomEvent('imageloaded', { bubbles: true }));
+      console.log('Image loaded successfully:', src);
+    }}
+    onerror={(event) => {
+      const target = event.target as HTMLImageElement;
+      console.error('Image failed to load:', src);
+      // Try to load the original src as fallback
+      if (!webpExists) {
+        console.warn('WebP not available, using original:', src);
+      }
+    }}
+  />
+</picture>
+
+<style>
+  picture {
+    display: contents;
+  }
+
+  picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+</style>
