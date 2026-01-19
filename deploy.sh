@@ -18,7 +18,8 @@ fi
 cd "$SCRIPT_DIR" || exit 1
 
 echo "📥 Pulling latest code from GitHub (as $DEPLOY_USER)..."
-sudo -u "$DEPLOY_USER" git stash || true  # Stash local changes if any
+sudo -u "$DEPLOY_USER" git fetch origin
+sudo -u "$DEPLOY_USER" git reset --hard origin/"$DEPLOY_BRANCH"
 sudo -u "$DEPLOY_USER" git pull origin "$DEPLOY_BRANCH"
 
 echo "📦 Installing dependencies (as $DEPLOY_USER)..."
@@ -27,5 +28,11 @@ sudo -u "$DEPLOY_USER" npm install
 echo "🔨 Building Astro site (as $DEPLOY_USER)..."
 sudo -u "$DEPLOY_USER" npm run build
 
-echo "📁 Build complete - files ready in dist/ directory"
+echo "🔒 Fixing permissions..."
+sudo chown -R www-data:www-data /home/digital360/web/digital360.id/public_html/dist
+sudo find /home/digital360/web/digital360.id/public_html/dist -type d -exec chmod 755 {} \;
+sudo find /home/digital360/web/digital360.id/public_html/dist -type f -exec chmod 644 {} \;
+
+echo "✅ Build complete - files ready in dist/ directory"
 echo "📍 Repository location: $(pwd)"
+echo "🌐 Website: https://digital360.id"
