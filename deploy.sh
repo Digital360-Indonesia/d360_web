@@ -23,6 +23,11 @@ sudo -u "$DEPLOY_USER" git pull origin "$DEPLOY_BRANCH"
 echo "📦 Installing dependencies (as $DEPLOY_USER)..."
 sudo -u "$DEPLOY_USER" npm install
 
+echo "🧹 Cleaning dist folder before build..."
+if [ -d "/home/digital360/web/digital360.id/public_html/dist" ]; then
+    sudo rm -rf /home/digital360/web/digital360.id/public_html/dist
+fi
+
 echo "🔨 Building Astro site (as $DEPLOY_USER)..."
 sudo -u "$DEPLOY_USER" npm run build
 
