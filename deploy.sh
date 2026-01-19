@@ -18,8 +18,6 @@ fi
 cd "$SCRIPT_DIR" || exit 1
 
 echo "📥 Pulling latest code from GitHub (as $DEPLOY_USER)..."
-sudo -u "$DEPLOY_USER" git fetch origin
-sudo -u "$DEPLOY_USER" git reset --hard origin/"$DEPLOY_BRANCH"
 sudo -u "$DEPLOY_USER" git pull origin "$DEPLOY_BRANCH"
 
 echo "📦 Installing dependencies (as $DEPLOY_USER)..."
