@@ -24,17 +24,14 @@ echo "📦 Installing dependencies (as $DEPLOY_USER)..."
 sudo -u "$DEPLOY_USER" npm install
 
 echo "🧹 Cleaning dist folder before build..."
-if [ -d "/home/digital360/web/digital360.id/public_html/dist" ]; then
-    sudo rm -rf /home/digital360/web/digital360.id/public_html/dist
-fi
+sudo -u "$DEPLOY_USER" rm -rf dist
 
 echo "🔨 Building Astro site (as $DEPLOY_USER)..."
 sudo -u "$DEPLOY_USER" npm run build
 
-echo "🔒 Fixing permissions..."
-sudo chown -R www-data:www-data /home/digital360/web/digital360.id/public_html/dist
-sudo find /home/digital360/web/digital360.id/public_html/dist -type d -exec chmod 755 {} \;
-sudo find /home/digital360/web/digital360.id/public_html/dist -type f -exec chmod 644 {} \;
+echo "🔒 Fixing permissions for nginx..."
+chmod -R 755 dist
+find dist -type f -exec chmod 644 {} \;
 
 echo "✅ Build complete - files ready in dist/ directory"
 echo "📍 Repository location: $(pwd)"
