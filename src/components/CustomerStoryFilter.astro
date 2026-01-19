@@ -6,8 +6,8 @@
   <div class="flex flex-col gap-6">
     <!-- Filter Title -->
     <div>
-      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Browse customer stories</h2>
-      <p class="text-gray-600">Filter by industry to find stories relevant to your business</p>
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2" data-lang-en="Browse customer stories" data-lang-id="Jelajahi kisah pelanggan">Browse customer stories</h2>
+      <p class="text-gray-600" data-lang-en="Filter by industry to find stories relevant to your business" data-lang-id="Filter berdasarkan industri untuk menemukan kisah yang relevan dengan bisnis Anda">Filter by industry to find stories relevant to your business</p>
     </div>
 
     <!-- Filter Buttons -->
@@ -15,53 +15,105 @@
       <button
         data-filter="all"
         class="filter-btn filter-active px-5 py-2.5 rounded-full font-semibold transition-all duration-300 bg-primary-800 text-white hover:bg-primary-900"
+        data-lang-en="All Stories" data-lang-id="Semua Kisah"
       >
-        All Stories
+        <span class="filter-text">All Stories</span>
       </button>
       <button
         data-filter="dental"
         class="filter-btn px-5 py-2.5 rounded-full font-semibold transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800"
+        data-lang-en="Dental" data-lang-id="Dental"
       >
-        Dental
+        <span class="filter-text">Dental</span>
       </button>
       <button
         data-filter="pharmacy"
         class="filter-btn px-5 py-2.5 rounded-full font-semibold transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800"
+        data-lang-en="Pharmacy" data-lang-id="Farmasi"
       >
-        Pharmacy
+        <span class="filter-text">Pharmacy</span>
       </button>
       <button
         data-filter="manufacture"
         class="filter-btn px-5 py-2.5 rounded-full font-semibold transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800"
+        data-lang-en="Manufacturing" data-lang-id="Manufaktur"
       >
-        Manufacturing
+        <span class="filter-text">Manufacturing</span>
       </button>
       <button
         data-filter="outsourcing"
         class="filter-btn px-5 py-2.5 rounded-full font-semibold transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800"
+        data-lang-en="Outsourcing" data-lang-id="Outsourcing"
       >
-        Outsourcing
+        <span class="filter-text">Outsourcing</span>
       </button>
       <button
         data-filter="logistic"
         class="filter-btn px-5 py-2.5 rounded-full font-semibold transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800"
+        data-lang-en="Logistics" data-lang-id="Logistik"
       >
-        Logistics
+        <span class="filter-text">Logistics</span>
       </button>
       <button
         data-filter="others"
         class="filter-btn px-5 py-2.5 rounded-full font-semibold transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-800"
+        data-lang-en="Others" data-lang-id="Lainnya"
       >
-        Others
+        <span class="filter-text">Others</span>
       </button>
     </div>
 
     <!-- Results Counter -->
-    <div class="text-sm text-gray-600">
+    <div class="text-sm text-gray-600" data-lang-en="Showing <span id='results-count' class='font-semibold'>0</span> stories" data-lang-id="Menampilkan <span id='results-count' class='font-semibold'>0</span> kisah">
       Showing <span id="results-count" class="font-semibold">0</span> stories
     </div>
   </div>
 </div>
+
+<script>
+  // Language switching functionality for filter
+  function setFilterLanguage(lang) {
+    const langKey = lang === 'EN' ? 'en' : 'id';
+
+    // Update all elements with data-lang attributes
+    document.querySelectorAll('[data-lang-en]').forEach(element => {
+      const translation = element.getAttribute(`data-lang-${langKey}`);
+      if (translation) {
+        // Check if it's a filter button with span inside
+        const spanElement = element.querySelector('.filter-text');
+        if (spanElement) {
+          spanElement.textContent = translation;
+        } else {
+          // Check if it contains HTML (for counter)
+          if (translation.includes('<span')) {
+            element.innerHTML = translation;
+          } else {
+            element.textContent = translation;
+          }
+        }
+      }
+    });
+  }
+
+  // Listen for language change events from Header
+  window.addEventListener('languageChanged', (event) => {
+    setFilterLanguage(event.detail.language);
+  });
+
+  // Set initial language on page load
+  document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('language') || 'EN';
+    setFilterLanguage(savedLang);
+  });
+
+  // Re-initialize after view transition
+  document.addEventListener('astro:after-swap', () => {
+    setTimeout(() => {
+      const savedLang = localStorage.getItem('language') || 'EN';
+      setFilterLanguage(savedLang);
+    }, 50);
+  });
+</script>
 
 <script is:inline>
   // Filter functionality

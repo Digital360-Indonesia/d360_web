@@ -30,17 +30,18 @@ const sortedStories = allStories.sort((a, b) => {
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <!-- Left Column - Text Content -->
           <div class="max-w-xl">
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight" data-lang-en="Inspiring stories, remarkable productivity" data-lang-id="Kisah inspiratif, produktivitas luar biasa">
               Inspiring stories, remarkable productivity
             </h1>
-            <p class="text-base md:text-lg text-gray-700 mb-6 leading-relaxed">
+            <p class="text-base md:text-lg text-gray-700 mb-6 leading-relaxed" data-lang-en="Efficiency abounds in these success stories of teams, companies and industries shaping the future of work. They do it all with the help of Digital360." data-lang-id="Efisiensi melimpah dalam kisah sukses tim, perusahaan, dan industri yang membentuk masa depan pekerjaan. Semua achieved dengan bantuan Digital360.">
               Efficiency abounds in these success stories of teams, companies and industries shaping the future of work. They do it all with the help of Digital360.
             </p>
             <a
               href="#stories"
               class="inline-flex items-center text-primary-800 font-medium hover:underline"
+              data-lang-en="See all stories" data-lang-id="Lihat semua kisah"
             >
-              See all stories
+              <span class="cta-text">See all stories</span>
               <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
@@ -61,12 +62,13 @@ const sortedStories = allStories.sort((a, b) => {
             <!-- Featured Story Card - Bottom Right (Outside container) -->
             <div class="absolute -bottom-4 -right-4 bg-white p-4 shadow-xl max-w-xs rounded-lg">
               <h3 class="font-bold text-gray-900 mb-1 text-base uppercase tracking-wide">{sortedStories[0].data.company}</h3>
-              <p class="text-gray-700 mb-2 text-sm">{sortedStories[0].data.title}</p>
+              <p class="text-gray-700 mb-2 text-sm featured-story-title" data-lang-en={sortedStories[0].data.title} data-lang-id={sortedStories[0].data.titleId || sortedStories[0].data.title}>{sortedStories[0].data.title}</p>
               <a
                 href={`/customer-stories/${sortedStories[0].slug}`}
-                class="inline-flex items-center text-primary-800 font-semibold text-sm hover:underline"
+                class="inline-flex items-center text-primary-800 font-semibold text-sm hover:underline featured-story-link"
+                data-lang-en="Read story" data-lang-id="Baca kisah"
               >
-                Read story
+                <span class="read-story-text">Read story</span>
                 <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                 </svg>
@@ -83,19 +85,19 @@ const sortedStories = allStories.sort((a, b) => {
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 max-w-6xl mx-auto">
           <div class="text-center">
             <div class="text-5xl md:text-6xl font-bold text-primary-800 mb-3">50+</div>
-            <div class="text-gray-600 font-medium text-sm md:text-base">Happy Clients</div>
+            <div class="text-gray-600 font-medium text-sm md:text-base" data-lang-en="Happy Clients" data-lang-id="Klien Puas">Happy Clients</div>
           </div>
           <div class="text-center">
             <div class="text-5xl md:text-6xl font-bold text-primary-800 mb-3">85%</div>
-            <div class="text-gray-600 font-medium text-sm md:text-base">Improved Efficiency</div>
+            <div class="text-gray-600 font-medium text-sm md:text-base" data-lang-en="Improved Efficiency" data-lang-id="Efisiensi Meningkat">Improved Efficiency</div>
           </div>
           <div class="text-center">
             <div class="text-5xl md:text-6xl font-bold text-primary-800 mb-3">95%</div>
-            <div class="text-gray-600 font-medium text-sm md:text-base">Client Satisfaction</div>
+            <div class="text-gray-600 font-medium text-sm md:text-base" data-lang-en="Client Satisfaction" data-lang-id="Kepuasan Klien">Client Satisfaction</div>
           </div>
           <div class="text-center">
             <div class="text-5xl md:text-6xl font-bold text-primary-800 mb-3">24/7</div>
-            <div class="text-gray-600 font-medium text-sm md:text-base">Support Available</div>
+            <div class="text-gray-600 font-medium text-sm md:text-base" data-lang-en="Support Available" data-lang-id="Support Tersedia">Support Available</div>
           </div>
         </div>
       </div>
@@ -116,7 +118,9 @@ const sortedStories = allStories.sort((a, b) => {
           <CustomerStoryCard
             company={story.data.company}
             title={story.data.title}
+            titleId={story.data.titleId}
             excerpt={story.data.excerpt}
+            excerptId={story.data.excerptId}
             industry={story.data.industry}
             logo={story.data.logo}
             coverImage={story.data.coverImage}
@@ -131,13 +135,14 @@ const sortedStories = allStories.sort((a, b) => {
         <svg class="w-24 h-24 mx-auto text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
         </svg>
-        <h3 class="text-xl font-semibold text-gray-700 mb-2">No stories found</h3>
-        <p class="text-gray-500">We're having a bit of trouble finding a story in that category.</p>
+        <h3 class="text-xl font-semibold text-gray-700 mb-2" data-lang-en="No stories found" data-lang-id="Tidak ada kisah ditemukan">No stories found</h3>
+        <p class="text-gray-500" data-lang-en="We're having a bit of trouble finding a story in that category." data-lang-id="Kami mengalami sedikit kesulitan menemukan kisah di kategori tersebut.">We're having a bit of trouble finding a story in that category.</p>
         <button
           onclick="document.querySelector('[data-filter=\"all\"]').click()"
           class="mt-4 px-6 py-2 bg-primary-800 text-white rounded-full font-semibold hover:bg-primary-900 transition-colors"
+          data-lang-en="View all stories" data-lang-id="Lihat semua kisah"
         >
-          View all stories
+          <span class="view-all-text">View all stories</span>
         </button>
       </div>
     </section>
@@ -145,22 +150,25 @@ const sortedStories = allStories.sort((a, b) => {
     <!-- CTA Section -->
     <section class="py-20 bg-gradient-to-br from-primary-800 to-primary-900 text-white">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Write Your Success Story?</h2>
-        <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6" data-lang-en="Ready to Write Your Success Story?" data-lang-id="Siap Menulis Kisah Sukses Anda?">Ready to Write Your Success Story?</h2>
+        <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto" data-lang-en="Join hundreds of businesses that have transformed their operations with Digital360" data-lang-id="Bergabunglah dengan ratusan bisnis yang telah mengubah operasional mereka dengan Digital360">
           Join hundreds of businesses that have transformed their operations with Digital360
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="/contact"
+            href="https://wa.me/6285156858298"
+            target="_blank"
             class="px-8 py-4 bg-white text-primary-800 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+            data-lang-en="Get Started Today" data-lang-id="Mulai Sekarang"
           >
-            Get Started Today
+            <span class="get-started-text">Get Started Today</span>
           </a>
           <a
-            href="/products"
+            href="/"
             class="px-8 py-4 bg-primary-700 text-white rounded-lg font-semibold hover:bg-primary-600 transition-colors border-2 border-white/20"
+            data-lang-en="Explore Our Solutions" data-lang-id="Jelajahi Solusi Kami"
           >
-            Explore Our Solutions
+            <span class="explore-text">Explore Our Solutions</span>
           </a>
         </div>
       </div>
@@ -191,3 +199,51 @@ const sortedStories = allStories.sort((a, b) => {
     }
   }
 </style>
+
+<script>
+  // Language switching functionality
+  function setCustomerStoriesLanguage(lang) {
+    const langKey = lang === 'EN' ? 'en' : 'id';
+
+    // Update all elements with data-lang attributes
+    document.querySelectorAll('[data-lang-en]').forEach(element => {
+      const translation = element.getAttribute(`data-lang-${langKey}`);
+      if (translation) {
+        // Check if element has a span child with specific class
+        const spanElement = element.querySelector('.cta-text, .read-story-text, .view-all-text, .get-started-text, .explore-text');
+        if (spanElement) {
+          spanElement.textContent = translation;
+        } else if (element.classList.contains('featured-story-title') || element.classList.contains('featured-story-link')) {
+          // Special handling for featured story card
+          const textSpan = element.querySelector('.read-story-text');
+          if (textSpan) {
+            textSpan.textContent = translation;
+          } else {
+            element.textContent = translation;
+          }
+        } else {
+          element.textContent = translation;
+        }
+      }
+    });
+  }
+
+  // Listen for language change events from Header
+  window.addEventListener('languageChanged', (event) => {
+    setCustomerStoriesLanguage(event.detail.language);
+  });
+
+  // Set initial language on page load
+  document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('language') || 'EN';
+    setCustomerStoriesLanguage(savedLang);
+  });
+
+  // Re-initialize after view transition
+  document.addEventListener('astro:after-swap', () => {
+    setTimeout(() => {
+      const savedLang = localStorage.getItem('language') || 'EN';
+      setCustomerStoriesLanguage(savedLang);
+    }, 50);
+  });
+</script>

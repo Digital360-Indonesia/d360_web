@@ -2,7 +2,9 @@
 interface Props {
   company: string;
   title: string;
+  titleId?: string;
   excerpt: string;
+  excerptId?: string;
   industry: string;
   logo: string;
   coverImage: string;
@@ -10,15 +12,15 @@ interface Props {
   dataIndustry?: string;
 }
 
-const { company, title, excerpt, industry, logo, coverImage, slug, dataIndustry } = Astro.props;
+const { company, title, titleId, excerpt, excerptId, industry, logo, coverImage, slug, dataIndustry } = Astro.props;
 
-const industryLabels: Record<string, string> = {
-  dental: 'Dental',
-  pharmacy: 'Pharmacy',
-  manufacture: 'Manufacturing',
-  outsourcing: 'Outsourcing',
-  logistic: 'Logistics',
-  others: 'Others'
+const industryLabels: Record<string, { en: string; id: string }> = {
+  dental: { en: 'Dental', id: 'Dental' },
+  pharmacy: { en: 'Pharmacy', id: 'Farmasi' },
+  manufacture: { en: 'Manufacturing', id: 'Manufaktur' },
+  outsourcing: { en: 'Outsourcing', id: 'Outsourcing' },
+  logistic: { en: 'Logistics', id: 'Logistik' },
+  others: { en: 'Others', id: 'Lainnya' }
 };
 ---
 
@@ -56,27 +58,28 @@ const industryLabels: Record<string, string> = {
     <div class="text-white">
       <!-- Industry Badge -->
       <div class="mb-2 sm:mb-3">
-        <span class="inline-block bg-white/90 backdrop-blur-sm text-primary-800 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-semibold">
-          {industryLabels[industry] || industry}
+        <span class="inline-block bg-white/90 backdrop-blur-sm text-primary-800 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-semibold industry-label" data-industry={industry}>
+          {industryLabels[industry]?.en || industry}
         </span>
       </div>
 
       <!-- Title -->
-      <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 line-clamp-2 drop-shadow-lg leading-tight">
+      <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 line-clamp-2 drop-shadow-lg leading-tight story-title" data-lang-en={title} data-lang-id={titleId || title}>
         {title}
       </h3>
 
       <!-- Excerpt -->
-      <p class="text-sm sm:text-base text-white/90 mb-3 sm:mb-4 line-clamp-2 drop-shadow-md leading-relaxed">
+      <p class="text-sm sm:text-base text-white/90 mb-3 sm:mb-4 line-clamp-2 drop-shadow-md leading-relaxed story-excerpt" data-lang-en={excerpt} data-lang-id={excerptId || excerpt}>
         {excerpt}
       </p>
 
       <!-- Read Story Link -->
       <a
         href={`/customer-stories/${slug}`}
-        class="inline-flex items-center text-sm sm:text-base text-white font-semibold hover:text-primary-200 transition-colors group-hover:translate-x-1 transform duration-300"
+        class="inline-flex items-center text-sm sm:text-base text-white font-semibold hover:text-primary-200 transition-colors group-hover:translate-x-1 transform duration-300 story-link"
+        data-lang-en="Read story" data-lang-id="Baca kisah"
       >
-        Read story
+        <span class="story-link-text">Read story</span>
         <svg class="w-4 h-4 sm:w-5 sm:h-5 ml-1.5 sm:ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
         </svg>
@@ -93,3 +96,72 @@ const industryLabels: Record<string, string> = {
     overflow: hidden;
   }
 </style>
+
+<script>
+  // Industry labels for both languages
+  const industryLabels = {
+    dental: { en: 'Dental', id: 'Dental' },
+    pharmacy: { en: 'Pharmacy', id: 'Farmasi' },
+    manufacture: { en: 'Manufacturing', id: 'Manufaktur' },
+    outsourcing: { en: 'Outsourcing', id: 'Outsourcing' },
+    logistic: { en: 'Logistics', id: 'Logistik' },
+    others: { en: 'Others', id: 'Lainnya' }
+  };
+
+  // Update customer story card language
+  function updateCustomerStoryCardLanguage(lang) {
+    const langKey = lang === 'EN' ? 'en' : 'id';
+
+    // Update industry labels
+    document.querySelectorAll('.industry-label').forEach(label => {
+      const industry = label.getAttribute('data-industry');
+      if (industry && industryLabels[industry]) {
+        label.textContent = industryLabels[industry][langKey];
+      }
+    });
+
+    // Update story titles
+    document.querySelectorAll('.story-title').forEach(title => {
+      const translation = title.getAttribute(`data-lang-${langKey}`);
+      if (translation) {
+        title.textContent = translation;
+      }
+    });
+
+    // Update story excerpts
+    document.querySelectorAll('.story-excerpt').forEach(excerpt => {
+      const translation = excerpt.getAttribute(`data-lang-${langKey}`);
+      if (translation) {
+        excerpt.textContent = translation;
+      }
+    });
+
+    // Update "Read story" links
+    document.querySelectorAll('.story-link').forEach(link => {
+      const textSpan = link.querySelector('.story-link-text');
+      const translation = link.getAttribute(`data-lang-${langKey}`);
+      if (textSpan && translation) {
+        textSpan.textContent = translation;
+      }
+    });
+  }
+
+  // Listen for language change events
+  window.addEventListener('languageChanged', (event) => {
+    updateCustomerStoryCardLanguage(event.detail.language);
+  });
+
+  // Set initial language on page load
+  document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('language') || 'EN';
+    updateCustomerStoryCardLanguage(savedLang);
+  });
+
+  // Re-initialize after view transition
+  document.addEventListener('astro:after-swap', () => {
+    setTimeout(() => {
+      const savedLang = localStorage.getItem('language') || 'EN';
+      updateCustomerStoryCardLanguage(savedLang);
+    }, 50);
+  });
+</script>
