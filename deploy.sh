@@ -26,6 +26,10 @@ sudo -u "$DEPLOY_USER" npm install
 echo "🔨 Building Astro site (as $DEPLOY_USER)..."
 sudo -u "$DEPLOY_USER" npm run build
 
+echo "🔒 Fixing permissions..."
+sudo chown -R www-data:www-data /home/digital360/web/digital360.id/public_html/dist
+sudo find /home/digital360/web/digital360.id/public_html/dist -type d -exec chmod 755 {} \;
+sudo find /home/digital360/web/digital360.id/public_html/dist -type f -exec chmod 644 {} \;
 
 echo "✅ Build complete - files ready in dist/ directory"
 echo "📍 Repository location: $(pwd)"
