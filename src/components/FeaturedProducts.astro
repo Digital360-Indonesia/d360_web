@@ -23,7 +23,9 @@
           <div class="space-y-4 md:space-y-4 lg:space-y-5 w-full max-w-2xl mx-auto text-center lg:text-left lg:mx-0 px-2">
             <!-- Product Logo -->
             <div class="flex justify-center lg:justify-start">
-              <img src="/assets/images/satu360dental-logo.png" alt="Dental360 Logo" width="192" height="64" class="w-32 h-10 sm:w-40 sm:h-12 md:w-48 md:h-14 lg:w-48 lg:h-16 object-contain">
+              <div class="logo-skeleton-wrapper">
+                <img src="/assets/images/satu360dental-logo.png" alt="Dental360 Logo" width="192" height="64" class="w-32 h-10 sm:w-40 sm:h-12 md:w-48 md:h-14 lg:w-48 lg:h-16 object-contain" onload="this.parentElement.classList.add('loaded')">
+              </div>
             </div>
 
             <!-- Product Title -->
@@ -50,8 +52,8 @@
             <!-- Customer Testimonial - Compact on mobile -->
             <div class="rounded-lg border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow overflow-hidden max-w-md mx-auto lg:mx-0 lg:max-w-none">
               <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 p-4">
-                <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0">
-                  <img src="/assets/images/bfresh-dental-care-logo.png" alt="Bfresh Dental Care" class="w-full h-full object-contain">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 testimonial-logo-skeleton">
+                  <img src="/assets/images/bfresh-dental-care-logo.png" alt="Bfresh Dental Care" class="w-full h-full object-contain" onload="this.parentElement.classList.add('loaded')">
                 </div>
                 <div class="flex-1 min-w-0 text-center sm:text-left">
                   <p class="text-gray-700 text-sm leading-relaxed" id="dental-proof">
@@ -69,16 +71,16 @@
         <!-- Mobile Product Image - Only visible on mobile/tablet -->
         <div class="lg:hidden my-6">
           <div class="relative h-48 sm:h-56 md:h-64 flex items-center justify-center">
-            <!-- Decorative Background -->
-            <div class="absolute inset-0 flex items-center justify-center">
-              <div class="w-[85%] h-[85%] bg-gradient-to-br from-green-100 to-green-200 rounded-lg"></div>
+            <div class="relative w-full h-full flex items-center justify-center">
+              <!-- Loading Skeleton -->
+              <div class="skeleton-placeholder absolute inset-0 rounded-lg z-0"></div>
+              <img
+                src="/assets/images/dental360-dashboard.png"
+                alt="Dental360 Interface"
+                class="product-img w-full h-full object-contain relative z-10"
+                loading="lazy"
+              />
             </div>
-            <!-- Image -->
-            <img
-              src="/assets/images/dental360-dashboard.png"
-              alt="Dental360 Interface"
-              class="relative w-[90%] h-[90%] object-contain drop-shadow-xl"
-            />
           </div>
         </div>
 
@@ -90,7 +92,9 @@
           <div class="space-y-4 md:space-y-4 lg:space-y-5 w-full max-w-2xl mx-auto text-center lg:text-left lg:mx-0 px-2">
             <!-- Product Logo -->
             <div class="flex justify-center lg:justify-start">
-              <img src="/assets/images/satu360manufacture-logo.png" alt="Manufacture360 Logo" width="224" height="64" class="w-36 h-10 sm:w-44 sm:h-12 md:w-52 md:h-14 lg:w-52 lg:h-18 object-contain">
+              <div class="logo-skeleton-wrapper">
+                <img src="/assets/images/satu360manufacture-logo.png" alt="Manufacture360 Logo" width="224" height="64" class="w-36 h-10 sm:w-44 sm:h-12 md:w-52 md:h-14 lg:w-52 lg:h-18 object-contain" onload="this.parentElement.classList.add('loaded')">
+              </div>
             </div>
 
             <!-- Product Title -->
@@ -117,8 +121,8 @@
             <!-- Customer Testimonial - Compact on mobile -->
             <div class="rounded-lg border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow overflow-hidden max-w-md mx-auto lg:mx-0 lg:max-w-none">
               <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 p-4">
-                <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0">
-                  <img src="/assets/images/vido-garment-logo.png" alt="Vido Garment" class="w-full h-full object-contain">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 testimonial-logo-skeleton">
+                  <img src="/assets/images/vido-garment-logo.png" alt="Vido Garment" class="w-full h-full object-contain" onload="this.parentElement.classList.add('loaded')">
                 </div>
                 <div class="flex-1 min-w-0 text-center sm:text-left">
                   <p class="text-gray-700 text-sm leading-relaxed" id="business-proof">
@@ -136,16 +140,16 @@
         <!-- Mobile Product Image - Only visible on mobile/tablet -->
         <div class="lg:hidden my-6">
           <div class="relative h-48 sm:h-56 md:h-64 flex items-center justify-center">
-            <!-- Decorative Background -->
-            <div class="absolute inset-0 flex items-center justify-center">
-              <div class="w-[85%] h-[85%] bg-gradient-to-br from-purple-100 to-purple-200 rounded-lg"></div>
+            <div class="relative w-full h-full flex items-center justify-center">
+              <!-- Loading Skeleton -->
+              <div class="skeleton-placeholder absolute inset-0 rounded-lg z-0"></div>
+              <img
+                src="/assets/images/business360-dashboard.png"
+                alt="Manufacture360 Interface"
+                class="product-img w-full h-full object-contain relative z-10"
+                loading="lazy"
+              />
             </div>
-            <!-- Image -->
-            <img
-              src="/assets/images/business360-dashboard.png"
-              alt="Manufacture360 Interface"
-              class="relative w-[90%] h-[90%] object-contain drop-shadow-xl"
-            />
           </div>
         </div>
 
@@ -157,7 +161,9 @@
           <div class="space-y-4 md:space-y-4 lg:space-y-5 w-full max-w-2xl mx-auto text-center lg:text-left lg:mx-0 px-2">
             <!-- Product Logo -->
             <div class="flex justify-center lg:justify-start">
-              <img src="/assets/images/web360-logo.png" alt="Website360 Logo" width="224" height="64" class="w-28 h-10 sm:w-32 sm:h-12 md:w-40 md:h-14 object-contain">
+              <div class="logo-skeleton-wrapper">
+                <img src="/assets/images/web360-logo.png" alt="Website360 Logo" width="224" height="64" class="w-28 h-10 sm:w-32 sm:h-12 md:w-40 md:h-14 object-contain" onload="this.parentElement.classList.add('loaded')">
+              </div>
             </div>
 
             <!-- Product Title -->
@@ -184,8 +190,8 @@
             <!-- Customer Testimonial - Compact on mobile -->
             <div class="rounded-lg border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow overflow-hidden max-w-md mx-auto lg:mx-0 lg:max-w-none">
               <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 p-4">
-                <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0">
-                  <img src="/assets/images/pln-uid-jatim-logo.png" alt="PLN UID Jawa Timur" class="w-full h-full object-contain">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 testimonial-logo-skeleton">
+                  <img src="/assets/images/pln-uid-jatim-logo.png" alt="PLN UID Jawa Timur" class="w-full h-full object-contain" onload="this.parentElement.classList.add('loaded')">
                 </div>
                 <div class="flex-1 min-w-0 text-center sm:text-left">
                   <p class="text-gray-700 text-sm leading-relaxed" id="website-proof">
@@ -203,16 +209,16 @@
         <!-- Mobile Product Image - Only visible on mobile/tablet -->
         <div class="lg:hidden my-6">
           <div class="relative h-48 sm:h-56 md:h-64 flex items-center justify-center">
-            <!-- Decorative Background -->
-            <div class="absolute inset-0 flex items-center justify-center">
-              <div class="w-[85%] h-[85%] bg-gradient-to-br from-orange-100 to-orange-200 rounded-lg"></div>
+            <div class="relative w-full h-full flex items-center justify-center">
+              <!-- Loading Skeleton -->
+              <div class="skeleton-placeholder absolute inset-0 rounded-lg z-0"></div>
+              <img
+                src="/assets/images/website360-builder.png"
+                alt="Website360 Interface"
+                class="product-img w-full h-full object-contain relative z-10"
+                loading="lazy"
+              />
             </div>
-            <!-- Image -->
-            <img
-              src="/assets/images/website360-builder.png"
-              alt="Website360 Interface"
-              class="relative w-[90%] h-[90%] object-contain drop-shadow-xl"
-            />
           </div>
         </div>
 
@@ -221,7 +227,9 @@
           <div class="space-y-3 md:space-y-3 lg:space-y-4 w-full max-w-2xl mx-auto text-center lg:text-left lg:mx-0 px-2">
             <!-- Product Logo -->
             <div class="flex justify-center lg:justify-start">
-              <img src="/assets/images/tryon360-logo.png" alt="TryOn360 Logo" width="192" height="64" class="w-24 h-9 sm:w-28 sm:h-10 md:w-32 md:h-12 object-contain">
+              <div class="logo-skeleton-wrapper">
+                <img src="/assets/images/tryon360-logo.png" alt="TryOn360 Logo" width="192" height="64" class="w-24 h-9 sm:w-28 sm:h-10 md:w-32 md:h-12 object-contain" onload="this.parentElement.classList.add('loaded')">
+              </div>
             </div>
 
             <!-- Product Title -->
@@ -249,16 +257,16 @@
         <!-- Mobile Product Image - Only visible on mobile/tablet -->
         <div class="lg:hidden my-3">
           <div class="relative h-48 sm:h-56 md:h-64 flex items-center justify-center">
-            <!-- Decorative Background -->
-            <div class="absolute inset-0 flex items-center justify-center">
-              <div class="w-[85%] h-[85%] bg-gradient-to-br from-cyan-100 to-blue-200 rounded-lg"></div>
+            <div class="relative w-full h-full flex items-center justify-center">
+              <!-- Loading Skeleton -->
+              <div class="skeleton-placeholder absolute inset-0 rounded-lg z-0"></div>
+              <img
+                src="/assets/images/ai-virtual-tryon.png"
+                alt="TryOn360 Interface"
+                class="product-img w-full h-full object-contain relative z-10"
+                loading="lazy"
+              />
             </div>
-            <!-- Image -->
-            <img
-              src="/assets/images/ai-virtual-tryon.png"
-              alt="TryOn360 Interface"
-              class="relative w-[90%] h-[90%] object-contain drop-shadow-xl"
-            />
           </div>
         </div>
       </div>
@@ -269,26 +277,18 @@
           <!-- Product 1 Image -->
           <div class="product-image absolute inset-0 transition-all duration-700" data-product="0">
             <div class="relative h-full flex items-center justify-center">
-              <!-- Green Decorative Background - Smaller, positioned behind -->
-              <div class="absolute inset-0 flex items-center justify-center">
-                <div class="w-[75%] h-[75%] bg-gradient-to-br from-green-400 to-green-600" style="clip-path: polygon(0% 8%, 100% 0%, 100% 85%, 92% 100%, 0% 92%);"></div>
-              </div>
-
-              <!-- Main Image Container - Smaller -->
-              <div class="relative w-[95%] h-[95%] flex items-center justify-center overflow-hidden">
+              <!-- Main Image Container -->
+              <div class="relative w-full h-full flex items-center justify-center">
                 <!-- Loading Skeleton -->
-                <div class="image-skeleton absolute inset-0 bg-gray-200 animate-pulse rounded-lg flex items-center justify-center z-10">
-                  <div class="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
-                </div>
+                <div class="skeleton-placeholder absolute inset-0 rounded-lg z-0"></div>
                 <img
                   src="/assets/images/dental360-dashboard.png"
                   alt="Dental360 Interface"
                   width="1200"
                   height="900"
                   loading="lazy"
-                  class="w-full h-full object-contain drop-shadow-2xl opacity-0 transition-opacity duration-500 relative z-20"
-                  onload="this.style.opacity='1'; this.previousElementSibling.style.display='none';"
-                >
+                  class="product-img w-full h-full object-contain relative z-10"
+                  >
               </div>
             </div>
           </div>
@@ -296,26 +296,18 @@
           <!-- Product 2 Image -->
           <div class="product-image absolute inset-0 opacity-0 pointer-events-none transition-all duration-700" data-product="1">
             <div class="relative h-full flex items-center justify-center">
-              <!-- Purple Decorative Background - Smaller, positioned behind -->
-              <div class="absolute inset-0 flex items-center justify-center">
-                <div class="w-[75%] h-[75%] bg-gradient-to-br from-purple-400 to-purple-600" style="clip-path: polygon(5% 0%, 100% 3%, 95% 100%, 0% 88%, 0% 15%);"></div>
-              </div>
-
-              <!-- Main Image Container - Larger -->
-              <div class="relative w-[130%] h-[130%] flex items-center justify-center">
+              <!-- Main Image Container -->
+              <div class="relative w-full h-full flex items-center justify-center">
                 <!-- Loading Skeleton -->
-                <div class="image-skeleton absolute inset-0 bg-gray-200 animate-pulse rounded-lg flex items-center justify-center z-10">
-                  <div class="w-12 h-12 border-4 border-purple-600 border-t-transparent rounded-full animate-spin"></div>
-                </div>
+                <div class="skeleton-placeholder absolute inset-0 rounded-lg z-0"></div>
                 <img
                   src="/assets/images/business360-dashboard.png"
                   alt="Business360 Interface"
                   width="1200"
                   height="900"
                   loading="lazy"
-                  class="w-full h-full object-contain drop-shadow-2xl opacity-0 transition-opacity duration-500 relative z-20"
-                  onload="this.style.opacity='1'; this.previousElementSibling.style.display='none';"
-                >
+                  class="product-img w-full h-full object-contain relative z-10"
+                  >
               </div>
             </div>
           </div>
@@ -323,26 +315,18 @@
           <!-- Product 3 Image -->
           <div class="product-image absolute inset-0 opacity-0 pointer-events-none transition-all duration-700" data-product="2">
             <div class="relative h-full flex items-center justify-center">
-              <!-- Orange Decorative Background - Smaller, positioned behind -->
-              <div class="absolute inset-0 flex items-center justify-center">
-                <div class="w-[75%] h-[75%] bg-gradient-to-br from-orange-400 to-orange-600" style="clip-path: polygon(0% 5%, 95% 0%, 100% 90%, 8% 100%, 0% 80%);"></div>
-              </div>
-
-              <!-- Main Image Container - Larger -->
-              <div class="relative w-[130%] h-[130%] flex items-center justify-center">
+              <!-- Main Image Container -->
+              <div class="relative w-full h-full flex items-center justify-center">
                 <!-- Loading Skeleton -->
-                <div class="image-skeleton absolute inset-0 bg-gray-200 animate-pulse rounded-lg flex items-center justify-center z-10">
-                  <div class="w-12 h-12 border-4 border-orange-600 border-t-transparent rounded-full animate-spin"></div>
-                </div>
+                <div class="skeleton-placeholder absolute inset-0 rounded-lg z-0"></div>
                 <img
                   src="/assets/images/website360-builder.png"
                   alt="Website360 Interface"
                   width="1200"
                   height="900"
                   loading="lazy"
-                  class="w-full h-full object-contain drop-shadow-2xl opacity-0 transition-opacity duration-500 relative z-20"
-                  onload="this.style.opacity='1'; this.previousElementSibling.style.display='none';"
-                >
+                  class="product-img w-full h-full object-contain relative z-10"
+                  >
               </div>
             </div>
           </div>
@@ -350,26 +334,18 @@
           <!-- Product 4 Image - AI Tools -->
           <div class="product-image absolute inset-0 opacity-0 pointer-events-none transition-all duration-700" data-product="3">
             <div class="relative h-full flex items-center justify-center">
-              <!-- Cyan-Blue Decorative Background - Smaller, positioned behind -->
-              <div class="absolute inset-0 flex items-center justify-center">
-                <div class="w-[75%] h-[75%] bg-gradient-to-br from-cyan-400 to-blue-600" style="clip-path: polygon(8% 0%, 100% 5%, 100% 95%, 0% 85%, 0% 12%);"></div>
-              </div>
-
-              <!-- Main Image Container - Larger -->
-              <div class="relative w-[130%] h-[130%] flex items-center justify-center">
+              <!-- Main Image Container -->
+              <div class="relative w-full h-full flex items-center justify-center">
                 <!-- Loading Skeleton -->
-                <div class="image-skeleton absolute inset-0 bg-gray-200 animate-pulse rounded-lg flex items-center justify-center z-10">
-                  <div class="w-12 h-12 border-4 border-cyan-600 border-t-transparent rounded-full animate-spin"></div>
-                </div>
+                <div class="skeleton-placeholder absolute inset-0 rounded-lg z-0"></div>
                 <img
                   src="/assets/images/ai-virtual-tryon.png"
                   alt="AI Tools Garment Try On Interface"
                   width="1200"
                   height="900"
                   loading="lazy"
-                  class="w-full h-full object-contain drop-shadow-2xl opacity-0 transition-opacity duration-500 relative z-20"
-                  onload="this.style.opacity='1'; this.previousElementSibling.style.display='none';"
-                >
+                  class="product-img w-full h-full object-contain relative z-10"
+                  >
               </div>
             </div>
           </div>
@@ -727,4 +703,152 @@
       updateFeaturedContent(savedLang);
     }, 50);
   });
+
+  // Skeleton Loading Handler - Simple and Clean
+  function handleImageLoad(img) {
+    // Check if already processed to avoid duplicate handling
+    if (img.classList.contains('loaded')) {
+      return;
+    }
+
+    const skeleton = img.parentElement.querySelector('.skeleton-placeholder');
+    if (skeleton) {
+      // Mark image as loaded (triggers fade in)
+      img.classList.add('loaded');
+
+      // Hide skeleton after short delay
+      setTimeout(() => {
+        skeleton.classList.add('hidden');
+      }, 300);
+    }
+  }
+
+  // Attach load handlers when DOM is ready
+  document.addEventListener('DOMContentLoaded', () => {
+    const productImages = document.querySelectorAll('.product-img');
+    productImages.forEach(img => {
+      if (img.complete && img.naturalHeight !== 0) {
+        // Image already loaded
+        handleImageLoad(img);
+      } else {
+        // Wait for load event
+        img.addEventListener('load', () => handleImageLoad(img));
+        img.addEventListener('error', () => {
+          // On error, hide skeleton immediately
+          const skeleton = img.parentElement.querySelector('.skeleton-placeholder');
+          if (skeleton) skeleton.classList.add('hidden');
+        });
+      }
+    });
+  });
+
+  // Re-attach handlers after view transition
+  document.addEventListener('astro:after-swap', () => {
+    setTimeout(() => {
+      const productImages = document.querySelectorAll('.product-img');
+      productImages.forEach(img => {
+        if (img.complete && img.naturalHeight !== 0) {
+          handleImageLoad(img);
+        } else {
+          img.addEventListener('load', () => handleImageLoad(img));
+        }
+      });
+    }, 100);
+  });
 </script>
+
+<style>
+  /* Skeleton Placeholder - Clean gray shimmer only */
+  .skeleton-placeholder {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    transition: opacity 0.3s ease-out, visibility 0s 0.3s;
+    visibility: visible;
+  }
+
+  .skeleton-placeholder.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  /* Product Image - Fade in after loading */
+  .product-img {
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+  }
+
+  .product-img.loaded {
+    opacity: 1;
+  }
+
+  /* Logo Skeleton Wrapper - Clean gray shimmer */
+  .logo-skeleton-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+
+  .logo-skeleton-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 4px;
+    transition: opacity 0.3s ease-out;
+  }
+
+  .logo-skeleton-wrapper.loaded::before {
+    opacity: 0;
+  }
+
+  .logo-skeleton-wrapper img {
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+  }
+
+  .logo-skeleton-wrapper.loaded img {
+    opacity: 1;
+  }
+
+  /* Testimonial Logo Skeleton - Clean gray shimmer */
+  .testimonial-logo-skeleton {
+    position: relative;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 8px;
+    transition: background 0.3s ease-out;
+  }
+
+  .testimonial-logo-skeleton.loaded {
+    background: none;
+    animation: none;
+  }
+
+  .testimonial-logo-skeleton img {
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+  }
+
+  .testimonial-logo-skeleton.loaded img {
+    opacity: 1;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+</style>

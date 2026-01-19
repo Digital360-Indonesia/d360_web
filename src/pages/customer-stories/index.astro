@@ -52,11 +52,14 @@ const sortedStories = allStories.sort((a, b) => {
           <div class="relative lg:ml-8">
             <!-- Oval/Rounded Container -->
             <div class="relative hero-image-container">
-              <img
-                src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&h=600&fit=crop"
-                alt="Dental clinic"
-                class="w-full h-auto object-cover"
-              />
+              <div class="hero-image-skeleton">
+                <img
+                  src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&h=600&fit=crop"
+                  alt="Dental clinic"
+                  class="w-full h-auto object-cover"
+                  onload="this.parentElement.classList.add('loaded')"
+                />
+              </div>
             </div>
 
             <!-- Featured Story Card - Bottom Right (Outside container) -->
@@ -191,6 +194,42 @@ const sortedStories = allStories.sort((a, b) => {
     border-radius: 0 50% 50% 0 / 0 50% 50% 0;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Hero image skeleton */
+  .hero-image-skeleton {
+    position: relative;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  .hero-image-skeleton.loaded {
+    background: none;
+    animation: none;
+    transition: background 0.3s ease-out 0.8s; /* Delay removal by 0.8s */
+  }
+
+  .hero-image-skeleton img {
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.5s ease-in 0.3s; /* Delay fade in by 0.3s */
+    display: block;
+    width: 100%;
+  }
+
+  .hero-image-skeleton.loaded img {
+    opacity: 1;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
   }
 
   @media (max-width: 1024px) {

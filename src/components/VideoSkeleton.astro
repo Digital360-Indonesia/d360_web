@@ -1,0 +1,87 @@
+---
+interface Props {
+  src: string;
+  poster?: string;
+  class?: string;
+  width?: string;
+  height?: string;
+  autoplay?: boolean;
+  muted?: boolean;
+  loop?: boolean;
+  playsinline?: boolean;
+  controls?: boolean;
+}
+
+const {
+  src,
+  poster,
+  class: className = '',
+  width,
+  height,
+  autoplay = false,
+  muted = true,
+  loop = false,
+  playsinline = true,
+  controls = false
+} = Astro.props;
+---
+
+<div class={`video-skeleton-wrapper ${className}`} style={width ? `width: ${width}` : ''}>
+  <video
+    src={src}
+    poster={poster}
+    class="skeleton-video"
+    style={height ? `height: ${height}` : ''}
+    {autoplay}
+    {muted}
+    {loop}
+    {playsinline}
+    {controls}
+    onloadeddata="this.parentElement.classList.add('loaded')"
+    onerror="this.parentElement.classList.add('loaded', 'error')"
+  />
+</div>
+
+<style>
+  .video-skeleton-wrapper {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(90deg, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%);
+    background-size: 200% 100%;
+    animation: shimmerDark 1.5s infinite;
+    display: inline-block;
+  }
+
+  .video-skeleton-wrapper.loaded {
+    background: none;
+    animation: none;
+  }
+
+  .video-skeleton-wrapper.error {
+    background: #331111;
+    animation: none;
+  }
+
+  .skeleton-video {
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .video-skeleton-wrapper.loaded .skeleton-video {
+    opacity: 1;
+  }
+
+  @keyframes shimmerDark {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+</style>

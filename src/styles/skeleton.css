@@ -1,0 +1,111 @@
+/* Skeleton Loading Styles */
+
+/* Base skeleton class */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Image skeleton wrapper */
+.image-skeleton-wrapper {
+  position: relative;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+.image-skeleton-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  z-index: 1;
+}
+
+/* Hide skeleton when image is loaded */
+.image-skeleton-wrapper.loaded::before {
+  display: none;
+}
+
+/* Text skeleton */
+.skeleton-text {
+  height: 1em;
+  margin: 0.5em 0;
+  border-radius: 4px;
+}
+
+.skeleton-text-sm {
+  height: 0.8em;
+  margin: 0.3em 0;
+  border-radius: 3px;
+}
+
+.skeleton-text-lg {
+  height: 1.5em;
+  margin: 0.7em 0;
+  border-radius: 5px;
+}
+
+/* Card skeleton */
+.skeleton-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Circle skeleton */
+.skeleton-circle {
+  border-radius: 50%;
+}
+
+/* Different sizes */
+.skeleton-sm {
+  width: 50px;
+  height: 50px;
+}
+
+.skeleton-md {
+  width: 100px;
+  height: 100px;
+}
+
+.skeleton-lg {
+  width: 150px;
+  height: 150px;
+}
+
+/* Full width skeleton */
+.skeleton-full {
+  width: 100%;
+}
+
+.skeleton-full-sm {
+  width: 100%;
+  height: 100px;
+}
+
+.skeleton-full-md {
+  width: 100%;
+  height: 200px;
+}
+
+.skeleton-full-lg {
+  width: 100%;
+  height: 300px;
+}

@@ -30,12 +30,15 @@ const industryLabels: Record<string, { en: string; id: string }> = {
 >
   <!-- Background Cover Image - Full Card -->
   <div class="absolute inset-0 overflow-hidden bg-gradient-to-br from-primary-50 to-primary-100">
-    <img
-      src={coverImage}
-      alt={company}
-      class="w-full h-full object-cover opacity-90 group-hover:opacity-95 group-hover:scale-105 transition-all duration-500"
-      loading="lazy"
-    />
+    <div class="cover-image-skeleton w-full h-full">
+      <img
+        src={coverImage}
+        alt={company}
+        class="w-full h-full object-cover opacity-90 group-hover:opacity-95 group-hover:scale-105 transition-all duration-500"
+        loading="lazy"
+        onload="this.parentElement.classList.add('loaded')"
+      />
+    </div>
     <!-- Gradient Overlay -->
     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
   </div>
@@ -45,12 +48,15 @@ const industryLabels: Record<string, { en: string; id: string }> = {
     <!-- Top: Company Logo -->
     <div class="flex justify-start">
       <div class="bg-white rounded-lg p-2 sm:p-2.5 shadow-lg max-w-[120px] sm:max-w-[140px]">
-        <img
-          src={logo}
-          alt={`${company} logo`}
-          class="h-6 sm:h-8 w-auto object-contain max-w-full"
-          loading="lazy"
-        />
+        <div class="logo-skeleton">
+          <img
+            src={logo}
+            alt={`${company} logo`}
+            class="h-6 sm:h-8 w-auto object-contain max-w-full"
+            loading="lazy"
+            onload="this.parentElement.classList.add('loaded')"
+          />
+        </div>
       </div>
     </div>
 
@@ -94,6 +100,73 @@ const industryLabels: Record<string, { en: string; id: string }> = {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+
+  /* Cover image skeleton */
+  .cover-image-skeleton {
+    position: relative;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  .cover-image-skeleton.loaded {
+    background: none;
+    animation: none;
+    transition: background 0.3s ease-out 0.8s; /* Delay removal by 0.8s */
+  }
+
+  .cover-image-skeleton img {
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.5s ease-in 0.3s; /* Delay fade in by 0.3s */
+  }
+
+  .cover-image-skeleton.loaded img {
+    opacity: 0.9;
+  }
+
+  /* Logo skeleton */
+  .logo-skeleton {
+    position: relative;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 4px;
+    min-width: 80px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-skeleton.loaded {
+    background: none;
+    animation: none;
+    min-width: auto;
+    min-height: auto;
+    transition: background 0.3s ease-out 0.8s; /* Delay removal by 0.8s */
+  }
+
+  .logo-skeleton img {
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.5s ease-in 0.3s; /* Delay fade in by 0.3s */
+  }
+
+  .logo-skeleton.loaded img {
+    opacity: 1;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
   }
 </style>
 
