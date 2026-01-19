@@ -23,15 +23,8 @@ sudo -u "$DEPLOY_USER" git pull origin "$DEPLOY_BRANCH"
 echo "📦 Installing dependencies (as $DEPLOY_USER)..."
 sudo -u "$DEPLOY_USER" npm install
 
-echo "🧹 Cleaning dist folder before build..."
-sudo -u "$DEPLOY_USER" rm -rf dist
-
 echo "🔨 Building Astro site (as $DEPLOY_USER)..."
 sudo -u "$DEPLOY_USER" npm run build
-
-echo "🔒 Fixing permissions for nginx..."
-chmod -R 755 dist
-find dist -type f -exec chmod 644 {} \;
 
 echo "✅ Build complete - files ready in dist/ directory"
 echo "📍 Repository location: $(pwd)"
