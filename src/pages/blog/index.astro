@@ -2,18 +2,19 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import BlogSkeleton from '../../components/BlogSkeleton.astro';
 import { getAllBlogPosts, getBlogCategories } from '../../lib/blog';
 
-// Get initial posts and categories
-const initialPosts = await getAllBlogPosts();
+// Get ALL blog posts (not just initial batch)
+const allPosts = await getAllBlogPosts();
 const categories = ["Semua", ...await getBlogCategories()];
 
-// Initial batch size
+// Initial display
 const INITIAL_BATCH_SIZE = 9;
-const initialBatch = initialPosts.slice(0, INITIAL_BATCH_SIZE);
-const totalPosts = initialPosts.length;
-const hasMoreInitial = totalPosts > INITIAL_BATCH_SIZE;
+const initialBatch = allPosts.slice(0, INITIAL_BATCH_SIZE);
+const totalPosts = allPosts.length;
+
+// Serialize all posts for client-side search
+const allPostsJson = JSON.stringify(allPosts);
 ---
 
 <Layout title="Blog - Digital360" description="Temukan insight terbaru tentang teknologi dan transformasi digital dari tim Digital360" lang="id">
@@ -84,6 +85,11 @@ const hasMoreInitial = totalPosts > INITIAL_BATCH_SIZE;
           </div>
         </div>
 
+        <!-- Results Info -->
+        <div class="mb-6 text-center text-gray-600">
+          <span id="displayedCount">{initialBatch.length}</span> dari <span id="totalCount">{totalPosts}</span> artikel
+        </div>
+
         <!-- Blog Grid -->
         <div id="blogGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
           <!-- Initial Posts (Server-side rendered) -->
@@ -108,18 +114,11 @@ const hasMoreInitial = totalPosts > INITIAL_BATCH_SIZE;
                   <span class="inline-block bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-semibold">
                     {post.category}
                   </span>
-                  {post.tags && post.tags.length > 0 ? (
-                    post.tags.slice(0, 3).map((tag) => (
-                      <span class="inline-block bg-gray-100 text-gray-600 px-2 py-1 rounded-full text-xs font-medium">
-                        #{tag}
-                      </span>
-                    ))
-                  ) : null}
-                  {post.tags && post.tags.length > 3 ? (
+                  {post.tags && post.tags.slice(0, 3).map((tag) => (
                     <span class="inline-block bg-gray-100 text-gray-600 px-2 py-1 rounded-full text-xs font-medium">
-                      +{post.tags.length - 3}
+                      #{tag}
                     </span>
-                  ) : null}
+                  ))}
                 </div>
 
                 <h3 class="text-xl font-bold mb-3 line-clamp-2 hover:text-primary-800 transition-colors">
@@ -161,402 +160,267 @@ const hasMoreInitial = totalPosts > INITIAL_BATCH_SIZE;
           ))}
         </div>
 
-        <!-- Skeleton Loader (hidden by default) -->
-        <div id="blogSkeleton" class="hidden">
-          <BlogSkeleton count={9} />
+        <!-- Load More Button -->
+        <div class="text-center mb-8">
+          <button
+            id="loadMoreBtn"
+            class="px-8 py-3 bg-primary-800 text-white font-semibold rounded-full hover:bg-primary-900 transition-colors duration-200"
+          >
+            Load More Articles
+          </button>
         </div>
 
-        <!-- Load More Indicator -->
-        <div id="loadMoreIndicator" class={`text-center py-8 ${hasMoreInitial ? '' : 'hidden'}`}>
-          <div class="inline-flex items-center text-gray-500">
-            <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-            </svg>
-            <span>Memuat lebih banyak artikel...</span>
-          </div>
+        <!-- End Message -->
+        <div id="endMessage" class="hidden text-center text-gray-500 py-8">
+          <p class="text-lg">Tidak ada lagi artikel untuk ditampilkan</p>
         </div>
 
-        <!-- End of Posts Message -->
-        <div id="endMessage" class={`text-center py-8 hidden`}>
-          <p class="text-gray-500 text-lg">Semua artikel telah ditampilkan</p>
-        </div>
-
-        <!-- Filter Info -->
-        <div class="text-center text-gray-600 mt-8">
-          <p id="filterInfo">Menampilkan <span id="displayedCount">{initialBatch.length}</span> dari <span id="totalCount">{totalPosts}</span> artikel</p>
+        <!-- No Results Message -->
+        <div id="noResults" class="hidden text-center py-16">
+          <svg class="w-16 h-16 mx-auto mb-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <h3 class="text-xl font-semibold text-gray-600 mb-2">Tidak ada artikel ditemukan</h3>
+          <p class="text-gray-500">Coba kata kunci atau kategori lain</p>
         </div>
       </div>
     </section>
-
-    <!-- Sentinel element for infinite scroll -->
-    <div id="sentinel" class={`h-20 ${hasMoreInitial ? '' : 'hidden'}`}></div>
   </main>
+
   <Footer />
 </Layout>
 
-<script define:vars={{ INITIAL_BATCH_SIZE, totalPosts }}>
-  // Configuration
-  const API_BASE = '/api/blog';
-  const SCROLL_DELAY = 500;
+<!-- Import Fuse.js -->
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
 
-  // State
-  let currentOffset = INITIAL_BATCH_SIZE;
-  let isLoading = false;
-  let hasMoreItems = totalPosts > INITIAL_BATCH_SIZE;
+<script define vars={{ allPostsJson }}>
+  const allPosts = JSON.parse(allPostsJson);
+  const INITIAL_BATCH_SIZE = 9;
+  const BATCH_INCREMENT = 9;
+
+  let displayedPosts = [...allPosts.slice(0, INITIAL_BATCH_SIZE)];
+  let currentIndex = INITIAL_BATCH_SIZE;
   let currentCategory = 'Semua';
-  let currentSearch = '';
-  let searchTimeout = null;
-  let loadTimeout = null;
-  let totalPostsCount = totalPosts;
+  let fuse = null;
 
-  // DOM elements
-  const blogGrid = document.getElementById('blogGrid');
-  const blogSkeleton = document.getElementById('blogSkeleton');
-  const loadMoreIndicator = document.getElementById('loadMoreIndicator');
-  const endMessage = document.getElementById('endMessage');
-  const filterInfo = document.getElementById('filterInfo');
-  const displayedCount = document.getElementById('displayedCount');
-  const totalCount = document.getElementById('totalCount');
-  const filterButtons = document.querySelectorAll('.category-filter');
-  const searchInput = document.getElementById('searchInput');
-  const sentinel = document.getElementById('sentinel');
-
-  // Show skeleton loader
-  function showSkeleton() {
-    if (blogSkeleton) {
-      blogSkeleton.classList.remove('hidden');
-    }
-    loadMoreIndicator?.classList.add('hidden');
-  }
-
-  // Hide skeleton loader
-  function hideSkeleton() {
-    if (blogSkeleton) {
-      blogSkeleton.classList.add('hidden');
-    }
-  }
-
-  // Update filter info
-  function updateFilterInfo(displayed, total) {
-    if (displayedCount) displayedCount.textContent = displayed.toString();
-    if (totalCount) totalCount.textContent = total.toString();
-  }
-
-  // Show load more indicator
-  function showLoadMoreIndicator() {
-    loadMoreIndicator?.classList.remove('hidden');
-  }
-
-  // Hide load more indicator
-  function hideLoadMoreIndicator() {
-    loadMoreIndicator?.classList.add('hidden');
-  }
-
-  // Show end message
-  function showEndMessage() {
-    endMessage?.classList.remove('hidden');
-    sentinel?.classList.add('hidden');
-  }
-
-  // Hide end message
-  function hideEndMessage() {
-    endMessage?.classList.add('hidden');
-  }
-
-  // Create blog card HTML
-  function createBlogCard(post) {
-    const article = document.createElement('article');
-    article.className = 'blog-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300';
-    article.setAttribute('data-category', post.category);
-    article.setAttribute('data-slug', post.slug);
-
-    // Create tags HTML
-    let tagsHtml = '';
-    if (post.tags && post.tags.length > 0) {
-      const displayTags = post.tags.slice(0, 3);
-      tagsHtml = displayTags.map(tag => `
-        <span class="inline-block bg-gray-100 text-gray-600 px-2 py-1 rounded-full text-xs font-medium">
-          #${tag}
-        </span>
-      `).join('');
-
-      if (post.tags.length > 3) {
-        tagsHtml += `
-          <span class="inline-block bg-gray-100 text-gray-600 px-2 py-1 rounded-full text-xs font-medium">
-            +${post.tags.length - 3}
-          </span>
-        `;
-      }
-    }
-
-    article.innerHTML = `
-      <div class="relative blog-card-image overflow-hidden aspect-video">
-        <img
-          src="${post.image}"
-          alt="${post.title}"
-          class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-          loading="lazy"
-        />
-      </div>
-
-      <div class="p-6">
-        <!-- Category Badge & Tags -->
-        <div class="mb-3 flex flex-wrap items-center gap-2">
-          <span class="inline-block bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-semibold">
-            ${post.category}
-          </span>
-          ${tagsHtml}
-        </div>
-
-        <h3 class="text-xl font-bold mb-3 line-clamp-2 hover:text-primary-800 transition-colors">
-          <a href="/blog/${post.slug}" class="hover:text-primary-800 transition-colors">
-            ${post.title}
-          </a>
-        </h3>
-
-        <p class="text-gray-600 mb-4 line-clamp-3">
-          ${post.excerpt}
-        </p>
-
-        <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
-          <div class="flex items-center space-x-2">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-            </svg>
-            <span>${post.date}</span>
-          </div>
-          <div class="flex items-center space-x-2">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-            <span>${post.readTime}</span>
-          </div>
-        </div>
-
-        <a
-          href="/blog/${post.slug}"
-          class="inline-flex items-center text-primary-800 font-semibold hover:text-primary-900 transition-colors"
-        >
-          Baca Selengkapnya
-          <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-        </a>
-      </div>
-    `;
-
-    // Add fade-in animation
-    article.style.opacity = '0';
-    article.style.transform = 'translateY(20px)';
-    article.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-
-    return article;
-  }
-
-  // Fetch posts from API
-  async function fetchPosts(offset, search = '', category = 'all') {
-    const params = new URLSearchParams({
-      offset: offset.toString(),
-      limit: INITIAL_BATCH_SIZE.toString()
-    });
-
-    if (category && category !== 'Semua' && category !== 'all') {
-      params.append('category', category);
-    }
-
-    if (search) {
-      params.append('search', search);
-    }
-
-    const response = await fetch(`${API_BASE}?${params}`);
-    if (!response.ok) {
-      throw new Error('Failed to fetch posts');
-    }
-
-    return response.json();
-  }
-
-  // Load more items
-  async function loadMoreItems() {
-    if (isLoading || !hasMoreItems) return;
-
-    isLoading = true;
-    showLoadMoreIndicator();
-
-    try {
-      const data = await fetchPosts(currentOffset, currentSearch, currentCategory);
-
-      hideLoadMoreIndicator();
-
-      if (data.posts && data.posts.length > 0) {
-        data.posts.forEach((post, index) => {
-          const postCard = createBlogCard(post);
-          blogGrid.appendChild(postCard);
-
-          // Trigger animation with staggered delay
-          setTimeout(() => {
-            postCard.style.opacity = '1';
-            postCard.style.transform = 'translateY(0)';
-          }, index * 100);
-        });
-
-        currentOffset += data.posts.length;
-        hasMoreItems = data.hasMore;
-        totalPostsCount = data.total;
-
-        updateFilterInfo(currentOffset, totalPostsCount);
-
-        if (!hasMoreItems) {
-          showEndMessage();
-        } else {
-          sentinel?.classList.remove('hidden');
-        }
-      } else {
-        hasMoreItems = false;
-        showEndMessage();
-      }
-    } catch (error) {
-      console.error('Error loading more posts:', error);
-      hideLoadMoreIndicator();
-    } finally {
-      isLoading = false;
-    }
-  }
-
-  // Reset and load (for search/filter)
-  async function resetAndLoad() {
-    // Clear existing posts
-    const existingCards = blogGrid.querySelectorAll('.blog-card');
-    existingCards.forEach(card => card.remove());
-
-    // Reset state
-    currentOffset = 0;
-    hideEndMessage();
-    showSkeleton();
-
-    try {
-      const data = await fetchPosts(0, currentSearch, currentCategory);
-
-      hideSkeleton();
-
-      if (data.posts && data.posts.length > 0) {
-        data.posts.forEach((post, index) => {
-          const postCard = createBlogCard(post);
-          blogGrid.appendChild(postCard);
-
-          // Trigger animation with staggered delay
-          setTimeout(() => {
-            postCard.style.opacity = '1';
-            postCard.style.transform = 'translateY(0)';
-          }, index * 100);
-        });
-
-        currentOffset = data.posts.length;
-        hasMoreItems = data.hasMore;
-        totalPostsCount = data.total;
-
-        updateFilterInfo(currentOffset, totalPostsCount);
-
-        if (!hasMoreItems) {
-          showEndMessage();
-        } else {
-          sentinel?.classList.remove('hidden');
-        }
-      } else {
-        hasMoreItems = false;
-        showEndMessage();
-        updateFilterInfo(0, 0);
-      }
-    } catch (error) {
-      console.error('Error loading posts:', error);
-      hideSkeleton();
-    }
-  }
-
-  // Handle search input
-  function handleSearch(value) {
-    currentSearch = value;
-
-    // Clear existing timeout
-    if (searchTimeout) {
-      clearTimeout(searchTimeout);
-    }
-
-    // Debounce search
-    searchTimeout = setTimeout(() => {
-      resetAndLoad();
-    }, 500);
-  }
-
-  // Setup Intersection Observer for infinite scroll
-  function setupIntersectionObserver() {
-    const observerOptions = {
-      root: null,
-      rootMargin: '200px',
-      threshold: 0.1
+  // Initialize Fuse.js
+  function initFuse() {
+    const options = {
+      keys: [
+        { name: 'title', weight: 0.4 },
+        { name: 'excerpt', weight: 0.3 },
+        { name: 'tags', weight: 0.2 },
+        { name: 'category', weight: 0.1 }
+      ],
+      threshold: 0.3,
+      includeScore: true
     };
+    fuse = new Fuse(allPosts, options);
+  }
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !isLoading && hasMoreItems) {
-          // Clear any existing load timeout
-          if (loadTimeout) {
-            clearTimeout(loadTimeout);
-          }
+  // Filter by category
+  function filterByCategory(posts, category) {
+    if (category === 'Semua') return posts;
+    return posts.filter(post => post.category === category);
+  }
 
-          // Set new timeout for debounced loading
-          loadTimeout = setTimeout(() => {
-            loadMoreItems();
-          }, SCROLL_DELAY);
-        }
-      });
-    }, observerOptions);
+  // Search function
+  function searchPosts(query) {
+    if (!query.trim()) {
+      return allPosts;
+    }
+    const results = fuse.search(query);
+    return results.map(result => result.item);
+  }
 
-    if (sentinel) {
-      observer.observe(sentinel);
+  // Get filtered and searched posts
+  function getProcessedPosts() {
+    const searchQuery = document.getElementById('searchInput').value;
+    let posts = searchPosts(searchQuery);
+    posts = filterByCategory(posts, currentCategory);
+    return posts;
+  }
+
+  // Render blog cards
+  function renderBlogCards(posts, append = false) {
+    const blogGrid = document.getElementById('blogGrid');
+    const noResults = document.getElementById('noResults');
+    const endMessage = document.getElementById('endMessage');
+    const loadMoreBtn = document.getElementById('loadMoreBtn');
+
+    if (!append) {
+      blogGrid.innerHTML = '';
     }
 
-    return observer;
-  }
+    if (posts.length === 0) {
+      noResults?.classList.remove('hidden');
+      loadMoreBtn?.classList.add('hidden');
+      endMessage?.classList.add('hidden');
+      return;
+    }
 
-  // Update category button states
-  function updateCategoryButtons(activeCategory) {
-    filterButtons.forEach(button => {
-      const buttonCategory = button.getAttribute('data-category');
-      if (buttonCategory === activeCategory) {
-        button.classList.remove('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
-        button.classList.add('bg-primary-800', 'text-white');
-      } else {
-        button.classList.remove('bg-primary-800', 'text-white');
-        button.classList.add('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
-      }
+    noResults?.classList.add('hidden');
+
+    posts.forEach(post => {
+      const article = document.createElement('article');
+      article.className = 'blog-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300';
+      article.setAttribute('data-category', post.category);
+      article.setAttribute('data-slug', post.slug);
+
+      const tagsHtml = post.tags && post.tags.slice(0, 3).map(tag =>
+        `<span class="inline-block bg-gray-100 text-gray-600 px-2 py-1 rounded-full text-xs font-medium">#${tag}</span>`
+      ).join('');
+
+      article.innerHTML = `
+        <div class="relative blog-card-image overflow-hidden aspect-video">
+          <img
+            src="${post.image}"
+            alt="${post.title}"
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="p-6">
+          <div class="mb-3 flex flex-wrap items-center gap-2">
+            <span class="inline-block bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-semibold">
+              ${post.category}
+            </span>
+            ${tagsHtml}
+          </div>
+
+          <h3 class="text-xl font-bold mb-3 line-clamp-2 hover:text-primary-800 transition-colors">
+            <a href="/blog/${post.slug}" class="hover:text-primary-800 transition-colors">
+              ${post.title}
+            </a>
+          </h3>
+
+          <p class="text-gray-600 mb-4 line-clamp-3">
+            ${post.excerpt}
+          </p>
+
+          <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+            <div class="flex items-center space-x-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+              <span>${post.date}</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span>${post.readTime}</span>
+            </div>
+          </div>
+
+          <a
+            href="/blog/${post.slug}"
+            class="inline-flex items-center text-primary-800 font-semibold hover:text-primary-900 transition-colors"
+          >
+            Baca Selengkapnya
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      `;
+
+      // Add fade-in animation
+      article.style.opacity = '0';
+      article.style.transform = 'translateY(20px)';
+      blogGrid.appendChild(article);
+
+      requestAnimationFrame(() => {
+        article.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        article.style.opacity = '1';
+        article.style.transform = 'translateY(0)';
+      });
     });
+
+    updateCounts();
+    updateLoadMoreButton();
   }
 
-  // Initialize event listeners
+  // Update counts
+  function updateCounts() {
+    const processedPosts = getProcessedPosts();
+    const displayed = document.querySelectorAll('#blogGrid .blog-card').length;
+    document.getElementById('displayedCount').textContent = displayed;
+    document.getElementById('totalCount').textContent = processedPosts.length;
+  }
+
+  // Update load more button
+  function updateLoadMoreButton() {
+    const processedPosts = getProcessedPosts();
+    const displayed = document.querySelectorAll('#blogGrid .blog-card').length;
+    const loadMoreBtn = document.getElementById('loadMoreBtn');
+    const endMessage = document.getElementById('endMessage');
+
+    if (displayed >= processedPosts.length) {
+      loadMoreBtn?.classList.add('hidden');
+      if (processedPosts.length > 0) {
+        endMessage?.classList.remove('hidden');
+      }
+    } else {
+      loadMoreBtn?.classList.remove('hidden');
+      endMessage?.classList.add('hidden');
+    }
+  }
+
+  // Load more function
+  function loadMore() {
+    const processedPosts = getProcessedPosts();
+    const displayed = document.querySelectorAll('#blogGrid .blog-card').length;
+    const nextBatch = processedPosts.slice(displayed, displayed + BATCH_INCREMENT);
+
+    if (nextBatch.length > 0) {
+      renderBlogCards(nextBatch, true);
+    }
+  }
+
+  // Reset and re-render
+  function resetAndRender() {
+    currentIndex = 0;
+    const processedPosts = getProcessedPosts();
+    const initialBatch = processedPosts.slice(0, INITIAL_BATCH_SIZE);
+    renderBlogCards(initialBatch, false);
+    currentIndex = INITIAL_BATCH_SIZE;
+  }
+
+  // Initialize
   document.addEventListener('DOMContentLoaded', () => {
+    initFuse();
+
     // Category filter buttons
-    filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const category = button.getAttribute('data-category');
-        currentCategory = category;
-        currentSearch = ''; // Reset search when category changes
-        if (searchInput) searchInput.value = '';
-        updateCategoryButtons(category);
-        resetAndLoad();
+    document.querySelectorAll('.category-filter').forEach(button => {
+      button.addEventListener('click', (e) => {
+        currentCategory = e.target.dataset.category;
+
+        // Update active state
+        document.querySelectorAll('.category-filter').forEach(btn => {
+          btn.classList.remove('bg-primary-800', 'text-white');
+          btn.classList.add('bg-gray-200', 'text-gray-700');
+        });
+        e.target.classList.remove('bg-gray-200', 'text-gray-700');
+        e.target.classList.add('bg-primary-800', 'text-white');
+
+        resetAndRender();
       });
     });
 
     // Search input
-    if (searchInput) {
-      searchInput.addEventListener('input', (e) => {
-        handleSearch(e.target.value);
-      });
-    }
+    const searchInput = document.getElementById('searchInput');
+    let searchTimeout;
+    searchInput.addEventListener('input', (e) => {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(() => {
+        resetAndRender();
+      }, 300);
+    });
 
-    // Setup infinite scroll
-    setupIntersectionObserver();
+    // Load more button
+    document.getElementById('loadMoreBtn').addEventListener('click', loadMore);
   });
 </script>
 
@@ -575,7 +439,6 @@ const hasMoreInitial = totalPosts > INITIAL_BATCH_SIZE;
     overflow: hidden;
   }
 
-  /* Aspect ratio for images */
   .aspect-video {
     aspect-ratio: 16 / 9;
   }

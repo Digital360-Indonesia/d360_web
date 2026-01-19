@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.6.0",
-    "astro": "^5.14.1"
+    "astro": "^5.14.1",
+    "fuse.js": "^7.1.0"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^6.0.2",
