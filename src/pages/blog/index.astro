@@ -12,9 +12,6 @@ const categories = ["Semua", ...await getBlogCategories()];
 const INITIAL_BATCH_SIZE = 9;
 const initialBatch = allPosts.slice(0, INITIAL_BATCH_SIZE);
 const totalPosts = allPosts.length;
-
-// Serialize all posts for client-side search
-const allPostsJson = JSON.stringify(allPosts);
 ---
 
 <Layout title="Blog - Digital360" description="Temukan insight terbaru tentang teknologi dan transformasi digital dari tim Digital360" lang="id">
@@ -190,11 +187,17 @@ const allPostsJson = JSON.stringify(allPosts);
   <Footer />
 </Layout>
 
-<!-- Import Fuse.js -->
+<script define:vars={{ allPosts }}>
+  // Embed all blog data directly
+  window.ALL_BLOG_POSTS = allPosts;
+</script>
+
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
 
-<script define vars={{ allPostsJson }}>
-  const allPosts = JSON.parse(allPostsJson);
+<script>
+  // Get blog data from window
+  const allPosts = window.ALL_BLOG_POSTS;
+
   const INITIAL_BATCH_SIZE = 9;
   const BATCH_INCREMENT = 9;
 
