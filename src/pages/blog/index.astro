@@ -206,6 +206,10 @@ const totalPosts = allPosts.length;
   let currentCategory = 'Semua';
   let fuse = null;
 
+  // State to track if already initialized
+  let blogInitialized = false;
+  let searchTimeout = null;
+
   // Initialize Fuse.js
   function initFuse() {
     const options = {
@@ -238,7 +242,7 @@ const totalPosts = allPosts.length;
 
   // Get filtered and searched posts
   function getProcessedPosts() {
-    const searchQuery = document.getElementById('searchInput').value;
+    const searchQuery = document.getElementById('searchInput')?.value || '';
     let posts = searchPosts(searchQuery);
     posts = filterByCategory(posts, currentCategory);
     return posts;
@@ -250,6 +254,8 @@ const totalPosts = allPosts.length;
     const noResults = document.getElementById('noResults');
     const endMessage = document.getElementById('endMessage');
     const loadMoreBtn = document.getElementById('loadMoreBtn');
+
+    if (!blogGrid) return;
 
     if (!append) {
       blogGrid.innerHTML = '';
@@ -349,8 +355,10 @@ const totalPosts = allPosts.length;
   function updateCounts() {
     const processedPosts = getProcessedPosts();
     const displayed = document.querySelectorAll('#blogGrid .blog-card').length;
-    document.getElementById('displayedCount').textContent = displayed;
-    document.getElementById('totalCount').textContent = processedPosts.length;
+    const displayedCount = document.getElementById('displayedCount');
+    const totalCount = document.getElementById('totalCount');
+    if (displayedCount) displayedCount.textContent = displayed;
+    if (totalCount) totalCount.textContent = processedPosts.length;
   }
 
   // Update load more button
@@ -391,13 +399,27 @@ const totalPosts = allPosts.length;
     currentIndex = INITIAL_BATCH_SIZE;
   }
 
-  // Initialize
-  document.addEventListener('DOMContentLoaded', () => {
+  // Initialize blog functionality
+  function initBlog() {
+    // Check if we're on blog page
+    const blogGrid = document.getElementById('blogGrid');
+    if (!blogGrid) return;
+
+    // Clear existing state
+    if (blogInitialized) {
+      currentCategory = 'Semua';
+      currentIndex = INITIAL_BATCH_SIZE;
+    }
+
     initFuse();
 
     // Category filter buttons
     document.querySelectorAll('.category-filter').forEach(button => {
-      button.addEventListener('click', (e) => {
+      // Remove old listener by cloning
+      const newButton = button.cloneNode(true);
+      button.parentNode.replaceChild(newButton, button);
+
+      newButton.addEventListener('click', (e) => {
         currentCategory = e.target.dataset.category;
 
         // Update active state
@@ -414,16 +436,39 @@ const totalPosts = allPosts.length;
 
     // Search input
     const searchInput = document.getElementById('searchInput');
-    let searchTimeout;
-    searchInput.addEventListener('input', (e) => {
-      clearTimeout(searchTimeout);
-      searchTimeout = setTimeout(() => {
-        resetAndRender();
-      }, 300);
-    });
+    if (searchInput) {
+      // Remove old listener
+      searchInput.removeEventListener('input', searchInput._searchHandler);
+
+      searchInput._searchHandler = (e) => {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+          resetAndRender();
+        }, 300);
+      };
+
+      searchInput.addEventListener('input', searchInput._searchHandler);
+    }
 
     // Load more button
-    document.getElementById('loadMoreBtn').addEventListener('click', loadMore);
+    const loadMoreBtn = document.getElementById('loadMoreBtn');
+    if (loadMoreBtn) {
+      // Remove old listener
+      loadMoreBtn.removeEventListener('click', loadMoreBtn._loadHandler);
+
+      loadMoreBtn._loadHandler = loadMore;
+      loadMoreBtn.addEventListener('click', loadMoreBtn._loadHandler);
+    }
+
+    blogInitialized = true;
+  }
+
+  // Initialize on DOM load
+  document.addEventListener('DOMContentLoaded', initBlog);
+
+  // Re-initialize after view transition
+  document.addEventListener('astro:after-swap', () => {
+    setTimeout(initBlog, 50);
   });
 </script>
 

@@ -236,10 +236,10 @@
 
             <!-- CTA Buttons - Side by side on all screens -->
             <div class="flex items-center justify-center gap-2 md:gap-3 lg:justify-start">
-              <a href="https://tryon.digital360.id" target="_blank" class="inline-flex items-center justify-center bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white font-semibold px-4 sm:px-6 py-2.5 rounded-lg transition-colors duration-200 text-sm" id="aitools-cta-primary">
+              <a href="https://wa.me/6285156858298" target="_blank" class="inline-flex items-center justify-center bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white font-semibold px-4 sm:px-6 py-2.5 rounded-lg transition-colors duration-200 text-sm" id="aitools-cta-primary">
                 Try It Now
               </a>
-              <a href="https://tryon.digital360.id" target="_blank" class="text-cyan-600 hover:text-cyan-700 font-semibold inline-flex items-center text-sm whitespace-nowrap" id="aitools-cta-secondary">
+              <a href="https://wa.me/6285156858298" target="_blank" class="text-cyan-600 hover:text-cyan-700 font-semibold inline-flex items-center text-sm whitespace-nowrap" id="aitools-cta-secondary">
                 Learn More →
               </a>
             </div>
@@ -380,15 +380,47 @@
 </section>
 
 <script>
+  // Global state to manage cleanup
+  let featuredProductsState = {
+    scrollHandler: null,
+    currentIndex: 0,
+    initialized: false
+  };
+
+  // Function to cleanup previous instance
+  function cleanupFeaturedProducts() {
+    if (featuredProductsState.scrollHandler) {
+      window.removeEventListener('scroll', featuredProductsState.scrollHandler);
+      featuredProductsState.scrollHandler = null;
+    }
+    featuredProductsState.currentIndex = 0;
+    featuredProductsState.initialized = false;
+  }
+
   // Function to initialize FeaturedProducts
   function initFeaturedProducts() {
+    // Clean up previous instance if exists
+    cleanupFeaturedProducts();
+
     const productSections = document.querySelectorAll('.product-section');
     const productImages = document.querySelectorAll('.product-image');
 
-    let currentIndex = 0;
+    if (productSections.length === 0 || productImages.length === 0) {
+      return; // Exit if elements don't exist
+    }
+
+    // Reset all images to hidden state first
+    productImages.forEach((img, i) => {
+      img.style.opacity = '0';
+      img.style.pointerEvents = 'none';
+      img.style.transform = 'scale(0.95)';
+    });
+
+    // Mark as initialized
+    featuredProductsState.initialized = true;
 
     function updateActiveProduct(index) {
-      if (index === currentIndex) return;
+      if (index === featuredProductsState.currentIndex) return;
 
       // Update images
       productImages.forEach((image, i) => {
@@ -403,7 +435,7 @@
         }
       });
 
-      currentIndex = index;
+      featuredProductsState.currentIndex = index;
     }
 
     // Scroll-based detection
@@ -417,9 +449,6 @@
         const sectionMiddle = sectionTop + (rect.height / 2);
         const currentViewportMiddle = scrollPosition + (viewportHeight / 2);
 
-        // Check if section middle is closest to viewport middle
-        const distanceFromCenter = Math.abs(sectionMiddle - currentViewportMiddle);
-
         // If this section is in the center area of viewport
         if (rect.top < viewportHeight * 0.6 && rect.bottom > viewportHeight * 0.4) {
           updateActiveProduct(index);
@@ -427,23 +456,18 @@
       });
     }
 
+    // Save handler reference for cleanup
+    featuredProductsState.scrollHandler = handleScroll;
+
     // Listen to scroll events
     window.addEventListener('scroll', handleScroll, { passive: true });
 
-    // Initial check
-    handleScroll();
-
-    // Initial state
-    updateActiveProduct(0);
-
-    // Ensure images are visible after navigation
-    productImages.forEach((img, i) => {
-      if (i === 0) {
-        img.style.opacity = '1';
-        img.style.pointerEvents = 'auto';
-        img.style.transform = 'scale(1)';
-      }
-    });
+    // Force initial check after a small delay to ensure DOM is ready
+    setTimeout(() => {
+      handleScroll();
+      // Always show first product initially
+      updateActiveProduct(0);
+    }, 100);
   }
 
   // Initialize on DOM load
@@ -451,7 +475,12 @@
 
   // Re-initialize after view transition
   document.addEventListener('astro:after-swap', () => {
-    setTimeout(initFeaturedProducts, 50);
+    setTimeout(() => {
+      const hasFeaturedProducts = document.querySelector('#featured-products-section');
+      if (hasFeaturedProducts) {
+        initFeaturedProducts();
+      }
+    }, 100);
   });
 </script>
 
@@ -689,5 +718,13 @@
   document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('language') || 'EN';
     updateFeaturedContent(savedLang);
+  });
+
+  // Re-initialize language after view transition
+  document.addEventListener('astro:after-swap', () => {
+    setTimeout(() => {
+      const savedLang = localStorage.getItem('language') || 'EN';
+      updateFeaturedContent(savedLang);
+    }, 50);
   });
 </script>

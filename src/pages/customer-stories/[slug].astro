@@ -30,12 +30,30 @@ const url = new URL(Astro.request.url);
 const lang = url.searchParams.get('lang') || 'id';
 const isEnglish = lang === 'en';
 
-// Select content based on language
+// Select content based on language for initial render
 const displayTitle = isEnglish ? title : (titleId || title);
 const displayExcerpt = isEnglish ? excerpt : (excerptId || excerpt);
 const displayOverview = isEnglish ? (overviewEn || overview) : overview;
 const displayProblem = isEnglish ? (problemEn || problem) : problem;
 const displaySolution = isEnglish ? (solutionEn || solution) : solution;
+
+// Store both versions for client-side switching
+const contentData = {
+  en: {
+    title: title,
+    excerpt: excerpt,
+    overview: overviewEn || overview,
+    problem: problemEn || problem,
+    solution: solutionEn || solution
+  },
+  id: {
+    title: titleId || title,
+    excerpt: excerptId || excerpt,
+    overview: overview,
+    problem: problem,
+    solution: solution
+  }
+};
 
 // Get related stories (same industry, excluding current)
 const relatedStories = (await getCollection('customerStories', ({ data, slug }) => {
@@ -74,20 +92,20 @@ const industryLabels: Record<string, string> = {
       <div class="relative h-full container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-end pb-16">
         <!-- Breadcrumb -->
         <div class="mb-6">
-          <a href="/customer-stories" class="text-white/80 hover:text-white transition-colors text-sm font-medium">
-            ← Back to Customer Stories
+          <a href="/customer-stories" class="text-white/80 hover:text-white transition-colors text-sm font-medium" data-lang-en="← Back to Customer Stories" data-lang-id="← Kembali ke Kisah Klien">
+            <span class="breadcrumb-text">← Back to Customer Stories</span>
           </a>
         </div>
 
         <!-- Industry Badge -->
         <div class="mb-4">
-          <span class="inline-block bg-white/90 backdrop-blur-sm text-primary-800 px-4 py-2 rounded-full text-sm font-semibold">
-            {industryLabels[industry]} Industry
+          <span class="inline-block bg-white/90 backdrop-blur-sm text-primary-800 px-4 py-2 rounded-full text-sm font-semibold" data-lang-en={`${industryLabels[industry]} Industry`} data-lang-id={`Industri ${industryLabels[industry]}`}>
+            <span class="industry-text">{industryLabels[industry]} Industry</span>
           </span>
         </div>
 
         <!-- Title -->
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-w-4xl">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-w-4xl" data-lang-en={title} data-lang-id={titleId || title}>
           {displayTitle}
         </h1>
 
@@ -138,8 +156,8 @@ const industryLabels: Record<string, string> = {
       <div class="max-w-4xl mx-auto">
         <!-- Company Overview -->
         <section class="mb-16">
-          <h2 class="text-3xl font-bold text-gray-900 mb-6">Company Overview</h2>
-          <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+          <h2 class="text-3xl font-bold text-gray-900 mb-6" data-lang-en="Company Overview" data-lang-id="Ikhtisar Perusahaan">Company Overview</h2>
+          <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed content-overview" data-lang-en={overviewEn || overview} data-lang-id={overview}>
             {displayOverview}
           </div>
         </section>
@@ -158,8 +176,8 @@ const industryLabels: Record<string, string> = {
 
         <!-- The Problem -->
         <section class="mb-16">
-          <h2 class="text-3xl font-bold text-gray-900 mb-6">The Challenge</h2>
-          <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed bg-red-50 border-l-4 border-red-500 p-8 rounded-r-lg">
+          <h2 class="text-3xl font-bold text-gray-900 mb-6" data-lang-en="The Challenge" data-lang-id="Tantangan">The Challenge</h2>
+          <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed bg-red-50 border-l-4 border-red-500 p-8 rounded-r-lg content-problem" data-lang-en={problemEn || problem} data-lang-id={problem}>
             {displayProblem}
           </div>
         </section>
@@ -178,8 +196,8 @@ const industryLabels: Record<string, string> = {
 
         <!-- The Solution -->
         <section class="mb-16">
-          <h2 class="text-3xl font-bold text-gray-900 mb-6">The Solution</h2>
-          <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed bg-green-50 border-l-4 border-green-500 p-8 rounded-r-lg">
+          <h2 class="text-3xl font-bold text-gray-900 mb-6" data-lang-en="The Solution" data-lang-id="Solusi">The Solution</h2>
+          <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed bg-green-50 border-l-4 border-green-500 p-8 rounded-r-lg content-solution" data-lang-en={solutionEn || solution} data-lang-id={solution}>
             {displaySolution}
           </div>
         </section>
@@ -201,22 +219,25 @@ const industryLabels: Record<string, string> = {
     <!-- CTA Section -->
     <section class="py-16 bg-gradient-to-br from-primary-800 to-primary-900 text-white">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Business?</h2>
-        <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6" data-lang-en="Ready to Transform Your Business?" data-lang-id="Siap Mengubah Bisnis Anda?">Ready to Transform Your Business?</h2>
+        <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto" data-lang-en="Let's discuss how Digital360 can help you achieve similar results" data-lang-id="Mari diskusikan bagaimana Digital360 dapat membantu Anda achieve hasil similar">
           Let's discuss how Digital360 can help you achieve similar results
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="/contact"
+            href="https://wa.me/6285156858298"
+            target="_blank"
             class="px-8 py-4 bg-white text-primary-800 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+            data-lang-en="Contact Sales" data-lang-id="Hubungi Sales"
           >
-            Contact Sales
+            <span class="contact-sales-text">Contact Sales</span>
           </a>
           <a
-            href="/products"
+            href="/"
             class="px-8 py-4 bg-primary-700 text-white rounded-lg font-semibold hover:bg-primary-600 transition-colors border-2 border-white/20"
+            data-lang-en="View Products" data-lang-id="Lihat Produk"
           >
-            View Products
+            <span class="view-products-text">View Products</span>
           </a>
         </div>
       </div>
@@ -226,7 +247,9 @@ const industryLabels: Record<string, string> = {
     {relatedStories.length > 0 && (
       <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 class="text-3xl font-bold text-gray-900 mb-8">More stories in {industryLabels[industry]}</h2>
+          <h2 class="text-3xl font-bold text-gray-900 mb-8" data-lang-en={`More stories in ${industryLabels[industry]}`} data-lang-id={`Kisah lain di ${industryLabels[industry]}`}>
+            <span class="related-stories-text">More stories in {industryLabels[industry]}</span>
+          </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {relatedStories.map((relatedStory) => (
               <a
@@ -275,3 +298,86 @@ const industryLabels: Record<string, string> = {
     line-height: 1.75;
   }
 </style>
+
+<script define:vars={{ contentData }}>
+  // Language switching functionality for customer story detail
+  function setCustomerStoryLanguage(lang) {
+    const langKey = lang === 'EN' ? 'en' : 'id';
+    const content = contentData[langKey];
+
+    // Update title
+    const titleElement = document.querySelector('h1.text-4xl');
+    if (titleElement) {
+      titleElement.textContent = content.title;
+    }
+
+    // Update breadcrumb
+    const breadcrumbText = document.querySelector('.breadcrumb-text');
+    if (breadcrumbText) {
+      const breadcrumb = breadcrumbText.parentElement;
+      const translation = breadcrumb.getAttribute(`data-lang-${langKey}`);
+      if (translation) breadcrumbText.textContent = translation.replace('← ', '');
+    }
+
+    // Update industry badge
+    const industryText = document.querySelector('.industry-text');
+    if (industryText) {
+      const industry = industryText.parentElement;
+      const translation = industry.getAttribute(`data-lang-${langKey}`);
+      if (translation) industryText.textContent = translation;
+    }
+
+    // Update overview
+    const overviewElement = document.querySelector('.content-overview');
+    if (overviewElement) {
+      overviewElement.textContent = content.overview;
+    }
+
+    // Update problem
+    const problemElement = document.querySelector('.content-problem');
+    if (problemElement) {
+      problemElement.textContent = content.problem;
+    }
+
+    // Update solution
+    const solutionElement = document.querySelector('.content-solution');
+    if (solutionElement) {
+      solutionElement.textContent = content.solution;
+    }
+
+    // Update section headings
+    document.querySelectorAll('[data-lang-en]').forEach(element => {
+      const translation = element.getAttribute(`data-lang-${langKey}`);
+      if (translation) {
+        // Check for span children
+        const spanElement = element.querySelector('.breadcrumb-text, .industry-text, .contact-sales-text, .view-products-text, .related-stories-text');
+        if (spanElement) {
+          spanElement.textContent = translation;
+        } else if (element.tagName === 'H2' || element.tagName === 'H1') {
+          element.textContent = translation;
+        } else if (element.tagName === 'P') {
+          element.textContent = translation;
+        }
+      }
+    });
+  }
+
+  // Listen for language change events from Header
+  window.addEventListener('languageChanged', (event) => {
+    setCustomerStoryLanguage(event.detail.language);
+  });
+
+  // Set initial language on page load
+  document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('language') || 'EN';
+    setCustomerStoryLanguage(savedLang);
+  });
+
+  // Re-initialize after view transition
+  document.addEventListener('astro:after-swap', () => {
+    setTimeout(() => {
+      const savedLang = localStorage.getItem('language') || 'EN';
+      setCustomerStoryLanguage(savedLang);
+    }, 50);
+  });
+</script>

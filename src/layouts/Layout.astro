@@ -20,7 +20,7 @@ const {
   title,
   description = 'Digital360 - Your Digital Transformation Partner',
   lang = 'en',
-  ogImage = 'https://digital360.id/assets/images/og-image.jpg',
+  ogImage = '/assets/images/og-image.jpg',
   ogType = 'website',
   articlePublishedTime,
   articleAuthor,
@@ -79,7 +79,7 @@ const hreflangDefault = hreflangId; // Use Indonesian as default for Indonesia a
       "@type": "Organization",
       "name": "Digital360",
       "url": "https://digital360.id",
-      "logo": "https://digital360.id/assets/images/digital360-logo.png",
+      "logo": "/assets/images/digital360-logo.png",
       "description": description,
       "address": {
         "@type": "PostalAddress",
@@ -128,12 +128,48 @@ const hreflangDefault = hreflangId; // Use Indonesian as default for Indonesia a
     <link rel="preload" href="/assets/images/hero-poster.jpg" as="image" fetchpriority="high" />
     <link rel="preload" href="/assets/videos/CSD-10721_WAC_Hero_FULL_LowBR.mp4" as="video" type="video/mp4" />
 
-    <!-- View Transitions for smooth page navigation -->
-    <ViewTransitions />
+    <!-- View Transitions DISABLED for testing -->
+    <!-- <ViewTransitions /> -->
   </head>
   <body>
     <LoadingBar />
     <slot />
+
+    <!-- View Transition Re-initialization Script -->
+    <script is:inline>
+      /**
+       * View Transition Re-initialization Script
+       * Ensures all component scripts are re-initialized after Astro view transitions
+       */
+      (function() {
+        let initialized = false;
+
+        function triggerReinit() {
+          // Dispatch custom event for all components
+          window.dispatchEvent(new CustomEvent('view-transition-reinit', {
+            detail: { timestamp: Date.now() }
+          }));
+
+          // Also trigger language update
+          const savedLang = localStorage.getItem('language') || 'EN';
+          window.dispatchEvent(new CustomEvent('languageChanged', {
+            detail: { language: savedLang }
+          }));
+        }
+
+        // Initialize on DOM load
+        document.addEventListener('DOMContentLoaded', () => {
+          initialized = true;
+        });
+
+        // Re-initialize after view transition
+        document.addEventListener('astro:after-swap', () => {
+          setTimeout(() => {
+            triggerReinit();
+          }, 100);
+        });
+      })();
+    </script>
   </body>
 </html>
 
