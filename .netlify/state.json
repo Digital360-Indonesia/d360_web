@@ -1,3 +1,21 @@
 {
-	"siteId": "208f1a72-0e32-4a91-a015-5c0a9ddb3467"
+	"siteId": "208f1a72-0e32-4a91-a015-5c0a9ddb3467",
+	"geolocation": {
+		"data": {
+			"city": "Surabaya",
+			"country": {
+				"code": "ID",
+				"name": "Indonesia"
+			},
+			"subdivision": {
+				"code": "JI",
+				"name": "East Java"
+			},
+			"timezone": "Asia/Jakarta",
+			"latitude": -7.2484,
+			"longitude": 112.7419,
+			"postalCode": "60271"
+		},
+		"timestamp": 1766970780492
+	}
 }

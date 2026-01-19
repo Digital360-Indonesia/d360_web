@@ -1,88 +1,73 @@
 ---
+const videoPoster = '/assets/images/hero-placeholder.png';
 ---
 
 <section id="home" class="bg-white">
-  <div class="container mx-auto px-6 lg:px-8">
-    <div class="pt-32 pb-20 text-center">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="pt-24 sm:pt-28 md:pt-32 pb-12 md:pb-16 lg:pb-20 text-center">
       <!-- Main Heading -->
-      <h1 class="text-5xl md:text-6xl lg:text-7xl font-normal text-gray-900 mb-8 leading-tight max-w-5xl mx-auto" data-lang-en="true">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-gray-900 mb-6 md:mb-8 leading-tight max-w-5xl mx-auto px-2" data-lang-en="true">
         The Digital Partner for Businesses <span class="relative inline-block">
           <span class="relative z-10 font-bold">Ready</span>
-          <svg class="absolute -bottom-2 left-0 w-full h-4 z-0" viewBox="0 0 200 20" fill="none">
+          <svg class="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-3 sm:h-4 z-0" viewBox="0 0 200 20" fill="none">
             <path d="M5 15 Q50 5 95 10 T185 12" stroke="#F59E0B" stroke-width="6" fill="none" stroke-linecap="round"/>
           </svg>
         </span> to Scale
       </h1>
-      <h1 class="text-5xl md:text-6xl lg:text-7xl font-normal text-gray-900 mb-8 leading-tight max-w-5xl mx-auto hidden" data-lang-id="true">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-gray-900 mb-6 md:mb-8 leading-tight max-w-5xl mx-auto px-2 hidden" data-lang-id="true">
         Partner Digital Bisnis Anda untuk <span class="relative inline-block">
           <span class="relative z-10 font-bold">Scale Up</span>
-          <svg class="absolute -bottom-2 left-0 w-full h-4 z-0" viewBox="0 0 200 20" fill="none">
+          <svg class="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-3 sm:h-4 z-0" viewBox="0 0 200 20" fill="none">
             <path d="M5 15 Q50 5 95 10 T185 12" stroke="#F59E0B" stroke-width="6" fill="none" stroke-linecap="round"/>
           </svg>
         </span>
       </h1>
 
       <!-- Subtitle -->
-      <p class="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto" data-lang-en="true">
+      <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 md:mb-12 max-w-4xl mx-auto px-4" data-lang-en="true">
         We build AI-powered systems that actually work for your business—custom dashboards, smart management tools, and digital solutions designed around how you really operate.
       </p>
-      <p class="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto hidden" data-lang-id="true">
+      <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 md:mb-12 max-w-4xl mx-auto px-4 hidden" data-lang-id="true">
         Bangun sistem digital yang efektif untuk bisnis Anda—dashboard AI-powered, tools manajemen terintegrasi, dan solusi custom yang mendukung pertumbuhan tanpa mengubah workflow Anda.
       </p>
 
       <!-- CTA Buttons -->
-      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-        <div class="relative group">
-          <a href="#contact" class="bg-primary-800 hover:bg-primary-900 text-white font-semibold px-8 py-4 rounded-full transition-colors duration-200 cursor-not-allowed opacity-90 inline-block" data-lang-en="true">
-            Get started
-          </a>
-          <!-- Under Construction Bubble -->
-          <div class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-            <div class="bg-gray-800 text-white text-xs px-3 py-2 rounded-lg whitespace-nowrap animate-bounce">
-              🚧 Under Construction
-            </div>
-            <div class="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800"></div>
-          </div>
-        </div>
-        <div class="relative group">
-          <a href="#contact" class="bg-primary-800 hover:bg-primary-900 text-white font-semibold px-8 py-4 rounded-full transition-colors duration-200 cursor-not-allowed opacity-90 inline-block hidden" data-lang-id="true">
-            Mulai Sekarang
-          </a>
-          <!-- Under Construction Bubble -->
-          <div class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-            <div class="bg-gray-800 text-white text-xs px-3 py-2 rounded-lg whitespace-nowrap animate-bounce">
-              🚧 Dalam Pembangunan
-            </div>
-            <div class="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800"></div>
-          </div>
-        </div>
-        <a href="https://wa.me/6285706679500" target="_blank" class="bg-white hover:bg-gray-50 text-black font-semibold px-8 py-4 rounded-full border border-gray-300 transition-colors duration-200" data-lang-en="true">
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-10 md:mb-16 px-4">
+        <a href="https://wa.me/6285706679500" target="_blank" class="w-full sm:w-auto bg-primary-800 hover:bg-primary-900 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-colors duration-200 inline-block text-center" data-lang-en="true">
+          Get started
+        </a>
+        <a href="https://wa.me/6285706679500" target="_blank" class="w-full sm:w-auto bg-primary-800 hover:bg-primary-900 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-colors duration-200 inline-block text-center hidden" data-lang-id="true">
+          Mulai Sekarang
+        </a>
+        <a href="https://wa.me/6285706679500" target="_blank" class="w-full sm:w-auto bg-white hover:bg-gray-50 text-black font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full border border-gray-300 transition-colors duration-200 text-center" data-lang-en="true">
           Book a Consultation
         </a>
-        <a href="https://wa.me/6285706679500" target="_blank" class="bg-white hover:bg-gray-50 text-black font-semibold px-8 py-4 rounded-full border border-gray-300 transition-colors duration-200 hidden" data-lang-id="true">
+        <a href="https://wa.me/6285706679500" target="_blank" class="w-full sm:w-auto bg-white hover:bg-gray-50 text-black font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full border border-gray-300 transition-colors duration-200 text-center hidden" data-lang-id="true">
           Hubungi Kami
         </a>
       </div>
 
-      <!-- Video -->
-      <div class="max-w-4xl mx-auto">
-        <div class="relative aspect-video bg-black rounded-3xl overflow-hidden shadow-2xl">
-          <!-- Animated gradient background behind video -->
-          <div class="absolute inset-0 gradient-bg"></div>
+      <!-- Hero Video -->
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl bg-[#0f172a]">
+          <!-- Placeholder Image (shown while video loads) -->
+          <img
+            id="heroPlaceholder"
+            src={videoPoster}
+            alt="Hero Video Preview"
+            class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 z-10"
+          >
 
-          <!-- Video overlay -->
+          <!-- Video (hidden initially, fades in when ready) -->
           <video
-            id="hero-video"
+            id="heroVideo"
+            class="w-full h-auto opacity-0 transition-opacity duration-500"
             autoplay
             muted
             loop
             playsinline
-            preload="auto"
-            poster="/assets/images/hero-video-poster.jpg"
-            class="w-full h-full object-cover relative z-10"
           >
-            <source src="/assets/videos/CSD-10721_WAC_Hero_FULL_LowBR.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+            <source src="/assets/videos/CSD-10721_WAC_Hero_FULL_LowBR.mp4" type="video/mp4" />
           </video>
         </div>
       </div>
@@ -100,37 +85,76 @@
   svg path {
     stroke-dasharray: 300;
     stroke-dashoffset: 300;
+  }
+
+  svg path.animate-draw {
     animation: draw 2s ease-out 0.5s forwards;
-  }
-
-  /* Subtle slow-moving gradient animation */
-  @keyframes gradientShift {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-
-  .gradient-bg {
-    background: linear-gradient(
-      135deg,
-      rgba(15, 45, 120, 0.65),     /* deeper navy blue - 65% opacity */
-      rgba(30, 80, 200, 0.6),      /* vibrant blue - 60% opacity */
-      rgba(50, 120, 220, 0.65),    /* bright blue - 65% opacity */
-      rgba(15, 45, 120, 0.7)       /* deeper navy blue - 70% opacity */
-    );
-    background-size: 400% 400%;
-    animation: gradientShift 20s ease-in-out infinite;
-    opacity: 0.85;
   }
 </style>
 
 <script>
+  // Function to initialize Hero animations
+  function initHeroAnimations() {
+    const savedLang = localStorage.getItem('language') || 'EN';
+    switchLanguage(savedLang);
+
+    // Trigger the "Ready" underline animation
+    const svgPaths = document.querySelectorAll('#home svg path');
+    svgPaths.forEach(path => {
+      // Remove class first to reset
+      path.classList.remove('animate-draw');
+      // Force reflow
+      void path.offsetWidth;
+      // Add class to trigger animation
+      path.classList.add('animate-draw');
+    });
+
+    // Handle video loading with smooth transition
+    const video = document.getElementById('heroVideo') as HTMLVideoElement;
+    const placeholder = document.getElementById('heroPlaceholder') as HTMLImageElement;
+
+    if (video && placeholder) {
+      // Wait for video to be ready before playing and showing
+      video.addEventListener('canplaythrough', () => {
+        // Video is ready to play smoothly
+        video.play().catch(err => {
+          video.muted = true;
+          video.play().catch(e => console.log('Video autoplay prevented:', e));
+        });
+
+        // Fade in video and hide placeholder
+        video.classList.remove('opacity-0');
+        placeholder.classList.add('opacity-0');
+
+        // Remove placeholder from DOM after fade completes
+        setTimeout(() => {
+          placeholder.style.display = 'none';
+        }, 500);
+      }, { once: true });
+
+      // Fallback: if video takes too long, show it anyway after 3 seconds
+      setTimeout(() => {
+        if (video.classList.contains('opacity-0')) {
+          video.play().catch(err => {
+            video.muted = true;
+            video.play().catch(e => console.log('Video autoplay prevented:', e));
+          });
+          video.classList.remove('opacity-0');
+          placeholder.classList.add('opacity-0');
+          setTimeout(() => {
+            placeholder.style.display = 'none';
+          }, 500);
+        }
+      }, 3000);
+    }
+  }
+
+  // Handle view transition navigation
+  document.addEventListener('astro:after-swap', () => {
+    // Small delay to ensure DOM is ready
+    setTimeout(initHeroAnimations, 50);
+  });
+
   // Language switching functionality
   function switchLanguage(lang: string) {
     // Only select elements within this Hero section, not the entire page
@@ -157,43 +181,6 @@
     switchLanguage(e.detail.language);
   }) as EventListener);
 
-  // Load saved language on page load
-  document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('language') || 'EN';
-    switchLanguage(savedLang);
-  });
-
-  // Ensure video plays immediately
-  function initHeroVideo() {
-    const video = document.getElementById('hero-video') as HTMLVideoElement;
-
-    if (video) {
-      // Attempt to play
-      const playPromise = video.play();
-
-      if (playPromise !== undefined) {
-        playPromise.catch(error => {
-          // Auto-play was prevented, retry on user interaction
-          console.log('Autoplay prevented, will retry on interaction');
-          document.addEventListener('click', () => {
-            video.play();
-          }, { once: true });
-        });
-      }
-    }
-  }
-
-  // Initialize video immediately
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initHeroVideo);
-  } else {
-    initHeroVideo();
-  }
-
-  // Also handle page show (back/forward cache)
-  window.addEventListener('pageshow', (event) => {
-    if (event.persisted) {
-      initHeroVideo();
-    }
-  });
+  // Load saved language on page load and trigger animations
+  document.addEventListener('DOMContentLoaded', initHeroAnimations);
 </script>

@@ -7,10 +7,12 @@
       <!-- Logo and Navigation Group -->
       <div class="flex items-center space-x-12">
         <!-- Logo -->
-        <a href="/" class="flex items-center">
+        <a href="/" data-no-view-transition class="flex items-center">
           <img
-            src="/assets/images/logo-digital360-ori.png"
+            src="/assets/images/digital360-logo.png"
             alt="Digital360 Logo"
+            width="150"
+            height="48"
             class="h-12 w-auto"
           />
         </a>
@@ -30,14 +32,14 @@
             <div class="fixed left-1/2 -translate-x-1/2 mt-2 w-screen max-w-7xl bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2" id="products-dropdown" style="top: 80px;">
               <!-- Horizontal Tab Navigation -->
               <div class="flex border-b border-gray-200 bg-gray-50 rounded-t-lg">
-                <button class="px-6 py-4 text-sm font-medium border-b-2 border-blue-600 text-blue-600 category-tab active" data-category="services" data-lang-en="360 Services" data-lang-id="360 Layanan">
-                  <span class="tab-text">360 Services</span>
+                <button class="px-6 py-4 text-sm font-medium border-b-2 border-blue-600 text-blue-600 category-tab active" data-category="services" data-lang-en="Business management system" data-lang-id="Sistem manajemen bisnis">
+                  <span class="tab-text">Business management system</span>
                 </button>
-                <button class="px-6 py-4 text-sm font-medium border-b-2 border-transparent text-gray-600 hover:text-gray-900 category-tab" data-category="apps" data-lang-en="360 Apps" data-lang-id="360 Aplikasi">
-                  <span class="tab-text">360 Apps</span>
+                <button class="px-6 py-4 text-sm font-medium border-b-2 border-transparent text-gray-600 hover:text-gray-900 category-tab" data-category="apps" data-lang-en="Website360" data-lang-id="Website360">
+                  <span class="tab-text">Website360</span>
                 </button>
-                <button class="px-6 py-4 text-sm font-medium border-b-2 border-transparent text-gray-600 hover:text-gray-900 category-tab" data-category="partner" data-lang-en="360 Partner" data-lang-id="360 Mitra">
-                  <span class="tab-text">360 Partner</span>
+                <button class="px-6 py-4 text-sm font-medium border-b-2 border-transparent text-gray-600 hover:text-gray-900 category-tab" data-category="partner" data-lang-en="Tryon360" data-lang-id="Tryon360">
+                  <span class="tab-text">Tryon360</span>
                 </button>
                 <div class="flex-1"></div>
                 <a href="https://wa.me/6285706679500" target="_blank" class="px-6 py-4 text-sm font-medium text-blue-600 hover:text-blue-700 flex items-center" data-lang-en="SCHEDULE CONSULTATION" data-lang-id="JADWALKAN KONSULTASI">
@@ -52,92 +54,36 @@
               <div class="p-8">
                 <!-- 360 Services Content -->
                 <div class="category-content" id="services-content">
-                  <div class="grid grid-cols-3 gap-6">
-                    <a href="#dental360" class="block p-6 rounded-lg border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all bg-blue-50">
-                      <div class="flex items-start mb-2">
-                        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
-                          <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                          </svg>
-                        </div>
-                      </div>
-                      <h4 class="font-semibold text-gray-900 mb-1">Dental360</h4>
-                      <p class="text-xs text-gray-600">Complete dental practice management system</p>
-                      <span class="text-xs text-blue-600 font-medium mt-2 inline-flex items-center">
-                        TRY NOW
-                        <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div class="grid grid-cols-2 gap-8">
+                    <a href="https://digital360.id/dental360" target="_blank" class="block p-8 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all bg-white">
+                      <img
+                        src="/assets/images/satu360dental-logo.png"
+                        alt="Satu360 Dental"
+                        width="180"
+                        height="48"
+                        class="h-12 w-auto mb-4"
+                      />
+                      <p class="text-sm text-gray-600 mb-4">Complete dental practice management system</p>
+                      <span class="text-sm text-blue-600 font-medium inline-flex items-center cta-text" data-lang-en="Check more" data-lang-id="Cek lebih lanjut">
+                        Check more
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                         </svg>
                       </span>
                     </a>
 
-                    <a href="#business360" class="block p-6 rounded-lg border border-gray-200 hover:border-green-300 hover:shadow-md transition-all bg-green-50">
-                      <div class="flex items-start mb-2">
-                        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-3">
-                          <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                          </svg>
-                        </div>
-                      </div>
-                      <h4 class="font-semibold text-gray-900 mb-1">Business360</h4>
-                      <p class="text-xs text-gray-600">All-in-one business management solution</p>
-                      <span class="text-xs text-blue-600 font-medium mt-2 inline-flex items-center">
-                        TRY NOW
-                        <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                      </span>
-                    </a>
-
-                    <a href="#website360" class="block p-6 rounded-lg border border-gray-200 hover:border-cyan-300 hover:shadow-md transition-all bg-cyan-50">
-                      <div class="flex items-start mb-2">
-                        <div class="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center mr-3">
-                          <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
-                          </svg>
-                        </div>
-                      </div>
-                      <h4 class="font-semibold text-gray-900 mb-1">Website360</h4>
-                      <p class="text-xs text-gray-600">Professional website builder and hosting</p>
-                      <span class="text-xs text-blue-600 font-medium mt-2 inline-flex items-center">
-                        TRY NOW
-                        <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                      </span>
-                    </a>
-
-                    <a href="#clinic360" class="block p-6 rounded-lg border border-gray-200 hover:border-purple-300 hover:shadow-md transition-all bg-purple-50">
-                      <div class="flex items-start mb-2">
-                        <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-3">
-                          <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
-                          </svg>
-                        </div>
-                      </div>
-                      <h4 class="font-semibold text-gray-900 mb-1">Clinic360</h4>
-                      <p class="text-xs text-gray-600">Healthcare clinic management platform</p>
-                      <span class="text-xs text-blue-600 font-medium mt-2 inline-flex items-center">
-                        TRY NOW
-                        <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                      </span>
-                    </a>
-
-                    <a href="#logistic360" class="block p-6 rounded-lg border border-gray-200 hover:border-red-300 hover:shadow-md transition-all bg-red-50">
-                      <div class="flex items-start mb-2">
-                        <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center mr-3">
-                          <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"></path>
-                          </svg>
-                        </div>
-                      </div>
-                      <h4 class="font-semibold text-gray-900 mb-1">Logistic360</h4>
-                      <p class="text-xs text-gray-600">Supply chain and logistics management</p>
-                      <span class="text-xs text-blue-600 font-medium mt-2 inline-flex items-center">
-                        TRY NOW
-                        <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <a href="https://digital360.id/manufacturemanagementsystem" target="_blank" class="block p-8 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all bg-white">
+                      <img
+                        src="/assets/images/satu360manufacture-logo.png"
+                        alt="Satu360 Manufacture"
+                        width="180"
+                        height="48"
+                        class="h-12 w-auto mb-4"
+                      />
+                      <p class="text-sm text-gray-600 mb-4">All-in-one business management solution</p>
+                      <span class="text-sm text-blue-600 font-medium inline-flex items-center cta-text" data-lang-en="Check more" data-lang-id="Cek lebih lanjut">
+                        Check more
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                         </svg>
                       </span>
@@ -147,90 +93,80 @@
 
                 <!-- 360 Apps Content - Banner Style -->
                 <div class="category-content hidden" id="apps-content">
-                  <div class="flex items-center gap-8 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-8 border border-blue-100">
-                    <!-- Left Content -->
-                    <div class="flex-1">
-                      <div class="flex items-center mb-4">
-                        <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
-                          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
-                          </svg>
-                        </div>
-                        <div>
-                          <span class="text-sm text-gray-600 font-medium">All-in-one suite</span>
-                          <h4 class="text-2xl font-bold text-gray-900">Digital360 Apps</h4>
-                          <span class="inline-block mt-1 px-3 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full">The Complete App Ecosystem</span>
-                        </div>
-                      </div>
-                      <p class="text-gray-700 mb-6 leading-relaxed">
-                        Run your entire business on Digital360 with our unified app platform, designed to help you break down silos between departments and increase organizational efficiency.
-                      </p>
-                      <div class="relative inline-block group/apps">
-                        <button class="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg cursor-not-allowed opacity-90">
-                          TRY DIGITAL360 APPS
-                          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div class="relative overflow-hidden rounded-xl border border-gray-200 bg-white p-10 shadow-sm hover:shadow-xl transition-all duration-300">
+                    <!-- Subtle gradient overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-white to-cyan-50/30 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
+
+                    <div class="relative flex items-center gap-12">
+                      <!-- Left Content -->
+                      <div class="flex-1">
+                        <img
+                          src="/assets/images/web360-logo.png"
+                          alt="Website360"
+                          width="200"
+                          height="56"
+                          class="h-14 w-auto mb-6"
+                        />
+                        <p class="text-gray-700 mb-8 leading-relaxed text-sm">
+                          Run your entire business on Digital360 with our unified app platform, designed to help you break down silos between departments and increase organizational efficiency.
+                        </p>
+                        <a href="https://wa.me/6285706679500" target="_blank" class="text-sm text-blue-600 font-medium inline-flex items-center hover:text-blue-700 transition-colors cta-text" data-lang-en="Check more" data-lang-id="Cek lebih lanjut">
+                          Check more
+                          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                           </svg>
-                        </button>
-                        <!-- Under Construction Bubble -->
-                        <div class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 opacity-0 invisible group-hover/apps:opacity-100 group-hover/apps:visible transition-all duration-300">
-                          <div class="bg-gray-800 text-white text-xs px-3 py-2 rounded-lg whitespace-nowrap animate-bounce">
-                            🚧 Under Construction
-                          </div>
-                          <div class="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800"></div>
-                        </div>
+                        </a>
                       </div>
-                    </div>
-                    <!-- Right Image/Illustration -->
-                    <div class="flex-shrink-0 w-80 h-64 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-lg flex items-center justify-center">
-                      <svg class="w-48 h-48 text-blue-600 opacity-20" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
-                      </svg>
+                      <!-- Right Image -->
+                      <div class="flex-shrink-0">
+                        <img
+                          src="/assets/images/header-web360-right.png"
+                          alt="Website360"
+                          width="320"
+                          height="240"
+                          class="w-80 h-60 object-contain"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
 
                 <!-- 360 Partner Content - Banner Style -->
                 <div class="category-content hidden" id="partner-content">
-                  <div class="flex items-center gap-8 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg p-8 border border-purple-100">
-                    <!-- Left Content -->
-                    <div class="flex-1">
-                      <div class="flex items-center mb-4">
-                        <div class="w-16 h-16 bg-purple-600 rounded-lg flex items-center justify-center mr-4">
-                          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                          </svg>
-                        </div>
-                        <div>
-                          <span class="text-sm text-gray-600 font-medium">Partner Program</span>
-                          <h4 class="text-2xl font-bold text-gray-900">Digital360 Partner</h4>
-                          <span class="inline-block mt-1 px-3 py-1 bg-purple-100 text-purple-700 text-xs font-semibold rounded-full">Grow Together with Us</span>
-                        </div>
-                      </div>
-                      <p class="text-gray-700 mb-6 leading-relaxed">
-                        Join our global partner network and unlock new opportunities for growth. Access exclusive resources, training, and support to deliver exceptional value to your clients.
-                      </p>
-                      <div class="relative inline-block group/partner">
-                        <button class="inline-flex items-center px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg cursor-not-allowed opacity-90">
-                          BECOME A PARTNER
-                          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div class="relative overflow-hidden rounded-xl border border-gray-200 bg-white p-10 shadow-sm hover:shadow-xl transition-all duration-300">
+                    <!-- Subtle gradient overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-purple-50/50 via-white to-pink-50/30 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
+
+                    <div class="relative flex items-center gap-12">
+                      <!-- Left Content -->
+                      <div class="flex-1">
+                        <img
+                          src="/assets/images/tryon360-logo.png"
+                          alt="Tryon360"
+                          width="200"
+                          height="56"
+                          class="h-14 w-auto mb-6"
+                        />
+                        <p class="text-gray-700 mb-8 leading-relaxed text-sm">
+                          Join our global partner network and unlock new opportunities for growth. Access exclusive resources, training, and support to deliver exceptional value to your clients.
+                        </p>
+                        <a href="https://tryon.digital360.id" target="_blank" class="text-sm text-blue-600 font-medium inline-flex items-center hover:text-blue-700 transition-colors cta-text" data-lang-en="Check more" data-lang-id="Cek lebih lanjut">
+                          Check more
+                          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                           </svg>
-                        </button>
-                        <!-- Under Construction Bubble -->
-                        <div class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 opacity-0 invisible group-hover/partner:opacity-100 group-hover/partner:visible transition-all duration-300">
-                          <div class="bg-gray-800 text-white text-xs px-3 py-2 rounded-lg whitespace-nowrap animate-bounce">
-                            🚧 Under Construction
-                          </div>
-                          <div class="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800"></div>
-                        </div>
+                        </a>
                       </div>
-                    </div>
-                    <!-- Right Image/Illustration -->
-                    <div class="flex-shrink-0 w-80 h-64 bg-gradient-to-br from-purple-100 to-pink-100 rounded-lg flex items-center justify-center">
-                      <svg class="w-48 h-48 text-purple-600 opacity-20" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                      </svg>
+                      <!-- Right Image -->
+                      <div class="flex-shrink-0">
+                        <img
+                          src="/assets/images/header-tryon360-right.png"
+                          alt="Tryon360"
+                          width="320"
+                          height="240"
+                          class="w-80 h-60 object-contain"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -247,19 +183,6 @@
             <span class="blog-text">Blog</span>
           </a>
 
-          <!-- Pricing with Under Construction Tooltip -->
-          <div class="relative group">
-            <span class="text-gray-700 font-medium cursor-not-allowed pricing-text" data-lang-en="Pricing" data-lang-id="Harga">
-              Pricing
-            </span>
-            <!-- Under Construction Bubble - Right Side -->
-            <div class="absolute left-full ml-2 top-1/2 -translate-y-1/2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-              <div class="bg-gray-800 text-white text-xs px-3 py-2 rounded-lg whitespace-nowrap animate-bounce flex items-center">
-                <div class="absolute right-full w-0 h-0 border-t-4 border-b-4 border-r-4 border-transparent border-r-gray-800"></div>
-                🚧 Under Construction
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -295,50 +218,273 @@
       </div>
 
       <!-- Mobile Menu Button -->
-      <button class="md:hidden p-2 text-gray-700" id="mobile-menu-btn">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
+      <div class="md:hidden">
+        <button class="p-2 text-gray-700" id="mobile-menu-btn">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Fullscreen Mobile Navigation Overlay (outside header) -->
+<div id="mobile-nav-overlay" class="md:hidden fixed inset-0 bg-white z-[60] transform translate-x-full transition-transform duration-300 ease-in-out">
+  <!-- Main Menu Level -->
+  <div id="mobile-nav-main" class="h-full flex flex-col">
+    <!-- Top Bar: Logo, Language, Close -->
+    <div class="flex items-center justify-between px-6 py-5 border-b border-gray-100">
+      <!-- Logo -->
+      <a href="/" data-no-view-transition class="flex items-center" onclick="closeMobileNav()">
+        <img
+          src="/assets/images/digital360-logo.png"
+          alt="Digital360 Logo"
+          width="150"
+          height="48"
+          class="h-10 w-auto"
+        />
+      </a>
+
+      <!-- Language & Close -->
+      <div class="flex items-center gap-4">
+        <button onclick="setLanguage('EN')" class="p-2 text-gray-700 hover:text-gray-900 transition-colors text-sm font-medium" id="mobile-lang-en">
+          EN
+        </button>
+        <span class="text-gray-300">|</span>
+        <button onclick="setLanguage('ID')" class="p-2 text-gray-700 hover:text-gray-900 transition-colors text-sm font-medium" id="mobile-lang-id">
+          ID
+        </button>
+        <button class="p-2 text-gray-700 hover:text-gray-900" id="mobile-nav-close">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
     </div>
 
-    <!-- Mobile Menu -->
-    <div class="md:hidden hidden" id="mobile-menu">
-      <div class="py-4 space-y-4 border-t border-gray-100">
-        <a href="#products" class="block text-gray-700 hover:text-gray-900 font-medium transition-colors" data-lang-en="Products" data-lang-id="Produk">
+    <!-- Menu Items -->
+    <div class="flex-1 overflow-y-auto px-6 py-8">
+      <div class="space-y-2">
+        <!-- Products with arrow (has submenu) -->
+        <button class="w-full flex items-center justify-between py-4 text-left text-xl font-medium text-gray-900 hover:text-gray-700 transition-colors border-b border-gray-100" id="mobile-products-trigger">
           <span class="mobile-products-text">Products</span>
+          <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+
+        <a href="/customer-stories" class="block py-4 text-xl font-medium text-gray-900 hover:text-gray-700 transition-colors border-b border-gray-100" onclick="closeMobileNav()" data-lang-en="Portfolio" data-lang-id="Portofolio">
+          <span class="mobile-portfolio-text">Portfolio</span>
         </a>
-        <a href="#business-solution" class="block text-gray-700 hover:text-gray-900 font-medium transition-colors" data-lang-en="Business Solution" data-lang-id="Solusi Bisnis">
-          <span class="mobile-business-solution-text">Business Solution</span>
-        </a>
-        <a href="/blog" class="block text-gray-700 hover:text-gray-900 font-medium transition-colors" data-lang-en="Blog" data-lang-id="Berita">
+
+        <a href="/blog" class="block py-4 text-xl font-medium text-gray-900 hover:text-gray-700 transition-colors border-b border-gray-100" onclick="closeMobileNav()" data-lang-en="Blog" data-lang-id="Berita">
           <span class="mobile-blog-text">Blog</span>
         </a>
-        <a href="#pricing" class="block text-gray-700 hover:text-gray-900 font-medium transition-colors" data-lang-en="Pricing" data-lang-id="Harga">
-          <span class="mobile-pricing-text">Pricing</span>
-        </a>
-        <a href="#signin" class="block text-gray-700 hover:text-gray-900 font-medium transition-colors" data-lang-en="Sign in" data-lang-id="Masuk">
+
+        <a href="#signin" class="block py-4 text-xl font-medium text-gray-900 hover:text-gray-700 transition-colors border-b border-gray-100" onclick="closeMobileNav()" data-lang-en="Sign in" data-lang-id="Masuk">
           <span class="mobile-signin-text">Sign in</span>
         </a>
-        <a href="https://wa.me/6285706679500" target="_blank" class="flex items-center bg-primary-800 hover:bg-primary-900 text-white font-medium px-4 py-2 rounded-lg transition-colors duration-200 w-fit" data-lang-en="Book a Meeting" data-lang-id="Jadwalkan Pertemuan">
-          <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+      </div>
+
+      <!-- CTA Button -->
+      <div class="mt-8">
+        <a href="https://wa.me/6285706679500" target="_blank" class="flex items-center justify-center bg-primary-800 hover:bg-primary-900 text-white font-medium px-6 py-3 rounded-lg transition-colors duration-200" data-lang-en="Book a Meeting" data-lang-id="Jadwalkan Pertemuan">
+          <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.306"/>
           </svg>
           <span class="mobile-bookmeeting-text">Book a Meeting</span>
         </a>
       </div>
     </div>
-  </nav>
-</header>
+  </div>
+
+  <!-- Products Submenu Level -->
+  <div id="mobile-nav-products" class="h-full flex flex-col hidden absolute inset-0 bg-white">
+    <!-- Top Bar: Back, Logo, Close -->
+    <div class="flex items-center justify-between px-6 py-5 border-b border-gray-100">
+      <!-- Back Button -->
+      <button class="flex items-center text-gray-700 hover:text-gray-900" id="mobile-nav-back">
+        <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+        <span class="text-sm font-medium">Back</span>
+      </button>
+
+      <!-- Logo -->
+      <a href="/" data-no-view-transition class="flex items-center" onclick="closeMobileNav()">
+        <img
+          src="/assets/images/digital360-logo.png"
+          alt="Digital360 Logo"
+          width="150"
+          height="48"
+          class="h-10 w-auto"
+        />
+      </a>
+
+      <!-- Close Button -->
+      <button class="p-2 text-gray-700 hover:text-gray-900" id="mobile-nav-close-sub">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Section Title -->
+    <div class="px-6 py-4 bg-gray-50 border-b border-gray-100">
+      <p class="text-sm font-semibold text-gray-500 uppercase tracking-wide">Our Products</p>
+    </div>
+
+    <!-- Submenu Content -->
+    <div class="flex-1 overflow-y-auto">
+      <!-- Dental360 Card -->
+      <a href="/dental360" class="block" onclick="closeMobileNav()">
+        <div class="mx-4 my-4 rounded-xl border border-gray-200 bg-white shadow-sm hover:shadow-lg hover:border-gray-300 transition-all overflow-hidden">
+          <div class="relative h-32 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
+            <img
+              src="/assets/images/satu360dental-logo.png"
+              alt="Dental360"
+              class="h-10 w-auto object-contain"
+            />
+          </div>
+          <div class="p-5">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Dental360</h3>
+            <p class="text-sm text-gray-600 mb-3">Complete dental practice management system with booking, records, inventory & billing.</p>
+            <div class="flex items-center text-blue-600 font-medium text-sm">
+              <span>Explore Dental360</span>
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Manufacture360 Card -->
+      <a href="/manufacturemanagementsystem" class="block" onclick="closeMobileNav()">
+        <div class="mx-4 my-4 rounded-xl border border-gray-200 bg-white shadow-sm hover:shadow-lg hover:border-gray-300 transition-all overflow-hidden">
+          <div class="relative h-32 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
+            <img
+              src="/assets/images/satu360manufacture-logo.png"
+              alt="Manufacture360"
+              class="h-10 w-auto object-contain"
+            />
+          </div>
+          <div class="p-5">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Manufacture360</h3>
+            <p class="text-sm text-gray-600 mb-3">All-in-one business management solution connecting HR to operations.</p>
+            <div class="flex items-center text-blue-600 font-medium text-sm">
+              <span>Explore Manufacture360</span>
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Website360 Card -->
+      <a href="https://wa.me/6285706679500" target="_blank" class="block" onclick="closeMobileNav()">
+        <div class="mx-4 my-4 rounded-xl border border-gray-200 bg-white shadow-sm hover:shadow-lg hover:border-gray-300 transition-all overflow-hidden">
+          <div class="relative h-32 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
+            <img
+              src="/assets/images/web360-logo.png"
+              alt="Website360"
+              class="h-16 w-auto object-contain"
+            />
+          </div>
+          <div class="p-5">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Website360</h3>
+            <p class="text-sm text-gray-600 mb-3">Professional websites built to strengthen your digital presence and marketing goals.</p>
+            <div class="flex items-center text-blue-600 font-medium text-sm">
+              <span>Get Started</span>
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Tryon360 Card -->
+      <a href="https://tryon.digital360.id" target="_blank" class="block" onclick="closeMobileNav()">
+        <div class="mx-4 my-4 rounded-xl border border-gray-200 bg-white shadow-sm hover:shadow-lg hover:border-gray-300 transition-all overflow-hidden">
+          <div class="relative h-32 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
+            <img
+              src="/assets/images/tryon360-logo.png"
+              alt="Tryon360"
+              class="h-16 w-auto object-contain"
+            />
+          </div>
+          <div class="p-5">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Tryon360</h3>
+            <p class="text-sm text-gray-600 mb-3">AI-powered virtual try-on for fashion & e-commerce. Upload 2 photos and get realistic visualizations.</p>
+            <div class="flex items-center text-blue-600 font-medium text-sm">
+              <span>Try It Now</span>
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
 
 <script>
-  // Mobile menu toggle
+  // Fullscreen mobile navigation
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileNavOverlay = document.getElementById('mobile-nav-overlay');
+  const mobileNavMain = document.getElementById('mobile-nav-main');
+  const mobileNavProducts = document.getElementById('mobile-nav-products');
+  const mobileProductsTrigger = document.getElementById('mobile-products-trigger');
+  const mobileNavBack = document.getElementById('mobile-nav-back');
+  const mobileNavClose = document.getElementById('mobile-nav-close');
+  const mobileNavCloseSub = document.getElementById('mobile-nav-close-sub');
 
-  mobileMenuBtn?.addEventListener('click', () => {
-    mobileMenu?.classList.toggle('hidden');
-  });
+  // Open mobile nav
+  function openMobileNav() {
+    if (mobileNavOverlay) {
+      mobileNavOverlay.classList.remove('translate-x-full');
+      document.body.classList.add('mobile-nav-open');
+    }
+  }
+
+  // Close mobile nav
+  function closeMobileNav() {
+    if (mobileNavOverlay) {
+      mobileNavOverlay.classList.add('translate-x-full');
+      document.body.classList.remove('mobile-nav-open');
+    }
+    // Reset to main menu
+    setTimeout(() => {
+      if (mobileNavProducts) mobileNavProducts.classList.add('hidden');
+      if (mobileNavMain) mobileNavMain.classList.remove('hidden');
+    }, 300);
+  }
+
+  // Show products submenu
+  function showProductsSubmenu() {
+    if (mobileNavMain) mobileNavMain.classList.add('hidden');
+    if (mobileNavProducts) mobileNavProducts.classList.remove('hidden');
+  }
+
+  // Back to main menu
+  function backToMainMenu() {
+    if (mobileNavProducts) mobileNavProducts.classList.add('hidden');
+    if (mobileNavMain) mobileNavMain.classList.remove('hidden');
+  }
+
+  // Event listeners
+  if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMobileNav);
+  if (mobileNavClose) mobileNavClose.addEventListener('click', closeMobileNav);
+  if (mobileNavCloseSub) mobileNavCloseSub.addEventListener('click', closeMobileNav);
+  if (mobileProductsTrigger) mobileProductsTrigger.addEventListener('click', showProductsSubmenu);
+  if (mobileNavBack) mobileNavBack.addEventListener('click', backToMainMenu);
+
+  // Make functions available globally
+  window.closeMobileNav = closeMobileNav;
 
   // Sticky header scroll effect
   const header = document.getElementById('main-header');
@@ -404,6 +550,23 @@
         span.textContent = lang;
       }
 
+      // Update mobile language buttons active state
+      const mobileLangEn = document.getElementById('mobile-lang-en');
+      const mobileLangId = document.getElementById('mobile-lang-id');
+      if (mobileLangEn && mobileLangId) {
+        if (lang === 'EN') {
+          mobileLangEn.classList.add('text-blue-600', 'font-bold');
+          mobileLangEn.classList.remove('text-gray-700');
+          mobileLangId.classList.remove('text-blue-600', 'font-bold');
+          mobileLangId.classList.add('text-gray-700');
+        } else {
+          mobileLangId.classList.add('text-blue-600', 'font-bold');
+          mobileLangId.classList.remove('text-gray-700');
+          mobileLangEn.classList.remove('text-blue-600', 'font-bold');
+          mobileLangEn.classList.add('text-gray-700');
+        }
+      }
+
       // Save to localStorage (unless skipSave is true)
       if (!skipSave) {
         localStorage.setItem('language', lang);
@@ -450,12 +613,6 @@
         if (translation) blogText.textContent = translation;
       }
 
-      const pricingElement = document.querySelector('.pricing-text');
-      if (pricingElement) {
-        const translation = getTranslation(pricingElement, langKey);
-        if (translation) pricingElement.textContent = translation;
-      }
-
       const signinText = document.querySelector('.signin-text');
       if (signinText) {
         const translation = getTranslation(signinText, langKey);
@@ -475,22 +632,16 @@
         if (translation) mobileProducts.textContent = translation;
       }
 
-      const mobileBusinessSolution = document.querySelector('.mobile-business-solution-text');
-      if (mobileBusinessSolution) {
-        const translation = getTranslation(mobileBusinessSolution, langKey);
-        if (translation) mobileBusinessSolution.textContent = translation;
+      const mobilePortfolio = document.querySelector('.mobile-portfolio-text');
+      if (mobilePortfolio) {
+        const translation = getTranslation(mobilePortfolio, langKey);
+        if (translation) mobilePortfolio.textContent = translation;
       }
 
       const mobileBlog = document.querySelector('.mobile-blog-text');
       if (mobileBlog) {
         const translation = getTranslation(mobileBlog, langKey);
         if (translation) mobileBlog.textContent = translation;
-      }
-
-      const mobilePricing = document.querySelector('.mobile-pricing-text');
-      if (mobilePricing) {
-        const translation = getTranslation(mobilePricing, langKey);
-        if (translation) mobilePricing.textContent = translation;
       }
 
       const mobileSignin = document.querySelector('.mobile-signin-text');
@@ -522,6 +673,18 @@
         const translation = getTranslation(scheduleElement, langKey);
         if (translation) scheduleElement.textContent = translation;
       }
+
+      // Update CTA texts (Check more / Cek lebih lanjut)
+      document.querySelectorAll('.cta-text').forEach(cta => {
+        const translation = cta.getAttribute(`data-lang-${langKey}`);
+        if (translation) {
+          // Update only the text node, not the SVG
+          const textNode = cta.childNodes[0];
+          if (textNode && textNode.nodeType === Node.TEXT_NODE) {
+            textNode.textContent = translation + ' ';
+          }
+        }
+      });
 
       // Dispatch custom event for other components to listen
       const event = new CustomEvent('languageChanged', { detail: { language: lang } });
@@ -555,6 +718,23 @@
       span.textContent = savedLang;
     }
 
+    // Update mobile language buttons active state
+    const mobileLangEn = document.getElementById('mobile-lang-en');
+    const mobileLangId = document.getElementById('mobile-lang-id');
+    if (mobileLangEn && mobileLangId) {
+      if (savedLang === 'EN') {
+        mobileLangEn.classList.add('text-blue-600', 'font-bold');
+        mobileLangEn.classList.remove('text-gray-700');
+        mobileLangId.classList.remove('text-blue-600', 'font-bold');
+        mobileLangId.classList.add('text-gray-700');
+      } else {
+        mobileLangId.classList.add('text-blue-600', 'font-bold');
+        mobileLangId.classList.remove('text-gray-700');
+        mobileLangEn.classList.remove('text-blue-600', 'font-bold');
+        mobileLangEn.classList.add('text-gray-700');
+      }
+    }
+
     // Apply saved language (including EN to ensure consistency)
     // Use requestAnimationFrame for smooth rendering
     requestAnimationFrame(() => {
@@ -564,52 +744,6 @@
 
   // Make setLanguage available globally
   window.setLanguage = setLanguage;
-
-  // Add "Under Construction" tooltips to all placeholder # links
-  document.addEventListener('DOMContentLoaded', () => {
-    // Find all links that start with # (excluding #signin which might be special)
-    const placeholderLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
-
-    placeholderLinks.forEach(link => {
-      // Skip if already has a tooltip parent
-      if (link.parentElement?.classList.contains('relative') && link.parentElement?.classList.contains('group')) {
-        return;
-      }
-
-      // Check if link has block display (for vertical nav items)
-      const isBlock = window.getComputedStyle(link).display === 'block';
-
-      // Wrap link in tooltip container
-      const wrapper = document.createElement('div');
-      wrapper.className = isBlock ? 'relative group block' : 'relative group inline-block';
-
-      // Clone and modify the link
-      const parent = link.parentElement;
-      parent?.insertBefore(wrapper, link);
-      wrapper.appendChild(link);
-
-      // Add cursor style
-      link.style.cursor = 'not-allowed';
-      link.style.opacity = '0.9';
-
-      // Prevent default click
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-      });
-
-      // Create tooltip
-      const tooltip = document.createElement('div');
-      tooltip.className = 'absolute left-1/2 -translate-x-1/2 bottom-full mb-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50';
-      tooltip.innerHTML = `
-        <div class="bg-gray-800 text-white text-xs px-3 py-2 rounded-lg whitespace-nowrap animate-bounce">
-          🚧 Under Construction
-        </div>
-        <div class="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800"></div>
-      `;
-
-      wrapper.appendChild(tooltip);
-    });
-  });
 </script>
 
 <style>
@@ -620,5 +754,19 @@
 
   .language-switching * {
     pointer-events: none;
+  }
+
+  /* Mobile Navigation - simple transitions */
+  #mobile-nav-main.hidden {
+    display: none;
+  }
+
+  #mobile-nav-products.hidden {
+    display: none;
+  }
+
+  /* Body scroll lock class */
+  body.mobile-nav-open {
+    overflow: hidden;
   }
 </style>

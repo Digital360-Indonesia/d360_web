@@ -1,0 +1,73 @@
+[build]
+publish = "dist"
+command = "npm run build"
+
+[build.environment]
+NODE_VERSION = "18.20.8"
+
+[build.processing]
+skip_processing = false
+
+[build.processing.css]
+bundle = true
+minify = true
+
+[build.processing.html]
+pretty_urls = true
+
+[build.processing.images]
+optimize = [
+  ".jpg",
+  ".jpeg",
+  ".png",
+  ".gif",
+  ".webp"
+]
+
+[build.processing.js]
+bundle = true
+minify = true
+
+[[headers]]
+for = "/*"
+[headers.values]
+X-Frame-Options = "DENY"
+X-Content-Type-Options = "nosniff"
+X-XSS-Protection = "1; mode=block"
+Referrer-Policy = "strict-origin-when-cross-origin"
+Permissions-Policy = "geolocation=(self), microphone=(), camera=()"
+
+[[headers]]
+for = "/blog/*"
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "*.jpg"
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "*.png"
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "*.webp"
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+
+# Serve sitemap and robots.txt directly (no redirect)
+[[redirects]]
+from = "/sitemap.xml"
+to = "/sitemap-index.xml"
+status = 200
+force = false
+
+# Blog article redirects - old WordPress to new Astro structure
+# IMPORTANT: Redirect old article URLs (without /blog/) to new structure (with /blog/)
+# Using _redirects file for better wildcard support
+# See: public/_redirects file for implementation
+
+# No SPA fallback needed for Astro SSR mode
+# Astro Netlify adapter handles routing automatically

@@ -2,42 +2,18 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import BlogCard from '../../components/BlogCard.astro';
 import BlogSkeleton from '../../components/BlogSkeleton.astro';
-import { getCollection } from 'astro:content';
+import { getAllBlogPosts, getBlogCategories } from '../../lib/blog';
 
-// Get all published blog posts sorted by date (no server-side filtering)
-const allBlogPosts = await getCollection('blog', ({ data }) => {
-  return data.published;
-});
+// Get initial posts and categories
+const initialPosts = await getAllBlogPosts();
+const categories = ["Semua", ...await getBlogCategories()];
 
-// Sort by date (newest first) and map to required format
-const sortedBlogPosts = allBlogPosts
-  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
-  .map((post) => ({
-    title: post.data.title,
-    excerpt: post.data.excerpt,
-    category: post.data.category,
-    date: new Date(post.data.date).toLocaleDateString('id-ID', {
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric'
-    }),
-    readTime: post.data.readTime,
-    image: post.data.image || 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&h=715&fit=crop',
-    slug: post.slug,
-    tags: post.data.tags || []
-  }));
-
-// Get unique categories for filter
-const categories = ["Semua", ...Array.from(new Set(allBlogPosts.map(post => post.data.category)))];
-
-// Get all posts for client-side filtering and pagination
-const blogPosts = sortedBlogPosts;
-
-// Pagination settings
-const POSTS_PER_PAGE = 9;
-const TOTAL_PAGES = Math.ceil(blogPosts.length / POSTS_PER_PAGE);
+// Initial batch size
+const INITIAL_BATCH_SIZE = 9;
+const initialBatch = initialPosts.slice(0, INITIAL_BATCH_SIZE);
+const totalPosts = initialPosts.length;
+const hasMoreInitial = totalPosts > INITIAL_BATCH_SIZE;
 ---
 
 <Layout title="Blog - Digital360" description="Temukan insight terbaru tentang teknologi dan transformasi digital dari tim Digital360" lang="id">
@@ -72,79 +48,186 @@ const TOTAL_PAGES = Math.ceil(blogPosts.length / POSTS_PER_PAGE);
       </div>
     </section>
 
-  <!-- Blog Content -->
-  <section class="py-16">
-    <div class="container mx-auto px-4">
-      <!-- Category Filter -->
-      <div class="mb-12">
-        <div class="flex flex-wrap gap-2 justify-center">
-          {categories.map((category) => (
-            <button
-              data-category={category}
-              class={`category-filter px-4 py-2 rounded-full font-medium transition-colors cursor-pointer inline-block ${
-                category === 'Semua'
-                  ? "bg-primary-800 text-white"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-              }`}
+    <!-- Blog Content -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <!-- Search Bar -->
+        <div class="mb-8 max-w-2xl mx-auto">
+          <div class="relative">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Cari artikel..."
+              class="w-full px-6 py-4 pr-12 rounded-full border-2 border-gray-200 focus:border-primary-800 focus:outline-none text-lg"
+            />
+            <svg class="w-6 h-6 absolute right-6 top-1/2 -translate-y-1/2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Category Filter -->
+        <div class="mb-12">
+          <div class="flex flex-wrap gap-2 justify-center" id="categoryFilters">
+            {categories.map((category) => (
+              <button
+                data-category={category}
+                class={`category-filter px-4 py-2 rounded-full font-medium transition-colors cursor-pointer inline-block ${
+                  category === 'Semua'
+                    ? "bg-primary-800 text-white"
+                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <!-- Blog Grid -->
+        <div id="blogGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+          <!-- Initial Posts (Server-side rendered) -->
+          {initialBatch.map((post) => (
+            <article
+              data-category={post.category}
+              data-slug={post.slug}
+              class="blog-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
-              {category}
-            </button>
+              <div class="relative blog-card-image overflow-hidden aspect-video">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="p-6">
+                <!-- Category Badge & Tags -->
+                <div class="mb-3 flex flex-wrap items-center gap-2">
+                  <span class="inline-block bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-semibold">
+                    {post.category}
+                  </span>
+                  {post.tags && post.tags.length > 0 ? (
+                    post.tags.slice(0, 3).map((tag) => (
+                      <span class="inline-block bg-gray-100 text-gray-600 px-2 py-1 rounded-full text-xs font-medium">
+                        #{tag}
+                      </span>
+                    ))
+                  ) : null}
+                  {post.tags && post.tags.length > 3 ? (
+                    <span class="inline-block bg-gray-100 text-gray-600 px-2 py-1 rounded-full text-xs font-medium">
+                      +{post.tags.length - 3}
+                    </span>
+                  ) : null}
+                </div>
+
+                <h3 class="text-xl font-bold mb-3 line-clamp-2 hover:text-primary-800 transition-colors">
+                  <a href={`/blog/${post.slug}`} class="hover:text-primary-800 transition-colors">
+                    {post.title}
+                  </a>
+                </h3>
+
+                <p class="text-gray-600 mb-4 line-clamp-3">
+                  {post.excerpt}
+                </p>
+
+                <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                  <div class="flex items-center space-x-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                    </svg>
+                    <span>{post.date}</span>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <span>{post.readTime}</span>
+                  </div>
+                </div>
+
+                <a
+                  href={`/blog/${post.slug}`}
+                  class="inline-flex items-center text-primary-800 font-semibold hover:text-primary-900 transition-colors"
+                >
+                  Baca Selengkapnya
+                  <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </article>
           ))}
         </div>
-      </div>
 
-      <!-- Blog Grid -->
-      <div id="blogGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-        <!-- Skeleton Loader (initially hidden) -->
+        <!-- Skeleton Loader (hidden by default) -->
         <div id="blogSkeleton" class="hidden">
-          <BlogSkeleton count={POSTS_PER_PAGE} />
+          <BlogSkeleton count={9} />
         </div>
 
-        <!-- Blog Posts -->
-        {blogPosts.slice(0, POSTS_PER_PAGE).map((post) => (
-          <BlogCard {...post} data-category={post.category} />
-        ))}
+        <!-- Load More Indicator -->
+        <div id="loadMoreIndicator" class={`text-center py-8 ${hasMoreInitial ? '' : 'hidden'}`}>
+          <div class="inline-flex items-center text-gray-500">
+            <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <span>Memuat lebih banyak artikel...</span>
+          </div>
+        </div>
+
+        <!-- End of Posts Message -->
+        <div id="endMessage" class={`text-center py-8 hidden`}>
+          <p class="text-gray-500 text-lg">Semua artikel telah ditampilkan</p>
+        </div>
+
+        <!-- Filter Info -->
+        <div class="text-center text-gray-600 mt-8">
+          <p id="filterInfo">Menampilkan <span id="displayedCount">{initialBatch.length}</span> dari <span id="totalCount">{totalPosts}</span> artikel</p>
+        </div>
       </div>
+    </section>
 
-      <!-- Pagination -->
-      <nav id="pagination" class="flex justify-center items-center gap-2 mb-8" aria-label="Pagination">
-        <!-- Pagination will be generated by JavaScript -->
-      </nav>
-
-      <!-- Filter Info -->
-      <div class="text-center text-gray-600">
-        <p id="filterInfo">Menampilkan {Math.min(POSTS_PER_PAGE, blogPosts.length)} dari {blogPosts.length} artikel</p>
-      </div>
-
-      </div>
-  </section>
-
-    </main>
+    <!-- Sentinel element for infinite scroll -->
+    <div id="sentinel" class={`h-20 ${hasMoreInitial ? '' : 'hidden'}`}></div>
+  </main>
   <Footer />
 </Layout>
 
-<script define:vars={{ blogPosts, POSTS_PER_PAGE, TOTAL_PAGES }}>
-  // Get all blog posts from server-side data
-  let posts = Array.isArray(blogPosts) ? blogPosts : [];
-  let currentPage = 1;
+<script define:vars={{ INITIAL_BATCH_SIZE, totalPosts }}>
+  // Configuration
+  const API_BASE = '/api/blog';
+  const SCROLL_DELAY = 500;
+
+  // State
+  let currentOffset = INITIAL_BATCH_SIZE;
+  let isLoading = false;
+  let hasMoreItems = totalPosts > INITIAL_BATCH_SIZE;
   let currentCategory = 'Semua';
-  let filteredPosts = [...posts];
+  let currentSearch = '';
+  let searchTimeout = null;
+  let loadTimeout = null;
+  let totalPostsCount = totalPosts;
 
   // DOM elements
   const blogGrid = document.getElementById('blogGrid');
   const blogSkeleton = document.getElementById('blogSkeleton');
-  const filterButtons = document.querySelectorAll('.category-filter');
+  const loadMoreIndicator = document.getElementById('loadMoreIndicator');
+  const endMessage = document.getElementById('endMessage');
   const filterInfo = document.getElementById('filterInfo');
-  const paginationNav = document.getElementById('pagination');
+  const displayedCount = document.getElementById('displayedCount');
+  const totalCount = document.getElementById('totalCount');
+  const filterButtons = document.querySelectorAll('.category-filter');
+  const searchInput = document.getElementById('searchInput');
+  const sentinel = document.getElementById('sentinel');
 
   // Show skeleton loader
   function showSkeleton() {
     if (blogSkeleton) {
       blogSkeleton.classList.remove('hidden');
     }
-    // Hide existing blog cards
-    const existingCards = blogGrid.querySelectorAll('article[data-category]');
-    existingCards.forEach(card => card.style.display = 'none');
+    loadMoreIndicator?.classList.add('hidden');
   }
 
   // Hide skeleton loader
@@ -152,206 +235,63 @@ const TOTAL_PAGES = Math.ceil(blogPosts.length / POSTS_PER_PAGE);
     if (blogSkeleton) {
       blogSkeleton.classList.add('hidden');
     }
-    // Show existing blog cards
-    const existingCards = blogGrid.querySelectorAll('article[data-category]');
-    existingCards.forEach(card => card.style.display = '');
   }
 
-  // Filter posts function
-  function filterPosts(category) {
-    showSkeleton();
-
-    // Simulate loading delay for better UX
-    setTimeout(() => {
-      currentCategory = category;
-      filteredPosts = category === 'Semua'
-        ? [...posts]
-        : posts.filter(post => post.category === category);
-
-      currentPage = 1; // Reset to first page when filter changes
-      renderPage(currentPage);
-      updateFilterInfo();
-      updatePagination();
-      updateCategoryButtons(category);
-      hideSkeleton();
-    }, 300);
+  // Update filter info
+  function updateFilterInfo(displayed, total) {
+    if (displayedCount) displayedCount.textContent = displayed.toString();
+    if (totalCount) totalCount.textContent = total.toString();
   }
 
-  // Render posts for specific page
-  function renderPage(page) {
-    const startIndex = (page - 1) * POSTS_PER_PAGE;
-    const endIndex = startIndex + POSTS_PER_PAGE;
-    const postsToShow = filteredPosts.slice(startIndex, endIndex);
-
-    // Clear current grid but keep skeleton
-    const skeleton = blogGrid.querySelector('#blogSkeleton');
-    blogGrid.innerHTML = '';
-    if (skeleton) {
-      blogGrid.appendChild(skeleton);
-    }
-
-    // Add posts for current page
-    postsToShow.forEach(post => {
-      const postCard = createBlogCard(post);
-      blogGrid.appendChild(postCard);
-    });
-
-    // Scroll to top of grid
-    blogGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  // Show load more indicator
+  function showLoadMoreIndicator() {
+    loadMoreIndicator?.classList.remove('hidden');
   }
 
-  // Update filter info text
-  function updateFilterInfo() {
-    const startIndex = (currentPage - 1) * POSTS_PER_PAGE + 1;
-    const endIndex = Math.min(currentPage * POSTS_PER_PAGE, filteredPosts.length);
-    const categoryText = currentCategory === 'Semua' ? '' : ` dalam kategori "${currentCategory}"`;
-    filterInfo.textContent = `Menampilkan ${startIndex}-${endIndex} dari ${filteredPosts.length} artikel${categoryText}`;
+  // Hide load more indicator
+  function hideLoadMoreIndicator() {
+    loadMoreIndicator?.classList.add('hidden');
   }
 
-  // Update pagination controls
-  function updatePagination() {
-    const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
-
-    if (totalPages <= 1) {
-      paginationNav.innerHTML = '';
-      return;
-    }
-
-    let paginationHTML = '';
-
-    // Previous button
-    paginationHTML += `
-      <button
-        onclick="goToPage(${currentPage - 1})"
-        class="pagination-btn px-4 py-2 rounded-lg font-medium transition-colors ${
-          currentPage === 1
-            ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-            : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
-        }"
-        ${currentPage === 1 ? 'disabled' : ''}
-      >
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-        </svg>
-      </button>
-    `;
-
-    // Page numbers
-    const maxVisiblePages = 5;
-    let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
-    let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
-
-    if (endPage - startPage < maxVisiblePages - 1) {
-      startPage = Math.max(1, endPage - maxVisiblePages + 1);
-    }
-
-    if (startPage > 1) {
-      paginationHTML += `
-        <button
-          onclick="goToPage(1)"
-          class="pagination-btn px-4 py-2 rounded-lg font-medium bg-white text-gray-700 hover:bg-gray-100 border border-gray-300"
-        >
-          1
-        </button>
-      `;
-
-      if (startPage > 2) {
-        paginationHTML += `<span class="px-2 text-gray-500">...</span>`;
-      }
-    }
-
-    for (let i = startPage; i <= endPage; i++) {
-      paginationHTML += `
-        <button
-          onclick="goToPage(${i})"
-          class="pagination-btn px-4 py-2 rounded-lg font-medium transition-colors ${
-            i === currentPage
-              ? 'bg-primary-800 text-white'
-              : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
-          }"
-        >
-          ${i}
-        </button>
-      `;
-    }
-
-    if (endPage < totalPages) {
-      if (endPage < totalPages - 1) {
-        paginationHTML += `<span class="px-2 text-gray-500">...</span>`;
-      }
-
-      paginationHTML += `
-        <button
-          onclick="goToPage(${totalPages})"
-          class="pagination-btn px-4 py-2 rounded-lg font-medium bg-white text-gray-700 hover:bg-gray-100 border border-gray-300"
-        >
-          ${totalPages}
-        </button>
-      `;
-    }
-
-    // Next button
-    paginationHTML += `
-      <button
-        onclick="goToPage(${currentPage + 1})"
-        class="pagination-btn px-4 py-2 rounded-lg font-medium transition-colors ${
-          currentPage === totalPages
-            ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-            : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
-        }"
-        ${currentPage === totalPages ? 'disabled' : ''}
-      >
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-        </svg>
-      </button>
-    `;
-
-    paginationNav.innerHTML = paginationHTML;
+  // Show end message
+  function showEndMessage() {
+    endMessage?.classList.remove('hidden');
+    sentinel?.classList.add('hidden');
   }
 
-  // Update category button states
-  function updateCategoryButtons(activeCategory) {
-    filterButtons.forEach(button => {
-      const buttonCategory = button.getAttribute('data-category');
-      if (buttonCategory === activeCategory) {
-        button.classList.remove('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
-        button.classList.add('bg-primary-800', 'text-white');
-      } else {
-        button.classList.remove('bg-primary-800', 'text-white');
-        button.classList.add('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
-      }
-    });
-  }
-
-  // Go to specific page
-  window.goToPage = function(page) {
-    const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
-    if (page < 1 || page > totalPages) return;
-
-    showSkeleton();
-
-    // Simulate loading delay for better UX
-    setTimeout(() => {
-      currentPage = page;
-      renderPage(currentPage);
-      updateFilterInfo();
-      updatePagination();
-      hideSkeleton();
-
-      // Scroll to top of blog grid
-      document.getElementById('blogGrid').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 300);
+  // Hide end message
+  function hideEndMessage() {
+    endMessage?.classList.add('hidden');
   }
 
   // Create blog card HTML
   function createBlogCard(post) {
     const article = document.createElement('article');
-    article.className = 'bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300';
+    article.className = 'blog-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300';
     article.setAttribute('data-category', post.category);
+    article.setAttribute('data-slug', post.slug);
+
+    // Create tags HTML
+    let tagsHtml = '';
+    if (post.tags && post.tags.length > 0) {
+      const displayTags = post.tags.slice(0, 3);
+      tagsHtml = displayTags.map(tag => `
+        <span class="inline-block bg-gray-100 text-gray-600 px-2 py-1 rounded-full text-xs font-medium">
+          #${tag}
+        </span>
+      `).join('');
+
+      if (post.tags.length > 3) {
+        tagsHtml += `
+          <span class="inline-block bg-gray-100 text-gray-600 px-2 py-1 rounded-full text-xs font-medium">
+            +${post.tags.length - 3}
+          </span>
+        `;
+      }
+    }
 
     article.innerHTML = `
-      <div class="relative blog-card-image overflow-hidden">
+      <div class="relative blog-card-image overflow-hidden aspect-video">
         <img
           src="${post.image}"
           alt="${post.title}"
@@ -366,18 +306,7 @@ const TOTAL_PAGES = Math.ceil(blogPosts.length / POSTS_PER_PAGE);
           <span class="inline-block bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-semibold">
             ${post.category}
           </span>
-          ${post.tags && post.tags.length > 0 ? `
-            ${post.tags.slice(0, 3).map(tag => `
-              <span class="inline-block bg-gray-100 text-gray-600 px-2 py-1 rounded-full text-xs font-medium">
-                #${tag}
-              </span>
-            `).join('')}
-            ${post.tags.length > 3 ? `
-              <span class="inline-block bg-gray-100 text-gray-600 px-2 py-1 rounded-full text-xs font-medium">
-                +${post.tags.length - 3}
-              </span>
-            ` : ''}
-          ` : ''}
+          ${tagsHtml}
         </div>
 
         <h3 class="text-xl font-bold mb-3 line-clamp-2 hover:text-primary-800 transition-colors">
@@ -417,47 +346,219 @@ const TOTAL_PAGES = Math.ceil(blogPosts.length / POSTS_PER_PAGE);
       </div>
     `;
 
+    // Add fade-in animation
+    article.style.opacity = '0';
+    article.style.transform = 'translateY(20px)';
+    article.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+
     return article;
   }
 
-  // Add click event listeners to filter buttons
-  filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const category = button.getAttribute('data-category');
-      filterPosts(category);
+  // Fetch posts from API
+  async function fetchPosts(offset, search = '', category = 'all') {
+    const params = new URLSearchParams({
+      offset: offset.toString(),
+      limit: INITIAL_BATCH_SIZE.toString()
     });
-  });
 
-  // Check URL parameters on page load
-  function initFromURL() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const categoryFromURL = urlParams.get('category');
-    const pageFromURL = parseInt(urlParams.get('page'));
-
-    if (categoryFromURL) {
-      filterPosts(categoryFromURL);
-    } else {
-      // Default to showing all posts
-      filterPosts('Semua');
+    if (category && category !== 'Semua' && category !== 'all') {
+      params.append('category', category);
     }
 
-    if (pageFromURL && !isNaN(pageFromURL)) {
-      const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
-      if (pageFromURL >= 1 && pageFromURL <= totalPages) {
-        currentPage = pageFromURL;
-        renderPage(currentPage);
-        updateFilterInfo();
-        updatePagination();
+    if (search) {
+      params.append('search', search);
+    }
+
+    const response = await fetch(`${API_BASE}?${params}`);
+    if (!response.ok) {
+      throw new Error('Failed to fetch posts');
+    }
+
+    return response.json();
+  }
+
+  // Load more items
+  async function loadMoreItems() {
+    if (isLoading || !hasMoreItems) return;
+
+    isLoading = true;
+    showLoadMoreIndicator();
+
+    try {
+      const data = await fetchPosts(currentOffset, currentSearch, currentCategory);
+
+      hideLoadMoreIndicator();
+
+      if (data.posts && data.posts.length > 0) {
+        data.posts.forEach((post, index) => {
+          const postCard = createBlogCard(post);
+          blogGrid.appendChild(postCard);
+
+          // Trigger animation with staggered delay
+          setTimeout(() => {
+            postCard.style.opacity = '1';
+            postCard.style.transform = 'translateY(0)';
+          }, index * 100);
+        });
+
+        currentOffset += data.posts.length;
+        hasMoreItems = data.hasMore;
+        totalPostsCount = data.total;
+
+        updateFilterInfo(currentOffset, totalPostsCount);
+
+        if (!hasMoreItems) {
+          showEndMessage();
+        } else {
+          sentinel?.classList.remove('hidden');
+        }
+      } else {
+        hasMoreItems = false;
+        showEndMessage();
       }
+    } catch (error) {
+      console.error('Error loading more posts:', error);
+      hideLoadMoreIndicator();
+    } finally {
+      isLoading = false;
     }
   }
 
-  // Initialize on page load
+  // Reset and load (for search/filter)
+  async function resetAndLoad() {
+    // Clear existing posts
+    const existingCards = blogGrid.querySelectorAll('.blog-card');
+    existingCards.forEach(card => card.remove());
+
+    // Reset state
+    currentOffset = 0;
+    hideEndMessage();
+    showSkeleton();
+
+    try {
+      const data = await fetchPosts(0, currentSearch, currentCategory);
+
+      hideSkeleton();
+
+      if (data.posts && data.posts.length > 0) {
+        data.posts.forEach((post, index) => {
+          const postCard = createBlogCard(post);
+          blogGrid.appendChild(postCard);
+
+          // Trigger animation with staggered delay
+          setTimeout(() => {
+            postCard.style.opacity = '1';
+            postCard.style.transform = 'translateY(0)';
+          }, index * 100);
+        });
+
+        currentOffset = data.posts.length;
+        hasMoreItems = data.hasMore;
+        totalPostsCount = data.total;
+
+        updateFilterInfo(currentOffset, totalPostsCount);
+
+        if (!hasMoreItems) {
+          showEndMessage();
+        } else {
+          sentinel?.classList.remove('hidden');
+        }
+      } else {
+        hasMoreItems = false;
+        showEndMessage();
+        updateFilterInfo(0, 0);
+      }
+    } catch (error) {
+      console.error('Error loading posts:', error);
+      hideSkeleton();
+    }
+  }
+
+  // Handle search input
+  function handleSearch(value) {
+    currentSearch = value;
+
+    // Clear existing timeout
+    if (searchTimeout) {
+      clearTimeout(searchTimeout);
+    }
+
+    // Debounce search
+    searchTimeout = setTimeout(() => {
+      resetAndLoad();
+    }, 500);
+  }
+
+  // Setup Intersection Observer for infinite scroll
+  function setupIntersectionObserver() {
+    const observerOptions = {
+      root: null,
+      rootMargin: '200px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !isLoading && hasMoreItems) {
+          // Clear any existing load timeout
+          if (loadTimeout) {
+            clearTimeout(loadTimeout);
+          }
+
+          // Set new timeout for debounced loading
+          loadTimeout = setTimeout(() => {
+            loadMoreItems();
+          }, SCROLL_DELAY);
+        }
+      });
+    }, observerOptions);
+
+    if (sentinel) {
+      observer.observe(sentinel);
+    }
+
+    return observer;
+  }
+
+  // Update category button states
+  function updateCategoryButtons(activeCategory) {
+    filterButtons.forEach(button => {
+      const buttonCategory = button.getAttribute('data-category');
+      if (buttonCategory === activeCategory) {
+        button.classList.remove('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
+        button.classList.add('bg-primary-800', 'text-white');
+      } else {
+        button.classList.remove('bg-primary-800', 'text-white');
+        button.classList.add('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
+      }
+    });
+  }
+
+  // Initialize event listeners
   document.addEventListener('DOMContentLoaded', () => {
-    initFromURL();
+    // Category filter buttons
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const category = button.getAttribute('data-category');
+        currentCategory = category;
+        currentSearch = ''; // Reset search when category changes
+        if (searchInput) searchInput.value = '';
+        updateCategoryButtons(category);
+        resetAndLoad();
+      });
+    });
+
+    // Search input
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        handleSearch(e.target.value);
+      });
+    }
+
+    // Setup infinite scroll
+    setupIntersectionObserver();
   });
 </script>
-
 
 <style>
   .line-clamp-2 {
@@ -474,7 +575,8 @@ const TOTAL_PAGES = Math.ceil(blogPosts.length / POSTS_PER_PAGE);
     overflow: hidden;
   }
 
-  .pagination-btn:disabled {
-    pointer-events: none;
+  /* Aspect ratio for images */
+  .aspect-video {
+    aspect-ratio: 16 / 9;
   }
 </style>

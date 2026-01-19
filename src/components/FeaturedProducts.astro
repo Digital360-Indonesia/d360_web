@@ -1,200 +1,375 @@
 ---
 ---
 
-<section class="py-16 bg-white relative" id="featured-products-section">
+<section class="py-10 sm:py-12 md:py-16 bg-white relative" id="featured-products-section">
   <!-- Sticky Title -->
-  <div class="sticky top-20 bg-white z-20 py-8 border-b border-gray-100">
-    <div class="container mx-auto px-6 lg:px-8 max-w-7xl">
-      <div class="text-center">
-        <h2 class="font-bold text-gray-900" style="font-size: 2.3rem;" id="featured-section-title">
+  <div class="sticky top-16 sm:top-20 bg-white z-20 py-3 sm:py-4 md:py-6 border-b border-gray-100">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      <div class="text-center px-2">
+        <h2 class="font-bold text-gray-900 text-lg sm:text-xl md:text-2xl lg:text-3xl" id="featured-section-title">
           Digital360 Solutions for Your Business
         </h2>
       </div>
     </div>
   </div>
 
-  <div class="container mx-auto px-6 lg:px-8 max-w-7xl pt-12">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl pt-8 md:pt-12">
     <!-- Main Content Container -->
-    <div class="grid lg:grid-cols-2 gap-16 items-start">
+    <div class="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-start">
       <!-- Left Content (Scrolls naturally, content changes) -->
       <div>
-        <!-- Product 1 Content - Initially centered and aligned -->
-        <div class="product-section min-h-[600px] flex items-center" data-product="0">
-          <div class="space-y-4 w-full">
+        <!-- Product 1 Content - Centered on mobile -->
+        <div class="product-section min-h-[400px] md:min-h-[500px] lg:min-h-[600px] flex items-center" data-product="0">
+          <div class="space-y-4 md:space-y-4 lg:space-y-5 w-full max-w-2xl mx-auto text-center lg:text-left lg:mx-0 px-2">
             <!-- Product Logo -->
-            <div class="flex items-center">
-              <img src="/assets/images/logo-dental360.png" alt="Dental360 Logo" class="w-48 h-16 object-contain">
+            <div class="flex justify-center lg:justify-start">
+              <img src="/assets/images/satu360dental-logo.png" alt="Dental360 Logo" width="192" height="64" class="w-32 h-10 sm:w-40 sm:h-12 md:w-48 md:h-14 lg:w-48 lg:h-16 object-contain">
             </div>
 
             <!-- Product Title -->
-            <h3 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight -mt-4" id="dental-title">
+            <h3 class="text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold text-gray-900 leading-tight" id="dental-title">
               The Complete Management System for Dental Clinics
             </h3>
 
             <!-- Product Description -->
-            <p class="text-xl text-gray-600 leading-relaxed" id="dental-desc">
-              Complete clinic management dashboard that helps handle bookings, medical records, inventory, and billing—all in one system. More efficient, more professional, more growth.
+            <p class="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed" id="dental-desc">
+              All-in-one clinic management: bookings, records, inventory & billing. More efficient, more professional.
             </p>
 
-            <!-- CTA Buttons -->
-            <div class="flex flex-col sm:flex-row gap-4">
-              <a href="https://wa.me/6285706679500" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-200 text-center inline-block" id="dental-cta-primary">
-                Book Demo Meeting now
+            <!-- CTA Buttons - Side by side on all screens -->
+            <div class="flex items-center justify-center gap-2 md:gap-3 lg:justify-start">
+              <a href="https://wa.me/6285706679500" target="_blank" class="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 sm:px-6 py-2.5 rounded-lg transition-colors duration-200 text-sm" id="dental-cta-primary">
+                <span class="hidden lg:inline">Book Demo Meeting now</span>
+                <span class="lg:hidden">Book a Demo</span>
               </a>
-              <a href="#" class="text-blue-600 hover:text-blue-700 font-semibold flex items-center" id="dental-cta-secondary">
+              <a href="/dental360" class="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center text-sm whitespace-nowrap" id="dental-cta-secondary">
                 Explore Dental360 →
               </a>
             </div>
 
-            <!-- Customer Testimonial -->
-            <div class="bg-gray-50 rounded-lg p-6">
-              <div class="flex items-start space-x-4">
-                <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span class="text-white font-bold">B</span>
+            <!-- Customer Testimonial - Compact on mobile -->
+            <div class="rounded-lg border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow overflow-hidden max-w-md mx-auto lg:mx-0 lg:max-w-none">
+              <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 p-4">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0">
+                  <img src="/assets/images/bfresh-dental-care-logo.png" alt="Bfresh Dental Care" class="w-full h-full object-contain">
                 </div>
-                <div>
-                  <p class="text-gray-800" id="dental-proof">
-                    Since 2021, <span class="font-semibold">Bfresh Dental Care</span> has partnered with Dental360, with Feel playing a key role in supporting its growth to over 50 branches and managing the expanding complexity of its systems.
+                <div class="flex-1 min-w-0 text-center sm:text-left">
+                  <p class="text-gray-700 text-sm leading-relaxed" id="dental-proof">
+                    <span class="font-semibold text-gray-900">Bfresh Dental Care</span> has grown to 50+ branches nationwide with Dental360 since 2021.
                   </p>
+                  <a href="/customer-stories" class="text-blue-600 hover:text-blue-700 font-semibold text-sm inline-flex items-center justify-center sm:justify-start mt-1.5">
+                    See their story →
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Scroll Transition Space -->
-        <div class="h-32"></div>
+        <!-- Mobile Product Image - Only visible on mobile/tablet -->
+        <div class="lg:hidden my-6">
+          <div class="relative h-48 sm:h-56 md:h-64 flex items-center justify-center">
+            <!-- Decorative Background -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-[85%] h-[85%] bg-gradient-to-br from-green-100 to-green-200 rounded-lg"></div>
+            </div>
+            <!-- Image -->
+            <img
+              src="/assets/images/dental360-dashboard.png"
+              alt="Dental360 Interface"
+              class="relative w-[90%] h-[90%] object-contain drop-shadow-xl"
+            />
+          </div>
+        </div>
 
-        <!-- Product 2 Content -->
-        <div class="product-section min-h-[600px] flex items-center" data-product="1">
-          <div class="space-y-4 w-full">
+        <!-- Scroll Transition Space -->
+        <div class="h-12 md:h-16 lg:h-24"></div>
+
+        <!-- Product 2 Content - Centered on mobile -->
+        <div class="product-section min-h-[400px] md:min-h-[500px] lg:min-h-[600px] flex items-center" data-product="1">
+          <div class="space-y-4 md:space-y-4 lg:space-y-5 w-full max-w-2xl mx-auto text-center lg:text-left lg:mx-0 px-2">
             <!-- Product Logo -->
-            <div class="flex items-center">
-              <img src="/assets/images/logo-business360.png" alt="Business360 Logo" class="w-56 h-20 object-contain">
+            <div class="flex justify-center lg:justify-start">
+              <img src="/assets/images/satu360manufacture-logo.png" alt="Manufacture360 Logo" width="224" height="64" class="w-36 h-10 sm:w-44 sm:h-12 md:w-52 md:h-14 lg:w-52 lg:h-18 object-contain">
             </div>
 
             <!-- Product Title -->
-            <h3 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight -mt-4" id="business-title">
+            <h3 class="text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold text-gray-900 leading-tight" id="business-title">
               One Platform for Complete Business Control
             </h3>
 
             <!-- Product Description -->
-            <p class="text-xl text-gray-600 leading-relaxed" id="business-desc">
-              Business360 connects every aspect of your business from HR to operations, into a single powerful platform. Make faster decisions, track performance easily, and keep your growth on the right path.
+            <p class="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed" id="business-desc">
+              Connect every aspect of your business from HR to operations in one platform. Faster decisions, better performance tracking.
             </p>
 
-            <!-- CTA Buttons -->
-            <div class="flex flex-col sm:flex-row gap-4">
-              <a href="https://wa.me/6285706679500" target="_blank" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-200 text-center inline-block" id="business-cta-primary">
-                Book Demo Meeting now
+            <!-- CTA Buttons - Side by side on all screens -->
+            <div class="flex items-center justify-center gap-2 md:gap-3 lg:justify-start">
+              <a href="https://wa.me/6285706679500" target="_blank" class="inline-flex items-center justify-center bg-purple-600 hover:bg-purple-700 text-white font-semibold px-4 sm:px-6 py-2.5 rounded-lg transition-colors duration-200 text-sm" id="business-cta-primary">
+                <span class="hidden lg:inline">Book Demo Meeting now</span>
+                <span class="lg:hidden">Book a Demo</span>
               </a>
-              <a href="#" class="text-purple-600 hover:text-purple-700 font-semibold flex items-center" id="business-cta-secondary">
-                Explore Business360 →
+              <a href="/manufacturemanagementsystem" class="text-purple-600 hover:text-purple-700 font-semibold inline-flex items-center text-sm whitespace-nowrap" id="business-cta-secondary">
+                Explore Manufacture360 →
               </a>
             </div>
 
-            <!-- Customer Testimonial -->
-            <div class="bg-purple-50 rounded-lg p-6">
-              <div class="flex items-start space-x-4">
-                <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span class="text-white font-bold">D</span>
+            <!-- Customer Testimonial - Compact on mobile -->
+            <div class="rounded-lg border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow overflow-hidden max-w-md mx-auto lg:mx-0 lg:max-w-none">
+              <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 p-4">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0">
+                  <img src="/assets/images/vido-garment-logo.png" alt="Vido Garment" class="w-full h-full object-contain">
                 </div>
-                <div>
-                  <p class="text-gray-800" id="business-proof">
-                    Since 2022, <span class="font-semibold">Digital360</span> has helped businesses streamline their operations and accelerate growth with integrated business management solutions.
+                <div class="flex-1 min-w-0 text-center sm:text-left">
+                  <p class="text-gray-700 text-sm leading-relaxed" id="business-proof">
+                    <span class="font-semibold text-gray-900">Vido Garment</span> transforms manufacturing with Manufacture360, optimizing production and inventory management.
                   </p>
+                  <a href="/customer-stories" class="text-purple-600 hover:text-purple-700 font-semibold text-sm inline-flex items-center justify-center sm:justify-start mt-1.5">
+                    See their story →
+                  </a>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        <!-- Mobile Product Image - Only visible on mobile/tablet -->
+        <div class="lg:hidden my-6">
+          <div class="relative h-48 sm:h-56 md:h-64 flex items-center justify-center">
+            <!-- Decorative Background -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-[85%] h-[85%] bg-gradient-to-br from-purple-100 to-purple-200 rounded-lg"></div>
+            </div>
+            <!-- Image -->
+            <img
+              src="/assets/images/business360-dashboard.png"
+              alt="Manufacture360 Interface"
+              class="relative w-[90%] h-[90%] object-contain drop-shadow-xl"
+            />
           </div>
         </div>
 
         <!-- Scroll Transition Space -->
-        <div class="h-32"></div>
+        <div class="h-12 md:h-16 lg:h-24"></div>
 
-        <!-- Product 3 Content -->
-        <div class="product-section min-h-[600px] flex items-center" data-product="2">
-          <div class="space-y-4 w-full">
+        <!-- Product 3 Content - Centered on mobile -->
+        <div class="product-section min-h-[400px] md:min-h-[500px] lg:min-h-[600px] flex items-center" data-product="2">
+          <div class="space-y-4 md:space-y-4 lg:space-y-5 w-full max-w-2xl mx-auto text-center lg:text-left lg:mx-0 px-2">
             <!-- Product Logo -->
-            <div class="flex items-center">
-              <img src="/assets/images/logo-website360.png" alt="Website360 Logo" class="w-56 h-20 object-contain">
+            <div class="flex justify-center lg:justify-start">
+              <img src="/assets/images/web360-logo.png" alt="Website360 Logo" width="224" height="64" class="w-28 h-10 sm:w-32 sm:h-12 md:w-40 md:h-14 object-contain">
             </div>
 
             <!-- Product Title -->
-            <h3 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight -mt-4" id="website-title">
+            <h3 class="text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold text-gray-900 leading-tight" id="website-title">
               A Professional Website, Built for Your Digital Strategy
             </h3>
 
             <!-- Product Description -->
-            <p class="text-xl text-gray-600 leading-relaxed" id="website-desc">
-              Website360 delivers business-ready websites that strengthen your digital presence. From planning to launch, every detail is designed to support your marketing goals and brand credibility.
+            <p class="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed" id="website-desc">
+              Professional websites built to strengthen your digital presence and marketing goals. From planning to launch.
             </p>
 
-            <!-- CTA Buttons -->
-            <div class="flex flex-col sm:flex-row gap-4">
-              <a href="https://wa.me/6285706679500" target="_blank" class="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-200 text-center inline-block" id="website-cta-primary">
-                Book Demo Meeting now
+            <!-- CTA Buttons - Side by side on all screens -->
+            <div class="flex items-center justify-center gap-2 md:gap-3 lg:justify-start">
+              <a href="https://wa.me/6285706679500" target="_blank" class="inline-flex items-center justify-center bg-orange-600 hover:bg-orange-700 text-white font-semibold px-4 sm:px-6 py-2.5 rounded-lg transition-colors duration-200 text-sm" id="website-cta-primary">
+                <span class="hidden lg:inline">Book Demo Meeting now</span>
+                <span class="lg:hidden">Book a Demo</span>
               </a>
-              <a href="#" class="text-orange-600 hover:text-orange-700 font-semibold flex items-center" id="website-cta-secondary">
+              <a href="https://wa.me/6285706679500" target="_blank" class="text-orange-600 hover:text-orange-700 font-semibold inline-flex items-center text-sm whitespace-nowrap" id="website-cta-secondary">
                 Explore Website360 →
               </a>
             </div>
 
-            <!-- Customer Testimonial -->
-            <div class="bg-orange-50 rounded-lg p-6">
-              <div class="flex items-start space-x-4">
-                <div class="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span class="text-white font-bold">D</span>
+            <!-- Customer Testimonial - Compact on mobile -->
+            <div class="rounded-lg border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow overflow-hidden max-w-md mx-auto lg:mx-0 lg:max-w-none">
+              <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 p-4">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0">
+                  <img src="/assets/images/pln-uid-jatim-logo.png" alt="PLN UID Jawa Timur" class="w-full h-full object-contain">
                 </div>
-                <div>
-                  <p class="text-gray-800" id="website-proof">
-                    Since 2020, <span class="font-semibold">Digital360</span> has built professional websites that help businesses establish strong digital foundations and drive measurable results.
+                <div class="flex-1 min-w-0 text-center sm:text-left">
+                  <p class="text-gray-700 text-sm leading-relaxed" id="website-proof">
+                    <span class="font-semibold text-gray-900">PLN UID Jawa Timur</span> strengthens digital presence with Website360, building professional platforms for thousands of customers.
                   </p>
+                  <a href="https://wa.me/6285706679500" target="_blank" class="text-orange-600 hover:text-orange-700 font-semibold text-sm inline-flex items-center justify-center sm:justify-start mt-1.5">
+                    See their story →
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- Mobile Product Image - Only visible on mobile/tablet -->
+        <div class="lg:hidden my-6">
+          <div class="relative h-48 sm:h-56 md:h-64 flex items-center justify-center">
+            <!-- Decorative Background -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-[85%] h-[85%] bg-gradient-to-br from-orange-100 to-orange-200 rounded-lg"></div>
+            </div>
+            <!-- Image -->
+            <img
+              src="/assets/images/website360-builder.png"
+              alt="Website360 Interface"
+              class="relative w-[90%] h-[90%] object-contain drop-shadow-xl"
+            />
+          </div>
+        </div>
+
+        <!-- Product 4 Content - Centered on mobile -->
+        <div class="product-section min-h-[300px] md:min-h-[500px] lg:min-h-[600px] flex items-center" data-product="3">
+          <div class="space-y-3 md:space-y-3 lg:space-y-4 w-full max-w-2xl mx-auto text-center lg:text-left lg:mx-0 px-2">
+            <!-- Product Logo -->
+            <div class="flex justify-center lg:justify-start">
+              <img src="/assets/images/tryon360-logo.png" alt="TryOn360 Logo" width="192" height="64" class="w-24 h-9 sm:w-28 sm:h-10 md:w-32 md:h-12 object-contain">
+            </div>
+
+            <!-- Product Title -->
+            <h3 class="text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold text-gray-900 leading-tight" id="aitools-title">
+              Garment Try On App - Virtual Fitting Room
+            </h3>
+
+            <!-- Product Description -->
+            <p class="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed" id="aitools-desc">
+              Upload 2 photos and AI generates realistic virtual try-on visualizations. Perfect for e-commerce and fashion brands.
+            </p>
+
+            <!-- CTA Buttons - Side by side on all screens -->
+            <div class="flex items-center justify-center gap-2 md:gap-3 lg:justify-start">
+              <a href="https://tryon.digital360.id" target="_blank" class="inline-flex items-center justify-center bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white font-semibold px-4 sm:px-6 py-2.5 rounded-lg transition-colors duration-200 text-sm" id="aitools-cta-primary">
+                Try It Now
+              </a>
+              <a href="https://tryon.digital360.id" target="_blank" class="text-cyan-600 hover:text-cyan-700 font-semibold inline-flex items-center text-sm whitespace-nowrap" id="aitools-cta-secondary">
+                Learn More →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Product Image - Only visible on mobile/tablet -->
+        <div class="lg:hidden my-3">
+          <div class="relative h-48 sm:h-56 md:h-64 flex items-center justify-center">
+            <!-- Decorative Background -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-[85%] h-[85%] bg-gradient-to-br from-cyan-100 to-blue-200 rounded-lg"></div>
+            </div>
+            <!-- Image -->
+            <img
+              src="/assets/images/ai-virtual-tryon.png"
+              alt="TryOn360 Interface"
+              class="relative w-[90%] h-[90%] object-contain drop-shadow-xl"
+            />
+          </div>
+        </div>
       </div>
 
-      <!-- Right Side - Sticky Images -->
-      <div class="lg:sticky lg:top-56 lg:self-start">
-        <div class="relative h-[500px]">
+      <!-- Right Side - Sticky Images (hidden on mobile) -->
+      <div class="hidden lg:block lg:sticky lg:top-56 lg:self-start">
+        <div class="relative h-[400px] md:h-[500px] lg:h-[500px]">
           <!-- Product 1 Image -->
           <div class="product-image absolute inset-0 transition-all duration-700" data-product="0">
-            <div class="relative h-full">
-              <!-- Green Decorative Background -->
-              <div class="absolute inset-0 bg-gradient-to-br from-green-400 to-green-600 rounded-3xl transform rotate-2"></div>
+            <div class="relative h-full flex items-center justify-center">
+              <!-- Green Decorative Background - Smaller, positioned behind -->
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-[75%] h-[75%] bg-gradient-to-br from-green-400 to-green-600" style="clip-path: polygon(0% 8%, 100% 0%, 100% 85%, 92% 100%, 0% 92%);"></div>
+              </div>
 
-              <!-- Main Image Container -->
-              <div class="relative bg-white rounded-2xl shadow-2xl overflow-hidden p-4 h-full flex items-center">
-                <img src="/assets/images/section-3-1.png" alt="Dental360 Interface" class="w-full h-full object-cover rounded-lg">
+              <!-- Main Image Container - Smaller -->
+              <div class="relative w-[95%] h-[95%] flex items-center justify-center overflow-hidden">
+                <!-- Loading Skeleton -->
+                <div class="image-skeleton absolute inset-0 bg-gray-200 animate-pulse rounded-lg flex items-center justify-center z-10">
+                  <div class="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
+                </div>
+                <img
+                  src="/assets/images/dental360-dashboard.png"
+                  alt="Dental360 Interface"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  class="w-full h-full object-contain drop-shadow-2xl opacity-0 transition-opacity duration-500 relative z-20"
+                  onload="this.style.opacity='1'; this.previousElementSibling.style.display='none';"
+                >
               </div>
             </div>
           </div>
 
           <!-- Product 2 Image -->
           <div class="product-image absolute inset-0 opacity-0 pointer-events-none transition-all duration-700" data-product="1">
-            <div class="relative h-full">
-              <!-- Purple Decorative Background -->
-              <div class="absolute inset-0 bg-gradient-to-br from-purple-400 to-purple-600 rounded-3xl transform -rotate-2"></div>
+            <div class="relative h-full flex items-center justify-center">
+              <!-- Purple Decorative Background - Smaller, positioned behind -->
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-[75%] h-[75%] bg-gradient-to-br from-purple-400 to-purple-600" style="clip-path: polygon(5% 0%, 100% 3%, 95% 100%, 0% 88%, 0% 15%);"></div>
+              </div>
 
-              <!-- Main Image Container -->
-              <div class="relative bg-white rounded-2xl shadow-2xl overflow-hidden p-4 h-full flex items-center">
-                <img src="/assets/images/section-3-2.png" alt="Business360 Interface" class="w-full h-full object-cover rounded-lg">
+              <!-- Main Image Container - Larger -->
+              <div class="relative w-[130%] h-[130%] flex items-center justify-center">
+                <!-- Loading Skeleton -->
+                <div class="image-skeleton absolute inset-0 bg-gray-200 animate-pulse rounded-lg flex items-center justify-center z-10">
+                  <div class="w-12 h-12 border-4 border-purple-600 border-t-transparent rounded-full animate-spin"></div>
+                </div>
+                <img
+                  src="/assets/images/business360-dashboard.png"
+                  alt="Business360 Interface"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  class="w-full h-full object-contain drop-shadow-2xl opacity-0 transition-opacity duration-500 relative z-20"
+                  onload="this.style.opacity='1'; this.previousElementSibling.style.display='none';"
+                >
               </div>
             </div>
           </div>
 
           <!-- Product 3 Image -->
           <div class="product-image absolute inset-0 opacity-0 pointer-events-none transition-all duration-700" data-product="2">
-            <div class="relative h-full">
-              <!-- Orange Decorative Background -->
-              <div class="absolute inset-0 bg-gradient-to-br from-orange-400 to-orange-600 rounded-3xl transform rotate-3"></div>
+            <div class="relative h-full flex items-center justify-center">
+              <!-- Orange Decorative Background - Smaller, positioned behind -->
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-[75%] h-[75%] bg-gradient-to-br from-orange-400 to-orange-600" style="clip-path: polygon(0% 5%, 95% 0%, 100% 90%, 8% 100%, 0% 80%);"></div>
+              </div>
 
-              <!-- Main Image Container -->
-              <div class="relative bg-white rounded-2xl shadow-2xl overflow-hidden p-4 h-full flex items-center">
-                <img src="/assets/images/section-3-3.png" alt="Website360 Interface" class="w-full h-full object-cover rounded-lg">
+              <!-- Main Image Container - Larger -->
+              <div class="relative w-[130%] h-[130%] flex items-center justify-center">
+                <!-- Loading Skeleton -->
+                <div class="image-skeleton absolute inset-0 bg-gray-200 animate-pulse rounded-lg flex items-center justify-center z-10">
+                  <div class="w-12 h-12 border-4 border-orange-600 border-t-transparent rounded-full animate-spin"></div>
+                </div>
+                <img
+                  src="/assets/images/website360-builder.png"
+                  alt="Website360 Interface"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  class="w-full h-full object-contain drop-shadow-2xl opacity-0 transition-opacity duration-500 relative z-20"
+                  onload="this.style.opacity='1'; this.previousElementSibling.style.display='none';"
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 4 Image - AI Tools -->
+          <div class="product-image absolute inset-0 opacity-0 pointer-events-none transition-all duration-700" data-product="3">
+            <div class="relative h-full flex items-center justify-center">
+              <!-- Cyan-Blue Decorative Background - Smaller, positioned behind -->
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-[75%] h-[75%] bg-gradient-to-br from-cyan-400 to-blue-600" style="clip-path: polygon(8% 0%, 100% 5%, 100% 95%, 0% 85%, 0% 12%);"></div>
+              </div>
+
+              <!-- Main Image Container - Larger -->
+              <div class="relative w-[130%] h-[130%] flex items-center justify-center">
+                <!-- Loading Skeleton -->
+                <div class="image-skeleton absolute inset-0 bg-gray-200 animate-pulse rounded-lg flex items-center justify-center z-10">
+                  <div class="w-12 h-12 border-4 border-cyan-600 border-t-transparent rounded-full animate-spin"></div>
+                </div>
+                <img
+                  src="/assets/images/ai-virtual-tryon.png"
+                  alt="AI Tools Garment Try On Interface"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  class="w-full h-full object-contain drop-shadow-2xl opacity-0 transition-opacity duration-500 relative z-20"
+                  onload="this.style.opacity='1'; this.previousElementSibling.style.display='none';"
+                >
               </div>
             </div>
           </div>
@@ -205,7 +380,8 @@
 </section>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+  // Function to initialize FeaturedProducts
+  function initFeaturedProducts() {
     const productSections = document.querySelectorAll('.product-section');
     const productImages = document.querySelectorAll('.product-image');
 
@@ -227,7 +403,6 @@
         }
       });
 
-
       currentIndex = index;
     }
 
@@ -247,7 +422,6 @@
 
         // If this section is in the center area of viewport
         if (rect.top < viewportHeight * 0.6 && rect.bottom > viewportHeight * 0.4) {
-          console.log('Active product section:', index); // Debug log
           updateActiveProduct(index);
         }
       });
@@ -261,6 +435,23 @@
 
     // Initial state
     updateActiveProduct(0);
+
+    // Ensure images are visible after navigation
+    productImages.forEach((img, i) => {
+      if (i === 0) {
+        img.style.opacity = '1';
+        img.style.pointerEvents = 'auto';
+        img.style.transform = 'scale(1)';
+      }
+    });
+  }
+
+  // Initialize on DOM load
+  document.addEventListener('DOMContentLoaded', initFeaturedProducts);
+
+  // Re-initialize after view transition
+  document.addEventListener('astro:after-swap', () => {
+    setTimeout(initFeaturedProducts, 50);
   });
 </script>
 
@@ -288,8 +479,8 @@
         ID: "Kelola Klinik, Fokus ke Pasien"
       },
       desc: {
-        EN: "Complete clinic management dashboard that helps handle bookings, medical records, inventory, and billing—all in one system. More efficient, more professional, more growth.",
-        ID: "Dashboard manajemen klinik lengkap yang membantu Anda mengelola booking, rekam medis, inventory, dan billing—semua dalam satu sistem. Lebih efisien, lebih profesional, lebih growth."
+        EN: "All-in-one clinic management: bookings, records, inventory & billing. More efficient, more professional.",
+        ID: "Semua dalam satu sistem: booking, rekam medis, inventory & billing. Lebih efisien, lebih profesional."
       },
       ctaPrimary: {
         EN: "Book Demo Meeting now",
@@ -300,8 +491,12 @@
         ID: "Pelajari Dental360 →"
       },
       proof: {
-        EN: 'Since 2021, <span class="font-semibold">Bfresh Dental Care</span> has partnered with Dental360, with Feel playing a key role in supporting its growth to over 50 branches and managing the expanding complexity of its systems.',
-        ID: 'Sejak tahun 2021, <span class="font-semibold">Bfresh</span> telah berkolaborasi dengan Dental360, yang berperan dalam mendukung pengembangan dan ekspansi hingga lebih dari 50 cabang serta mengelola sistem yang semakin kompleks.'
+        EN: '<span class="font-semibold text-gray-900">Bfresh Dental Care</span> has grown to 50+ branches nationwide, streamlining operations and scaling efficiently with Dental360 since 2021.',
+        ID: '<span class="font-semibold text-gray-900">Bfresh Dental Care</span> berkembang ke 50+ cabang di seluruh Indonesia, menyederhanakan operasional dan meningkatkan efisiensi dengan Dental360 sejak 2021.'
+      },
+      companyName: {
+        EN: 'Bfresh Dental Care',
+        ID: 'Bfresh Dental Care'
       }
     },
     business: {
@@ -310,8 +505,8 @@
         ID: "Satu Platform untuk Kendali Penuh Bisnis Anda"
       },
       desc: {
-        EN: "Business360 connects every aspect of your business from HR to operations, into a single powerful platform. Make faster decisions, track performance easily, and keep your growth on the right path.",
-        ID: "Dengan Business360, semua aspek bisnis dari HR hingga operasional, bisa dikelola dalam satu sistem yang saling terhubung. Lebih cepat ambil keputusan, lebih mudah pantau performa, dan lebih jelas arah pertumbuhan."
+        EN: "Connect every aspect of your business from HR to operations in one platform. Faster decisions, better performance tracking.",
+        ID: "Satu platform untuk semua aspek bisnis dari HR hingga operasional. Keputusan lebih cepat, performa lebih terukur."
       },
       ctaPrimary: {
         EN: "Book Demo Meeting now",
@@ -322,8 +517,12 @@
         ID: "Pelajari Business360 →"
       },
       proof: {
-        EN: 'Since 2022, <span class="font-semibold">Digital360</span> has helped businesses streamline their operations and accelerate growth with integrated business management solutions.',
-        ID: 'Sejak tahun 2022, <span class="font-semibold">Digital360</span> telah membantu berbagai bisnis menyederhanakan operasional mereka dan mempercepat pertumbuhan dengan solusi manajemen bisnis terintegrasi.'
+        EN: '<span class="font-semibold text-gray-900">Vido Garment</span> transforms manufacturing with Business360, optimizing production and inventory management across all operations.',
+        ID: '<span class="font-semibold text-gray-900">Vido Garment</span> mengubah manufaktur dengan Business360, mengoptimalkan produksi dan manajemen inventory di seluruh operasional.'
+      },
+      companyName: {
+        EN: 'Vido Garment',
+        ID: 'Vido Garment'
       }
     },
     website: {
@@ -332,8 +531,8 @@
         ID: "Website Profesional, Fondasi Strategi Digital Anda"
       },
       desc: {
-        EN: "Website360 delivers business-ready websites that strengthen your digital presence. From planning to launch, every detail is designed to support your marketing goals and brand credibility.",
-        ID: "Website360 menghadirkan website bisnis yang siap digunakan untuk kampanye digital, promosi, dan branding. Dari perencanaan hingga peluncuran, setiap detail kami rancang untuk memperkuat kehadiran digital dan reputasi bisnis Anda."
+        EN: "Professional websites built to strengthen your digital presence and marketing goals. From planning to launch.",
+        ID: "Website profesional untuk memperkuat kehadiran digital dan tujuan marketing Anda. Dari perencanaan hingga peluncuran."
       },
       ctaPrimary: {
         EN: "Book Demo Meeting now",
@@ -344,8 +543,38 @@
         ID: "Pelajari Website360 →"
       },
       proof: {
-        EN: 'Since 2020, <span class="font-semibold">Digital360</span> has built professional websites that help businesses establish strong digital foundations and drive measurable results.',
-        ID: 'Sejak tahun 2020, <span class="font-semibold">Digital360</span> telah membangun website profesional yang membantu bisnis membangun fondasi digital yang kuat dan menghasilkan hasil yang terukur.'
+        EN: '<span class="font-semibold text-gray-900">PLN UID Jawa Timur</span> strengthens digital presence with Website360, building professional platforms that serve thousands of customers effectively.',
+        ID: '<span class="font-semibold text-gray-900">PLN UID Jawa Timur</span> memperkuat kehadiran digital dengan Website360, membangun platform profesional yang melayani ribuan pelanggan secara efektif.'
+      },
+      companyName: {
+        EN: 'PLN UID Jawa Timur',
+        ID: 'PLN UID Jawa Timur'
+      }
+    },
+    aitools: {
+      title: {
+        EN: "Garment Try On App - Virtual Fitting Room",
+        ID: "Aplikasi Virtual Try On - Ruang Pasar Virtual"
+      },
+      desc: {
+        EN: "Upload 2 photos and AI generates realistic virtual try-on visualizations. Perfect for e-commerce and fashion brands.",
+        ID: "Upload 2 foto dan AI membuat visualisasi virtual try-on yang realistis. Cocok untuk e-commerce dan brand fashion."
+      },
+      ctaPrimary: {
+        EN: "Try It Now",
+        ID: "Coba Sekarang"
+      },
+      ctaSecondary: {
+        EN: "Learn More →",
+        ID: "Pelajari Lebih Lanjut →"
+      },
+      proof: {
+        EN: 'Fashion brands use our AI for <span class="font-semibold text-gray-900">instant virtual try-on</span>. Upload 2 photos and get realistic visualizations that boost conversions.',
+        ID: 'Brand fashion menggunakan AI kami untuk <span class="font-semibold text-gray-900">virtual try-on instan</span>. Upload 2 foto dan dapatkan visualisasi realistis yang meningkatkan konversi.'
+      },
+      companyName: {
+        EN: 'Fashion & E-commerce',
+        ID: 'Fashion & E-commerce'
       }
     }
   };
@@ -425,6 +654,29 @@
     }
     if (websiteProof && translations.website.proof[lang]) {
       websiteProof.innerHTML = translations.website.proof[lang];
+    }
+
+    // Update AI Tools content
+    const aitoolsTitle = document.getElementById('aitools-title');
+    const aitoolsDesc = document.getElementById('aitools-desc');
+    const aitoolsCtaPrimary = document.getElementById('aitools-cta-primary');
+    const aitoolsCtaSecondary = document.getElementById('aitools-cta-secondary');
+    const aitoolsProof = document.getElementById('aitools-proof');
+
+    if (aitoolsTitle && translations.aitools.title[lang]) {
+      aitoolsTitle.textContent = translations.aitools.title[lang];
+    }
+    if (aitoolsDesc && translations.aitools.desc[lang]) {
+      aitoolsDesc.textContent = translations.aitools.desc[lang];
+    }
+    if (aitoolsCtaPrimary && translations.aitools.ctaPrimary[lang]) {
+      aitoolsCtaPrimary.textContent = translations.aitools.ctaPrimary[lang];
+    }
+    if (aitoolsCtaSecondary && translations.aitools.ctaSecondary[lang]) {
+      aitoolsCtaSecondary.textContent = translations.aitools.ctaSecondary[lang];
+    }
+    if (aitoolsProof && translations.aitools.proof[lang]) {
+      aitoolsProof.innerHTML = translations.aitools.proof[lang];
     }
   }
 

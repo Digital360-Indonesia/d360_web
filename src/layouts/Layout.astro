@@ -1,4 +1,7 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
+import LoadingBar from '../components/LoadingBar.astro';
+
 export interface Props {
   title: string;
   description?: string;
@@ -7,6 +10,10 @@ export interface Props {
   ogType?: string;
   articlePublishedTime?: string;
   articleAuthor?: string;
+  alternateUrls?: {
+    en?: string;
+    id?: string;
+  };
 }
 
 const {
@@ -16,12 +23,21 @@ const {
   ogImage = 'https://digital360.id/assets/images/og-image.jpg',
   ogType = 'website',
   articlePublishedTime,
-  articleAuthor
+  articleAuthor,
+  alternateUrls
 } = Astro.props;
 
 // Determine OG type and meta
 const isArticle = ogType === 'article';
 const currentUrl = Astro.url?.href || 'https://digital360.id/';
+
+// Build hreflang URLs based on content type
+// If alternateUrls provided (bilingual content), use them
+// If not provided (Indonesian-only like blog), only use Indonesian hreflang
+const hasAlternateUrls = alternateUrls && (alternateUrls.en || alternateUrls.id);
+const hreflangEn = alternateUrls?.en || currentUrl;
+const hreflangId = alternateUrls?.id || currentUrl;
+const hreflangDefault = hreflangId; // Use Indonesian as default for Indonesia audience
 ---
 
 <!doctype html>
@@ -35,9 +51,20 @@ const currentUrl = Astro.url?.href || 'https://digital360.id/';
     <link rel="canonical" href={currentUrl} />
 
     <!-- Hreflang tags for SEO -->
-    <link rel="alternate" hreflang="en" href="https://digital360.id/" />
-    <link rel="alternate" hreflang="id" href="https://digital360.id/" />
-    <link rel="alternate" hreflang="x-default" href="https://digital360.id/" />
+    {hasAlternateUrls ? (
+      <>
+        {/* Bilingual content - provide both language versions */}
+        {alternateUrls?.en && <link rel="alternate" hreflang="en" href={alternateUrls.en} />}
+        {alternateUrls?.id && <link rel="alternate" hreflang="id" href={alternateUrls.id} />}
+        <link rel="alternate" hreflang="x-default" href={hreflangDefault} />
+      </>
+    ) : (
+      <>
+        {/* Indonesian-only content (like blog) - only Indonesian hreflang */}
+        <link rel="alternate" hreflang="id" href={currentUrl} />
+        <link rel="alternate" hreflang="x-default" href={currentUrl} />
+      </>
+    )}
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
@@ -52,7 +79,7 @@ const currentUrl = Astro.url?.href || 'https://digital360.id/';
       "@type": "Organization",
       "name": "Digital360",
       "url": "https://digital360.id",
-      "logo": "https://digital360.id/assets/images/logo-digital360-ori.png",
+      "logo": "https://digital360.id/assets/images/digital360-logo.png",
       "description": description,
       "address": {
         "@type": "PostalAddress",
@@ -79,6 +106,7 @@ const currentUrl = Astro.url?.href || 'https://digital360.id/';
     <meta property="og:image:alt" content={title} />
     {isArticle && articlePublishedTime && <meta property="article:published_time" content={articlePublishedTime} />}
     {isArticle && articleAuthor && <meta property="article:author" content={articleAuthor} />}
+    <meta property="og:locale" content={lang === 'id' ? 'id_ID' : 'en_US'} />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -87,14 +115,24 @@ const currentUrl = Astro.url?.href || 'https://digital360.id/';
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={ogImage} />
 
+    <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Preload critical assets for faster initial render -->
+    <link rel="preload" href="/assets/images/digital360-logo.png" as="image" />
+    <link rel="preload" href="/assets/images/hero-poster.jpg" as="image" fetchpriority="high" />
+    <link rel="preload" href="/assets/videos/CSD-10721_WAC_Hero_FULL_LowBR.mp4" as="video" type="video/mp4" />
+
+    <!-- View Transitions for smooth page navigation -->
+    <ViewTransitions />
   </head>
   <body>
+    <LoadingBar />
     <slot />
   </body>
 </html>
