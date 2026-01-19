@@ -17,7 +17,7 @@ jobs:
           username: ${{ secrets.PROD_VPS_USERNAME }}
           key: ${{ secrets.PROD_VPS_SSH_KEY }}
           port: ${{ secrets.PROD_VPS_PORT }}
-          script_stop: false
           script: |
             cd /home/digital360/web/digital360.id/public_html
-            bash deploy.sh 2>&1 | tee build.log
+            chmod +x deploy.sh
+            ./deploy.sh
