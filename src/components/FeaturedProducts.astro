@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 ---
 
 <section class="py-10 sm:py-12 md:py-16 bg-white relative" id="featured-products-section">
@@ -24,9 +23,7 @@ import { Image } from 'astro:assets';
           <div class="space-y-4 md:space-y-4 lg:space-y-5 w-full max-w-2xl mx-auto text-center lg:text-left lg:mx-0 px-2">
             <!-- Product Logo -->
             <div class="flex justify-center lg:justify-start">
-              <div class="logo-skeleton-wrapper">
-                <img src="/assets/images/satu360dental-logo.png" alt="Dental360 Logo" width="192" height="64" class="w-32 h-10 sm:w-40 sm:h-12 md:w-48 md:h-14 lg:w-48 lg:h-16 object-contain" onload="this.parentElement.classList.add('loaded')">
-              </div>
+              <img src="/assets/images/satu360dental-logo.webp" alt="Dental360 Logo" width="192" height="64" class="w-32 h-10 sm:w-40 sm:h-12 md:w-48 md:h-14 lg:w-48 lg:h-16 object-contain">
             </div>
 
             <!-- Product Title -->
@@ -41,7 +38,7 @@ import { Image } from 'astro:assets';
 
             <!-- CTA Buttons - Side by side on all screens -->
             <div class="flex items-center justify-center gap-2 md:gap-3 lg:justify-start">
-              <a href="https://wa.me/6285156858298" target="_blank" class="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 sm:px-6 py-2.5 rounded-lg transition-colors duration-200 text-sm" id="dental-cta-primary">
+              <a href="https://wa.me/6285706679500" target="_blank" class="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 sm:px-6 py-2.5 rounded-lg transition-colors duration-200 text-sm" id="dental-cta-primary">
                 <span class="hidden lg:inline">Book Demo Meeting now</span>
                 <span class="lg:hidden">Book a Demo</span>
               </a>
@@ -53,8 +50,8 @@ import { Image } from 'astro:assets';
             <!-- Customer Testimonial - Compact on mobile -->
             <div class="rounded-lg border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow overflow-hidden max-w-md mx-auto lg:mx-0 lg:max-w-none">
               <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 p-4">
-                <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 testimonial-logo-skeleton">
-                  <img src="/assets/images/bfresh-dental-care-logo.png" alt="Bfresh Dental Care" class="w-full h-full object-contain" onload="this.parentElement.classList.add('loaded')">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0">
+                  <img src="/assets/images/bfresh-dental-care-logo.webp" alt="Bfresh Dental Care" class="w-full h-full object-contain">
                 </div>
                 <div class="flex-1 min-w-0 text-center sm:text-left">
                   <p class="text-gray-700 text-sm leading-relaxed" id="dental-proof">
@@ -72,20 +69,16 @@ import { Image } from 'astro:assets';
         <!-- Mobile Product Image - Only visible on mobile/tablet -->
         <div class="lg:hidden my-6">
           <div class="relative h-48 sm:h-56 md:h-64 flex items-center justify-center">
-            <div class="relative w-full h-full flex items-center justify-center">
-              <!-- Loading Skeleton -->
-              <div class="skeleton-placeholder absolute inset-0 rounded-lg z-0"></div>
-              <img
-                src="/assets/images/dental360-dashboard.webp"
-                alt="Dental360 Interface"
-                width="1200"
-                height="900"
-                loading="lazy"
-                class="product-img w-full h-full object-contain relative z-10"
-                onload="this.classList.add('loaded'); const s=this.parentElement?.querySelector('.skeleton-placeholder'); if(s) s.classList.add('hidden');"
-                onerror="this.src='/assets/images/dental360-dashboard.png'; this.classList.add('loaded'); const s=this.parentElement?.querySelector('.skeleton-placeholder'); if(s) s.classList.add('hidden');"
-              />
+            <!-- Decorative Background -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-[85%] h-[85%] bg-gradient-to-br from-green-100 to-green-200 rounded-lg"></div>
             </div>
+            <!-- Image -->
+            <img
+              src="/assets/images/dental360-dashboard.webp"
+              alt="Dental360 Interface"
+              class="relative w-[90%] h-[90%] object-contain drop-shadow-xl"
+            />
           </div>
         </div>
 
@@ -97,9 +90,7 @@ import { Image } from 'astro:assets';
           <div class="space-y-4 md:space-y-4 lg:space-y-5 w-full max-w-2xl mx-auto text-center lg:text-left lg:mx-0 px-2">
             <!-- Product Logo -->
             <div class="flex justify-center lg:justify-start">
-              <div class="logo-skeleton-wrapper">
-                <img src="/assets/images/satu360manufacture-logo.png" alt="Manufacture360 Logo" width="224" height="64" class="w-36 h-10 sm:w-44 sm:h-12 md:w-52 md:h-14 lg:w-52 lg:h-18 object-contain" onload="this.parentElement.classList.add('loaded')">
-              </div>
+              <img src="/assets/images/satu360manufacture-logo.webp" alt="Manufacture360 Logo" width="224" height="64" class="w-36 h-10 sm:w-44 sm:h-12 md:w-52 md:h-14 lg:w-52 lg:h-18 object-contain">
             </div>
 
             <!-- Product Title -->
@@ -114,7 +105,7 @@ import { Image } from 'astro:assets';
 
             <!-- CTA Buttons - Side by side on all screens -->
             <div class="flex items-center justify-center gap-2 md:gap-3 lg:justify-start">
-              <a href="https://wa.me/6285156858298" target="_blank" class="inline-flex items-center justify-center bg-purple-600 hover:bg-purple-700 text-white font-semibold px-4 sm:px-6 py-2.5 rounded-lg transition-colors duration-200 text-sm" id="business-cta-primary">
+              <a href="https://wa.me/6285706679500" target="_blank" class="inline-flex items-center justify-center bg-purple-600 hover:bg-purple-700 text-white font-semibold px-4 sm:px-6 py-2.5 rounded-lg transition-colors duration-200 text-sm" id="business-cta-primary">
                 <span class="hidden lg:inline">Book Demo Meeting now</span>
                 <span class="lg:hidden">Book a Demo</span>
               </a>
@@ -126,8 +117,8 @@ import { Image } from 'astro:assets';
             <!-- Customer Testimonial - Compact on mobile -->
             <div class="rounded-lg border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow overflow-hidden max-w-md mx-auto lg:mx-0 lg:max-w-none">
               <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 p-4">
-                <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 testimonial-logo-skeleton">
-                  <img src="/assets/images/vido-garment-logo.png" alt="Vido Garment" class="w-full h-full object-contain" onload="this.parentElement.classList.add('loaded')">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0">
+                  <img src="/assets/images/vido-garment-logo.webp" alt="Vido Garment" class="w-full h-full object-contain">
                 </div>
                 <div class="flex-1 min-w-0 text-center sm:text-left">
                   <p class="text-gray-700 text-sm leading-relaxed" id="business-proof">
@@ -145,20 +136,16 @@ import { Image } from 'astro:assets';
         <!-- Mobile Product Image - Only visible on mobile/tablet -->
         <div class="lg:hidden my-6">
           <div class="relative h-48 sm:h-56 md:h-64 flex items-center justify-center">
-            <div class="relative w-full h-full flex items-center justify-center">
-              <!-- Loading Skeleton -->
-              <div class="skeleton-placeholder absolute inset-0 rounded-lg z-0"></div>
-              <img
-                src="/assets/images/business360-dashboard.webp"
-                alt="Manufacture360 Interface"
-                width="1200"
-                height="900"
-                loading="lazy"
-                class="product-img w-full h-full object-contain relative z-10"
-                onload="this.classList.add('loaded'); const s=this.parentElement?.querySelector('.skeleton-placeholder'); if(s) s.classList.add('hidden');"
-                onerror="this.src='/assets/images/business360-dashboard.png'; this.classList.add('loaded'); const s=this.parentElement?.querySelector('.skeleton-placeholder'); if(s) s.classList.add('hidden');"
-              />
+            <!-- Decorative Background -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-[85%] h-[85%] bg-gradient-to-br from-purple-100 to-purple-200 rounded-lg"></div>
             </div>
+            <!-- Image -->
+            <img
+              src="/assets/images/business360-dashboard.webp"
+              alt="Manufacture360 Interface"
+              class="relative w-[90%] h-[90%] object-contain drop-shadow-xl"
+            />
           </div>
         </div>
 
@@ -170,9 +157,7 @@ import { Image } from 'astro:assets';
           <div class="space-y-4 md:space-y-4 lg:space-y-5 w-full max-w-2xl mx-auto text-center lg:text-left lg:mx-0 px-2">
             <!-- Product Logo -->
             <div class="flex justify-center lg:justify-start">
-              <div class="logo-skeleton-wrapper">
-                <img src="/assets/images/web360-logo.png" alt="Website360 Logo" width="224" height="64" class="w-28 h-10 sm:w-32 sm:h-12 md:w-40 md:h-14 object-contain" onload="this.parentElement.classList.add('loaded')">
-              </div>
+              <img src="/assets/images/web360-logo.webp" alt="Website360 Logo" width="224" height="64" class="w-28 h-10 sm:w-32 sm:h-12 md:w-40 md:h-14 object-contain">
             </div>
 
             <!-- Product Title -->
@@ -187,11 +172,11 @@ import { Image } from 'astro:assets';
 
             <!-- CTA Buttons - Side by side on all screens -->
             <div class="flex items-center justify-center gap-2 md:gap-3 lg:justify-start">
-              <a href="https://wa.me/6285156858298" target="_blank" class="inline-flex items-center justify-center bg-orange-600 hover:bg-orange-700 text-white font-semibold px-4 sm:px-6 py-2.5 rounded-lg transition-colors duration-200 text-sm" id="website-cta-primary">
+              <a href="https://wa.me/6285706679500" target="_blank" class="inline-flex items-center justify-center bg-orange-600 hover:bg-orange-700 text-white font-semibold px-4 sm:px-6 py-2.5 rounded-lg transition-colors duration-200 text-sm" id="website-cta-primary">
                 <span class="hidden lg:inline">Book Demo Meeting now</span>
                 <span class="lg:hidden">Book a Demo</span>
               </a>
-              <a href="https://wa.me/6285156858298" target="_blank" class="text-orange-600 hover:text-orange-700 font-semibold inline-flex items-center text-sm whitespace-nowrap" id="website-cta-secondary">
+              <a href="https://wa.me/6285706679500" target="_blank" class="text-orange-600 hover:text-orange-700 font-semibold inline-flex items-center text-sm whitespace-nowrap" id="website-cta-secondary">
                 Explore Website360 →
               </a>
             </div>
@@ -199,14 +184,14 @@ import { Image } from 'astro:assets';
             <!-- Customer Testimonial - Compact on mobile -->
             <div class="rounded-lg border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow overflow-hidden max-w-md mx-auto lg:mx-0 lg:max-w-none">
               <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 p-4">
-                <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 testimonial-logo-skeleton">
-                  <img src="/assets/images/pln-uid-jatim-logo.png" alt="PLN UID Jawa Timur" class="w-full h-full object-contain" onload="this.parentElement.classList.add('loaded')">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0">
+                  <img src="/assets/images/pln-uid-jatim-logo.webp" alt="PLN UID Jawa Timur" class="w-full h-full object-contain">
                 </div>
                 <div class="flex-1 min-w-0 text-center sm:text-left">
                   <p class="text-gray-700 text-sm leading-relaxed" id="website-proof">
                     <span class="font-semibold text-gray-900">PLN UID Jawa Timur</span> strengthens digital presence with Website360, building professional platforms for thousands of customers.
                   </p>
-                  <a href="https://wa.me/6285156858298" target="_blank" class="text-orange-600 hover:text-orange-700 font-semibold text-sm inline-flex items-center justify-center sm:justify-start mt-1.5">
+                  <a href="https://wa.me/6285706679500" target="_blank" class="text-orange-600 hover:text-orange-700 font-semibold text-sm inline-flex items-center justify-center sm:justify-start mt-1.5">
                     See their story →
                   </a>
                 </div>
@@ -218,20 +203,16 @@ import { Image } from 'astro:assets';
         <!-- Mobile Product Image - Only visible on mobile/tablet -->
         <div class="lg:hidden my-6">
           <div class="relative h-48 sm:h-56 md:h-64 flex items-center justify-center">
-            <div class="relative w-full h-full flex items-center justify-center">
-              <!-- Loading Skeleton -->
-              <div class="skeleton-placeholder absolute inset-0 rounded-lg z-0"></div>
-              <img
-                src="/assets/images/website360-builder.webp"
-                alt="Website360 Interface"
-                width="1200"
-                height="900"
-                loading="lazy"
-                class="product-img w-full h-full object-contain relative z-10"
-                onload="this.classList.add('loaded'); const s=this.parentElement?.querySelector('.skeleton-placeholder'); if(s) s.classList.add('hidden');"
-                onerror="this.src='/assets/images/website360-builder.png'; this.classList.add('loaded'); const s=this.parentElement?.querySelector('.skeleton-placeholder'); if(s) s.classList.add('hidden');"
-              />
+            <!-- Decorative Background -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-[85%] h-[85%] bg-gradient-to-br from-orange-100 to-orange-200 rounded-lg"></div>
             </div>
+            <!-- Image -->
+            <img
+              src="/assets/images/website360-builder.webp"
+              alt="Website360 Interface"
+              class="relative w-[90%] h-[90%] object-contain drop-shadow-xl"
+            />
           </div>
         </div>
 
@@ -240,9 +221,7 @@ import { Image } from 'astro:assets';
           <div class="space-y-3 md:space-y-3 lg:space-y-4 w-full max-w-2xl mx-auto text-center lg:text-left lg:mx-0 px-2">
             <!-- Product Logo -->
             <div class="flex justify-center lg:justify-start">
-              <div class="logo-skeleton-wrapper">
-                <img src="/assets/images/tryon360-logo.png" alt="TryOn360 Logo" width="192" height="64" class="w-24 h-9 sm:w-28 sm:h-10 md:w-32 md:h-12 object-contain" onload="this.parentElement.classList.add('loaded')">
-              </div>
+              <img src="/assets/images/tryon360-logo.webp" alt="TryOn360 Logo" width="192" height="64" class="w-24 h-9 sm:w-28 sm:h-10 md:w-32 md:h-12 object-contain">
             </div>
 
             <!-- Product Title -->
@@ -257,10 +236,10 @@ import { Image } from 'astro:assets';
 
             <!-- CTA Buttons - Side by side on all screens -->
             <div class="flex items-center justify-center gap-2 md:gap-3 lg:justify-start">
-              <a href="https://wa.me/6285156858298" target="_blank" class="inline-flex items-center justify-center bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white font-semibold px-4 sm:px-6 py-2.5 rounded-lg transition-colors duration-200 text-sm" id="aitools-cta-primary">
+              <a href="https://tryon.digital360.id" target="_blank" class="inline-flex items-center justify-center bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white font-semibold px-4 sm:px-6 py-2.5 rounded-lg transition-colors duration-200 text-sm" id="aitools-cta-primary">
                 Try It Now
               </a>
-              <a href="https://wa.me/6285156858298" target="_blank" class="text-cyan-600 hover:text-cyan-700 font-semibold inline-flex items-center text-sm whitespace-nowrap" id="aitools-cta-secondary">
+              <a href="https://tryon.digital360.id" target="_blank" class="text-cyan-600 hover:text-cyan-700 font-semibold inline-flex items-center text-sm whitespace-nowrap" id="aitools-cta-secondary">
                 Learn More →
               </a>
             </div>
@@ -270,20 +249,16 @@ import { Image } from 'astro:assets';
         <!-- Mobile Product Image - Only visible on mobile/tablet -->
         <div class="lg:hidden my-3">
           <div class="relative h-48 sm:h-56 md:h-64 flex items-center justify-center">
-            <div class="relative w-full h-full flex items-center justify-center">
-              <!-- Loading Skeleton -->
-              <div class="skeleton-placeholder absolute inset-0 rounded-lg z-0"></div>
-              <img
-                src="/assets/images/ai-virtual-tryon.webp"
-                alt="TryOn360 Interface"
-                width="1200"
-                height="900"
-                loading="lazy"
-                class="product-img w-full h-full object-contain relative z-10"
-                onload="this.classList.add('loaded'); const s=this.parentElement?.querySelector('.skeleton-placeholder'); if(s) s.classList.add('hidden');"
-                onerror="this.src='/assets/images/ai-virtual-tryon.png'; this.classList.add('loaded'); const s=this.parentElement?.querySelector('.skeleton-placeholder'); if(s) s.classList.add('hidden');"
-              />
+            <!-- Decorative Background -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-[85%] h-[85%] bg-gradient-to-br from-cyan-100 to-blue-200 rounded-lg"></div>
             </div>
+            <!-- Image -->
+            <img
+              src="/assets/images/ai-virtual-tryon.webp"
+              alt="TryOn360 Interface"
+              class="relative w-[90%] h-[90%] object-contain drop-shadow-xl"
+            />
           </div>
         </div>
       </div>
@@ -294,20 +269,26 @@ import { Image } from 'astro:assets';
           <!-- Product 1 Image -->
           <div class="product-image absolute inset-0 transition-all duration-700" data-product="0">
             <div class="relative h-full flex items-center justify-center">
-              <!-- Main Image Container -->
-              <div class="relative w-full h-full flex items-center justify-center">
+              <!-- Green Decorative Background - Smaller, positioned behind -->
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-[75%] h-[75%] bg-gradient-to-br from-green-400 to-green-600" style="clip-path: polygon(0% 8%, 100% 0%, 100% 85%, 92% 100%, 0% 92%);"></div>
+              </div>
+
+              <!-- Main Image Container - Smaller -->
+              <div class="relative w-[95%] h-[95%] flex items-center justify-center overflow-hidden">
                 <!-- Loading Skeleton -->
-                <div class="skeleton-placeholder absolute inset-0 rounded-lg z-0"></div>
+                <div class="image-skeleton absolute inset-0 bg-gray-200 animate-pulse rounded-lg flex items-center justify-center z-10">
+                  <div class="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
+                </div>
                 <img
                   src="/assets/images/dental360-dashboard.webp"
                   alt="Dental360 Interface"
                   width="1200"
                   height="900"
                   loading="lazy"
-                  class="product-img w-full h-full object-contain relative z-10"
-                  onload="this.classList.add('loaded'); const s=this.parentElement?.querySelector('.skeleton-placeholder'); if(s) s.classList.add('hidden');"
-                  onerror="this.src='/assets/images/dental360-dashboard.png'; this.classList.add('loaded'); const s=this.parentElement?.querySelector('.skeleton-placeholder'); if(s) s.classList.add('hidden');"
-                />
+                  class="w-full h-full object-contain drop-shadow-2xl opacity-0 transition-opacity duration-500 relative z-20"
+                  onload="this.style.opacity='1'; this.previousElementSibling.style.display='none';"
+                >
               </div>
             </div>
           </div>
@@ -315,20 +296,26 @@ import { Image } from 'astro:assets';
           <!-- Product 2 Image -->
           <div class="product-image absolute inset-0 opacity-0 pointer-events-none transition-all duration-700" data-product="1">
             <div class="relative h-full flex items-center justify-center">
-              <!-- Main Image Container -->
-              <div class="relative w-full h-full flex items-center justify-center">
+              <!-- Purple Decorative Background - Smaller, positioned behind -->
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-[75%] h-[75%] bg-gradient-to-br from-purple-400 to-purple-600" style="clip-path: polygon(5% 0%, 100% 3%, 95% 100%, 0% 88%, 0% 15%);"></div>
+              </div>
+
+              <!-- Main Image Container - Larger -->
+              <div class="relative w-[130%] h-[130%] flex items-center justify-center">
                 <!-- Loading Skeleton -->
-                <div class="skeleton-placeholder absolute inset-0 rounded-lg z-0"></div>
+                <div class="image-skeleton absolute inset-0 bg-gray-200 animate-pulse rounded-lg flex items-center justify-center z-10">
+                  <div class="w-12 h-12 border-4 border-purple-600 border-t-transparent rounded-full animate-spin"></div>
+                </div>
                 <img
                   src="/assets/images/business360-dashboard.webp"
                   alt="Business360 Interface"
                   width="1200"
                   height="900"
                   loading="lazy"
-                  class="product-img w-full h-full object-contain relative z-10"
-                  onload="this.classList.add('loaded'); const s=this.parentElement?.querySelector('.skeleton-placeholder'); if(s) s.classList.add('hidden');"
-                  onerror="this.src='/assets/images/business360-dashboard.png'; this.classList.add('loaded'); const s=this.parentElement?.querySelector('.skeleton-placeholder'); if(s) s.classList.add('hidden');"
-                />
+                  class="w-full h-full object-contain drop-shadow-2xl opacity-0 transition-opacity duration-500 relative z-20"
+                  onload="this.style.opacity='1'; this.previousElementSibling.style.display='none';"
+                >
               </div>
             </div>
           </div>
@@ -336,20 +323,26 @@ import { Image } from 'astro:assets';
           <!-- Product 3 Image -->
           <div class="product-image absolute inset-0 opacity-0 pointer-events-none transition-all duration-700" data-product="2">
             <div class="relative h-full flex items-center justify-center">
-              <!-- Main Image Container -->
-              <div class="relative w-full h-full flex items-center justify-center">
+              <!-- Orange Decorative Background - Smaller, positioned behind -->
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-[75%] h-[75%] bg-gradient-to-br from-orange-400 to-orange-600" style="clip-path: polygon(0% 5%, 95% 0%, 100% 90%, 8% 100%, 0% 80%);"></div>
+              </div>
+
+              <!-- Main Image Container - Larger -->
+              <div class="relative w-[130%] h-[130%] flex items-center justify-center">
                 <!-- Loading Skeleton -->
-                <div class="skeleton-placeholder absolute inset-0 rounded-lg z-0"></div>
+                <div class="image-skeleton absolute inset-0 bg-gray-200 animate-pulse rounded-lg flex items-center justify-center z-10">
+                  <div class="w-12 h-12 border-4 border-orange-600 border-t-transparent rounded-full animate-spin"></div>
+                </div>
                 <img
                   src="/assets/images/website360-builder.webp"
                   alt="Website360 Interface"
                   width="1200"
                   height="900"
                   loading="lazy"
-                  class="product-img w-full h-full object-contain relative z-10"
-                  onload="this.classList.add('loaded'); const s=this.parentElement?.querySelector('.skeleton-placeholder'); if(s) s.classList.add('hidden');"
-                  onerror="this.src='/assets/images/website360-builder.png'; this.classList.add('loaded'); const s=this.parentElement?.querySelector('.skeleton-placeholder'); if(s) s.classList.add('hidden');"
-                />
+                  class="w-full h-full object-contain drop-shadow-2xl opacity-0 transition-opacity duration-500 relative z-20"
+                  onload="this.style.opacity='1'; this.previousElementSibling.style.display='none';"
+                >
               </div>
             </div>
           </div>
@@ -357,20 +350,26 @@ import { Image } from 'astro:assets';
           <!-- Product 4 Image - AI Tools -->
           <div class="product-image absolute inset-0 opacity-0 pointer-events-none transition-all duration-700" data-product="3">
             <div class="relative h-full flex items-center justify-center">
-              <!-- Main Image Container -->
-              <div class="relative w-full h-full flex items-center justify-center">
+              <!-- Cyan-Blue Decorative Background - Smaller, positioned behind -->
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-[75%] h-[75%] bg-gradient-to-br from-cyan-400 to-blue-600" style="clip-path: polygon(8% 0%, 100% 5%, 100% 95%, 0% 85%, 0% 12%);"></div>
+              </div>
+
+              <!-- Main Image Container - Larger -->
+              <div class="relative w-[130%] h-[130%] flex items-center justify-center">
                 <!-- Loading Skeleton -->
-                <div class="skeleton-placeholder absolute inset-0 rounded-lg z-0"></div>
+                <div class="image-skeleton absolute inset-0 bg-gray-200 animate-pulse rounded-lg flex items-center justify-center z-10">
+                  <div class="w-12 h-12 border-4 border-cyan-600 border-t-transparent rounded-full animate-spin"></div>
+                </div>
                 <img
                   src="/assets/images/ai-virtual-tryon.webp"
                   alt="AI Tools Garment Try On Interface"
                   width="1200"
                   height="900"
                   loading="lazy"
-                  class="product-img w-full h-full object-contain relative z-10"
-                  onload="this.classList.add('loaded'); const s=this.parentElement?.querySelector('.skeleton-placeholder'); if(s) s.classList.add('hidden');"
-                  onerror="this.src='/assets/images/ai-virtual-tryon.png'; this.classList.add('loaded'); const s=this.parentElement?.querySelector('.skeleton-placeholder'); if(s) s.classList.add('hidden');"
-                />
+                  class="w-full h-full object-contain drop-shadow-2xl opacity-0 transition-opacity duration-500 relative z-20"
+                  onload="this.style.opacity='1'; this.previousElementSibling.style.display='none';"
+                >
               </div>
             </div>
           </div>
@@ -381,47 +380,15 @@ import { Image } from 'astro:assets';
 </section>
 
 <script>
-  // Global state to manage cleanup
-  let featuredProductsState = {
-    scrollHandler: null,
-    currentIndex: 0,
-    initialized: false
-  };
-
-  // Function to cleanup previous instance
-  function cleanupFeaturedProducts() {
-    if (featuredProductsState.scrollHandler) {
-      window.removeEventListener('scroll', featuredProductsState.scrollHandler);
-      featuredProductsState.scrollHandler = null;
-    }
-    featuredProductsState.currentIndex = 0;
-    featuredProductsState.initialized = false;
-  }
-
   // Function to initialize FeaturedProducts
   function initFeaturedProducts() {
-    // Clean up previous instance if exists
-    cleanupFeaturedProducts();
-
     const productSections = document.querySelectorAll('.product-section');
     const productImages = document.querySelectorAll('.product-image');
 
-    if (productSections.length === 0 || productImages.length === 0) {
-      return; // Exit if elements don't exist
-    }
-
-    // Reset all images to hidden state first
-    productImages.forEach((img, i) => {
-      img.style.opacity = '0';
-      img.style.pointerEvents = 'none';
-      img.style.transform = 'scale(0.95)';
-    });
-
-    // Mark as initialized
-    featuredProductsState.initialized = true;
+    let currentIndex = 0;
 
     function updateActiveProduct(index) {
-      if (index === featuredProductsState.currentIndex) return;
+      if (index === currentIndex) return;
 
       // Update images
       productImages.forEach((image, i) => {
@@ -436,7 +403,7 @@ import { Image } from 'astro:assets';
         }
       });
 
-      featuredProductsState.currentIndex = index;
+      currentIndex = index;
     }
 
     // Scroll-based detection
@@ -450,6 +417,9 @@ import { Image } from 'astro:assets';
         const sectionMiddle = sectionTop + (rect.height / 2);
         const currentViewportMiddle = scrollPosition + (viewportHeight / 2);
 
+        // Check if section middle is closest to viewport middle
+        const distanceFromCenter = Math.abs(sectionMiddle - currentViewportMiddle);
+
         // If this section is in the center area of viewport
         if (rect.top < viewportHeight * 0.6 && rect.bottom > viewportHeight * 0.4) {
           updateActiveProduct(index);
@@ -457,18 +427,23 @@ import { Image } from 'astro:assets';
       });
     }
 
-    // Save handler reference for cleanup
-    featuredProductsState.scrollHandler = handleScroll;
-
     // Listen to scroll events
     window.addEventListener('scroll', handleScroll, { passive: true });
 
-    // Force initial check after a small delay to ensure DOM is ready
-    setTimeout(() => {
-      handleScroll();
-      // Always show first product initially
-      updateActiveProduct(0);
-    }, 100);
+    // Initial check
+    handleScroll();
+
+    // Initial state
+    updateActiveProduct(0);
+
+    // Ensure images are visible after navigation
+    productImages.forEach((img, i) => {
+      if (i === 0) {
+        img.style.opacity = '1';
+        img.style.pointerEvents = 'auto';
+        img.style.transform = 'scale(1)';
+      }
+    });
   }
 
   // Initialize on DOM load
@@ -476,12 +451,7 @@ import { Image } from 'astro:assets';
 
   // Re-initialize after view transition
   document.addEventListener('astro:after-swap', () => {
-    setTimeout(() => {
-      const hasFeaturedProducts = document.querySelector('#featured-products-section');
-      if (hasFeaturedProducts) {
-        initFeaturedProducts();
-      }
-    }, 100);
+    setTimeout(initFeaturedProducts, 50);
   });
 </script>
 
@@ -720,206 +690,4 @@ import { Image } from 'astro:assets';
     const savedLang = localStorage.getItem('language') || 'EN';
     updateFeaturedContent(savedLang);
   });
-
-  // Re-initialize language after view transition
-  document.addEventListener('astro:after-swap', () => {
-    setTimeout(() => {
-      const savedLang = localStorage.getItem('language') || 'EN';
-      updateFeaturedContent(savedLang);
-    }, 50);
-  });
-
-  // Skeleton Loading Handler - Simple and Direct
-  document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM loaded, attaching image handlers');
-
-    const productImages = document.querySelectorAll('.product-img');
-    console.log('Found product images:', productImages.length);
-
-    productImages.forEach((img, index) => {
-      console.log(`Processing image ${index}:`, img.src);
-
-      // Find the skeleton element
-      let skeleton = img.parentElement?.querySelector('.skeleton-placeholder');
-
-      // If not found, try closest
-      if (!skeleton) {
-        skeleton = img.closest('.product-image, .relative')?.querySelector('.skeleton-placeholder');
-      }
-
-      console.log(`Skeleton for image ${index}:`, skeleton ? 'found' : 'not found');
-
-      // Function to hide skeleton and show image
-      const revealImage = () => {
-        console.log(`Revealing image ${index}`);
-        img.classList.add('loaded');
-        if (skeleton) {
-          skeleton.classList.add('hidden');
-        }
-      };
-
-      // Force reveal after 3 seconds regardless of load status
-      const forceRevealTimeout = setTimeout(() => {
-        if (!img.classList.contains('loaded')) {
-          console.log(`Force revealing image ${index} after timeout`);
-          revealImage();
-        }
-      }, 3000);
-
-      // Check if already loaded
-      if (img.complete && img.naturalHeight !== 0) {
-        clearTimeout(forceRevealTimeout);
-        console.log(`Image ${index} already loaded`);
-        revealImage();
-      } else {
-        // Wait for load event
-        img.addEventListener('load', () => {
-          clearTimeout(forceRevealTimeout);
-          console.log(`Image ${index} loaded successfully`);
-          revealImage();
-        });
-
-        img.addEventListener('error', () => {
-          clearTimeout(forceRevealTimeout);
-          console.error(`Image ${index} failed to load:`, img.src);
-          // Still reveal on error to hide skeleton
-          revealImage();
-        });
-      }
-    });
-  });
-
-  // Re-attach after view transitions
-  document.addEventListener('astro:after-swap', () => {
-    setTimeout(() => {
-      const productImages = document.querySelectorAll('.product-img');
-      console.log('After swap - Found product images:', productImages.length);
-
-      productImages.forEach((img, index) => {
-        let skeleton = img.parentElement?.querySelector('.skeleton-placeholder');
-        if (!skeleton) {
-          skeleton = img.closest('.product-image, .relative')?.querySelector('.skeleton-placeholder');
-        }
-
-        const revealImage = () => {
-          img.classList.add('loaded');
-          if (skeleton) {
-            skeleton.classList.add('hidden');
-          }
-        };
-
-        const forceRevealTimeout = setTimeout(() => {
-          if (!img.classList.contains('loaded')) {
-            revealImage();
-          }
-        }, 3000);
-
-        if (img.complete && img.naturalHeight !== 0) {
-          clearTimeout(forceRevealTimeout);
-          revealImage();
-        } else {
-          img.addEventListener('load', () => {
-            clearTimeout(forceRevealTimeout);
-            revealImage();
-          });
-        }
-      });
-    }, 100);
-  });
 </script>
-
-<style>
-  /* Skeleton Placeholder - Clean gray shimmer only */
-  .skeleton-placeholder {
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-    background-size: 200% 100%;
-    animation: shimmer 1.5s infinite;
-    transition: opacity 0.3s ease-out, visibility 0s 0.3s;
-    visibility: visible;
-  }
-
-  .skeleton-placeholder.hidden {
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  /* Product Image - Fade in after loading */
-  .product-img {
-    opacity: 0;
-    transition: opacity 0.3s ease-in;
-  }
-
-  .product-img.loaded {
-    opacity: 1;
-  }
-
-  /* Logo Skeleton Wrapper - Clean gray shimmer */
-  .logo-skeleton-wrapper {
-    position: relative;
-    display: inline-block;
-  }
-
-  .logo-skeleton-wrapper::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-    background-size: 200% 100%;
-    animation: shimmer 1.5s infinite;
-    border-radius: 4px;
-    transition: opacity 0.3s ease-out;
-  }
-
-  .logo-skeleton-wrapper.loaded::before {
-    opacity: 0;
-  }
-
-  .logo-skeleton-wrapper img {
-    position: relative;
-    z-index: 2;
-    opacity: 0;
-    transition: opacity 0.3s ease-in;
-  }
-
-  .logo-skeleton-wrapper.loaded img {
-    opacity: 1;
-  }
-
-  /* Testimonial Logo Skeleton - Clean gray shimmer */
-  .testimonial-logo-skeleton {
-    position: relative;
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-    background-size: 200% 100%;
-    animation: shimmer 1.5s infinite;
-    border-radius: 8px;
-    transition: background 0.3s ease-out;
-  }
-
-  .testimonial-logo-skeleton.loaded {
-    background: none;
-    animation: none;
-  }
-
-  .testimonial-logo-skeleton img {
-    position: relative;
-    z-index: 2;
-    opacity: 0;
-    transition: opacity 0.3s ease-in;
-  }
-
-  .testimonial-logo-skeleton.loaded img {
-    opacity: 1;
-  }
-
-  @keyframes shimmer {
-    0% {
-      background-position: 200% 0;
-    }
-    100% {
-      background-position: -200% 0;
-    }
-  }
-</style>
