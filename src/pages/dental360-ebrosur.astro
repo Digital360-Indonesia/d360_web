@@ -125,6 +125,13 @@ const description = 'E-brosur interaktif Dental360 dengan pengalaman membaca dig
     border-radius: 8px;
     background: white;
     display: block;
+    /* Ensure smooth, high-quality rendering on all devices */
+    image-rendering: auto;
+    image-rendering: -webkit-optimize-contrast;
+    /* Enable hardware acceleration for smoother rendering */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    will-change: transform;
   }
 
   /* Mobile Responsive */
@@ -326,21 +333,43 @@ const description = 'E-brosur interaktif Dental360 dengan pengalaman membaca dig
 
     try {
       const page = await pdfDoc.getPage(pageNum);
-      const viewport = page.getViewport({ scale: currentScale });
+
+      // Get device pixel ratio for sharp rendering on high-DPI displays
+      const devicePixelRatio = window.devicePixelRatio || 1;
+      const adjustedScale = currentScale * devicePixelRatio;
+
+      const viewport = page.getViewport({
+        scale: adjustedScale,
+        intent: 'display' // Optimize for screen display
+      });
 
       const canvas = document.createElement('canvas');
-      const ctx = canvas.getContext('2d');
+      const ctx = canvas.getContext('2d', {
+        alpha: false, // No transparency needed for PDF
+        willReadFrequently: false // Better for rendering performance
+      });
 
+      // Set canvas size accounting for device pixel ratio
       canvas.height = viewport.height;
       canvas.width = viewport.width;
+
+      // Scale canvas down via CSS to fit container
+      canvas.style.height = `${viewport.height / devicePixelRatio}px`;
+      canvas.style.width = `${viewport.width / devicePixelRatio}px`;
 
       // Add transition class based on direction
       canvas.className = direction === 'next' ? 'page-transition' : 'page-transition prev';
 
-      await page.render({
+      // Render with enhanced settings
+      const renderContext = {
         canvasContext: ctx,
-        viewport: viewport
-      }).promise;
+        viewport: viewport,
+        intent: 'display',
+        renderInteractiveForms: false,
+        includeAnnotationStorage: false
+      };
+
+      await page.render(renderContext).promise;
 
       // Clear previous content and add new page
       const pageContainer = document.getElementById('pdfPageContainer');
@@ -399,14 +428,18 @@ const description = 'E-brosur interaktif Dental360 dengan pengalaman membaca dig
   document.getElementById('nextBtn').addEventListener('click', goToNextPage);
 
   document.getElementById('zoomInBtn').addEventListener('click', async () => {
-    if (currentScale < 2.0) {
+    const devicePixelRatio = window.devicePixelRatio || 1;
+    const maxScale = devicePixelRatio > 1 ? 3.0 : 2.0;
+    if (currentScale < maxScale) {
       currentScale += 0.1;
       await renderPage(currentPageNum, 'next');
     }
   });
 
   document.getElementById('zoomOutBtn').addEventListener('click', async () => {
-    if (currentScale > 0.5) {
+    const devicePixelRatio = window.devicePixelRatio || 1;
+    const minScale = devicePixelRatio > 1 ? 0.3 : 0.5;
+    if (currentScale > minScale) {
       currentScale -= 0.1;
       await renderPage(currentPageNum, 'next');
     }
@@ -428,6 +461,32 @@ const description = 'E-brosur interaktif Dental360 dengan pengalaman membaca dig
   document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight') goToNextPage();
     if (e.key === 'ArrowLeft') goToPrevPage();
+  });
+
+  // Handle window resize and device orientation changes
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(async () => {
+      if (pdfDoc && !isRendering) {
+        // Recalculate base scale based on new window width
+        const wasMobile = window.innerWidth < 768;
+        currentScale = wasMobile ? 0.6 : 0.8;
+        // Re-render current page with new device pixel ratio
+        await renderPage(currentPageNum, 'next');
+      }
+    }, 250);
+  });
+
+  // Handle device orientation changes (mobile)
+  window.addEventListener('orientationchange', async () => {
+    setTimeout(async () => {
+      if (pdfDoc && !isRendering) {
+        const wasMobile = window.innerWidth < 768;
+        currentScale = wasMobile ? 0.6 : 0.8;
+        await renderPage(currentPageNum, 'next');
+      }
+    }, 150);
   });
 
   // Start loading
