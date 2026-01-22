@@ -6,12 +6,16 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "optimize:images": "node scripts/optimize-images.js"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.6.0",
     "astro": "^5.14.1",
-    "fuse.js": "^7.1.0"
+    "fuse.js": "^7.1.0",
+    "page-flip": "^2.0.7",
+    "pdfjs-dist": "^5.4.530",
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^6.0.2",
