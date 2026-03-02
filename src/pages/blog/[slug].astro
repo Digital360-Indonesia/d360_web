@@ -264,6 +264,27 @@ const schemaTags = post.data.tags || [];
     @apply border-gray-200 my-8;
   }
 
+  /* Table styles */
+  :global(.prose table) {
+    @apply w-full border-collapse my-6 text-sm;
+  }
+
+  :global(.prose thead) {
+    @apply bg-primary-800 text-white;
+  }
+
+  :global(.prose th) {
+    @apply px-4 py-3 text-left font-semibold;
+  }
+
+  :global(.prose td) {
+    @apply px-4 py-3 border-b border-gray-200;
+  }
+
+  :global(.prose tbody tr:hover) {
+    @apply bg-gray-50;
+  }
+
   :global(.prose img) {
     @apply rounded-lg shadow-md my-6 w-full max-w-none;
   }
