@@ -8,7 +8,7 @@
 
 | Total Artikel | Selesai | In Progress | Pending |
 |---------------|---------|-------------|---------|
-| 19 | 5 | 0 | 14 |
+| 19 | 6 | 0 | 13 |
 
 ### Status Legend
 - ⬜ Pending - Belum dikerjakan
@@ -31,7 +31,7 @@
 |---|------|-------|--------|------|
 | 4 | C1.1 | Aplikasi Klinik Gigi Terbaik 2025 | ✅ | aplikasi-klinik-gigi-terbaik.md |
 | 5 | C1.2 | Software Rekam Medis Gigi | ✅ | software-rekam-medis-gigi.md |
-| 6 | C1.3 | Sistem Kasir Klinik Gigi | ⬜ | - |
+| 6 | C1.3 | Sistem Kasir Klinik Gigi | ✅ | sistem-kasir-klinik-gigi.md |
 | 7 | C1.4 | Klinik Manual vs Digital | ⬜ | - |
 | 8 | C1.5 | Manfaat Software Klinik Gigi | ⬜ | - |
 
@@ -356,7 +356,7 @@ Artikel dengan keyword intensi tinggi.
 |------|---------|--------|-----------------|------|
 | C1.1 | Aplikasi Klinik Gigi Terbaik 2025 | ✅ | 2026-03-03 | aplikasi-klinik-gigi-terbaik.md |
 | C1.2 | Software Rekam Medis Gigi | ✅ | 2026-03-03 | software-rekam-medis-gigi.md |
-| C1.3 | Sistem Kasir Klinik Gigi | ⬜ | - | - |
+| C1.3 | Sistem Kasir Klinik Gigi | ✅ | 2026-03-03 | sistem-kasir-klinik-gigi.md |
 | C1.4 | Klinik Manual vs Digital | ⬜ | - | - |
 | C1.5 | Manfaat Software Klinik Gigi | ⬜ | - | - |
 
@@ -466,6 +466,7 @@ tags: ["klinik gigi", "software klinik", "dental software"]
 | 2026-03-03 | ✅ P3: Workflow Klinik Gigi Modern selesai dibuat |
 | 2026-03-03 | ✅ C1.1: Aplikasi Klinik Gigi Terbaik 2025 selesai dibuat |
 | 2026-03-03 | ✅ C1.2: Software Rekam Medis Gigi selesai dibuat |
+| 2026-03-03 | ✅ C1.3: Sistem Kasir Klinik Gigi selesai dibuat |
 
 ---
 
