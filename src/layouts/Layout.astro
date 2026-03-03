@@ -1,6 +1,7 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
 import LoadingBar from '../components/LoadingBar.astro';
+import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
 
 export interface Props {
   title: string;
@@ -147,6 +148,8 @@ const hreflangDefault = hreflangId; // Use Indonesian as default for Indonesia a
   <body>
     <LoadingBar />
     <slot />
+    <FloatingWhatsApp />
+  </body>
 
     <!-- View Transition Re-initialization Script -->
     <script is:inline>
