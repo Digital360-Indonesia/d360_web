@@ -166,4 +166,4 @@ Dengan dukungan tim ahli, pendekatan berbasis data, dan fokus pada hasil nyata, 
 
 Ingin maksimalkan anggaran iklan Anda dan dapatkan hasil yang nyata? Tim Digital360 siap membantu Anda mulai dari strategi, pembuatan konten, sampai laporan hasil.
 
-👉 **WhatsApp:** [Klik untuk Chat](https://wa.me/6285156858298/) 👉 **Google Maps:** [Kunjungi Lokasi Digital360](https://g.co/kgs/ddEcRsT)
+👉 **WhatsApp:** [Klik untuk Chat](https://wa.me/6282228222899/) 👉 **Google Maps:** [Kunjungi Lokasi Digital360](https://g.co/kgs/ddEcRsT)

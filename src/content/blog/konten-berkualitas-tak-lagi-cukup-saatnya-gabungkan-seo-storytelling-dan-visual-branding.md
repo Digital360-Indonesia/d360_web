@@ -122,7 +122,7 @@ Ingin mengembangkan konten yang tidak hanya bagus tapi juga efektif dan berdampa
 
 Hubungi kami sekarang melalui:
 
-WhatsApp: [https://wa.me/6285156858298](https://wa.me/6285156858298)
+WhatsApp: [https://wa.me/6282228222899](https://wa.me/6282228222899)
 
 Google Maps: [https://g.co/kgs/ddEcRsT](https://g.co/kgs/ddEcRsT)
 

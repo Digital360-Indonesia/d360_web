@@ -106,7 +106,7 @@ Ingin membangun digital marketing yang berdampak dan strategis untuk bisnis Anda
 
 Hubungi **Digital360** sekarang:
 
-WhatsApp: [Klik untuk Chat](https://wa.me/6285156858298/)
+WhatsApp: [Klik untuk Chat](https://wa.me/6282228222899/)
 
 Kunjungi: [Google Maps](https://g.co/kgs/ddEcRsT)
 

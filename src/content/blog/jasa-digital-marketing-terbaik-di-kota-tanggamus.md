@@ -211,6 +211,6 @@ Apa yang termasuk dalam layanan Ads Solution Management Digital360?
 2. **Facebook Ads, **Solusi tampil dengan jangkauan yang lebih tertarget dengan beriklan melalui Facebook Ads.
 3. **Instagram Ads,** Solusi tampil dengan jangkauan yang lebih tertarget dengan beriklan melalui Instagram Ads.
 
-[Hubungi Digital360 untuk Mendapatkan Omzet yang Maksimal!](https://wa.me/6285156858298)
+[Hubungi Digital360 untuk Mendapatkan Omzet yang Maksimal!](https://wa.me/6282228222899)
 
-Beberapa layanan tersebut dapat Anda ambil untuk menaikkan traffic penjualan dalam bisnis Anda. Namun, Anda juga dapat mengambil beberapa paket saja yang ingin dioptimasi untuk hasil yang lebih maksimal. Tertarik untuk menggunakan jasa digital marketing dari Digital360? Yuk hubungi [Digital360 ](https://wa.me/6285156858298)sekarang juga!
+Beberapa layanan tersebut dapat Anda ambil untuk menaikkan traffic penjualan dalam bisnis Anda. Namun, Anda juga dapat mengambil beberapa paket saja yang ingin dioptimasi untuk hasil yang lebih maksimal. Tertarik untuk menggunakan jasa digital marketing dari Digital360? Yuk hubungi [Digital360 ](https://wa.me/6282228222899)sekarang juga!
