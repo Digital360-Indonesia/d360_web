@@ -45,6 +45,9 @@ Ini adalah fitur paling kritis yang membedakan EMR gigi dari EMR umum. Odontogra
 - **Histori per gigi** - riwayat treatment lengkap
 - **Treatment planning** - rencana perawatan per gigi
 
+![Contoh Odontogram Digital](/blog/2026/03/odontogram-example.jpg)
+*Contoh tampilan odontogram digital yang memudahkan pencatatan kondisi gigi pasien*
+
 **Tanpa odontogram yang baik, bukan software rekam medis GIGI yang sesungguhnya.**
 
 ### 2. Profil Pasien Lengkap
