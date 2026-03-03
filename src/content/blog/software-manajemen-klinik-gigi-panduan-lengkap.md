@@ -7,8 +7,6 @@ readTime: "15 menit"
 author: "Digital360"
 image: "/blog/2026/03/cover-software-manajemen-klinik-gigi.png"
 alt: "cover-Software Manajemen Klinik Gigi: Panduan Lengkap.png"
-cover-software-manajemen-klinik-gigi.png
-
 tags: ["software klinik gigi", "sistem manajemen klinik", "dental software", "digitalisasi klinik"]
 published: true
 ---

@@ -8,7 +8,7 @@
 
 | Total Artikel | Selesai | In Progress | Pending |
 |---------------|---------|-------------|---------|
-| 19 | 1 | 0 | 18 |
+| 19 | 2 | 0 | 17 |
 
 ### Status Legend
 - ⬜ Pending - Belum dikerjakan
@@ -23,7 +23,7 @@
 | # | Kode | Judul | Status | File |
 |---|------|-------|--------|------|
 | 1 | P1 | Software Manajemen Klinik Gigi: Panduan Lengkap | ✅ | software-manajemen-klinik-gigi-panduan-lengkap.md |
-| 2 | P2 | Meningkatkan Pasien dan Profit Klinik Gigi | ⬜ | - |
+| 2 | P2 | Meningkatkan Pasien dan Profit Klinik Gigi | ✅ | cara-meningkatkan-pasien-dan-profit-klinik-gigi.md |
 | 3 | P3 | Workflow Klinik Gigi Modern | ⬜ | - |
 
 ### Fase 2: Cluster Pillar 1
@@ -346,7 +346,7 @@ Prioritas tinggi - bangun authority dengan pillar content.
 | Kode | Artikel | Status | Tanggal Selesai | File |
 |------|---------|--------|-----------------|------|
 | P1 | Software Manajemen Klinik Gigi | ✅ | 2026-03-02 | software-manajemen-klinik-gigi-panduan-lengkap.md |
-| P2 | Meningkatkan Pasien dan Profit | ⬜ | - | - |
+| P2 | Meningkatkan Pasien dan Profit | ✅ | 2026-03-02 | cara-meningkatkan-pasien-dan-profit-klinik-gigi.md |
 | P3 | Workflow Klinik Modern | ⬜ | - | - |
 
 ### Fase 2: Cluster Pillar 1 (Minggu 3-4)
@@ -462,6 +462,7 @@ tags: ["klinik gigi", "software klinik", "dental software"]
 | 2026-03-02 | Dokumen awal dibuat |
 | 2026-03-02 | Tambah progress tracker dan status indicator |
 | 2026-03-02 | ✅ P1: Software Manajemen Klinik Gigi selesai dibuat |
+| 2026-03-02 | ✅ P2: Meningkatkan Pasien dan Profit Klinik Gigi selesai dibuat |
 
 ---
 
