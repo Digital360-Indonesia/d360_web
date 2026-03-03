@@ -2,7 +2,7 @@
 title: "Apa itu Chat GPT OpenAI? Kenali Chat GPT yang Viral!"
 excerpt: "Seiring dengan berkembangnya waktu, teknologi juga semakin berkembang pesat. Banyak sekali kemudahan-kemudahan yang diberikan oleh teknologi untuk mem..."
 category: "Media Sosial"
-date: "2023-03-08"
+date: "2025-12-27"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2023/03/apa-itu-chat-gpt-openai-kenali-chat-gpt-yang-viral.jpg"

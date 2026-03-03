@@ -2,7 +2,7 @@
 title: "7 Cara Mudah Meningkatkan Subscriber Newsletter!"
 excerpt: "Newsletter adalah alat pemasaran yang sangat penting bagi bisnis dalam membangun hubungan dengan pelanggan dan calon pelanggan. Meningkatkan jumlah pe..."
 category: "Digital Marketing"
-date: "2023-03-17"
+date: "2026-01-01"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2023/03/7-cara-mudah-meningkatkan-subscriber-newsletter.jpg"

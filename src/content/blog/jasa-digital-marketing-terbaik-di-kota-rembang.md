@@ -2,7 +2,7 @@
 title: "Jasa Digital Marketing Terbaik di Kota Rembang"
 excerpt: "Siapa yang pernah dengar tentang jasa digital marketing? Di tahun 2023 ini, jasa digital marketing mulai berkembang dan banyak perusahaan maupun perso..."
 category: "Digital Marketing"
-date: "2023-05-05"
+date: "2026-01-19"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2023/05/jasa-digital-marketing-terbaik-di-kota-rembang.jpg"

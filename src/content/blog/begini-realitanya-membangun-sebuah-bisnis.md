@@ -2,7 +2,7 @@
 title: "Begini Realitanya Membangun Sebuah Bisnis!"
 excerpt: "Siapa disini yang sedang memikirkan dan mengekspektasikan akan membangun sebuah bisnis yang sukses? Ternyata tidak semua ekspektasi sesuai dengan real..."
 category: "Bisnis & Usaha"
-date: "2022-10-28"
+date: "2025-11-24"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/10/begini-realitanya-membangun-sebuah-bisnis.jpg"

@@ -2,7 +2,7 @@
 title: "Apa itu Performance Marketing? Pengertian dan Cara Kerjanya"
 excerpt: "Hai Digital Marketing Surabaya! Teknologi pemasaran atau marketing mengalami perkembangan yang sangat pesat beberapa tahun ke belakang. Ada banyak jen..."
 category: "Produktivitas & Kerja"
-date: "2025-02-12"
+date: "2026-02-17"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2025/02/apa-itu-performance-marketing.jpg"

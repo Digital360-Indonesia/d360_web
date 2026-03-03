@@ -2,7 +2,7 @@
 title: "Jasa Digital Marketing Terbaik di Kota Labuhanbatu Utara"
 excerpt: "Siapa yang pernah dengar tentang jasa digital marketing? Di tahun 2023 ini, jasa digital marketing mulai berkembang dan banyak perusahaan maupun perso..."
 category: "Digital Marketing"
-date: "2022-05-02"
+date: "2024-06-13"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/05/jasa-digital-marketing-terbaik-di-kota-labuhanbatu-utara.jpg"

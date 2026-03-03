@@ -2,7 +2,7 @@
 title: "Aplikasi Klinik Gigi Terbaik 2025: Review dan Perbandingan Lengkap"
 excerpt: "Review dan perbandingan aplikasi klinik gigi terbaik di Indonesia tahun 2025. Pelajari fitur, harga, kelebihan dan kekurangan setiap software untuk membantu Anda memilih yang tepat."
 category: "Software Bisnis"
-date: "2026-03-03"
+date: "2026-02-28"
 readTime: "12 menit"
 author: "Digital360"
 image: "/blog/2026/03/cover-aplikasi-klinik-gigi-terbaik.jpg"

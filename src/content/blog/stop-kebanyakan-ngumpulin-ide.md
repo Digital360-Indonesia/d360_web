@@ -2,7 +2,7 @@
 title: "Stop Kebanyakan Ngumpulin Ide!"
 excerpt: "Pasti Anda bingung bukan kalau kalian tidak mempunyai ide? Atau Anda bingung mengapa tidak diperbolehkan untuk mengumpulkan ide? Bukannya mempunyai ba..."
 category: "Bisnis & Usaha"
-date: "2022-09-09"
+date: "2025-10-22"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/09/stop-kebanyakan-ngumpulin-ide.jpg"

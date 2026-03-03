@@ -2,7 +2,7 @@
 title: "Jasa Fotografi Surabaya Terbaik"
 excerpt: "Jasa Fotografi Surabaya Digital360&nbsp;â€“ Apakah Anda sedang bingung mencari Jasa Desain Logo di Surabaya? Tenang disinilah tempat yang tepat! Dibal..."
 category: "Teknologi"
-date: "2023-08-17"
+date: "2026-02-06"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2023/08/jasa-fotografi-surabaya-terbaik.jpg"

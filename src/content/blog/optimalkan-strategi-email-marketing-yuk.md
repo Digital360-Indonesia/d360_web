@@ -2,7 +2,7 @@
 title: "Optimalkan Strategi Email Marketing Yuk!"
 excerpt: "Dalam era digital saat ini, email masih menjadi salah satu alat pemasaran yang paling efektif. Strategi email marketing yang tepat dapat membantu bisn..."
 category: "Digital Marketing"
-date: "2023-04-21"
+date: "2026-01-14"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2023/04/optimalkan-strategi-email-marketing-yuk.jpg"

@@ -2,7 +2,7 @@
 title: "50 Cara Mendapatkan Uang dari Internet Tanpa Modal, di 2024!"
 excerpt: "Hai Sobat Digital Marketing Surabaya! &#8211; Siapa disini yang tahun 2024 pengen dapet cuan banyak? Selain sebagai pusat informasi, internet juga dap..."
 category: "Keuangan"
-date: "2023-12-12"
+date: "2026-02-12"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2023/12/cara-mendapatkan-uang-dari-internet.jpg"

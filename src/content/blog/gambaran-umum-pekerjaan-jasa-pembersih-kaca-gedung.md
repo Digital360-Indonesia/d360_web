@@ -2,7 +2,7 @@
 title: "Gambaran Umum Pekerjaan Jasa Pembersih Kaca Gedung"
 excerpt: "Perkembangan zaman mempengaruhi wajah kota-kota besar, kini banyak berdiri gedung pencakar langit, yang mana gedung tersebut paling tidak memiliki leb..."
 category: "Produktivitas & Kerja"
-date: "2022-08-01"
+date: "2025-09-26"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/08/gambaran-umum-pekerjaan-jasa-pembersih-kaca-gedung.jpg"

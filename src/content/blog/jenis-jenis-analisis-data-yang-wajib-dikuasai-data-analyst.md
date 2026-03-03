@@ -2,7 +2,7 @@
 title: "Jenis-Jenis Analisis Data yang Wajib Dikuasai Data Analyst"
 excerpt: "Apakah Anda berminat menjadi seorang data analyst? Analisis data adalah salah satu hal yang sangat penting dalam dunia bisnis dan industri saat ini. D..."
 category: "Teknologi"
-date: "2023-05-19"
+date: "2026-01-26"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2023/05/jenis-jenis-analisis-data-yang-wajib-dikuasai-data-analyst.jpg"

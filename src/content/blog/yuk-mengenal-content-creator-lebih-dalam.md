@@ -2,7 +2,7 @@
 title: "Yuk Mengenal Content Creator Lebih Dalam!"
 excerpt: "Apakah Anda tahu tentang content creator? Apa pertama kali yang terlintas di kepala Anda saat mendengar content creator? Inovatif, imajinatif, dan men..."
 category: "Media Sosial"
-date: "2022-11-03"
+date: "2025-11-27"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/11/yuk-mengenal-content-creator-lebih-dalam.jpg"

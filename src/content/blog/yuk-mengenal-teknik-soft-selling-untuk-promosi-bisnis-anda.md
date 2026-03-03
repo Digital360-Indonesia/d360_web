@@ -2,7 +2,7 @@
 title: "Yuk Mengenal Teknik Soft Selling untuk Promosi Bisnis Anda!"
 excerpt: "Untuk Anda yang sering mempromosikan jualan di sosial media pasti ada saatnya audiens merasa bosan melihat Anda memposting secara terus-menerus. Untuk..."
 category: "Digital Marketing"
-date: "2022-08-26"
+date: "2025-10-07"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/08/yuk-mengenal-teknik-soft-selling-untuk-promosi-bisnis-anda.jpg"

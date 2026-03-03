@@ -2,7 +2,7 @@
 title: "Kenali 5 Ide Peluang Bisnis yang sedang Trend Saat Pandemi"
 excerpt: "Sejak pandemi Covid-19 tahun 2020 hingga saat ini, membuka bisnis merupakan salah satu solusi efektif kehidupan ekonomi dalam masyarakat. Meskipun ada..."
 category: "Digital Marketing"
-date: "2022-08-19"
+date: "2025-09-30"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/08/kenali-5-ide-peluang-bisnis-yang-sedang-trend-saat-pandemi.jpg"

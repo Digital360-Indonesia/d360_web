@@ -2,7 +2,7 @@
 title: "Pelajari Shopee Ads untuk Menaikkan Traffic!"
 excerpt: "Apakah Anda mengerti fitur yang disediakan oleh shopee yaitu fitur ads? Jika Anda baru buka toko di shopee dan mau memasang iklan tetapi nggak tahu pr..."
 category: "Teknologi"
-date: "2022-10-13"
+date: "2025-11-15"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/10/pelajari-shopee-ads-untuk-menaikkan-traffic.jpg"

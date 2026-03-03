@@ -2,7 +2,7 @@
 title: "Cara Bikin 2022 Recap Reel di Instagram"
 excerpt: "Wah nggak kerasa udah mau ganti tahun aja nih! Siapa yang merasa tahun 2022 berlalu sangat cepat? Kenangan yang ada dalam tahun 2022 masih sulit untuk..."
 category: "Media Sosial"
-date: "2022-12-22"
+date: "2025-12-16"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/12/cara-bikin-2022-recap-reel-di-instagram.jpg"

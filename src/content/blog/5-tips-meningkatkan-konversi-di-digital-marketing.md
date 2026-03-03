@@ -2,7 +2,7 @@
 title: "5 Tips Meningkatkan Konversi di Digital Marketing"
 excerpt: "Apakah Anda sedang mencari cara untuk meningkatkan penjualan bisnis? Dalam strategi digital marketing, istilah konversi pasti sangat akrab di telinga ..."
 category: "Digital Marketing"
-date: "2022-09-23"
+date: "2025-11-04"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/09/5-tips-meningkatkan-konversi-di-digital-marketing.jpg"

@@ -2,7 +2,7 @@
 title: "Konten Berkualitas Tak Lagi Cukup: Saatnya Gabungkan SEO, Storytelling, dan Visual Branding"
 excerpt: "Konten hebat tak akan cukup jika tidak ditemukan, tidak dimaknai, dan tidak diingat. Di era digital saat ini, ribuan konten dipublikasikan setiap deti..."
 category: "Digital Marketing"
-date: "2025-07-09"
+date: "2026-02-22"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2025/07/konten-berkualitas-tak-lagi-cukup-saatnya-gabungkan-seo-storytelling-dan-visual-branding.jpg"

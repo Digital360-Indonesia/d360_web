@@ -2,7 +2,7 @@
 title: "Tips Meningkatkan Social Media Branding"
 excerpt: "Apakah Anda ingin meningkatkan social media branding? Sebenarnya apa saja sih manfaat dari membranding social media? Social media branding adalah hal ..."
 category: "Media Sosial"
-date: "2022-10-08"
+date: "2025-11-13"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/10/tips-meningkatkan-social-media-branding.jpg"

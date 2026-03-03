@@ -2,7 +2,7 @@
 title: "Apa itu Persuasive Advertising? Yuk Ketahui Pengertiannya!"
 excerpt: "Apa itu persuasive advertising? Kira-kira apa saja yang termasuk pada persuasive advertising? Dalam periklanan membutuhkan penyampaian pesan yang spes..."
 category: "Digital Marketing"
-date: "2022-11-19"
+date: "2025-12-07"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/11/apa-itu-persuasive-advertising-yuk-ketahui-pengertiannya.jpg"

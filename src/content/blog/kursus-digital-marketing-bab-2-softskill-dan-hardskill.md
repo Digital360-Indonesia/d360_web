@@ -2,7 +2,7 @@
 title: "Kursus Digital Marketing Bab 2: Softskill dan Hardskill"
 excerpt: "Pada artikel bab 2 kali ini mari kita membahas peran dan tanggung jawab seorang digital marketing serta keterampilan dan pengetahuan yang dimiliki ole..."
 category: "Digital Marketing"
-date: "2022-09-30"
+date: "2025-11-08"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/09/kursus-digital-marketing-bab-2-softskill-dan-hardskill.jpg"

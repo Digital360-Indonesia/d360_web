@@ -2,7 +2,7 @@
 title: "Stop Lakukan Hal ini saat Menjalankan Digital Marketing!"
 excerpt: "Apakah Anda merasa melakukan kesalahan saat menjalankan digital marketing? Ataukah Anda merasa tidak yakin dengan strategi digital marketing yang saat..."
 category: "Digital Marketing"
-date: "2022-09-20"
+date: "2025-11-01"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/09/stop-lakukan-hal-ini-saat-menjalankan-digital-marketing.jpg"

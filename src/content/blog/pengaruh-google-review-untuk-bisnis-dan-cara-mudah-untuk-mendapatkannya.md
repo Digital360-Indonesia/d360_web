@@ -2,7 +2,7 @@
 title: "Pengaruh Google Review untuk Bisnis dan Cara Mudah untuk Mendapatkannya"
 excerpt: "Memasuki era serba digital, seluruh aktivitas dan kegiatan mulai bergantung pada kecanggihan teknologi dan internet, salah satunya seperti bisnis. Di ..."
 category: "Bisnis & Usaha"
-date: "2022-08-01"
+date: "2025-09-28"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/08/pengaruh-google-review-untuk-bisnis-dan-cara-mudah-untuk-mendapatkannya.jpg"

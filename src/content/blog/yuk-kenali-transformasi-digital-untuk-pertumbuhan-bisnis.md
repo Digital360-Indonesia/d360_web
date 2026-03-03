@@ -2,7 +2,7 @@
 title: "Yuk Kenali Transformasi Digital untuk Pertumbuhan Bisnis!"
 excerpt: "Digitalisasi sering kali disangkutkan dengan penggunaan teknologi. Saat ini digitalisasi diperlukan untuk kemajuan bisnis. Entah dari segi promosi, pe..."
 category: "Digital Marketing"
-date: "2022-08-20"
+date: "2025-10-01"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/08/yuk-kenali-transformasi-digital-untuk-pertumbuhan-bisnis.jpg"

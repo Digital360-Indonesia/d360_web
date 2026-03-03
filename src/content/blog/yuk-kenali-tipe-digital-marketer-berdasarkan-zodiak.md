@@ -2,7 +2,7 @@
 title: "Yuk Kenali Tipe Digital Marketer Berdasarkan Zodiak!"
 excerpt: "Kira-kira, karakter digital marketer sesuai Zodiak tuh gimana sih? Menjadi seorang digital marketing memang harus memiliki sifat yang supel dan jago b..."
 category: "Bisnis & Usaha"
-date: "2022-10-29"
+date: "2025-11-25"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/10/yuk-kenali-tipe-digital-marketer-berdasarkan-zodiak.jpg"

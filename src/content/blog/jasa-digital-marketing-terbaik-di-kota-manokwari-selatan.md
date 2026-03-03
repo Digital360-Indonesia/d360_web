@@ -2,7 +2,7 @@
 title: "Jasa Digital Marketing Terbaik di Kota Manokwari Selatan"
 excerpt: "Siapa yang pernah dengar tentang jasa digital marketing? Di tahun 2023 ini, jasa digital marketing mulai berkembang dan banyak perusahaan maupun perso..."
 category: "Digital Marketing"
-date: "2022-05-08"
+date: "2025-05-28"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/05/jasa-digital-marketing-terbaik-di-kota-manokwari-selatan.jpg"

@@ -2,7 +2,7 @@
 title: "Tips Ampuh Menghindari Kecanduan Media Sosial!"
 excerpt: "Media sosial menjadi bagian penting dari kehidupan kita. Dari Facebook hingga Instagram, TikTok, dan banyak lagi, ada begitu banyak pilihan untuk beri..."
 category: "Media Sosial"
-date: "2023-03-13"
+date: "2025-12-30"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2023/03/tips-ampuh-menghindari-kecanduan-media-sosial.jpg"

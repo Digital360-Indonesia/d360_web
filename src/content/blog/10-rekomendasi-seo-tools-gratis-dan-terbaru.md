@@ -2,7 +2,7 @@
 title: "10 Rekomendasi SEO Tools Gratis dan Terbaru!"
 excerpt: "SEO (Search Engine Optimization) adalah salah satu hal penting yang perlu diperhatikan oleh para pemilik website. Agar website dapat ditemukan oleh pe..."
 category: "Digital Marketing"
-date: "2023-03-22"
+date: "2026-01-03"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2023/03/10-rekomendasi-seo-tools-gratis-dan-terbaru.jpg"

@@ -2,7 +2,7 @@
 title: "Ini Dia Tips Mudah untuk Menaikkan Engagement Instagram!"
 excerpt: "Apakah kalian ingin menaikkan engagement dalam instagram? Kira-kira bagaimana ya caranya menaikkan engagement dalam platform sosial media instagram? P..."
 category: "Media Sosial"
-date: "2022-11-23"
+date: "2025-12-08"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/11/ini-dia-tips-mudah-untuk-menaikkan-engagement-instagram.jpg"

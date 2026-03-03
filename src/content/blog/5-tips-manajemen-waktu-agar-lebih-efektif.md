@@ -2,7 +2,7 @@
 title: "5 Tips Manajemen Waktu agar Lebih Efektif"
 excerpt: "Siapa yang ngerasa kalau waktu dalam sehari itu kurang? Ada masyarakat produktif yang memiliki waktu sama seperti kita 24 jam tetapi justru dapat meng..."
 category: "Produktivitas & Kerja"
-date: "2023-01-05"
+date: "2025-12-18"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2023/01/5-tips-manajemen-waktu-agar-lebih-efektif.jpg"

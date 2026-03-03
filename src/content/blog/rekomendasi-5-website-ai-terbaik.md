@@ -2,7 +2,7 @@
 title: "Rekomendasi 5 Website AI Terbaik"
 excerpt: "Teknologi AI (Artificial Intelligence) semakin berkembang pesat dan semakin banyak digunakan dalam berbagai bidang, seperti bisnis, kesehatan, pendidi..."
 category: "Teknologi"
-date: "2023-05-17"
+date: "2026-01-24"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2023/05/rekomendasi-5-website-ai-terbaik.jpg"

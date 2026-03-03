@@ -2,7 +2,7 @@
 title: "Apa itu Iklan? Yuk Kenali Lebih dalam Disini!"
 excerpt: "Untuk Anda yang baik memiliki bisnis atau tidak, pasti sudah tidak asing lagi dengan kata &#8220;iklan&#8221;. Ya, iklan saat ini memang dijadikan str..."
 category: "Digital Marketing"
-date: "2022-11-10"
+date: "2025-12-01"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/11/apa-itu-iklan-yuk-kenali-lebih-dalam-disini.jpg"

@@ -2,7 +2,7 @@
 title: "Perlukah Dana Darurat? Ketahui Pentingnya Dana Darurat!"
 excerpt: "Apakah Anda memiliki dana darurat? Sebenarnya apakah penting dana darurat? Biasanya orang menganggap dana darurat tidak begitu penting dimiliki karena..."
 category: "Bisnis & Usaha"
-date: "2022-10-21"
+date: "2025-11-20"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/10/perlukah-dana-darurat-ketahui-pentingnya-dana-darurat.jpg"

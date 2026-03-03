@@ -2,7 +2,7 @@
 title: "4 Cara Ampuh Public Speaking Langsung Bisa!"
 excerpt: "Public speaking atau berbicara di depan umum adalah kegiatan yang umum dilakukan di dalam kehidupan sosial manusia. Namun, bagi sebagian orang, hal in..."
 category: "Produktivitas & Kerja"
-date: "2023-05-01"
+date: "2026-01-16"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2023/05/4-cara-ampuh-public-speaking-langsung-bisa.jpg"

@@ -2,7 +2,7 @@
 title: "Tips dan Trik agar Tidak Ditolak Klien Idaman!"
 excerpt: "Apakah Anda takut jika ditolak oleh klien penting? Atau Anda tidak bisa tidur karena memikirkan calon klien? Jangan biarkan tenaga Anda habis akibat t..."
 category: "Bisnis & Usaha"
-date: "2022-09-08"
+date: "2025-10-21"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/09/tips-dan-trik-agar-tidak-ditolak-klien-idaman.jpg"

@@ -2,7 +2,7 @@
 title: "Prinsip Trigger Marketing, Pepet sampai Dapet!"
 excerpt: "Apakah Anda ingin produk yang ditawarkan cepat terjual dan laris manis? Potential customer sudah memasukkan produk ke keranjang, tapi lama untuk melak..."
 category: "Teknologi"
-date: "2022-10-12"
+date: "2025-11-14"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/10/prinsip-trigger-marketing-pepet-sampai-dapet.jpg"

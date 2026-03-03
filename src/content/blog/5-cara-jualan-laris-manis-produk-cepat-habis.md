@@ -2,7 +2,7 @@
 title: "5 Cara Jualan Laris Manis, Produk Cepat Habis!"
 excerpt: "Saat berbisnis, kamu pasti ingin mendapatkan keuntungan sebanyak mungkin bukan? Sebagai pelaku usaha, tentunya kamu ingin agar tokomu bisa jualan yang..."
 category: "Bisnis & Usaha"
-date: "2023-01-26"
+date: "2025-12-21"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2023/01/5-cara-jualan-laris-manis-produk-cepat-habis.jpg"

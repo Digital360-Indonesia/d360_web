@@ -2,7 +2,7 @@
 title: "Kursus Digital Marketing Bab 1: Pengertian dan Macamnya"
 excerpt: "Apa yang kamu ketahui tentang digital marketing? Apakah kalian tertarik untuk mempelajari tentang digital marketing? Artikel berikut ini akan membantu..."
 category: "Digital Marketing"
-date: "2022-09-29"
+date: "2025-11-07"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/09/kursus-digital-marketing-bab-1-pengertian-dan-macamnya.jpg"

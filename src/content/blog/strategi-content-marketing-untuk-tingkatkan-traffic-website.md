@@ -2,7 +2,7 @@
 title: "Strategi Content Marketing untuk Tingkatkan Traffic Website"
 excerpt: "Content marketing merupakan strategi pemasaran yang fokus pada pembuatan dan distribusi konten yang berkualitas untuk memperluas jangkauan bisnis dan ..."
 category: "Digital Marketing"
-date: "2023-04-19"
+date: "2026-01-13"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2023/04/strategi-content-marketing-untuk-tingkatkan-traffic-website.jpg"

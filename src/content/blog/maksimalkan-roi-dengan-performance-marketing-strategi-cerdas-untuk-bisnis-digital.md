@@ -2,7 +2,7 @@
 title: "Maksimalkan ROI dengan Performance Marketing: Strategi Cerdas untuk Bisnis Digital"
 excerpt: "Dalam dunia digital yang kompetitif, setiap rupiah dalam anggaran pemasaran harus memberikan hasil yang terukur. Di sinilah peran performance marketin..."
 category: "Digital Marketing"
-date: "2025-07-17"
+date: "2026-02-23"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2025/07/maksimalkan-roi-dengan-performance-marketing-strategi-cerdas-untuk-bisnis-digital.jpg"

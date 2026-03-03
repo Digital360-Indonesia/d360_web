@@ -2,7 +2,7 @@
 title: "Konveksi Surabaya Vido Garment (Updated 25 April 2025)"
 excerpt: "Vido Garment telah dipercaya ratusan klien mulai dari Perusahaan, Pendidikan, Instansi Pemerintah hingga Komunitas sebagai perusahaan industri konveks..."
 category: "Bisnis & Usaha"
-date: "2022-09-03"
+date: "2025-10-15"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/09/konveksi-surabaya-vido-garment.jpg"

@@ -2,7 +2,7 @@
 title: "5 Hal yang Terbukti Bantu Naikin Omset Bisnis!"
 excerpt: "Omset penjualan merupakan hal yang sangat penting dalam sebuah bisnis atau perusahaan. Sehingga tidak heran apabila ada banyak pelaku bisnis yang menc..."
 category: "Digital Marketing"
-date: "2022-09-24"
+date: "2025-11-05"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/09/5-hal-yang-terbukti-bantu-naikin-omset-bisnis.jpg"

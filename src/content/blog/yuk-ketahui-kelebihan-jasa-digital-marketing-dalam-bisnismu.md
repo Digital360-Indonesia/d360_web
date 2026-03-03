@@ -2,7 +2,7 @@
 title: "Yuk Ketahui Kelebihan Jasa Digital Marketing dalam Bisnismu!"
 excerpt: "Untuk Anda yang ingin mengembangkan sebuah bisnis. Tentunya akan membutuhkan strategi yang penting terhadap produktivitas dalam bisnis Anda. Nah, jasa..."
 category: "Digital Marketing"
-date: "2022-08-22"
+date: "2025-10-03"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/08/yuk-ketahui-kelebihan-jasa-digital-marketing-dalam-bisnismu.jpg"

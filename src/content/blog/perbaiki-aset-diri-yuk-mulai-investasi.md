@@ -2,7 +2,7 @@
 title: "Perbaiki Aset Diri, Yuk Mulai Investasi!"
 excerpt: "Investasi merupakan bentuk penanaman modal untuk mendapatkan keuntungan di masa depan. Secara umum investasi adalah bentuk pemanfaatan waktu, uang, da..."
 category: "Keuangan"
-date: "2022-08-21"
+date: "2025-10-02"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/08/perbaiki-aset-diri-yuk-mulai-investasi.jpg"

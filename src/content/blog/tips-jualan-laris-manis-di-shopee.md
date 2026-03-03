@@ -2,7 +2,7 @@
 title: "Tips Jualan Laris Manis di Shopee!"
 excerpt: "Apakah Anda sedang merintis usaha di marketplace shopee? Ataukah Anda ingin produk yang Anda jual laris manis di shopee? Saat ini shopee menawarkan ba..."
 category: "Bisnis & Usaha"
-date: "2022-09-28"
+date: "2025-11-06"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/09/tips-jualan-laris-manis-di-shopee.jpg"

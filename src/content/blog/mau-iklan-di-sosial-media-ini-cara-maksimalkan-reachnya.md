@@ -2,7 +2,7 @@
 title: "Mau Iklan di Sosial Media? Ini Cara Maksimalkan Reachnya!"
 excerpt: "Media sosial telah menjadi platform pemasaran yang penting bagi perusahaan untuk mencapai audiens mereka. Iklan di media sosial dapat membantu meningk..."
 category: "Digital Marketing"
-date: "2023-04-05"
+date: "2026-01-07"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2023/04/mau-iklan-di-sosial-media-ini-cara-maksimalkan-reachnya.jpg"

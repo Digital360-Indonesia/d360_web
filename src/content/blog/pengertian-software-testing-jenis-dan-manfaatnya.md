@@ -2,7 +2,7 @@
 title: "Pengertian Software Testing, Jenis, dan Manfaatnya"
 excerpt: "Dalam era digital ini, perangkat lunak telah menjadi komponen penting dalam kehidupan kita. Dari aplikasi di ponsel pintar hingga perangkat lunak komp..."
 category: "Teknologi"
-date: "2023-07-14"
+date: "2026-02-03"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2023/07/pengertian-software-testing-jenis-dan-manfaatnya.jpg"

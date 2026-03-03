@@ -2,7 +2,7 @@
 title: "Ini Dia Tujuan Iklan dalam Branding Bisnis!"
 excerpt: "Branding merupakan salah satu strategi pemasaran yang penting untuk meningkatkan kesadaran merek dan menciptakan citra yang kuat di mata konsumen. Den..."
 category: "Digital Marketing"
-date: "2023-03-15"
+date: "2025-12-31"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2023/03/ini-dia-tujuan-iklan-dalam-branding-bisnis.jpg"

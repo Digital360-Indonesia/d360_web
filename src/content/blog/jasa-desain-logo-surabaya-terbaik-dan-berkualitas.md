@@ -2,7 +2,7 @@
 title: "Jasa Desain Logo Surabaya Terbaik dan Berkualitas"
 excerpt: "Jasa Desain Logo Surabaya Digital360&nbsp;â€“ Apakah Anda sedang bingung mencari Jasa Desain Logo di Surabaya? Tenang disinilah tempat yang tepat! Pem..."
 category: "Teknologi"
-date: "2023-08-10"
+date: "2026-02-05"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2023/08/jasa-desain-logo-surabaya-terbaik-dan-berkualitas.jpg"

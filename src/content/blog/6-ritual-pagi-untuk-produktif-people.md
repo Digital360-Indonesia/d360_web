@@ -2,7 +2,7 @@
 title: "6 Ritual Pagi untuk Produktif People!"
 excerpt: "Apakah Anda ingin hidup berproduktif? Jika Anda tidak berusaha mengatur hidup Anda sendiri, maka siapa lagi? Apakah Anda akan memaksa orang lain untuk..."
 category: "Produktivitas & Kerja"
-date: "2022-10-07"
+date: "2025-11-12"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/10/6-ritual-pagi-untuk-produktif-people.jpg"

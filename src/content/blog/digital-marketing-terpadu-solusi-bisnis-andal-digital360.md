@@ -2,7 +2,7 @@
 title: "Digital Marketing Terpadu: Solusi Bisnis Andal Digital360"
 excerpt: "Digital marketing saat ini telah menjadi pilar utama dalam strategi pertumbuhan bisnis modern. Namun, banyak perusahaan hanya fokus pada satu kanal, s..."
 category: "Digital Marketing"
-date: "2025-08-18"
+date: "2026-02-24"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2025/08/digital-marketing-terpadu-solusi-bisnis-andal-digital360.jpg"

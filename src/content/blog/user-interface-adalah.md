@@ -2,7 +2,7 @@
 title: "Apa itu User Interface? Pengertian, Contoh, dan Fungsinya"
 excerpt: "Pernahkah Anda menemukan website atau aplikasi dengan tampilan yang kurang menarik? Itu pasti membuat pengalaman pengguna menjadi tidak menyenangkan. ..."
 category: "Bisnis & Usaha"
-date: "2025-01-05"
+date: "2026-02-13"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2025/01/user-interface-adalah.jpg"

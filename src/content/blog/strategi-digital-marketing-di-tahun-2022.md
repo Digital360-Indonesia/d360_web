@@ -2,7 +2,7 @@
 title: "Strategi Digital Marketing di Tahun 2022"
 excerpt: "Apakah Anda ingin mengetahui strategi digital marketing di tahun ini? Ataukah kalian ingin memahami strategi digital marketing yang dapat diterapkan d..."
 category: "Digital Marketing"
-date: "2022-09-17"
+date: "2025-10-30"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/09/strategi-digital-marketing-di-tahun-2022.jpg"

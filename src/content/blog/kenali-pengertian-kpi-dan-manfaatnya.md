@@ -2,7 +2,7 @@
 title: "Kenali Pengertian KPI dan Manfaatnya"
 excerpt: "Siapa yang tidak tahu tentang KPI? Bagi orang yang memiliki pengalaman dengan dunia kerja pasti sudah memahami pengertian tentang KPI. KPI (Key Perfor..."
 category: "Bisnis & Usaha"
-date: "2023-05-12"
+date: "2026-01-22"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2023/05/kenali-pengertian-kpi-dan-manfaatnya.jpg"

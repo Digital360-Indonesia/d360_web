@@ -2,7 +2,7 @@
 title: "Optimalkan Iklan Online Anda dengan Google Ads &amp; Meta Ads"
 excerpt: "Di era digital seperti sekarang, persaingan bisnis semakin ketat. Semua sektor usaha, mulai dari UMKM hingga korporasi besar, berlomba-lomba untuk men..."
 category: "Digital Marketing"
-date: "2025-06-16"
+date: "2026-02-20"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2025/06/optimalkan-iklan-online-anda-dengan-google-ads-meta-ads.jpg"

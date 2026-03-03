@@ -2,7 +2,7 @@
 title: "Ini 5 Perbedaan Email Marketing dan Newsletter!"
 excerpt: "Email marketing dan newsletter adalah dua konsep yang sering digunakan dalam strategi pemasaran digital. Keduanya berfokus pada penggunaan email sebag..."
 category: "Digital Marketing"
-date: "2023-03-24"
+date: "2026-01-04"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2023/03/ini-5-perbedaan-email-marketing-dan-newsletter.jpg"

@@ -2,7 +2,7 @@
 title: "Burn Out saat Kerja? Lakuin Hal ini!"
 excerpt: "Apakah Anda merasa sedang mengalami burn out? Sebenarnya burn out itu apa sih? Jangan sampai Anda mengklaim sedang burnout namun ternyata Anda hanya m..."
 category: "Produktivitas & Kerja"
-date: "2022-10-19"
+date: "2025-11-18"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/10/burn-out-saat-kerja-lakuin-hal-ini.jpg"

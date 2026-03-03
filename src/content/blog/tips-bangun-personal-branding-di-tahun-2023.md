@@ -2,7 +2,7 @@
 title: "Tips Bangun Personal Branding di Tahun 2023"
 excerpt: "Personal branding adalah suatu proses membangun citra atau identitas yang unik dan membedakan diri sendiri dari orang lain di mata masyarakat. Seiring..."
 category: "Bisnis & Usaha"
-date: "2023-04-17"
+date: "2026-01-12"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2023/04/tips-bangun-personal-branding-di-tahun-2023.jpg"

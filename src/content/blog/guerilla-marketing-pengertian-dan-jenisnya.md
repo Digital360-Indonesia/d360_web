@@ -2,7 +2,7 @@
 title: "Guerilla Marketing: Pengertian dan Jenisnya"
 excerpt: "Apa itu Guerilla Marketing? Pernahkah Anda capek melakukan berbagai strategi pemasaran namun hasilnya tak kunjung kelihatan? Jika strategi pemasaran l..."
 category: "Bisnis & Usaha"
-date: "2022-12-29"
+date: "2025-12-17"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/12/guerilla-marketing-pengertian-dan-jenisnya.jpg"

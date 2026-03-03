@@ -2,7 +2,7 @@
 title: "Apa itu Standar Operasional Prosedur?"
 excerpt: "Mungkin Anda sudah tidak asing lagi dengan singkatan SOP. Atau mungkin Anda memang sedang mencari tau tentang SOP? Sebenarnya Standar Operasional Pros..."
 category: "Bisnis & Usaha"
-date: "2022-09-03"
+date: "2025-10-16"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/09/apa-itu-standar-operasional-prosedur.jpg"

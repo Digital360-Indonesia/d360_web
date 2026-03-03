@@ -2,7 +2,7 @@
 title: "5 Tips Cara Menemukan Ide, Dijamin Efektif!"
 excerpt: "Apakah Anda sedang bingung untuk membuat inovasi yang baru? Bingung karena tidak kunjung menemukan ide? Kehabisan ide? Tenanglah, jangan terlalu terbu..."
 category: "Bisnis & Usaha"
-date: "2022-09-07"
+date: "2025-10-20"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/09/5-tips-cara-menemukan-ide-dijamin-efektif.jpg"

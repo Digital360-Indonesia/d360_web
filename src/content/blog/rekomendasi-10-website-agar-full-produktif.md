@@ -2,7 +2,7 @@
 title: "Rekomendasi 10 Website Agar Full Produktif!"
 excerpt: "Apakah Anda sedang kesulitan untuk bertindak produktif? Ataukah Anda sedang ingin belajar untuk meningkatkan skill? Tenang tidak perlu risau, karena D..."
 category: "Produktivitas & Kerja"
-date: "2022-09-10"
+date: "2025-10-23"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/09/rekomendasi-10-website-agar-full-produktif.jpg"

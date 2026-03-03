@@ -2,7 +2,7 @@
 title: "Inilah 5 Alasan Mengapa Anda Harus Menggunakan Facebook Ads"
 excerpt: "Media sosial merupakan platform sosial yang sangat powefull karena terbukti dari hasil riset hootsuite 3,8 milyar merupakan pengguna media sosial di d..."
 category: "Media Sosial"
-date: "2022-08-01"
+date: "2025-09-24"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/08/inilah-5-alasan-mengapa-anda-harus-menggunakan-facebook-ads.jpg"

@@ -2,7 +2,7 @@
 title: "Optimalkan Email Marketing dan Dapatkan Keuntungannya untuk Bisnis Anda"
 excerpt: "Banyak cara untuk melakukan pemasaran pada bisnis Anda. Mulai dari pengoptimalan website, social media, Google Bisnisku, Google Ads, dan sebagainya. N..."
 category: "Digital Marketing"
-date: "2022-08-01"
+date: "2025-09-29"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/08/optimalkan-email-marketing-dan-dapatkan-keuntungannya-untuk-bisnis-anda.jpg"

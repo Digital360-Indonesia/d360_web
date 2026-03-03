@@ -2,7 +2,7 @@
 title: "Skill Penting yang Wajib Dikuasai untuk Jadi Manajer!"
 excerpt: "Nah siapa disini yang mau jadi manajer? Tentunya untuk menjadi seorang manajer diperlukan sebuah skill dari seorang manajer agar mampu menginspirasi d..."
 category: "Teknologi"
-date: "2022-11-24"
+date: "2025-12-09"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/11/skill-penting-yang-wajib-dikuasai-untuk-jadi-manajer.jpg"

@@ -2,7 +2,7 @@
 title: "Apa itu Creative Branding dan Bagaimana Penerapannya?"
 excerpt: "Creative branding merupakan strategi yang dapat membangun persepsi brand yang positif dalam jangka panjang. Biasanya sebuah produk atau bisnis dengan ..."
 category: "Teknologi"
-date: "2023-03-01"
+date: "2025-12-26"
 readTime: "5 menit"
 author: "syanampro"
 image: ""

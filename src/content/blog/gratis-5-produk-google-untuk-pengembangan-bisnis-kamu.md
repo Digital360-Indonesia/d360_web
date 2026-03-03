@@ -2,7 +2,7 @@
 title: "Gratis! 5 Produk Google untuk Pengembangan Bisnis Kamu"
 excerpt: "Tentu banyak cara yang dapat kita gunakan untuk mengembangkan bisnis agar mencapai target yang diinginkan, salah satunya dengan menggunakan produk Goo..."
 category: "Bisnis & Usaha"
-date: "2022-08-01"
+date: "2025-09-25"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/08/gratis-5-produk-google-untuk-pengembangan-bisnis-kamu.jpg"

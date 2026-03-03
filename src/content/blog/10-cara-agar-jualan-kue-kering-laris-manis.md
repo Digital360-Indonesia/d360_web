@@ -2,7 +2,7 @@
 title: "10 Cara Agar Jualan Kue Kering Laris Manis!"
 excerpt: "Setelah membahas tentang 8 Jenis Kue Kering yang Viral, kali ini Digital360 akan membahas tentang cara optimasi penjualan kue kering agar laris manis ..."
 category: "Bisnis & Usaha"
-date: "2023-03-25"
+date: "2026-01-05"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2023/03/10-cara-agar-jualan-kue-kering-laris-manis.jpg"

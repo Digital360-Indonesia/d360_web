@@ -2,7 +2,7 @@
 title: "Tips Menghilangkan Kejenuhan saat di Kantor!"
 excerpt: "Apakah Anda sedang mengalami kejenuhan di lingkup kerja Anda? Ataukah Anda merasa jenuh dengan pola hidup yang cenderung itu-itu saja? Solusinya bukan..."
 category: "Bisnis & Usaha"
-date: "2022-09-04"
+date: "2025-10-17"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/09/tips-menghilangkan-kejenuhan-saat-di-kantor.jpg"

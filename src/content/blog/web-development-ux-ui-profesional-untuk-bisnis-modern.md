@@ -2,7 +2,7 @@
 title: "Web Development &amp; UX/UI Profesional untuk Bisnis Modern"
 excerpt: "Di era digital saat ini, keberadaan website bukan hanya simbol eksistensi sebuah bisnis, tetapi juga merupakan bagian integral dari strategi pemasaran..."
 category: "Teknologi"
-date: "2025-06-17"
+date: "2026-02-21"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2025/06/web-development-ux-ui-profesional-untuk-bisnis-modern.jpg"

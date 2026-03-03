@@ -2,7 +2,7 @@
 title: "The Triple Bottom Line: Apa itu?"
 excerpt: "Apa itu the triple bottom line? Mengapa hal tersebut penting untuk keberlangsungan suatu bisnis? Tujuan umum dari strategi bisnis yang berkelanjutan a..."
 category: "Bisnis & Usaha"
-date: "2022-09-22"
+date: "2025-11-03"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/09/the-triple-bottom-line-apa-itu.jpg"

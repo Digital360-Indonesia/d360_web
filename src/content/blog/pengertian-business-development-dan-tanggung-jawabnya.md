@@ -2,7 +2,7 @@
 title: "Pengertian Business Development dan Tanggung Jawabnya"
 excerpt: "Apakah kalian berminat untuk terjun dalam dunia bisnis development? Bidang business development seringkali berkeliaran dalam informasi lowongan kerja...."
 category: "Bisnis & Usaha"
-date: "2023-01-12"
+date: "2025-12-19"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2023/01/pengertian-business-development-dan-tanggung-jawabnya.jpg"

@@ -2,7 +2,7 @@
 title: "Apa itu Social Media Report? Ketahui Pentingnya!"
 excerpt: "Dalam dunia pemasaran digital, social media report menjadi salah satu hal yang penting dan menjadi tolak ukur keberhasilan kampanye pemasaran. Social ..."
 category: "Media Sosial"
-date: "2023-03-20"
+date: "2026-01-02"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2023/03/apa-itu-social-media-report-ketahui-pentingnya.jpg"

@@ -2,7 +2,7 @@
 title: "15 Istilah Penting dalam Data Analytics!"
 excerpt: "Apakah Anda sedang mempelajari tentang data analytics? Ataukah Anda suka mempelajari data analytics untuk mengupgrade skill yang Anda miliki? Disini d..."
 category: "Produktivitas & Kerja"
-date: "2022-09-12"
+date: "2025-10-25"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/09/15-istilah-penting-dalam-data-analytics.jpg"

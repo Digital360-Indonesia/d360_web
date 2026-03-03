@@ -2,7 +2,7 @@
 title: "Mengenal Strategi Upselling dan Cross Selling dalam bisnis"
 excerpt: "Strategi pemasaran sangatlah penting untuk Anda yang sedang membangun suatu bisnis. Untuk memasarkan sebuah produk yang efektif dan efisien dibutuhkan..."
 category: "Bisnis & Usaha"
-date: "2022-09-01"
+date: "2025-10-13"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/09/mengenal-strategi-upselling-dan-cross-selling-dalam-bisnis.jpg"

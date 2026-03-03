@@ -2,7 +2,7 @@
 title: "4 Pembaruan Google Maps Augmented Reality Live View"
 excerpt: "Siapa yang tidak kenal dengan Google? Perusahaan satu ini menjadi &#8220;asupan&#8221; bagi masyarakat karena penggunaannya selalu dibutuhkan sebagai ..."
 category: "Teknologi"
-date: "2022-11-30"
+date: "2025-12-12"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/11/4-pembaruan-google-maps-augmented-reality-live-view.jpg"

@@ -2,7 +2,7 @@
 title: "Jangan Keseringan Kasih Diskon! Ini Akibat Buruknya!"
 excerpt: "Apakah kalian adalah pebisnis yang sering memberikan diskon untuk konsumen? Sebagai konsumen siapa yang tidak kegirangan bila mendapatkan informasi ad..."
 category: "Bisnis & Usaha"
-date: "2022-11-02"
+date: "2025-11-26"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/11/jangan-keseringan-kasih-diskon-ini-akibat-buruknya.jpg"

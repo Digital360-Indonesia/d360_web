@@ -2,7 +2,7 @@
 title: "5 Langkah Membangun Kekayaan Sejak Usia 20an!"
 excerpt: "Siapa yang tidak ingin kaya? Walaupun kekayaan tidak dapat membeli kebahagiaan tetapi jika tidak memiliki kekayaan juga belum tentu bahagia. Tetapi me..."
 category: "Keuangan"
-date: "2022-11-04"
+date: "2025-11-28"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2022/11/5-langkah-membangun-kekayaan-sejak-usia-20an.jpg"

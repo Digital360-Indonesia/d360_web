@@ -2,7 +2,7 @@
 title: "Cara Tingkatkan Bisnis dengan Digital Marketing!"
 excerpt: "Digital Marketing adalah serangkaian strategi pemasaran yang menggunakan media digital untuk mempromosikan bisnis atau produk Anda kepada audiens targ..."
 category: "Digital Marketing"
-date: "2023-03-10"
+date: "2025-12-28"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2023/03/cara-tingkatkan-bisnis-dengan-digital-marketing.jpg"

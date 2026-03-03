@@ -2,7 +2,7 @@
 title: "Apa itu Kurban Digital? Kenali Teknologi Mengubah Tradisi!"
 excerpt: "Kurban Digital adalah sebuah konsep inovatif yang telah mengubah cara pelaksanaan tradisi kurban. Dengan kemajuan teknologi, tradisi lama ini telah di..."
 category: "Teknologi"
-date: "2023-06-17"
+date: "2026-01-28"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2023/06/apa-itu-kurban-digital-kenali-teknologi-mengubah-tradisi.jpg"

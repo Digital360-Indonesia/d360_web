@@ -2,7 +2,7 @@
 title: "Cara Daftar Google AdSense, Mudah dan Pasti Diterima!"
 excerpt: "Dalam dunia pemasaran online, Google AdSense adalah salah satu program yang paling populer dan dapat menghasilkan uang. Ini memungkinkan pemilik situs..."
 category: "Digital Marketing"
-date: "2023-09-20"
+date: "2026-02-11"
 readTime: "5 menit"
 author: "syanampro"
 image: "/blog/2023/09/cara-daftar-google-adsense.jpg"
