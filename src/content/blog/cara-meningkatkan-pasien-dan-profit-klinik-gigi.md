@@ -1,7 +1,7 @@
 ---
 title: "Cara Meningkatkan Pasien dan Profit Klinik Gigi: Strategi Komplet untuk Growth"
 excerpt: "Panduan lengkap untuk meningkatkan jumlah pasien dan profit klinik gigi Anda. Pelajari strategi marketing, optimasi operasional, dan cara scale up klinik yang terbukti efektif."
-category: "Klinik Gigi"
+category: "Software Bisnis"
 date: "2026-03-02"
 readTime: "18 menit"
 author: "Digital360"

@@ -1,7 +1,7 @@
 ---
 title: "Software Manajemen Klinik Gigi: Panduan Lengkap untuk Digitalisasi Praktik Dental di Indonesia"
 excerpt: "Panduan komprehensif memilih software manajemen klinik gigi yang tepat untuk praktik dental Anda. Pelajari fitur wajib, manfaat, dan cara digitalisasi klinik yang efektif."
-category: "Klinik Gigi"
+category: "Software Bisnis"
 date: "2026-03-02"
 readTime: "15 menit"
 author: "Digital360"

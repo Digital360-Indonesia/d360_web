@@ -1,7 +1,7 @@
 ---
 title: "Workflow Klinik Gigi Modern: Sistem Operasional Efisien di Era Digital"
 excerpt: "Pelajari bagaimana membangun workflow klinik gigi modern yang efisien. Panduan lengkap untuk digitalisasi operasional, otomasi tugas rutin, dan transformasi klinik menuju SatuSehat."
-category: "Klinik Gigi"
+category: "Software Bisnis"
 date: "2026-03-03"
 readTime: "12 menit"
 author: "Digital360"
