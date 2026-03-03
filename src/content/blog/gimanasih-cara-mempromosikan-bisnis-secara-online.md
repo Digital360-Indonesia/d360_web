@@ -1,7 +1,7 @@
 ---
 title: "Gimanasih Cara Mempromosikan Bisnis Secara Online?"
 excerpt: "Apakah Anda sedang membangun sebuah bisnis? Ataukah Anda baru saja mengeluarkan produk yang menarik? Membangun sebuah bisnis dan memberikan inovasi pa..."
-category: "Blog"
+category: "Media Sosial"
 date: "2022-09-19"
 readTime: "5 menit"
 author: "syanampro"

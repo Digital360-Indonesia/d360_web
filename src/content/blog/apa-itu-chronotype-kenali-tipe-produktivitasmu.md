@@ -1,7 +1,7 @@
 ---
 title: "Apa itu Chronotype? Kenali Tipe Produktivitasmu!"
 excerpt: "Siapa disini pembaca yang selalu bersemangat untuk meningkatkan produktivitas? Dalam dunia yang penuh dengan tuntutan dan aktivitas sehari-hari, penti..."
-category: "Blog"
+category: "Produktivitas & Kerja"
 date: "2023-06-28"
 readTime: "5 menit"
 author: "syanampro"

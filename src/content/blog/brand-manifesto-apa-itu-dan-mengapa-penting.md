@@ -1,7 +1,7 @@
 ---
 title: "Brand Manifesto? Apa itu dan Mengapa Penting?"
 excerpt: "Apakah Anda mengerti tentang brand manifesto? Pernahkan Anda berpikir atau membuat pertanyaan sederhana tentang apa yang brand Anda mau perjuangkan se..."
-category: "Blog"
+category: "Bisnis & Usaha"
 date: "2022-10-20"
 readTime: "5 menit"
 author: "syanampro"

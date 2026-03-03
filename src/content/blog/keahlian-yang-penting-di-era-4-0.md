@@ -1,7 +1,7 @@
 ---
 title: "Keahlian yang Penting di Era 4.0!"
 excerpt: "Apakah Anda ingin mengetahui keahlian yang sangat penting di era saat ini? Dengan adanya berbagai perubahan yang terjadi di dunia saat ini dimana sega..."
-category: "Blog"
+category: "Produktivitas & Kerja"
 date: "2022-10-06"
 readTime: "5 menit"
 author: "syanampro"

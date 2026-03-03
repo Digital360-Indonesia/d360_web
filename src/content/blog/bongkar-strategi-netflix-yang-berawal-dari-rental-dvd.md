@@ -1,7 +1,7 @@
 ---
 title: "Bongkar Strategi Netflix yang Berawal dari Rental DVD!"
 excerpt: "Siapa disini yang tidak mengetahui netflix? Pasti sebagian besar udah pada berlangganan platform ini dong. Perusahaan tersebut saat ini sudah terkenal..."
-category: "Blog"
+category: "Bisnis & Usaha"
 date: "2022-10-22"
 readTime: "5 menit"
 author: "syanampro"

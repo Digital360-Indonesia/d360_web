@@ -1,7 +1,7 @@
 ---
 title: "Apa itu Hybrid Working? Yuk ketahui Pengertiannya!"
 excerpt: "Apakah Anda mengerti tentang hybrid working? Ataukah Anda ingin menerapkan hybrid working dalam lingkup kerja Anda? Dunia kerja yang fleksibel merupak..."
-category: "Blog"
+category: "Produktivitas & Kerja"
 date: "2022-11-25"
 readTime: "5 menit"
 author: "syanampro"

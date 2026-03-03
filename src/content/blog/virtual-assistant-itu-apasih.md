@@ -1,7 +1,7 @@
 ---
 title: "Virtual Assistant itu Apasih?"
 excerpt: "Apakah kalian mengetahui pekerjaan tentang virtual assistant? Apakah kalian mau kerja dari rumah dengan waktu yang fleksibel namun digaji ratusan doll..."
-category: "Blog"
+category: "Teknologi"
 date: "2022-09-16"
 readTime: "5 menit"
 author: "syanampro"

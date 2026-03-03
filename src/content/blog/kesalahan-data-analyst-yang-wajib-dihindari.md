@@ -1,7 +1,7 @@
 ---
 title: "Kesalahan Data Analyst yang Wajib Dihindari!"
 excerpt: "Apakah Anda seorang data analyst? Ataukah Anda seorang pebisnis yang mendalami data analyst? Sebagai data analyst tentunya kita diminta untuk selalu t..."
-category: "Blog"
+category: "Bisnis & Usaha"
 date: "2022-09-21"
 readTime: "5 menit"
 author: "syanampro"

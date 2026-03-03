@@ -1,7 +1,7 @@
 ---
 title: "Jasa Pasang Google Ads Surabaya Terbaik"
 excerpt: "Jasa Pasang Google Ads Surabaya Digital360 â€“ Sedang mencari Jasa Pasang Google Ads di Surabaya yang terpercaya? Anda berada di tempat yang tepat! Ko..."
-category: "Blog"
+category: "Digital Marketing"
 date: "2023-09-16"
 readTime: "5 menit"
 author: "syanampro"

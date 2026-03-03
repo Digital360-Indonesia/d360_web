@@ -1,7 +1,7 @@
 ---
 title: "Yuk Ketahui Jingle Iklan dan Manfaatnya Bagi Suatu Brand!"
 excerpt: "Kalian pernah lihat bukan iklan di televisi ataupun iklan yang terputar di youtube? Nah dalam iklan tersebut terkadang ada lirik yang diulang-ulang at..."
-category: "Blog"
+category: "Digital Marketing"
 date: "2022-11-16"
 readTime: "5 menit"
 author: "syanampro"

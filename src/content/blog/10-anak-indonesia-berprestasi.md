@@ -1,7 +1,7 @@
 ---
 title: "10 Anak Indonesia yang Berprestasi di Kancah Internasional!"
 excerpt: "Siapa yang tahu kapan dirayakannya hari anak nasional? Hari anak nasional pada tahun 2023 ini dirayakan pada hari Minggu, 23 Juli. Nah untuk mempering..."
-category: "Blog"
+category: "Bisnis & Usaha"
 date: "2023-07-12"
 readTime: "5 menit"
 author: "syanampro"

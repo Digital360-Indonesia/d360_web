@@ -1,7 +1,7 @@
 ---
 title: "Pentingnya SEO dalam Digital Marketing"
 excerpt: "SEO atau Search Engine Optimization adalah salah satu teknik dalam digital marketing yang bertujuan untuk meningkatkan kualitas dan kuantitas traffic ..."
-category: "Blog"
+category: "Digital Marketing"
 date: "2023-04-14"
 readTime: "5 menit"
 author: "syanampro"

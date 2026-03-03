@@ -1,7 +1,7 @@
 ---
 title: "6 Cara Efektif Meningkatkan Soft Skill"
 excerpt: "Siapa disini yang tidak tahu tentang soft skill? Soft skill menjadi semakin penting dalam dunia kerja saat ini. Kemampuan seperti komunikasi, kepemimp..."
-category: "Blog"
+category: "Produktivitas & Kerja"
 date: "2023-05-10"
 readTime: "5 menit"
 author: "syanampro"

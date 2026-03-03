@@ -1,7 +1,7 @@
 ---
 title: "Apa itu FYP? Ketahui Alogaritma dan Jadwal FYPnya!"
 excerpt: "Tak bisa dipungkiri, TikTok telah menjadi salah satu platform terpopuler untuk berbagi dan menemukan konten kreatif. Di tengah lautan video, istilah &..."
-category: "Blog"
+category: "Media Sosial"
 date: "2025-01-12"
 readTime: "5 menit"
 author: "syanampro"

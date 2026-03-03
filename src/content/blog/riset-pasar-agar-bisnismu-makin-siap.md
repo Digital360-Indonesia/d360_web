@@ -1,7 +1,7 @@
 ---
 title: "Riset Pasar Agar Bisnismu Makin Siap!"
 excerpt: "Apakah Anda ingin produk yang dijual terus dibeli dan digunakan konsumen? Siapa yang tidak mau jika produk yang dijual disenangi oleh konsumen. Untuk ..."
-category: "Blog"
+category: "Bisnis & Usaha"
 date: "2022-10-14"
 readTime: "5 menit"
 author: "syanampro"

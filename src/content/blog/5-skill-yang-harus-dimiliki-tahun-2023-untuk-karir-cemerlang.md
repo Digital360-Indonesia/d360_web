@@ -1,7 +1,7 @@
 ---
 title: "5 Skill yang Harus Dimiliki Tahun 2023 untuk Karir Cemerlang"
 excerpt: "Siapa disini yang lagi mencari pekerjaan? Untuk mempersiapkan diri dengan beberapa perubahan di tahun 2023 ini, kalian harus bisa untuk menguasai skil..."
-category: "Blog"
+category: "Produktivitas & Kerja"
 date: "2023-02-21"
 readTime: "5 menit"
 author: "syanampro"

@@ -1,7 +1,7 @@
 ---
 title: "Macam-macam Investasi untuk Pemuda Jaman Now!"
 excerpt: "Untuk Anda para pemuda yang memikirkan masa depan pastinya akan melakukan investasi. Kegiatan penanaman modal ini sangat menarik jika dipelajari lebih..."
-category: "Blog"
+category: "Keuangan"
 date: "2022-08-27"
 readTime: "5 menit"
 author: "syanampro"

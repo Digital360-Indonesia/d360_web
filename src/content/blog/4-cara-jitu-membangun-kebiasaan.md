@@ -1,7 +1,7 @@
 ---
 title: "4 Cara Jitu Membangun Kebiasaan"
 excerpt: "Apakah Anda selalu merasa tidak melakukan hal yang berguna? Ataukah Anda merasa susah sekali untuk melakukan suatu kebiasaan? Memanglah suatu kebiasaa..."
-category: "Blog"
+category: "Produktivitas & Kerja"
 date: "2022-09-15"
 readTime: "5 menit"
 author: "syanampro"

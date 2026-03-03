@@ -1,7 +1,7 @@
 ---
 title: "5 Pilar Digital Marketing Terpadu untuk UMKM yang Ingin Naik Kelas"
 excerpt: "Di tengah gempuran transformasi digital, UMKM tak lagi cukup hanya mengandalkan metode pemasaran konvensional. Perubahan perilaku konsumen, dominasi p..."
-category: "Blog"
+category: "Digital Marketing"
 date: "2025-08-23"
 readTime: "5 menit"
 author: "syanampro"

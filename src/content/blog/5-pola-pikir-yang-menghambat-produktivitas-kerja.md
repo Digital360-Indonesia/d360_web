@@ -1,7 +1,7 @@
 ---
 title: "5 Pola Pikir yang Menghambat Produktivitas Kerja"
 excerpt: "Siapa yang tidak ingin meningkatkan produktivitas kerja? Nah untuk meningkatkan produktivitas kerja ini, kita mulai membenahi pola pikir yang menjadi ..."
-category: "Blog"
+category: "Produktivitas & Kerja"
 date: "2023-02-04"
 readTime: "5 menit"
 author: "syanampro"

@@ -1,7 +1,7 @@
 ---
 title: "6 Trend Content Marketing yang Wajib Diketahui!"
 excerpt: "Apakah Anda suka mempelajari tentang content marketing? Kira-kira apa saja content marketing yang cocok untuk digunakan? Mencoba trend content marketi..."
-category: "Blog"
+category: "Digital Marketing"
 date: "2022-11-11"
 readTime: "5 menit"
 author: "syanampro"

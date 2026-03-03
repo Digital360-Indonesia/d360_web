@@ -1,7 +1,7 @@
 ---
 title: "Apa itu Social Media Specialist? Perusahaan Wajib Punya Nih!"
 excerpt: "Siapa disini yang tidak mengenal profesi social media specialist? Tentunya social media specialist ini sudah nggak terlalu asing di telinga kalian. Mu..."
-category: "Blog"
+category: "Media Sosial"
 date: "2022-11-26"
 readTime: "5 menit"
 author: "syanampro"

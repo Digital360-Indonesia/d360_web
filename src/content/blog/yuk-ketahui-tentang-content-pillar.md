@@ -1,7 +1,7 @@
 ---
 title: "Yuk Ketahui Tentang Content Pillar!"
 excerpt: "Apakah Anda sering mendengar tentang content pillar? Ataukah Anda tidak mengetahui tentang content pillar? Untuk kalian yang sedang mengembangkan akun..."
-category: "Blog"
+category: "Media Sosial"
 date: "2022-09-11"
 readTime: "5 menit"
 author: "syanampro"

@@ -1,7 +1,7 @@
 ---
 title: "7 Cara Optimalkan Sosial Media untuk Bisnis"
 excerpt: "Sosial media telah menjadi bagian penting dari strategi pemasaran bisnis modern. Dengan jutaan orang yang menghabiskan waktu mereka setiap hari di pla..."
-category: "Blog"
+category: "Media Sosial"
 date: "2023-04-10"
 readTime: "5 menit"
 author: "syanampro"

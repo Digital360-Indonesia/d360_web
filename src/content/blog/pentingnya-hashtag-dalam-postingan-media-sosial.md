@@ -1,7 +1,7 @@
 ---
 title: "Pentingnya Hashtag dalam Postingan Media Sosial"
 excerpt: "Media sosial telah menjadi salah satu alat pemasaran yang paling efektif bagi bisnis dan individu. Melalui media sosial, kita dapat mencapai audiens y..."
-category: "Blog"
+category: "Media Sosial"
 date: "2023-05-08"
 readTime: "5 menit"
 author: "syanampro"

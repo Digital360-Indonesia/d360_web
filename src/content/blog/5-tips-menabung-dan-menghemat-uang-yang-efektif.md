@@ -1,7 +1,7 @@
 ---
 title: "5 Tips Menabung dan Menghemat Uang yang Efektif"
 excerpt: "Menabung merupakan suatu cara dalam pengelolaan keuangan yang bertujuan untuk menyiapkan dana anggaran masa depan. Tabungan juga berperan penting dala..."
-category: "Blog"
+category: "Keuangan"
 date: "2023-02-14"
 readTime: "5 menit"
 author: "syanampro"

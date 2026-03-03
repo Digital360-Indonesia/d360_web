@@ -1,7 +1,7 @@
 ---
 title: "4 Jenis Skill yang Wajib Dikuasai!"
 excerpt: "Beberapa skill memang dirasa perlu untuk menambahkan keunggulan dalam diri. Skill adalah kemampuan spesifik yang dibutuhkan untuk mengerjakan sesuatu...."
-category: "Blog"
+category: "Teknologi"
 date: "2022-09-06"
 readTime: "5 menit"
 author: "syanampro"

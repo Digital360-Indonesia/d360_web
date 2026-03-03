@@ -1,7 +1,7 @@
 ---
 title: "5 Cara Mudah Mengatasi Lupa Password Gmail"
 excerpt: "Hai Digital Marketing Surabaya!&#8211; Lupa password Gmail bisa menjadi pengalaman yang menjengkelkan bagi banyak pengguna internet. Namun, jangan pan..."
-category: "Blog"
+category: "Teknologi"
 date: "2025-02-17"
 readTime: "5 menit"
 author: "syanampro"

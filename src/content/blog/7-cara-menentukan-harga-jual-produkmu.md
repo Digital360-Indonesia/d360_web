@@ -1,7 +1,7 @@
 ---
 title: "7 Cara Menentukan Harga Jual Produkmu"
 excerpt: "Menentukan harga produk merupakan salah satu hal penting dalam berbisnis. Apakah kamu sudah tahu cara menentukan harga jual yang tepat? Harga jual yan..."
-category: "Blog"
+category: "Bisnis & Usaha"
 date: "2023-01-19"
 readTime: "5 menit"
 author: "syanampro"

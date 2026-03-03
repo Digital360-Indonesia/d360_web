@@ -1,7 +1,7 @@
 ---
 title: "Elon Musk Bikin HP Jika Twitter di Blokir Apple dan Android"
 excerpt: "Digital360&#8211; Siapa disini yang tidak mengenal Elon Musk? Beritanya selalu simpang siur sejak ia membeli saham Twitter dan menjadi pemilik yang ba..."
-category: "Blog"
+category: "Media Sosial"
 date: "2022-12-02"
 readTime: "5 menit"
 author: "syanampro"

@@ -1,7 +1,7 @@
 ---
 title: "Kursus Digital Marketing Bab 3: Peluang Kerja dan Karir"
 excerpt: "Pada artikel bab 3 kali ini mari kita membahas tentang peluang kerja dan karir digital marketing. Yuk baca lebih lanjut! Peluang Kerja Digital Marketi..."
-category: "Blog"
+category: "Digital Marketing"
 date: "2022-10-01"
 readTime: "5 menit"
 author: "syanampro"

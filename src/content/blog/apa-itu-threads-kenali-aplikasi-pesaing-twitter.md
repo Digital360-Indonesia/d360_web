@@ -1,7 +1,7 @@
 ---
 title: "Apa itu Threads? Kenali Aplikasi Pesaing Twitter!"
 excerpt: "Siapa yang udah mulai download Threads? Kira-kira apa ya Threads itu? Buat yang belum tau yuk merapat! Threads merupakan aplikasi media sosial yang di..."
-category: "Blog"
+category: "Media Sosial"
 date: "2023-07-11"
 readTime: "5 menit"
 author: "syanampro"

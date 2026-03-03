@@ -1,7 +1,7 @@
 ---
 title: "Ini Dia Tips untuk Memaksimalkan Akun Instragam Bisnis!"
 excerpt: "Apakah Anda ingin memaksimalkan akun instagram bisnis? SebagaiÂ platformÂ media sosial yang populer, instagram saat ini banyak dimanfaatkan untuk mela..."
-category: "Blog"
+category: "Media Sosial"
 date: "2022-11-12"
 readTime: "5 menit"
 author: "syanampro"

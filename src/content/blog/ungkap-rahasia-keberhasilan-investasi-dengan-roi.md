@@ -1,7 +1,7 @@
 ---
 title: "Ungkap Rahasia Keberhasilan Investasi dengan ROI"
 excerpt: "Dalam dunia bisnis yang kompetitif saat ini, keberhasilan investasi menjadi prioritas utama bagi setiap perusahaan. Namun, untuk mencapai keberhasilan..."
-category: "Blog"
+category: "Keuangan"
 date: "2023-05-17"
 readTime: "5 menit"
 author: "syanampro"

@@ -1,7 +1,7 @@
 ---
 title: "Tools Social Media Management yang Legit!"
 excerpt: "Siapa yang tidak memiliki akun sosial media? Mempunyai akun sosial media tidak hanya sebatas memperkenalkan bisnis Anda agar mendapatkan teman atau ja..."
-category: "Blog"
+category: "Media Sosial"
 date: "2022-10-27"
 readTime: "5 menit"
 author: "syanampro"

@@ -1,7 +1,7 @@
 ---
 title: "5 Cara Agar Tidak Tertipu Investasi Bodong!"
 excerpt: "Apakah kalian sering berinvestasi? Tahukah kalian bahwa saat ini banyak sekali investasi bodong? Sebelum melakukan investasi, sebaiknya kalian memasti..."
-category: "Blog"
+category: "Keuangan"
 date: "2022-11-09"
 readTime: "5 menit"
 author: "syanampro"

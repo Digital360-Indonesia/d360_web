@@ -1,7 +1,7 @@
 ---
 title: "5 Tips untuk Meningkatkan Produktivitas di Tempat Kerja"
 excerpt: "Kalian ingin meningkatkan produktivitas? Gimana ya caranya meningkatkan produktivitas dalam tempat kerja? Produktivitas karyawan merupakan salah satu ..."
-category: "Blog"
+category: "Produktivitas & Kerja"
 date: "2022-11-17"
 readTime: "5 menit"
 author: "syanampro"

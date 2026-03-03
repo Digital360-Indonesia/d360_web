@@ -1,7 +1,7 @@
 ---
 title: "3 Langkah Mematikan untuk Meningkatkan Brandmu!"
 excerpt: "Mungkin Anda sedang memikirkan bagaimana meningkatkan brand secara efektif? Atau Anda perlu mengetahui berbagai caranya? Tentunya dengan meningkatkan ..."
-category: "Blog"
+category: "Bisnis & Usaha"
 date: "2022-09-02"
 readTime: "5 menit"
 author: "syanampro"

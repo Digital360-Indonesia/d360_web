@@ -1,7 +1,7 @@
 ---
 title: "Yuk Pahami Peran Sosial Media dalam Pertumbuhan Bisnis!"
 excerpt: "Peran sosial media tentunya akan memberikan dampak yang baik dalam pertumbuhan bisnis Anda. Karena sosial media sangat berperan dalam penyebaran infor..."
-category: "Blog"
+category: "Media Sosial"
 date: "2022-08-23"
 readTime: "5 menit"
 author: "syanampro"

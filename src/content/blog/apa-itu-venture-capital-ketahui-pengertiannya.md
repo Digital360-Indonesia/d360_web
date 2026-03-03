@@ -1,7 +1,7 @@
 ---
 title: "Apa itu Venture Capital? Ketahui Pengertiannya!"
 excerpt: "Pernahkah Anda mendengar istilah &#8220;venture capital&#8221; atau VC? Istilah ini merujuk pada bentuk investasi modal yang dilakukan oleh perusahaan..."
-category: "Blog"
+category: "Teknologi"
 date: "2023-05-05"
 readTime: "5 menit"
 author: "syanampro"

@@ -1,7 +1,7 @@
 ---
 title: "Stop Rasa Malas dengan Cara Ini!"
 excerpt: "Apakah kalian sering merasa malas? Ataukah kalian sedang berusaha untuk menghilangkan rasa malas? Tenang, Anda berada di tempat yang tepat. Rasa malas..."
-category: "Blog"
+category: "Bisnis & Usaha"
 date: "2022-10-05"
 readTime: "5 menit"
 author: "syanampro"

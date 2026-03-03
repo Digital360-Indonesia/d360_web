@@ -1,7 +1,7 @@
 ---
 title: "Digital Branding: Pengertian, Elemen, dan Strateginya"
 excerpt: "Digital Branding adalah strategi yang penting dalam meningkatkan brand awareness. Dengan membangun strategi yang kuat, maka dapat membangun suatu bran..."
-category: "Blog"
+category: "Digital Marketing"
 date: "2023-02-07"
 readTime: "5 menit"
 author: "syanampro"

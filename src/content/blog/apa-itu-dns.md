@@ -1,7 +1,7 @@
 ---
 title: "Apa itu DNS? Perhatikan Pengertian, Fungsi, dan Cara Kerja"
 excerpt: "Dalam era digital yang semakin berkembang, istilah DNS (Domain Name System) menjadi sebuah fondasi yang krusial dalam navigasi internet. DNS adalah pi..."
-category: "Blog"
+category: "Teknologi"
 date: "2025-02-05"
 readTime: "5 menit"
 author: "syanampro"

@@ -1,7 +1,7 @@
 ---
 title: "6 Ide Bisnis 2023, Peluang Usaha yang Menjanjikan"
 excerpt: "Apakah Anda seorang pengusaha yang menantikan peluang usaha di tahun 2023? Memang tidak terasa saat ini akan memasuki tahun 2023. Ide bisnis di tahun ..."
-category: "Blog"
+category: "Keuangan"
 date: "2022-12-09"
 readTime: "5 menit"
 author: "syanampro"

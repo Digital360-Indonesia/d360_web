@@ -1,7 +1,7 @@
 ---
 title: "5 Kunci Sukses Pemasaran dengan Media Sosial"
 excerpt: "Dalam era digital yang terus berkembang, media sosial telah menjadi alat yang sangat efektif untuk memasarkan produk dan layanan. Bagi para pengusaha ..."
-category: "Blog"
+category: "Media Sosial"
 date: "2023-06-19"
 readTime: "5 menit"
 author: "syanampro"

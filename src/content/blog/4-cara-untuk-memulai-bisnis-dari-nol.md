@@ -1,7 +1,7 @@
 ---
 title: "4 Cara untuk Memulai Bisnis dari Nol!"
 excerpt: "Membuka usaha mungkin terlihat sulit bagi seseorang yang baru terjun dalam dunia bisnis. Dalam berbisnis Anda memerlukan keberanian untuk mengambil re..."
-category: "Blog"
+category: "Digital Marketing"
 date: "2022-08-24"
 readTime: "5 menit"
 author: "syanampro"

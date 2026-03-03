@@ -1,7 +1,7 @@
 ---
 title: "5 Tren Digital Marketing Tahun 2022 yang Wajib Diterapkan"
 excerpt: "Semakin tahun teknologi semakin berkembang dan merevolusi kehidupan sehari-hari. Trend terbaru dari digital marketing pun ikut berkembang dan menunjuk..."
-category: "Blog"
+category: "Digital Marketing"
 date: "2022-08-01"
 readTime: "5 menit"
 author: "syanampro"

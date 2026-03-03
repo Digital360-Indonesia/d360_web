@@ -1,7 +1,7 @@
 ---
 title: "5 Strategi Media Sosial untuk Meningkatkan Bisnis"
 excerpt: "Penggunaan media sosial telah menjadi kunci sukses dalam dunia bisnis modern. Dengan jutaan pengguna yang aktif setiap hari, platform-platform media s..."
-category: "Blog"
+category: "Media Sosial"
 date: "2023-06-26"
 readTime: "5 menit"
 author: "syanampro"

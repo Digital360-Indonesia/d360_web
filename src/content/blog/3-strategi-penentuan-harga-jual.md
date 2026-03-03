@@ -1,7 +1,7 @@
 ---
 title: "3 Strategi Penentuan Harga Jual"
 excerpt: "Apakah kalian ingin memulai jualan tetapi bingung untuk menentukan harga jualnya? Ataukah kalian ingin mengetahui strategi untuk menentukan harga jual..."
-category: "Blog"
+category: "Bisnis & Usaha"
 date: "2022-09-14"
 readTime: "5 menit"
 author: "syanampro"

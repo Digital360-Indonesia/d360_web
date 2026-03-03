@@ -1,7 +1,7 @@
 ---
 title: "8 Jenis Kue Kering Diprediksi Viral Tahun 2023!"
 excerpt: "Tren kue kering selalu berubah dari waktu ke waktu, apalagi di tahun 2023 ini yang dihiasi dengan beragam kue kering untuk persiapan lebaran. Berbicar..."
-category: "Blog"
+category: "Media Sosial"
 date: "2023-03-13"
 readTime: "5 menit"
 author: "syanampro"

@@ -1,7 +1,7 @@
 ---
 title: "Tips Memperkuat Keamanan Akun Instagram!"
 excerpt: "Apakah akun instagram kalian tidak bisa diakses? Coba bayangkan bila Anda sudah capek-capek membangun akun instagram dari bawah, tiba-tiba akunnya di ..."
-category: "Blog"
+category: "Media Sosial"
 date: "2022-09-13"
 readTime: "5 menit"
 author: "syanampro"

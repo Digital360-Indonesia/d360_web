@@ -1,7 +1,7 @@
 ---
 title: "Rekomendasi Konveksi Surabaya: Solusi Terbaik untuk Produksi Kaos, Jaket, dan Seragam"
 excerpt: "Apakah Anda sedang mencari konveksi Surabaya yang terpercaya, cepat, dan hasilnya memuaskan? Kota Surabaya sebagai pusat bisnis dan industri di Jawa T..."
-category: "Blog"
+category: "Teknologi"
 date: "2025-04-23"
 readTime: "5 menit"
 author: "syanampro"

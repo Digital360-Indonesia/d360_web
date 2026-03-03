@@ -1,7 +1,7 @@
 ---
 title: "Teknik Copywriting Gelar S3 Marketing!"
 excerpt: "Siapa yang sering liat spanduk-spanduk viral di luar sana? Nah, viralnya spanduk tersebut karena diciptakan dengan teknik copywriting yang tepat! Copy..."
-category: "Blog"
+category: "Digital Marketing"
 date: "2022-10-26"
 readTime: "5 menit"
 author: "syanampro"

@@ -1,7 +1,7 @@
 ---
 title: "Meningkatkan Brand Awareness Melalui Digital PR"
 excerpt: "Brand awareness adalah salah satu kunci keberhasilan bisnis dalam jangka panjang. Hal ini penting karena semakin banyak orang yang mengenal merek Anda..."
-category: "Blog"
+category: "Bisnis & Usaha"
 date: "2023-04-12"
 readTime: "5 menit"
 author: "syanampro"

@@ -1,7 +1,7 @@
 ---
 title: "Apa itu Keyword? Ketahui Pengertian dan Contohnya!"
 excerpt: "Digital360 Surabaya-Dalam era digital yang serba cepat seperti sekarang, kata kunci atau &#8220;keyword&#8221; menjadi elemen penting dalam strategi p..."
-category: "Blog"
+category: "Bisnis & Usaha"
 date: "2023-09-18"
 readTime: "5 menit"
 author: "syanampro"

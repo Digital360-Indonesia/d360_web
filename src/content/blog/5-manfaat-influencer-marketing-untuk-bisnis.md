@@ -1,7 +1,7 @@
 ---
 title: "5 Manfaat Influencer Marketing untuk Bisnis"
 excerpt: "Dalam era digital seperti sekarang, media sosial menjadi salah satu platform pemasaran yang paling efektif dan memiliki potensi besar untuk mencapai a..."
-category: "Blog"
+category: "Bisnis & Usaha"
 date: "2023-04-26"
 readTime: "5 menit"
 author: "syanampro"

@@ -1,7 +1,7 @@
 ---
 title: "Pengertian Business Plan dan Jenis-Jenisnya"
 excerpt: "Siapa disini yang belum mengerti tentang business plan? Business plan atau rencana bisnis adalah dokumen tertulis yang berisi tentang strategi dan ren..."
-category: "Blog"
+category: "Bisnis & Usaha"
 date: "2023-05-22"
 readTime: "5 menit"
 author: "syanampro"

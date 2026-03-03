@@ -1,7 +1,7 @@
 ---
 title: "5 Prediksi Tren dalam Media Sosial di Tahun 2023"
 excerpt: "Wah siapa nih anak sosmed yang mempersiapkan tren di tahun depan? Memang tahun 2023 sudah didepan mata, tentunya Anda harus mengetahui tren media sosi..."
-category: "Blog"
+category: "Media Sosial"
 date: "2022-12-17"
 readTime: "5 menit"
 author: "syanampro"

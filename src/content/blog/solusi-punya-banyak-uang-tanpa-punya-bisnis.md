@@ -1,7 +1,7 @@
 ---
 title: "Solusi Punya Banyak Uang Tanpa Punya Bisnis!"
 excerpt: "Kalian pasti bertanya-tanya bukan bagaimana cara mencari uang tanpa berbisnis? Tenang, ini bukan dengan cara haram atau penipuan kok. Tentunya juga me..."
-category: "Blog"
+category: "Keuangan"
 date: "2022-09-05"
 readTime: "5 menit"
 author: "syanampro"

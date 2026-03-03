@@ -1,7 +1,7 @@
 ---
 title: "Bagaimana Cara untuk Mendapatkan Modal Usaha?"
 excerpt: "Apakah Anda sedang mencari modal usaha untuk berbisnis? Pastinya iya, karena Anda sedang membuka artikel ini. Banyak sekali hal yang harus dipersiapka..."
-category: "Blog"
+category: "Teknologi"
 date: "2022-08-30"
 readTime: "5 menit"
 author: "syanampro"

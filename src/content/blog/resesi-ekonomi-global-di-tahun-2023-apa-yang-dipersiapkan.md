@@ -1,7 +1,7 @@
 ---
 title: "Resesi Ekonomi Global di Tahun 2023, Apa yang Dipersiapkan?"
 excerpt: "Apakah Anda sering mendengar tentang resesi ekonomi global? Memang beberapa hari terakhir ini resesi ekonomi global sering dibicarakan. Tetapi, apakah..."
-category: "Blog"
+category: "Bisnis & Usaha"
 date: "2022-10-15"
 readTime: "5 menit"
 author: "syanampro"

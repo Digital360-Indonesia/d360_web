@@ -1,7 +1,7 @@
 ---
 title: "Kenali Masalah yang Harus Dihadapi saat Menjadi Entrepreneur"
 excerpt: "Entrepreneur sering disebut dengan pengusaha atau wirausahawan. Menjadi entrepreneur menggambarkan seseorang yang penuh dengan ide yang kreatif dan in..."
-category: "Blog"
+category: "Digital Marketing"
 date: "2022-08-25"
 readTime: "5 menit"
 author: "syanampro"

@@ -1,7 +1,7 @@
 ---
 title: "Beberapa Istilah Bisnis yang Wajib Diketahui!"
 excerpt: "Pasti Anda ingin mengetahui istilah dalam bisnis yang tidak dimengerti bukan? Atau Anda sekarang sedang bingung dengan istilah bisnis karena sedang ng..."
-category: "Blog"
+category: "Produktivitas & Kerja"
 date: "2022-08-31"
 readTime: "5 menit"
 author: "syanampro"

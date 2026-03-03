@@ -1,7 +1,7 @@
 ---
 title: "Digital Agency vs Freelancer, Pilih yang Mana?"
 excerpt: "Di era digital seperti sekarang, bisnis dan pemasaran digital semakin berkembang pesat. Ada banyak cara untuk membangun brand dan memperkenalkan bisni..."
-category: "Blog"
+category: "Bisnis & Usaha"
 date: "2023-04-07"
 readTime: "5 menit"
 author: "syanampro"

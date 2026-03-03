@@ -1,7 +1,7 @@
 ---
 title: "Ini Dia Pentingnya Customer Service Dalam Bisnis!"
 excerpt: "Dalam bisnis, pelayanan pelanggan atau customer service merupakan faktor yang sangat penting. Setiap perusahaan atau bisnis pasti memiliki tujuan utam..."
-category: "Blog"
+category: "Bisnis & Usaha"
 date: "2023-05-03"
 readTime: "5 menit"
 author: "syanampro"

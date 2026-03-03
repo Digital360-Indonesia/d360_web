@@ -1,7 +1,7 @@
 ---
 title: "Jasa Digital Marketing Terbaik di Kota Mesuji"
 excerpt: "Siapa yang pernah dengar tentang jasa digital marketing? Di tahun 2023 ini, jasa digital marketing mulai berkembang dan banyak perusahaan maupun perso..."
-category: "Blog"
+category: "Digital Marketing"
 date: "2022-05-03"
 readTime: "5 menit"
 author: "syanampro"

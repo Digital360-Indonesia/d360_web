@@ -1,7 +1,7 @@
 ---
 title: "Jasa Pasang Iklan Surabaya Terbaik"
 excerpt: "Jasa Pasang Iklan Surabaya Digital360 &#8211; Sedang mencari Jasa Pasang Iklan di Surabaya yang terpercaya? Anda berada di tempat yang tepat! Kota Sur..."
-category: "Blog"
+category: "Digital Marketing"
 date: "2023-09-11"
 readTime: "5 menit"
 author: "syanampro"

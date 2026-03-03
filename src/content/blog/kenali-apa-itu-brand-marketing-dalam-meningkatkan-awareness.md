@@ -1,7 +1,7 @@
 ---
 title: "Kenali Apa Itu Brand Marketing dalam Meningkatkan Awareness"
 excerpt: "Apakah Anda tahu apa yang dinamakan brand marketing? Ataukah Anda sama sekali tidak mengetahui tentang brand marketing? Wah padahal brand marketing ad..."
-category: "Blog"
+category: "Bisnis & Usaha"
 date: "2022-11-05"
 readTime: "5 menit"
 author: "syanampro"

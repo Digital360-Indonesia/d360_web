@@ -1,7 +1,7 @@
 ---
 title: "5 Tren Digital Marketing 2023 yang Harus Dilakukan!"
 excerpt: "Digital marketing adalah strategi pemasaran yang dilakukan melalui media digital. Dalam beberapa tahun terakhir, digital marketing telah menjadi salah..."
-category: "Blog"
+category: "Digital Marketing"
 date: "2023-04-03"
 readTime: "5 menit"
 author: "syanampro"

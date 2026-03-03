@@ -1,7 +1,7 @@
 ---
 title: "8 Strategi Pemasaran Terbaik"
 excerpt: "Pemasaran adalah salah satu aspek yang sangat penting dalam mengembangkan bisnis. Dalam era digital saat ini, ada banyak strategi pemasaran yang dapat..."
-category: "Blog"
+category: "Digital Marketing"
 date: "2023-05-15"
 readTime: "5 menit"
 author: "syanampro"

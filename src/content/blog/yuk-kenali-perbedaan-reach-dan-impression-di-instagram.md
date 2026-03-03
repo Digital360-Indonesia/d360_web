@@ -1,7 +1,7 @@
 ---
 title: "Yuk Kenali Perbedaan Reach dan Impression di Instagram!"
 excerpt: "Jika Anda menggunakan media sosial Instagram sebagai konten pemasaran dalam bisnis Anda. Tentunya harus mengetahui fitur reach dan impression. Baik re..."
-category: "Blog"
+category: "Media Sosial"
 date: "2022-08-28"
 readTime: "5 menit"
 author: "syanampro"

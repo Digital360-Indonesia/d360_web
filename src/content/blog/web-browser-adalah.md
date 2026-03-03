@@ -1,7 +1,7 @@
 ---
 title: "Apa itu Web Browser? Pengertian, Fungsi, dan Cara Kerjanya"
 excerpt: "Siapa disini yang tau web browser? Jika ingin mengakses internet, aplikasi mana ya yang Anda buka? Yap, betul web browser! Web browser adalah perangka..."
-category: "Blog"
+category: "Produktivitas & Kerja"
 date: "2025-01-17"
 readTime: "5 menit"
 author: "syanampro"

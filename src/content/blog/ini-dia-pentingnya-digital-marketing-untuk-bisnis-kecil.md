@@ -1,7 +1,7 @@
 ---
 title: "Ini Dia Pentingnya Digital Marketing untuk Bisnis Kecil!"
 excerpt: "Siapa disini yang masih berusaha untuk membangun sebuah bisnis? Nah lalu apa hubungannya digital marketing dengan suatu bisnis? Pentingnya digital mar..."
-category: "Blog"
+category: "Digital Marketing"
 date: "2022-11-18"
 readTime: "5 menit"
 author: "syanampro"

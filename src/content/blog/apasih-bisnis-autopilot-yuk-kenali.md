@@ -1,7 +1,7 @@
 ---
 title: "Apasih Bisnis Autopilot? Yuk Kenali!"
 excerpt: "Apakah Anda tahu bisnis autopilot? Atau Anda belum pernah mendengar tentang apa itu bisnis autopilot? Jika dijelaskan secara singkat, bisnis autopilot..."
-category: "Blog"
+category: "Bisnis & Usaha"
 date: "2022-08-29"
 readTime: "5 menit"
 author: "syanampro"
