@@ -8,7 +8,7 @@
 
 | Total Artikel | Selesai | In Progress | Pending |
 |---------------|---------|-------------|---------|
-| 19 | 6 | 0 | 13 |
+| 19 | 8 | 0 | 11 |
 
 ### Status Legend
 - ⬜ Pending - Belum dikerjakan
@@ -32,8 +32,8 @@
 | 4 | C1.1 | Aplikasi Klinik Gigi Terbaik 2025 | ✅ | aplikasi-klinik-gigi-terbaik.md |
 | 5 | C1.2 | Software Rekam Medis Gigi | ✅ | software-rekam-medis-gigi.md |
 | 6 | C1.3 | Sistem Kasir Klinik Gigi | ✅ | sistem-kasir-klinik-gigi.md |
-| 7 | C1.4 | Klinik Manual vs Digital | ⬜ | - |
-| 8 | C1.5 | Manfaat Software Klinik Gigi | ⬜ | - |
+| 7 | C1.4 | Klinik Manual vs Digital | ✅ | klinik-manual-vs-digital.md |
+| 8 | C1.5 | Manfaat Software Klinik Gigi | ✅ | manfaat-software-klinik-gigi.md |
 
 ### Fase 3: Cluster Pillar 2
 | # | Kode | Judul | Status | File |
@@ -357,8 +357,8 @@ Artikel dengan keyword intensi tinggi.
 | C1.1 | Aplikasi Klinik Gigi Terbaik 2025 | ✅ | 2026-03-03 | aplikasi-klinik-gigi-terbaik.md |
 | C1.2 | Software Rekam Medis Gigi | ✅ | 2026-03-03 | software-rekam-medis-gigi.md |
 | C1.3 | Sistem Kasir Klinik Gigi | ✅ | 2026-03-03 | sistem-kasir-klinik-gigi.md |
-| C1.4 | Klinik Manual vs Digital | ⬜ | - | - |
-| C1.5 | Manfaat Software Klinik Gigi | ⬜ | - | - |
+| C1.4 | Klinik Manual vs Digital | ✅ | 2026-03-04 | klinik-manual-vs-digital.md |
+| C1.5 | Manfaat Software Klinik Gigi | ✅ | 2026-03-04 | manfaat-software-klinik-gigi.md |
 
 ### Fase 3: Cluster Pillar 2 (Minggu 5-6)
 Artikel dengan keyword growth dan profit.
@@ -467,6 +467,8 @@ tags: ["klinik gigi", "software klinik", "dental software"]
 | 2026-03-03 | ✅ C1.1: Aplikasi Klinik Gigi Terbaik 2025 selesai dibuat |
 | 2026-03-03 | ✅ C1.2: Software Rekam Medis Gigi selesai dibuat |
 | 2026-03-03 | ✅ C1.3: Sistem Kasir Klinik Gigi selesai dibuat |
+| 2026-03-04 | ✅ C1.4: Klinik Manual vs Digital selesai dibuat |
+| 2026-03-04 | ✅ C1.5: Manfaat Software Klinik Gigi selesai dibuat |
 
 ---
 
