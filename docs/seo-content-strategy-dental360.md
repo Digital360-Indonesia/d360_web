@@ -8,7 +8,7 @@
 
 | Total Artikel | Selesai | In Progress | Pending |
 |---------------|---------|-------------|---------|
-| 19 | 8 | 0 | 11 |
+| 19 | 9 | 0 | 10 |
 
 ### Status Legend
 - ⬜ Pending - Belum dikerjakan
@@ -38,7 +38,7 @@
 ### Fase 3: Cluster Pillar 2
 | # | Kode | Judul | Status | File |
 |---|------|-------|--------|------|
-| 9 | C2.1 | Sistem Booking Online Klinik Gigi | ⬜ | - |
+| 9 | C2.1 | Sistem Booking Online Klinik Gigi | ✅ | sistem-booking-online-klinik-gigi.md |
 | 10 | C2.2 | WhatsApp Otomatis Klinik Gigi | ⬜ | - |
 | 11 | C2.3 | Reminder Appointment Pasien | ⬜ | - |
 | 12 | C2.4 | CRM untuk Klinik Gigi | ⬜ | - |
@@ -365,7 +365,7 @@ Artikel dengan keyword growth dan profit.
 
 | Kode | Artikel | Status | Tanggal Selesai | File |
 |------|---------|--------|-----------------|------|
-| C2.1 | Sistem Booking Online Klinik Gigi | ⬜ | - | - |
+| C2.1 | Sistem Booking Online Klinik Gigi | ✅ | 2026-03-04 | sistem-booking-online-klinik-gigi.md |
 | C2.2 | WhatsApp Otomatis Klinik Gigi | ⬜ | - | - |
 | C2.3 | Reminder Appointment Pasien | ⬜ | - | - |
 | C2.4 | CRM untuk Klinik Gigi | ⬜ | - | - |
@@ -469,6 +469,7 @@ tags: ["klinik gigi", "software klinik", "dental software"]
 | 2026-03-03 | ✅ C1.3: Sistem Kasir Klinik Gigi selesai dibuat |
 | 2026-03-04 | ✅ C1.4: Klinik Manual vs Digital selesai dibuat |
 | 2026-03-04 | ✅ C1.5: Manfaat Software Klinik Gigi selesai dibuat |
+| 2026-03-04 | ✅ C2.1: Sistem Booking Online Klinik Gigi selesai dibuat |
 
 ---
 
