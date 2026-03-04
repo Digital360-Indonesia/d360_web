@@ -8,7 +8,7 @@
 
 | Total Artikel | Selesai | In Progress | Pending |
 |---------------|---------|-------------|---------|
-| 19 | 11 | 0 | 8 |
+| 19 | 12 | 0 | 7 |
 
 ### Status Legend
 - ⬜ Pending - Belum dikerjakan
@@ -41,7 +41,7 @@
 | 9 | C2.1 | Sistem Booking Online Klinik Gigi | ✅ | sistem-booking-online-klinik-gigi.md |
 | 10 | C2.2 | WhatsApp Otomatis Klinik Gigi | ✅ | whatsapp-otomatis-klinik-gigi.md |
 | 11 | C2.3 | Reminder Appointment Pasien | ✅ | reminder-appointment-pasien.md |
-| 12 | C2.4 | CRM untuk Klinik Gigi | ⬜ | - |
+| 12 | C2.4 | CRM untuk Klinik Gigi | ✅ | crm-untuk-klinik-gigi.md |
 | 13 | C2.5 | Dashboard Bisnis Klinik Gigi | ⬜ | - |
 | 14 | C2.6 | Strategi Marketing Klinik Gigi | ⬜ | - |
 
@@ -368,7 +368,7 @@ Artikel dengan keyword growth dan profit.
 | C2.1 | Sistem Booking Online Klinik Gigi | ✅ | 2026-03-04 | sistem-booking-online-klinik-gigi.md |
 | C2.2 | WhatsApp Otomatis Klinik Gigi | ✅ | 2026-03-04 | whatsapp-otomatis-klinik-gigi.md |
 | C2.3 | Reminder Appointment Pasien | ✅ | 2026-03-04 | reminder-appointment-pasien.md |
-| C2.4 | CRM untuk Klinik Gigi | ⬜ | - | - |
+| C2.4 | CRM untuk Klinik Gigi | ✅ | 2026-03-04 | crm-untuk-klinik-gigi.md |
 | C2.5 | Dashboard Bisnis Klinik Gigi | ⬜ | - | - |
 | C2.6 | Strategi Marketing Klinik Gigi | ⬜ | - | - |
 
@@ -472,6 +472,7 @@ tags: ["klinik gigi", "software klinik", "dental software"]
 | 2026-03-04 | ✅ C2.1: Sistem Booking Online Klinik Gigi selesai dibuat |
 | 2026-03-04 | ✅ C2.2: WhatsApp Otomatis Klinik Gigi selesai dibuat |
 | 2026-03-04 | ✅ C2.3: Reminder Appointment Pasien selesai dibuat |
+| 2026-03-04 | ✅ C2.4: CRM untuk Klinik Gigi selesai dibuat |
 
 ---
 
