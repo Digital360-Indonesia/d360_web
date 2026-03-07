@@ -2,7 +2,7 @@
 title: "Klinik Manual vs Digital: Mana yang Lebih Efisien dan Menguntungkan?"
 excerpt: "Perbandingan lengkap klinik manual vs digital - mana yang lebih efisien, hemat biaya, dan menguntungkan? Pelajari pro dan kontra serta kapan saatnya beralih ke sistem digital."
 category: "Software Bisnis"
-date: "2026-03-04"
+date: "2026-03-09"
 readTime: "10 menit"
 author: "Digital360"
 image: "/blog/2026/03/cover-klinik-manual-vs-digital.jpg"

@@ -2,7 +2,7 @@
 title: "Reminder Appointment Pasien: Kurangi No-Show Hingga 50%"
 excerpt: "Pelajari strategi reminder appointment pasien yang efektif untuk mengurangi no-show rate hingga 50%. Tingkatkan retensi dan optimalkan jadwal klinik gigi Anda."
 category: "Software Bisnis"
-date: "2026-03-04"
+date: "2026-03-13"
 readTime: "10 menit"
 author: "Digital360"
 image: "/blog/2026/03/cover-reminder-appointment-pasien.jpg"

@@ -2,7 +2,7 @@
 title: "Manfaat Software Klinik Gigi: ROI dan Efisiensi yang Terbukti"
 excerpt: "Temukan manfaat software klinik gigi yang terbukti meningkatkan ROI hingga 300%. Pelajari bagaimana digitalisasi bisa menghemat waktu, mengurangi error, dan meningkatkan profit klinik Anda."
 category: "Software Bisnis"
-date: "2026-03-04"
+date: "2026-03-10"
 readTime: "12 menit"
 author: "Digital360"
 image: "/blog/2026/03/cover-manfaat-software-klinik-gigi.jpg"

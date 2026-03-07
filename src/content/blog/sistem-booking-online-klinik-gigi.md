@@ -2,7 +2,7 @@
 title: "Sistem Booking Online Klinik Gigi: Cara Menarik Pasien Baru 24/7"
 excerpt: "Pelajari bagaimana sistem booking online klinik gigi bisa menarik pasien baru 24/7, mengurangi no-show, dan meningkatkan revenue. Panduan lengkap implementasi dan best practice."
 category: "Software Bisnis"
-date: "2026-03-04"
+date: "2026-03-11"
 readTime: "11 menit"
 author: "Digital360"
 image: "/blog/2026/03/cover-sistem-booking-online-klinik-gigi.jpg"

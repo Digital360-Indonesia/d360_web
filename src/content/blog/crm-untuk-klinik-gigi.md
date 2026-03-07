@@ -2,7 +2,7 @@
 title: "CRM untuk Klinik Gigi: Bangun Loyalitas Pasien Jangka Panjang"
 excerpt: "Pelajari cara menggunakan CRM untuk klinik gigi dalam membangun loyalitas pasien. Tingkatkan retensi, personalisasi layanan, dan maksimalkan lifetime value pasien."
 category: "Software Bisnis"
-date: "2026-03-04"
+date: "2026-03-14"
 readTime: "11 menit"
 author: "Digital360"
 image: "/blog/2026/03/cover-crm-untuk-klinik-gigi.jpg"

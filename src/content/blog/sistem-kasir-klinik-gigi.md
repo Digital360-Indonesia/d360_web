@@ -2,7 +2,7 @@
 title: "Sistem Kasir Klinik Gigi: Solusi Transparansi Keuangan dan Efisiensi Billing"
 excerpt: "Panduan lengkap sistem kasir dan billing untuk klinik gigi. Pelajari fitur wajib, cara mencegah kebocoran revenue, dan mengapa sistem digital lebih efisien dari manual."
 category: "Software Bisnis"
-date: "2026-03-02"
+date: "2026-03-05"
 readTime: "10 menit"
 author: "Digital360"
 image: "/blog/2026/03/cover-sistem-kasir-klinik-gigi.png"

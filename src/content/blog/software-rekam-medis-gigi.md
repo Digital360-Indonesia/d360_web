@@ -2,7 +2,7 @@
 title: "Software Rekam Medis Gigi: Fitur Wajib dan Cara Memilih yang Tepat"
 excerpt: "Panduan lengkap memilih software rekam medis gigi untuk klinik dental Anda. Pelajari fitur wajib seperti odontogram, cara memilih sistem EMR yang tepat, dan manfaat digitalisasi rekam medis."
 category: "Software Bisnis"
-date: "2026-03-03"
+date: "2026-03-06"
 readTime: "10 menit"
 author: "Digital360"
 image: "/blog/2026/03/cover-software-rekam-medis-gigi.jpg"

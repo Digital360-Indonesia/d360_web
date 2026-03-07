@@ -2,7 +2,7 @@
 title: "WhatsApp Otomatis Klinik Gigi: Tingkatkan Engagement Pasien"
 excerpt: "Pelajari cara implementasi WhatsApp otomatis untuk klinik gigi. Tingkatkan engagement pasien, kurangi no-show, dan hemat waktu staf dengan sistem komunikasi otomatis."
 category: "Software Bisnis"
-date: "2026-03-04"
+date: "2026-03-12"
 readTime: "11 menit"
 author: "Digital360"
 image: "/blog/2026/03/cover-whatsapp-otomatis-klinik-gigi.jpg"
