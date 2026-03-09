@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => {
+    return data.published;
+  });
+
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const redirectUrl = `/blog/${slug}`;
+---
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content={`0; url=${redirectUrl}`}>
+  <link rel="canonical" href={redirectUrl}>
+  <title>Redirecting...</title>
+</head>
+<body>
+  <p>Redirecting to <a href={redirectUrl}>{redirectUrl}</a></p>
+</body>
+</html>
