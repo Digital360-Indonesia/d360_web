@@ -93,7 +93,7 @@
 				gap: 0.75rem;
 			}
 
-			.url-item {
+			.url-item, .sitemap-item {
 				background: var(--surface);
 				border: 1px solid var(--border);
 				border-radius: 8px;
@@ -101,26 +101,26 @@
 				transition: border-color 0.2s ease;
 			}
 
-			.url-item:hover {
+			.url-item:hover, .sitemap-item:hover {
 				border-color: var(--accent);
 			}
 
-			.url-loc {
+			.url-loc, .sitemap-loc {
 				font-size: 1rem;
 				font-weight: 500;
 				margin-bottom: 0.5rem;
 			}
 
-			.url-loc a {
+			.url-loc a, .sitemap-loc a {
 				color: var(--accent);
 				text-decoration: none;
 			}
 
-			.url-loc a:hover {
+			.url-loc a:hover, .sitemap-loc a:hover {
 				text-decoration: underline;
 			}
 
-			.url-meta {
+			.url-meta, .sitemap-meta {
 				display: flex;
 				gap: 1.5rem;
 				flex-wrap: wrap;
@@ -187,7 +187,7 @@
 					gap: 0.75rem;
 				}
 
-				.url-meta {
+				.url-meta, .sitemap-meta {
 					flex-direction: column;
 					gap: 0.5rem;
 				}
@@ -197,21 +197,68 @@
 	<body>
 		<div class="container">
 			<header>
-				<h1>Sitemap</h1>
+				<h1><xsl:choose>
+					<xsl:when test="//sitemap:sitemapindex">Sitemap Index</xsl:when>
+					<xsl:otherwise>Sitemap</xsl:otherwise>
+				</xsl:choose></h1>
 				<p class="subtitle">digital360.id — XML Sitemap</p>
 				<div class="stats">
-					<div class="stat">
-						<div class="stat-label">Total URLs</div>
-						<div class="stat-value"><xsl:value-of select="count(//sitemap:url)"/></div>
-					</div>
-					<div class="stat">
-						<div class="stat-label">Languages</div>
-						<div class="stat-value">EN, ID</div>
-					</div>
+					<xsl:choose>
+						<xsl:when test="//sitemap:sitemapindex">
+							<div class="stat">
+								<div class="stat-label">Total Sitemaps</div>
+								<div class="stat-value"><xsl:value-of select="count(//sitemap:sitemap)"/></div>
+							</div>
+						</xsl:when>
+						<xsl:otherwise>
+							<div class="stat">
+								<div class="stat-label">Total URLs</div>
+								<div class="stat-value"><xsl:value-of select="count(//sitemap:url)"/></div>
+							</div>
+							<div class="stat">
+								<div class="stat-label">Languages</div>
+								<div class="stat-value">EN, ID</div>
+							</div>
+						</xsl:otherwise>
+					</xsl:choose>
 				</div>
 			</header>
 
 			<main class="url-list">
+				<!-- Sitemap Index: List of sitemaps -->
+				<xsl:for-each select="//sitemap:sitemap">
+					<article class="sitemap-item">
+						<div class="sitemap-loc">
+							<a>
+								<xsl:attribute name="href">
+									<xsl:value-of select="sitemap:loc"/>
+								</xsl:attribute>
+								<xsl:choose>
+									<xsl:when test="contains(sitemap:loc, 'pages')">
+										📄 Pages Sitemap
+									</xsl:when>
+									<xsl:when test="contains(sitemap:loc, 'blog')">
+										📝 Blog Sitemap
+									</xsl:when>
+									<xsl:when test="contains(sitemap:loc, 'customer-stories')">
+										🏢 Customer Stories Sitemap
+									</xsl:when>
+									<xsl:otherwise>
+										📋 <xsl:value-of select="sitemap:loc"/>
+									</xsl:otherwise>
+								</xsl:choose>
+							</a>
+						</div>
+						<div class="sitemap-meta">
+							<div class="meta-item">
+								<span class="meta-label">Last updated:</span>
+								<span class="meta-value"><xsl:value-of select="sitemap:lastmod"/></span>
+							</div>
+						</div>
+					</article>
+				</xsl:for-each>
+
+				<!-- Regular Sitemap: List of URLs -->
 				<xsl:for-each select="//sitemap:url">
 					<xsl:sort select="sitemap:priority" order="descending"/>
 					<xsl:sort select="sitemap:loc"/>
