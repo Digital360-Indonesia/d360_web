@@ -9,7 +9,9 @@ export default defineConfig({
   output: 'static',
   integrations: [
     tailwind(),
-    sitemap()
+    sitemap({
+      xslURL: '/sitemap.xsl',
+    })
   ],
   image: {
     service: {
